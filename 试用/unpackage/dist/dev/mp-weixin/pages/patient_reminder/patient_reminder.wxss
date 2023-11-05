@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container {
+  height: 1200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+.unit {
+  border: 3rpx solid;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin-bottom: 50rpx;
+  width: 80%;
+  height: 20%;
+  font-family: cursive;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.medicine_name {
+  height: 50%;
+  width: 100%;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 90rpx;
+}
+

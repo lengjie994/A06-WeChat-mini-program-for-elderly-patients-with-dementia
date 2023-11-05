@@ -1,0 +1,1 @@
+<view><image src="/static/12.jpg"></image><button type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['getUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">一键登录</button></view>

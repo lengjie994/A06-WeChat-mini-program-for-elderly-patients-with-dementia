@@ -1,0 +1,81 @@
+{
+	"pages": [{
+		"path": "pages/patient_myinfo/patient_myinfo",
+		"style": {
+			"navigationBarTitleText": "uni-app"
+		}
+	},
+	{
+		"path" : "pages/patient_memorandum/patient_memorandum",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"enablePullDownRefresh" : false
+		}
+	},
+	{
+		"path" : "pages/patient_reminder/patient_reminder",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"enablePullDownRefresh" : false
+		}
+	},
+	{
+		"path" : "pages/identity/identity",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"enablePullDownRefresh" : false
+		}
+	},
+	{
+		"path" : "pages/login/login",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"enablePullDownRefresh" : false
+		}
+	},
+	{
+		"path" : "pages/patient_memoir/patient_memoir",
+		"style" : 
+		{
+			"navigationBarTitleText" : "",
+			"enablePullDownRefresh" : false
+		}
+	}],
+	"tabBar": {
+			"color": "#BBBAC7",
+			"selectedColor": "#2c2c2c",
+			"borderStyle": "black",
+			"list": [{
+                        "pagePath": "pages/patient_reminder/patient_reminder",
+                        "iconPath": "static/tab/pill.png",
+                        "selectedIconPath": "static/tab/pill_active.png",
+                        "text": "服药提醒"
+                    },
+                    {
+                        "pagePath": "pages/patient_memorandum/patient_memorandum",
+                        "iconPath": "static/tab/check.png",
+                        "selectedIconPath": "static/tab/check_active.png",
+                        "text": "备忘录"
+                    },
+					{
+					    "pagePath": "pages/patient_myinfo/patient_myinfo",
+					    "iconPath": "static/tab/my.png",
+					    "selectedIconPath": "static/tab/my_active.png",
+					    "text": "个人中心"
+					}
+			]
+		},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	}
+}
