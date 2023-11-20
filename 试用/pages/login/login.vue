@@ -29,31 +29,29 @@
 				const [err, res] = await new Promise((resolve, reject) => {	
 					uni.login({
 						provider: 'weixin',
-						// success: function(loginres) {
-						// 	//console.log(loginres);
-						// 	resolve([null, loginres]); // 将loginres的值传递给res
-						// },
-						success:(res)=>{
-						    console.log(res);
-							let code=res.code
-						    // 通过code换取openId
-						    uni.request({
-								url: `https://api.weixin.qq.com/sns/jscode2session?
-								appid=wx2535e2c919c58832&
-								secret=3a6e697feadee759db26c7fa033c8dc6&js_code=${code}&
-								grant_type=authorization_code`,
-								success:(res)=>{
-									console.log(res);
-									console.log(res.data.openid);
-								}
-						    })
+						success: function(loginres) {
+							//console.log(loginres);
+							resolve([null, loginres]); // 将loginres的值传递给res
+							    // 通过code换取openId
+							wx.request({
+							            // 这里是django的本地ip地址
+							            // 如果部署到线上，需要改为接口的实际网址
+							            url: 'http://127.0.0.1:8000/api/user/login/',
+							            // 请求方式修改为 POST
+							            method: 'POST',
+							            data: {
+							              code: loginres.code
+							            }
+							          })
 						},
+						
 						fail: function(error) {
 							reject([error, null]); // 将错误信息传递给err
-						}
+						},
+						
 					});
 				});
-
+				console.log('获取成功')
 				console.log(res)
 				const query = {
 					code: res.code,
