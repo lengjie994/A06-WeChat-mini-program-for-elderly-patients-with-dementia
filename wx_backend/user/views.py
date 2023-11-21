@@ -3,9 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.http import JsonResponse
 import requests
 import json
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from .models import User
+from wx_backend.LogicManage.Constants import Constants
 
 class WeixinLogin(APIView):
     def post(self, request, format=None):
@@ -25,22 +28,42 @@ class WeixinLogin(APIView):
         url = base_url + "?appid=" + appid + "&secret=" + appsecret + "&js_code=" + code + "&grant_type=authorization_code"
         response = requests.get(url)
 
+        
         # 处理获取的 openid
         try:
             openid = response.json()['openid']
             session_key = response.json()['session_key']
         except KeyError:
-            return Response({'code': 'fail'})
+            return Response({
+                "status_code": 400,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'网络繁忙，访问微信失败！！',
+                    'errid': Constants.ERROR_CODE_NETWORK_ERROR,
+                }
+            })
         else:
+            theRole=''
             # 打印到后端命令行
             print(openid, session_key)
             # 根据openid确定用户的本地身份
             try:
                 user = User.objects.get(username=openid)
-            except User.DoesNotExist:
-                user = User.objects.create(
+                theRole = user.role
+            except:
+                theRole = "newUser"
+                User.objects.create(
                     username=openid,
-                    password=openid
+                    password=openid,
+                    session=session_key,
+                    role=theRole
                 )
-                
-            return Response({'code': 'success'})
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "session": session_key,
+                    "openid": openid,
+                    "role": theRole,
+                 }
+            })
