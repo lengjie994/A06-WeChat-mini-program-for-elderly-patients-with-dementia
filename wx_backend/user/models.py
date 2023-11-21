@@ -9,7 +9,7 @@ class GlobalVariables(models.Model):
 
 #User：用户模型，用于存储用户的各种信息。
 class User(models.Model):
-    username = models.CharField(max_length = 100)
+    Openid = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
     session = models.CharField(max_length = 100)
     role = models.CharField(max_length = 100)

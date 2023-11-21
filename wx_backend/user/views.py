@@ -13,7 +13,7 @@ from wx_backend.LogicManage.Constants import Constants
 class WeixinLogin(APIView):
     def post(self, request, format=None):
         """
-        提供 post 请求
+        用户登录
         """
         # 从请求中获得code
         code = json.loads(request.body).get('code')
@@ -45,15 +45,15 @@ class WeixinLogin(APIView):
         else:
             theRole=''
             # 打印到后端命令行
-            print(openid, session_key)
+            #print(openid, session_key)
             # 根据openid确定用户的本地身份
             try:
-                user = User.objects.get(username=openid)
+                user = User.objects.get(Openid=openid)
                 theRole = user.role
             except:
                 theRole = "newUser"
                 User.objects.create(
-                    username=openid,
+                    Openid=openid,
                     password=openid,
                     session=session_key,
                     role=theRole
@@ -66,4 +66,37 @@ class WeixinLogin(APIView):
                     "openid": openid,
                     "role": theRole,
                  }
+            })
+        
+class ChooseRole(APIView):
+    def post(self, request, format=None):
+        """
+        用户选择身份
+        """
+        print("选择身份")
+        # 从请求中获得用户选择的身份
+        theRole = json.loads(request.body).get('role')
+        # 该用户的openid，用于识别该用户
+        openid = json.loads(request.body).get('openid')
+        try:
+            user = User.objects.get(Openid=openid)
+            user.role = theRole
+            user.save()
+            print("保存")
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "role": theRole,
+                    "openid": openid
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该用户不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
             })
