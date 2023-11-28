@@ -13,6 +13,9 @@
             selectedIndex: { // 当前选中的tab index
                 default: 0
             },
+            id_data: {
+				type: String,
+			}
         },
         data() {
             return {
@@ -26,56 +29,78 @@
             this.currentIndex = this.selectedIndex;
             
             let _this = this
+			console.log("111111")
+			console.log(this.selectedIndex)
+			console.log(this.id_data)
             
-            if (true) {
+            if (this.id_data=="patient") {
                 //角色1
                 _this.list = [{
                         "pagePath": "/pages/patient_reminder/patient_reminder",
                         "iconPath": "/static/tab/pill.png",
                         "selectedIconPath": "/static/tab/pill_active.png",
-                        "text": "服药提醒1"
+                        "text": "服药提醒"
                     },
                     {
                         "pagePath": "/pages/patient_memorandum/patient_memorandum",
                         "iconPath": "/static/tab/check.png",
                         "selectedIconPath": "/static/tab/check_active.png",
-                        "text": "备忘录1"
+                        "text": "备忘录"
                     },
 					{
 					    "pagePath": "/pages/patient_myinfo/patient_myinfo",
 					    "iconPath": "/static/tab/my.png",
 					    "selectedIconPath": "/static/tab/my_active.png",
-					    "text": "个人中心1"
+					    "text": "个人中心"
 					}
                 ]
-            } else {
+            } else if(this.id_data=="guardian") {
                 //角色2
                 _this.list = [{
-                        "pagePath": "/pages/patient_reminder/patient_reminder",
-                        "iconPath": "/static/tab/pill.png",
-                        "selectedIconPath": "/static/tab/pill_active.png",
-                        "text": "服药提醒2"
+                        "pagePath": "/pages/guardian_health/guardian_health",
+                        "iconPath": "/static/tab/health.png",
+                        "selectedIconPath": "/static/tab/health_active.png",
+                        "text": "患者相关"
                     },
                     {
-                        "pagePath": "/pages/patient_memorandum/patient_memorandum",
-                        "iconPath": "/static/tab/check.png",
-                        "selectedIconPath": "/static/tab/check_active.png",
-                        "text": "备忘录2"
+                        "pagePath": "/pages/guardian_chat/guardian_chat",
+                        "iconPath": "/static/tab/chat.png",
+                        "selectedIconPath": "/static/tab/chat_active.png",
+                        "text": "联系医生"
                     },
 					{
-					    "pagePath": "/pages/patient_myinfo/patient_myinfo",
+					    "pagePath": "/pages/guardian_myinfo/guardian_myinfo",
 					    "iconPath": "/static/tab/my.png",
 					    "selectedIconPath": "/static/tab/my_active.png",
-					    "text": "个人中心2"
+					    "text": "个人中心"
 					}
                 ]
-            }
+            } else if(this.id_data=="doctor"){
+				//医生
+				_this.list = [{
+				        "pagePath": "/pages/doctor_contact_guardian/doctor_contact_guardian",
+				        "iconPath": "/static/tab/health.png",
+				        "selectedIconPath": "/static/tab/health_active.png",
+				        "text": "联系监护人"
+				    },
+					{
+					    "pagePath": "/pages/doctor_myinfo/doctor_myinfo",
+					    "iconPath": "/static/tab/my.png",
+					    "selectedIconPath": "/static/tab/my_active.png",
+					    "text": "个人中心"
+					}
+				]
+			}
         },
         methods: {
             switchTab(item, index) {
                 this.currentIndex = index;
                 let url = item.pagePath;
-                uni.redirectTo({url:url})
+				console.log(url);
+                uni.navigateTo({url:url})
+				// uni.switchTab({
+				// 	url:url
+				// })
                 
             }
         }
