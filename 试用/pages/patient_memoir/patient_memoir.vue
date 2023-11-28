@@ -10,12 +10,36 @@
 		</view>
 		<scroll-view class="scroll-view" :scroll-y="true" :scroll-top="scrollTop" ref="scrollView">
 			<view v-for="(message, index) in messages" :key="index">
-				<view class="message">
-					<image v-if="message.image" :src="message.image" class="img"></image>
-					<text class="txt">{{ message.text }}</text>
+				
+				
+				<view class="u-demo-block">
+							<view class="u-demo-block__content">
+								<view class="album">
+									<view class="album__content">
+										<view :style="{
+											marginBottom: '8rpx',
+											width: albumWidth + 'rpx'
+										}">
+											<u--text
+											    :text="message.text"
+											    :customStyle="{
+													width: albumWidth + 'rpx'
+												}"
+												size="40"
+											></u--text>
+											<text v-if="message.time" class="time">{{message.time}}</text>
+										</view>
+										<u-album
+										    :urls="message.urls"
+										    @albumWidth="width => albumWidth = width"
+										    multipleSize="200"
+										></u-album>
+									</view>
+								</view>
+							</view>
 				</view>
-				<text v-if="message.time" class="time">{{message.time}}</text>
 			</view>
+			
 		</scroll-view>
 
 	</view>
@@ -25,14 +49,38 @@
 	export default {
 		data() {
 			return {
+				urls2: [
+									'https://cdn.uviewui.com/uview/album/1.jpg',
+									'https://cdn.uviewui.com/uview/album/2.jpg',
+									'https://cdn.uviewui.com/uview/album/3.jpg',
+									'https://cdn.uviewui.com/uview/album/4.jpg',
+									'https://cdn.uviewui.com/uview/album/5.jpg',
+									'https://cdn.uviewui.com/uview/album/6.jpg',
+									'https://cdn.uviewui.com/uview/album/7.jpg',
+									'https://cdn.uviewui.com/uview/album/8.jpg',
+									'https://cdn.uviewui.com/uview/album/9.jpg',
+									'https://cdn.uviewui.com/uview/album/10.jpg',
+								],
+				openid:"",
 				messages: [{
 						text: '消息1',
-						image: '/static/12.jpg',
+						urls: [
+									'https://cdn.uviewui.com/uview/album/1.jpg',
+									'https://cdn.uviewui.com/uview/album/2.jpg',
+									'https://cdn.uviewui.com/uview/album/3.jpg',
+									'https://cdn.uviewui.com/uview/album/4.jpg',
+									'https://cdn.uviewui.com/uview/album/5.jpg',
+									'https://cdn.uviewui.com/uview/album/6.jpg',
+									'https://cdn.uviewui.com/uview/album/7.jpg',
+									'https://cdn.uviewui.com/uview/album/8.jpg',
+									'https://cdn.uviewui.com/uview/album/9.jpg',
+									'https://cdn.uviewui.com/uview/album/10.jpg',
+								],
 						time: '2023-12-2-2-2-2'
 					},
 					{
 						text: '消息2',
-						image: '/static/c2.png'
+						urls: '/static/c2.png'
 					},
 					// ...
 				],
@@ -52,7 +100,18 @@
 				const currentTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
 				const newMessage = {
 					text: '今天去公园散步了，碰见了很多遛狗的老人家，大家一块儿聊天下棋打牌，特别开心！',
-					image: '/static/12.jpg',
+					urls: [
+									'https://cdn.uviewui.com/uview/album/1.jpg',
+									'https://cdn.uviewui.com/uview/album/2.jpg',
+									'https://cdn.uviewui.com/uview/album/3.jpg',
+									'https://cdn.uviewui.com/uview/album/4.jpg',
+									'https://cdn.uviewui.com/uview/album/5.jpg',
+									'https://cdn.uviewui.com/uview/album/6.jpg',
+									'https://cdn.uviewui.com/uview/album/7.jpg',
+									'https://cdn.uviewui.com/uview/album/8.jpg',
+									'https://cdn.uviewui.com/uview/album/9.jpg',
+									'https://cdn.uviewui.com/uview/album/10.jpg',
+								],
 					time: currentTime,
 				};
 				this.messages.unshift(newMessage); // 将新消息添加到开头
@@ -62,6 +121,9 @@
 				});
 			},
 		},
+		onLoad(){
+			this.openid=getApp().globalData.global_openid
+		}
 	};
 </script>
 
@@ -124,4 +186,19 @@
 	.icon-add-circle:before {
 	  content: "\e664";
 	}
+	.album {
+			@include flex;
+			align-items: flex-start;
+	
+			&__avatar {
+				background-color: $u-bg-color;
+				padding: 5rpx;
+				border-radius: 3rpx;
+			}
+	
+			&__content {
+				margin-left: 75rpx;
+				flex: 1;
+			}
+		}
 </style>

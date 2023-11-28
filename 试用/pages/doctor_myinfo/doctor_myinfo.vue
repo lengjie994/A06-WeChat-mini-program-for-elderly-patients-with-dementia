@@ -12,45 +12,44 @@
 
 			<view class="table">
 				<!-- 表头(即第一行) -->
-				<view class="tr" v-if="true" @click="onClickShow()">
+				<view class="tr" v-if="true" @click="bind_request()">
 					<view class="th">
 						<view class="iconfont icon-tianxuangouren"></view>
 					</view>
-					<view class="td">我的监护人</view>
+					<view class="td">绑定申请</view>
 					<view class="th">
 						<view class="iconfont icon-jinru" bind:tap=""></view>
 					</view>
 				</view>
 				<!-- 表格第二行 -->
-				<view class="tr" @tap="goto_healthdata">
+				<view class="tr" @click="show_reservation()">
 					<view class="th">
-						<view class="iconfont icon-fenxiang"></view>
+						<view class="iconfont icon-yisheng2"></view>
 					</view>
-					<view class="td">我的健康数据</view>
+					<view class="td">我的预约</view>
 					<view class="th">
 						<view class="iconfont icon-jinru" bind:tap=""></view>
 					</view>
 				</view>
-
 				<!-- 表格第三行 -->
-				<view class="tr" @tap="goto_memoir">
+				<view class="tr" @click="edit_info()">
 					<view class="th">
-						<view class="iconfont icon-shangchuantupian"></view>
+						<view class="iconfont icon-yisheng2"></view>
 					</view>
-					<view class="td">我的回忆录</view>
+					<view class="td">我的资料</view>
 					<view class="th">
-						<view class="iconfont icon-jinru"></view>
+						<view class="iconfont icon-jinru" bind:tap=""></view>
 					</view>
 				</view>
 			</view>
 		</view>
 		<!-- 弹出框模块 -->
-		<patientguardian_state ref='customModal' :dataLineDetail="dataLineDetail"
-			@onClickConfirm="onClickConfirm"></patientguardian_state>
+		<edit_info ref='customModal' :info="info" @onClickConfirm="onClickConfirm"></edit_info>
+		
 
 
 		<view>
-			<tabBar selectedIndex=2 :id_data="id_data"></tabBar>
+			<tabBar selectedIndex=1 :id_data="id_data"></tabBar>
 		</view>
 
 
@@ -65,17 +64,13 @@
 
 	// 引入自定义弹出框组件
 	import tabBar from '@/components/tabbar/tabbar.vue'
-	import patientguardian_state from '@/components/patient_guardian_state/patient_guardian_state.vue';
-
+	import edit_info from '@/components/edit_info/edit_info.vue'
 	export default {
 		data() {
 			return {
 				openid:"",
-				id_data:"patient",
-				dataLineDetail:{
-					remark:"1111",
-					status:0,
-				},
+				info:{},
+				id_data:"doctor",
 			};
 		},
 		onShow() {
@@ -94,34 +89,49 @@
 			uniPopup,
 			uniPopupDialog,
 			tabBar,
-			patientguardian_state,
+			edit_info,
 		},
 
 		methods: {
-			goto_memoir() {
+			show_reservation() {
 				uni.navigateTo({
-					url: '/pages/patient_memoir/patient_memoir'
-				})
-			},
-			goto_healthdata() {
-				uni.navigateTo({
-					url: '/pages/patient_healthdata/patient_healthdata'
+					url: '/pages/doctor_reservation/doctor_reservation?openid='+this.openid
 				})
 			},
 
 			// 根据自己项目，在某个事件触发弹框弹出,注意！！！$refs后面直接跟[],不需要.
-			onClickShow() {
+			bind_request() {
+				uni.navigateTo({
+					url: '/pages/doctor_bind_request/doctor_bind_request?openid='+this.openid
+				})
+			},
+			edit_info() {
 				//this.dataLineDetail = data;
 				// this.$refs['showWeight'].open()
 				// 调用弹出框组件里的显示方法
 				this.$refs['customModal'].showModal();
 			},
-			// 点击确定按钮，弹出框隐藏 
+			// 点击确定按钮，弹出框隐藏
 			onClickConfirm(data) {
 				let stateData = JSON.parse(data)
-				console.log(stateData.remark)
-				
-				// 回调组件里的隐藏方法
+				console.log(stateData.name)
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为传递医生资料的url
+					url: 'http://127.0.0.1:8000/api/user/login/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						info:stateData
+					},
+					success: function() {
+						console.log(111)
+					},
+					fail: function(response) {
+						console.log(222)
+					}
+				})
 				this.$refs['customModal'].hideModal();
 			},
 		},
@@ -200,62 +210,83 @@
 	}
 
 	@font-face {
-		font-family: "iconfont";
-		/* Project id 4305931 */
-		src: url('//at.alicdn.com/t/c/font_4305931_7px9mqbj2vl.woff2?t=1698481858386') format('woff2'),
-			url('//at.alicdn.com/t/c/font_4305931_7px9mqbj2vl.woff?t=1698481858386') format('woff'),
-			url('//at.alicdn.com/t/c/font_4305931_7px9mqbj2vl.ttf?t=1698481858386') format('truetype');
+	  font-family: "iconfont"; /* Project id 4305931 */
+	  src: url('//at.alicdn.com/t/c/font_4305931_80mti9nk8kd.woff2?t=1699279219215') format('woff2'),
+	       url('//at.alicdn.com/t/c/font_4305931_80mti9nk8kd.woff?t=1699279219215') format('woff'),
+	       url('//at.alicdn.com/t/c/font_4305931_80mti9nk8kd.ttf?t=1699279219215') format('truetype');
 	}
-
+	
 	.iconfont {
-		font-family: "iconfont" !important;
-		font-size: 16px;
-		font-style: normal;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+	  font-family: "iconfont" !important;
+	  font-size: 16px;
+	  font-style: normal;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
 	}
-
-	.icon-shangchuantupian:before {
-		content: "\e627";
+	
+	.icon-yisheng1:before {
+	  content: "\e68f";
 	}
-
-	.icon-xiaoxi-zhihui:before {
-		content: "\e61d";
+	
+	.icon-yisheng2:before {
+	  content: "\e7ad";
 	}
-
-	.icon-shouye-zhihui:before {
-		content: "\e61e";
+	
+	.icon-yisheng-01:before {
+	  content: "\e628";
 	}
-
-	.icon-gerenzhongxin-zhihui:before {
-		content: "\e61f";
+	
+	.icon-yisheng:before {
+	  content: "\e66a";
 	}
-
-	.icon-qianshuxieyi:before {
-		content: "\e620";
+	
+	.icon-a-23-pill-diagonal:before {
+	  content: "\e60b";
 	}
-
-	.icon-fenxiang:before {
-		content: "\e621";
+	
+	.icon-a-17-chart-3:before {
+	  content: "\e60c";
 	}
-
+	
+	.icon-a-32-chat-double:before {
+	  content: "\e60d";
+	}
+	
+	.icon-a-41-user-health-plus:before {
+	  content: "\e60e";
+	}
+	
+	.icon-a-38-mobile-check:before {
+	  content: "\e60f";
+	}
+	
+	.icon-a-34-browser-user:before {
+	  content: "\e610";
+	}
+	
+	.icon-a-61-user-surgeon:before {
+	  content: "\e611";
+	}
+	
 	.icon-tianxuangouren:before {
-		content: "\e622";
+	  content: "\e622";
 	}
-
+	
 	.icon-bianji:before {
-		content: "\e623";
+	  content: "\e623";
 	}
-
+	
 	.icon-jinru:before {
-		content: "\e624";
+	  content: "\e624";
 	}
-
+	
 	.icon-tishi:before {
-		content: "\e625";
+	  content: "\e625";
+	}
+	
+	.icon-shuba:before {
+	  content: "\e626";
 	}
 
-	.icon-shuba:before {
-		content: "\e626";
-	}
+
 </style>
