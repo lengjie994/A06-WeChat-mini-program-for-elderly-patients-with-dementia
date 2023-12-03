@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from django.http import JsonResponse
 import requests
 import json
-#from django.contrib.auth.models import User
 from .models import User
+from .models import Patient
 from wx_backend.LogicManage.Constants import Constants
 
 class WeixinLogin(APIView):
@@ -82,6 +82,13 @@ class ChooseRole(APIView):
             user = User.objects.get(Openid=openid)
             user.role = theRole
             user.save()
+            session_key=user.session
+            if theRole == 'patient':
+                Patient.objects.create(
+                    Openid=openid,
+                    password=openid,
+                    session=session_key,
+                )
             print("保存")
             return Response({
                 "status_code": 200,
@@ -89,6 +96,42 @@ class ChooseRole(APIView):
                     "msg": 'success', 
                     "role": theRole,
                     "openid": openid
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该用户不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        
+class GetPatientInfo(APIView):
+    def post(self, request, format=None):
+        """
+        通过openid获取该病人的信息
+        """
+        print("获取病人信息")
+        # 该用户的openid，用于识别该用户
+        openid = json.loads(request.body).get('openid')
+        try:
+            patient = Patient.objects.get(Openid=openid)
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "openid": openid,
+                    "Guardian_Openid": patient.Guardian_Openid,
+                    "Status": patient.Status,
+                    "Name": patient.Name,
+                    "Address": patient.Address,
+                    "Phone_contact": patient.Phone_contact,
+                    "Medicine_name": patient.Medicine_name,
+                    "Medicine_time": patient.Medicine_time,
+                    "Medicine_usage": patient.Medicine_usage,
+                    "Medicine_status": patient.Medicine_status,
                 }
             })
         except:
