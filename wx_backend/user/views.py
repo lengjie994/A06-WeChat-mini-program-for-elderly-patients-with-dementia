@@ -91,8 +91,10 @@ class ChooseRole(APIView):
             user.role = theRole
             user.save()
             session_key=user.session
+            theID=0
             if theRole == 'patient':
                 globalVariables.Patient_amount+=1
+                theID=globalVariables.Patient_amount
                 Patient.objects.create(
                     Openid=openid,
                     password=openid,
@@ -101,6 +103,7 @@ class ChooseRole(APIView):
                 )
             elif theRole == 'guardian':
                 globalVariables.Guardian_amount+=1
+                theID=globalVariables.Guardian_amount
                 Guardian.objects.create(
                     Openid=openid,
                     password=openid,
@@ -114,6 +117,7 @@ class ChooseRole(APIView):
                     "msg": 'success', 
                     "role": theRole,
                     "openid": openid
+                    "specialid": theID
                 }
             })
         except:
