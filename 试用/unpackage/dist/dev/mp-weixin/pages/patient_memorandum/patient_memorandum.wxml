@@ -1,1 +1,0 @@
-<view><view class="container"><view>姓名：</view><view>住址：</view><view>紧急联系人：</view></view><view>备忘<tab-bar vue-id="55a31b20-1" selectedIndex="1" bind:__l="__l"></tab-bar></view></view>
