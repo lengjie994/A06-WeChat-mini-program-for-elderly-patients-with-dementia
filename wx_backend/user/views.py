@@ -91,33 +91,33 @@ class ChooseRole(APIView):
             user.role = theRole
             user.save()
             session_key=user.session
-            theID=0
+            theID=""
             if theRole == 'patient':
                 globalVariables.Patient_amount+=1
-                theID=globalVariables.Patient_amount
                 Patient.objects.create(
                     Openid=openid,
                     password=openid,
                     session=session_key,
                     Patient_id=globalVariables.Patient_amount,
                 )
+                theID=str(globalVariables.Patient_amount)
             elif theRole == 'guardian':
                 globalVariables.Guardian_amount+=1
-                theID=globalVariables.Guardian_amount
                 Guardian.objects.create(
                     Openid=openid,
                     password=openid,
                     session=session_key,
                     Guardian_id=globalVariables.Guardian_amount,
                 )
+                theID=str(globalVariables.Guardian_amount)
             print("保存")
             return Response({
                 "status_code": 200,
                 'code': {
                     "msg": 'success', 
                     "role": theRole,
-                    "openid": openid
-                    "specialid": theID
+                    "openid": openid,
+                    "specialid": theID,
                 }
             })
         except:
