@@ -239,6 +239,14 @@ class GuardianToPatient(APIView):
             #patient = Patient.objects.get(Openid=openid)
             patient = Patient.objects.get(Patient_id=patient_id)
             guardian.Patient_id = patient.Patient_id
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "openid": openid,
+                    "patientid": guardian.Patient_id,
+                }
+            })
         except:
             return Response({
                 "status_code": 401,
