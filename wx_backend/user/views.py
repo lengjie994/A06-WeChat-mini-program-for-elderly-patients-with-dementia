@@ -101,6 +101,7 @@ class ChooseRole(APIView):
             theID=""
             if theRole == 'patient':
                 globalVariables.Patient_amount+=1
+                globalVariables.save()
                 theID=str(globalVariables.Patient_amount)
                 Patient.objects.create(
                     Openid=openid,
@@ -110,6 +111,7 @@ class ChooseRole(APIView):
                 )   
             elif theRole == 'guardian':
                 globalVariables.Guardian_amount+=1
+                globalVariables.save()
                 theID=str(globalVariables.Guardian_amount)
                 Guardian.objects.create(
                     Openid=openid,
@@ -152,16 +154,14 @@ class GetPatientInfo(APIView):
                 'code': {
                     "msg": 'success', 
                     "openid": openid,
+                    "session": patient.session,
                     "Guardian_id": patient.Guardian_id,
                     "Patient_id":patient.Patient_id,
                     "Status": patient.Status,
                     "Name": patient.Name,
                     "Address": patient.Address,
                     "Phone_contact": patient.Phone_contact,
-                    "Medicine_name": patient.Medicine_name,
-                    "Medicine_time": patient.Medicine_time,
-                    "Medicine_usage": patient.Medicine_usage,
-                    "Medicine_status": patient.Medicine_status,
+                    "Medicine_reminder": patient.Medicine_reminder,
                 }
             })
         except:
@@ -169,7 +169,37 @@ class GetPatientInfo(APIView):
                 "status_code": 401,
                 'code': {
                     "msg": 'false', 
-                    "reason":'该用户不存在',
+                    "reason":'该患者不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        
+class GetGuardianInfo(APIView):
+    def post(self, request, format=None):
+        """
+        通过openid获取该监护人的信息
+        """
+        # 该用户的openid，用于识别该用户
+        openid = json.loads(request.body).get('openid')
+        try:
+            guardian = Guardian.objects.get(Openid=openid)
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "openid": openid,
+                    "session": guardian.session,
+                    "Guardian_id": guardian.Guardian_id,
+                    "Patient_id":guardian.Patient_id,
+                    "Doctor_id": guardian.Doctor_id
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
@@ -320,8 +350,22 @@ class SendReminder(APIView):
         """
         # 监护人的openid
         openid = json.loads(request.body).get('openid')
+        reminder = json.loads(request.body).get('reminder')
         try:
             guardian = Guardian.objects.get(Openid=openid)
+            patientID=guardian.Patient_id
+            if patientID == 'UNDEFINED':
+                return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'未绑定患者',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+            patient = Patient.objects.get(Patient_id=patientID)
+            patient.Medicine_reminder = reminder
+            patient.save()
         except:
             return Response({
                 "status_code": 401,
@@ -331,7 +375,6 @@ class SendReminder(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
-        reminder = json.loads(request.body).get('reminder')
         return Response({
             'reminder':reminder,
         })

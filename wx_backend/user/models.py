@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import JSONField
 
 # Create your models here.
 #GlobalVariables：全局变量模型，用于存储应用的AppId、SecretId和AccessToken等全局变量信息
@@ -29,10 +30,7 @@ class Patient(models.Model):
     Address = models.CharField(max_length = 200, default = "UNDEFINED")
     Phone_contact = models.CharField(max_length = 100, default = "UNDEFINED") #紧急联系人电话
     #服药提醒
-    Medicine_name = models.CharField(max_length = 200, default = "UNDEFINED")
-    Medicine_time = models.CharField(max_length = 100, default = "UNDEFINED") #服药时间
-    Medicine_usage = models.CharField(max_length = 400, default = "UNDEFINED") #用法用量
-    Medicine_status = models.CharField(max_length = 200, default = "NOTTAKEN") #服用状态
+    Medicine_reminder = JSONField(null=True)
     #我的回忆录
     #我的健康数据
 
