@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.doctorinfo {
+  width: 86%;
+  margin-left: 7%;
+}
+.scroll-view {
+  margin-top: 20rpx;
+  height: 980rpx;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* 排列形式: 向下 */
+}
+.tr {
+  display: flex;
+  flex-direction: row;
+  width: 92%;
+}
+.td1, .td2, .td3 {
+  /* 公有的属性 */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-wrap: wrap;
+  /* 自动换行 */
+  height: 140rpx;
+  text-align: center;
+  /* 文本居中 */
+  align-items: center;
+  /* 交叉轴居中 */
+  justify-content: center;
+  /* 主轴居中 */
+  font-size: 32rpx;
+}
+.td1, .th1 {
+  width: 40%;
+}
+.td2, .th2 {
+  width: 30%;
+}
+.td3, .th3 {
+  width: 30%;
+}
+.cant, .can {
+  height: 60rpx;
+  width: 140rpx;
+  font-size: 32rpx;
+}
+.cant {
+  background-color: darkgray;
+}
+.can {
+  background-color: royalblue;
+}
+

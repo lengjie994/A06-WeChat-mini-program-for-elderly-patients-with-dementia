@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "身份选择",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar"
+  }
+}

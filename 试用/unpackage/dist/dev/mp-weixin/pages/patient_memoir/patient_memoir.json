@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的回忆录",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u--text": "/node-modules/uview-ui/components/u--text/u--text",
+    "u-album": "/node-modules/uview-ui/components/u-album/u-album",
+    "add_memoir": "/components/add_memoir/add_memoir"
+  }
+}

@@ -1,0 +1,1 @@
+<view><view class="header"><uni-nav-bar vue-id="42bea3b2-1" title="联系医生" height="11vh" border="{{false}}" fixed="{{true}}" backgroundColor="#f9f9f9" bind:__l="__l"></uni-nav-bar></view>这是联系医生<view><tab-bar vue-id="42bea3b2-2" selectedIndex="1" id_data="{{id_data}}" bind:__l="__l"></tab-bar></view></view>
