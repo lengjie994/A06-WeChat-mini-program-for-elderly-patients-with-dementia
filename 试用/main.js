@@ -1,8 +1,15 @@
 
+<<<<<<< HEAD
 // #ifndef VUE3
 import Vue from 'vue'
 import uView from "uview-ui";
 Vue.use(uView);
+=======
+// #ifndef VUE3
+import Vue from 'vue'
+import uView from "uview-ui";
+Vue.use(uView);
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 // 调用setConfig方法，方法内部会进行对象属性深度合并，可以放心嵌套配置
 // 需要在Vue.use(uView)之后执行
 uni.$u.setConfig({
@@ -20,6 +27,7 @@ uni.$u.setConfig({
 		// 其他组件属性配置
 		// ......
 	}
+<<<<<<< HEAD
 })
 import App from './App'
 Vue.config.productionTip = false
@@ -56,11 +64,55 @@ Vue.component('add_temperature',add_temperature)
 import add_bp from '@/components/add_bp/add_bp.vue'
 Vue.component('add_bp',add_bp)
 import edit_info from '@/components/edit_info/edit_info.vue'
+=======
+})
+import App from './App'
+Vue.config.productionTip = false
+
+App.mpType = 'app'
+
+const app = new Vue({
+    ...App
+})
+app.$mount()
+// #endif
+
+// #ifdef VUE3
+import { createSSRApp } from 'vue'
+import App from './App.vue'
+import patientguardian_state from '@/components/patient_guardian_state/patient_guardian_state.vue';
+
+import tabBar from "@/components/tabbar/tabbar.vue"
+Vue.component('tabBar',tabBar)
+import edit_note from '@/components/edit_note/edit_note.vue'
+Vue.component('edit_note',edit_note)
+import add_memoir from '@/components/add_memoir/add_memoir.vue'
+Vue.component('add_memoir',add_memoir)
+import guardianpatient_state from '@/components/guardian_patient_state/guardian_patient_state.vue'
+//Vue.component('guardianpatient_state',guardianpatient_state)
+import guardiandoctor_state from '@/components/guardian_doctor_state/guardian_doctor_state.vue'
+//Vue.component('guardiandoctor_state',guardiandoctor_state)
+import add_pill from '@/components/add_pill/add_pill.vue'
+Vue.component('add_pill',add_pill)
+import delete_pill from '@/components/delete_pill/delete_pill.vue'
+Vue.component('delete_pill',delete_pill)
+import add_heart from '@/components/add_heart/add_heart.vue'
+Vue.component('add_heart',add_heart)
+import add_temperature from '@/components/add_temperature/add_temperature.vue'
+Vue.component('add_temperature',add_temperature)
+import add_bp from '@/components/add_bp/add_bp.vue'
+Vue.component('add_bp',add_bp)
+import edit_info from '@/components/edit_info/edit_info.vue'
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 Vue.component('edit_info',edit_info)
 export function createApp() {
   const app = createSSRApp(App)
   return {
     app
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 // #endif

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view><image src="/static/12.jpg"></image><button type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['getUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">一键登录</button></view>
+=======
+<view class="content"><view class="header"><uni-nav-bar vue-id="35a7246c-1" title="登录界面" height="11vh" border="{{false}}" fixed="{{true}}" backgroundColor="#f9f9f9" bind:__l="__l"></uni-nav-bar></view><view class="login-container"><view class="logo"><uni-icons vue-id="35a7246c-2" type="contact-filled" size="100" color="#AFAFAF" bind:__l="__l"></uni-icons><button type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['getUserInfo',['$event']]]]]}}" bindgetuserinfo="__e">一键登录</button><view class="tips-text">登录后尽享更多权益</view></view></view></view>
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799

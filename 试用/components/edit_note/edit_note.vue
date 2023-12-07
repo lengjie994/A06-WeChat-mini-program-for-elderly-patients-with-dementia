@@ -4,12 +4,21 @@
 			<view class="modal-body">
 				<view class="style-font">姓名</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+<<<<<<< HEAD
 				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">住址</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
 				<textarea v-model="inputplace" class=" input-style" placeholder="暂无"></textarea>
 				<view class="style-font">紧急联系人</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+=======
+				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
+				<view class="style-font">住址</view>
+				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+				<textarea v-model="inputplace" class=" input-style" placeholder="暂无"></textarea>
+				<view class="style-font">紧急联系人</view>
+				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				<textarea v-model="inputphone" class=" input-style" placeholder="暂无"></textarea>
 			</view>
 
@@ -25,16 +34,27 @@
 	export default {
 
 		props: {
+<<<<<<< HEAD
 			note: {
 				type: Object,
 				default: ''
+=======
+			note: {
+				type: Object,
+				default: ''
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			},
 		},
 		data() {
 			return {
 				isShowModal: false,
+<<<<<<< HEAD
 				inputname: null,
 				inputplace:null,
+=======
+				inputname: null,
+				inputplace:null,
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				inputphone:null,
 				isactive: 0,
 				total: 0,
@@ -42,6 +62,35 @@
 				
 			}
 		},
+<<<<<<< HEAD
+=======
+		onLoad(){
+			this.openid=getApp().globalData.global_openid
+			let _this=this;
+			wx.request({
+				// 这里是django的本地ip地址
+				// 如果部署到线上，需要改为接口的实际网址
+				//此处url还需修改为绑定患者账号的url
+				url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+				// 请求方式修改为 POST
+				method: 'POST',
+				data: {
+					openid: this.openid,
+				},
+				success: function(response) {
+					console.log("获取备忘录成功")
+					_this.inputname=response.data.code.Name;
+					_this.inputplace=response.data.code.Address;
+					_this.inputphone=response.data.code.Phone_contact;
+					console.log(response)
+				},
+				fail: function(response) {
+					console.log("获取备忘录失败")
+				}
+			})
+		
+		},
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		methods: {
 			hideModal() {
 				// this.isShowModal = true
@@ -58,8 +107,13 @@
 			},
 			handleConfirm() {
 				
+<<<<<<< HEAD
 				this.$set(this.note,'name',this.inputname);
 				this.$set(this.note,'place',this.inputplace);
+=======
+				this.$set(this.note,'name',this.inputname);
+				this.$set(this.note,'place',this.inputplace);
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				this.$set(this.note,'phone',this.inputphone);
 	
 				
@@ -163,6 +217,7 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
+<<<<<<< HEAD
 	}
 	.input-style-name {
 		border: 1rpx solid #ddd;
@@ -172,6 +227,17 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
+=======
+	}
+	.input-style-name {
+		border: 1rpx solid #ddd;
+		border-radius: 10rpx;
+		/* height: 100rpx; */
+		height: 50rpx;
+		padding: 10rpx;
+		font-size: 30rpx;
+		width: auto;
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 
 	.style-font {

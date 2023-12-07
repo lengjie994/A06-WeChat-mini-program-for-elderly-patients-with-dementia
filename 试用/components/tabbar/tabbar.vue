@@ -13,14 +13,23 @@
             selectedIndex: { // 当前选中的tab index
                 default: 0
             },
+<<<<<<< HEAD
             id_data: {
 				type: String,
+=======
+            id_data: {
+				type: String,
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			}
         },
         data() {
             return {
                 color: "#666666",
+<<<<<<< HEAD
                 selectedColor: "#00BAB2",
+=======
+                selectedColor: "#465CFF",
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
                 list: [],
                 currentIndex:0,
             }
@@ -28,9 +37,15 @@
         created() {
             this.currentIndex = this.selectedIndex;
             
+<<<<<<< HEAD
             let _this = this
 			console.log("111111")
 			console.log(this.selectedIndex)
+=======
+            let _this = this
+			console.log("111111")
+			console.log(this.selectedIndex)
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			console.log(this.id_data)
             
             if (this.id_data=="patient") {
@@ -46,12 +61,21 @@
                         "iconPath": "/static/tab/check.png",
                         "selectedIconPath": "/static/tab/check_active.png",
                         "text": "备忘录"
+<<<<<<< HEAD
                     },
 					{
 					    "pagePath": "/pages/patient_myinfo/patient_myinfo",
 					    "iconPath": "/static/tab/my.png",
 					    "selectedIconPath": "/static/tab/my_active.png",
 					    "text": "个人中心"
+=======
+                    },
+					{
+					    "pagePath": "/pages/patient_myinfo/patient_myinfo",
+					    "iconPath": "/static/tab/my.png",
+					    "selectedIconPath": "/static/tab/my_active.png",
+					    "text": "个人中心"
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 					}
                 ]
             } else if(this.id_data=="guardian") {
@@ -67,6 +91,7 @@
                         "iconPath": "/static/tab/chat.png",
                         "selectedIconPath": "/static/tab/chat_active.png",
                         "text": "联系医生"
+<<<<<<< HEAD
                     },
 					{
 					    "pagePath": "/pages/guardian_myinfo/guardian_myinfo",
@@ -90,16 +115,49 @@
 					    "text": "个人中心"
 					}
 				]
+=======
+                    },
+					{
+					    "pagePath": "/pages/guardian_myinfo/guardian_myinfo",
+					    "iconPath": "/static/tab/my.png",
+					    "selectedIconPath": "/static/tab/my_active.png",
+					    "text": "个人中心"
+					}
+                ]
+            } else if(this.id_data=="doctor"){
+				//医生
+				_this.list = [{
+				        "pagePath": "/pages/doctor_contact_guardian/doctor_contact_guardian",
+				        "iconPath": "/static/tab/health.png",
+				        "selectedIconPath": "/static/tab/health_active.png",
+				        "text": "联系监护人"
+				    },
+					{
+					    "pagePath": "/pages/doctor_myinfo/doctor_myinfo",
+					    "iconPath": "/static/tab/my.png",
+					    "selectedIconPath": "/static/tab/my_active.png",
+					    "text": "个人中心"
+					}
+				]
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			}
         },
         methods: {
             switchTab(item, index) {
                 this.currentIndex = index;
+<<<<<<< HEAD
                 let url = item.pagePath;
 				console.log(url);
                 uni.navigateTo({url:url})
 				// uni.switchTab({
 				// 	url:url
+=======
+                let url = item.pagePath;
+				console.log(url);
+                uni.navigateTo({url:url})
+				// uni.switchTab({
+				// 	url:url
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				// })
                 
             }
@@ -113,7 +171,11 @@
         bottom: 0;
         left: 0;
         right: 0;
+<<<<<<< HEAD
         height: 100rpx;
+=======
+        height: 10%;
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
         background: white;
         display: flex;
         justify-content: center;

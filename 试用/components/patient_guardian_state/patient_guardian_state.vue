@@ -28,7 +28,11 @@
 			},
 		},
 		data() {
+<<<<<<< HEAD
 			return {
+=======
+			return {
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				openid:"",
 				isShowModal: false,
 				inputRemark: null,
@@ -68,6 +72,7 @@
 				this.$emit('onClickConfirm',JSON.stringify(this.dataLineDetail))
 				//this.$refs['customModal'].close();
 			}
+<<<<<<< HEAD
 		},
 		computed:{
 			guardian_Id(){
@@ -92,6 +97,33 @@
 				})
 				return this.guardian_id
 			}
+=======
+		},
+		computed:{
+			guardian_Id(){
+				this.openid=getApp().globalData.global_openid
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为获取监护人账号的url
+					url: 'http://127.0.0.1:8000/api/user/getPatientInfo/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid:this.openid,
+					},
+					success: function(response) {
+						this.guardian_id=response.data.code.Guardian_id;
+						console.log("获取监护人账号成功")
+					},
+					fail: function(response) {
+						this.guardian_id="暂无绑定监护人"
+						console.log("获取监护人账号失败")
+					}
+				})
+				return this.guardian_id
+			}
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		},
 	}
 </script>

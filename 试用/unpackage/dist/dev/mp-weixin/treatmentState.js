@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["treatmentState"],{
 
 /***/ 100:
@@ -306,3 +307,6 @@ component.options.__file = "treatmentState.vue"
     },
     [['treatmentState-create-component']]
 ]);
+=======
+Component({})
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799

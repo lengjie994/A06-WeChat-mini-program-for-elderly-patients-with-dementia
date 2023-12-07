@@ -4,6 +4,7 @@
 			<view class="modal-body">
 				<view class="style-font">药物名称</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+<<<<<<< HEAD
 				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">每次剂量</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
@@ -13,6 +14,17 @@
 				<textarea v-model="inputdailycount" class=" input-style" placeholder="暂无"></textarea>
 				<view class="style-font">提醒时间</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+=======
+				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
+				<view class="style-font">每次剂量</view>
+				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+				<textarea v-model="inputcount" class=" input-style" placeholder="暂无"></textarea>
+				<view class="style-font">每日剂次</view>
+				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+				<textarea v-model="inputdailycount" class=" input-style" placeholder="暂无"></textarea>
+				<view class="style-font">提醒时间</view>
+				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				<textarea v-model="inputtime" class=" input-style" placeholder="暂无"></textarea>
 			</view>
 
@@ -28,17 +40,29 @@
 	export default {
 
 		props: {
+<<<<<<< HEAD
 			add: {
 				type: Object,
 				default: ''
+=======
+			add: {
+				type: Object,
+				default: ''
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			},
 		},
 		data() {
 			return {
 				isShowModal: false,
+<<<<<<< HEAD
 				inputname: null,
 				inputcount:null,
 				inputdailycount:null,
+=======
+				inputname: null,
+				inputcount:null,
+				inputdailycount:null,
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				inputtime:null,
 				isactive: 0,
 				total: 0,
@@ -62,6 +86,7 @@
 			},
 			handleConfirm() {
 				
+<<<<<<< HEAD
 				this.$set(this.add,'name',this.inputname);
 				this.$set(this.add,'count',this.inputcount);
 				this.$set(this.add,'dailycount',this.inputdailycount);
@@ -71,6 +96,17 @@
 				this.inputcount = '';
 				this.inputdailycount = '';
 				this.inputtime = '';
+=======
+				this.$set(this.add,'name',this.inputname);
+				this.$set(this.add,'count',this.inputcount);
+				this.$set(this.add,'dailycount',this.inputdailycount);
+				this.$set(this.add,'time',this.inputtime);
+				
+				this.inputname = '';
+				this.inputcount = '';
+				this.inputdailycount = '';
+				this.inputtime = '';
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				
 				// this.isShowModal = false
 				this.$emit('onClickConfirm',JSON.stringify(this.add))
@@ -108,9 +144,15 @@
 		margin:10rpx 30rpx;
 	}
 
+<<<<<<< HEAD
 	.btn {
 		display: flex;
 		justify-content: center;
+=======
+	.btn {
+		display: flex;
+		justify-content: center;
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		align-items: center;
 		width: 300rpx;
 		height: 90rpx;
@@ -175,6 +217,7 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
+<<<<<<< HEAD
 	}
 	.input-style-name {
 		border: 1rpx solid #ddd;
@@ -184,6 +227,17 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
+=======
+	}
+	.input-style-name {
+		border: 1rpx solid #ddd;
+		border-radius: 10rpx;
+		/* height: 100rpx; */
+		height: 50rpx;
+		padding: 10rpx;
+		font-size: 30rpx;
+		width: auto;
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 
 	.style-font {

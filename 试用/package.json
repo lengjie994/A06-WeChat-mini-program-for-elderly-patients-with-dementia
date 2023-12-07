@@ -1,5 +1,9 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "firstui-uni": "^2.2.0",
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
     "uview-ui": "^2.0.36"
   }
 }

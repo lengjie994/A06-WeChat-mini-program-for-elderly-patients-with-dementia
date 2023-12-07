@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
+<<<<<<< HEAD
+=======
+.header {
+  background-color: #F5F5F5;
+}
+>>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 .container {
   height: 1200rpx;
   width: 100%;
