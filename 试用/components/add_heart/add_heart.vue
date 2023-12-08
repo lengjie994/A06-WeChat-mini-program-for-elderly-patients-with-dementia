@@ -18,11 +18,7 @@
 <script>
 	export default {
 
-<<<<<<< HEAD
 		props: {
-=======
-		props: {
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			
 		},
 		data() {
@@ -46,17 +42,10 @@
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {	
-<<<<<<< HEAD
 				// this.isShowModal = false
 				console.log(this.inputheart)
 				this.$emit('onClickConfirm',JSON.stringify(this.inputheart))
 				//this.$refs['customModal'].close();
-=======
-				// this.isShowModal = false
-				console.log(this.inputheart)
-				this.$emit('onClickConfirm',JSON.stringify(this.inputheart))
-				//this.$refs['customModal'].close();
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				this.inputheart = '';
 			}
 		}
@@ -91,15 +80,9 @@
 		margin:10rpx 30rpx;
 	}
 
-<<<<<<< HEAD
 	.btn {
 		display: flex;
 		justify-content: center;
-=======
-	.btn {
-		display: flex;
-		justify-content: center;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		align-items: center;
 		width: 300rpx;
 		height: 90rpx;
@@ -164,7 +147,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-<<<<<<< HEAD
 	}
 	.input-style-name {
 		border: 1rpx solid #ddd;
@@ -174,17 +156,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-=======
-	}
-	.input-style-name {
-		border: 1rpx solid #ddd;
-		border-radius: 10rpx;
-		/* height: 100rpx; */
-		height: 50rpx;
-		padding: 10rpx;
-		font-size: 30rpx;
-		width: auto;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 
 	.style-font {

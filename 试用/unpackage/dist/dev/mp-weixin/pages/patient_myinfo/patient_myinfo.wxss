@@ -1,9 +1,6 @@
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
-<<<<<<< HEAD
-.info {
-=======
 .content {
   background-color: #F1F4FA;
   height: 100vh;
@@ -16,29 +13,11 @@
 }
 .info {
   margin-top: 6%;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-<<<<<<< HEAD
-#pic {
-  margin-top: 5%;
-  height: 200rpx;
-  width: 200rpx;
-}
-#id {
-  margin-top: 5%;
-}
-#depart {
-  margin-top: 5%;
-  width: 100%;
-  height: 3%;
-  background-color: rgba(228, 228, 228, 0.4);
-}
-=======
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 .table {
   display: flex;
   flex-direction: column;

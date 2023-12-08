@@ -9,75 +9,6 @@
       "list": [
         {
           "name": "",
-<<<<<<< HEAD
-=======
-          "pathName": "pages/patient_memoir/patient_memoir",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/doctor_reservation/doctor_reservation",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/chatting/chatting",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/doctor_contact_guardian/doctor_contact_guardian",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/doctor_myinfo/doctor_myinfo",
-          "query": "",
-          "launchMode": "default",
-          "scene": null,
-          "partialCompile": {
-            "enabled": false,
-            "pages": []
-          }
-        },
-        {
-          "name": "",
-          "pathName": "pages/guardian_reservetime/guardian_reservetime",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/guardian_reservation/guardian_reservation",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/guardian_healthdata/guardian_healthdata",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/guardian_pill/guardian_pill",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/guardian_myinfo/guardian_myinfo",
           "query": "",
           "launchMode": "default",
@@ -85,29 +16,7 @@
         },
         {
           "name": "",
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
-          "pathName": "pages/patient_memorandum/patient_memorandum",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/patient_reminder/patient_reminder",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/patient_myinfo/patient_myinfo",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/patient_memoir/patient_memoir",
+          "pathName": "pages/identity/identity",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -115,13 +24,6 @@
         {
           "name": "",
           "pathName": "pages/login/login",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/identity/identity",
           "query": "",
           "launchMode": "default",
           "scene": null

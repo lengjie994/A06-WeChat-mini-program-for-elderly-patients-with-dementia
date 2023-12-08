@@ -4,7 +4,6 @@
 			<view class="modal-body">
 				<view class="style-font">姓名</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-<<<<<<< HEAD
 				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">职称</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
@@ -17,20 +16,6 @@
 				<input v-model="inputhospital" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">医院地址</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-=======
-				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
-				<view class="style-font">职称</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputcareer" class=" input-style-name" placeholder="暂无"></input>
-				<view class="style-font">简介</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputintro" class=" input-style" placeholder="暂无"></textarea>
-				<view class="style-font">就诊医院</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputhospital" class=" input-style-name" placeholder="暂无"></input>
-				<view class="style-font">医院地址</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				<textarea v-model="inputaddr" class=" input-style" placeholder="暂无"></textarea>
 			</view>
 
@@ -46,31 +31,18 @@
 	export default {
 
 		props: {
-<<<<<<< HEAD
 			info: {
 				type: Object,
 				default: ''
-=======
-			info: {
-				type: Object,
-				default: ''
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			},
 		},
 		data() {
 			return {
 				isShowModal: false,
-<<<<<<< HEAD
 				inputname: null,
 				inputcareer:null,
 				inputintro:null,
 				inputhospital:null,
-=======
-				inputname: null,
-				inputcareer:null,
-				inputintro:null,
-				inputhospital:null,
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				inputaddr:null,
 				isactive: 0,
 				total: 0,
@@ -94,17 +66,10 @@
 			},
 			handleConfirm() {
 				
-<<<<<<< HEAD
 				this.$set(this.info,'name',this.inputname);
 				this.$set(this.info,'career',this.inputcareer);
 				this.$set(this.info,'intro',this.inputintro);
 				this.$set(this.info,'hospital',this.inputhospital);
-=======
-				this.$set(this.info,'name',this.inputname);
-				this.$set(this.info,'career',this.inputcareer);
-				this.$set(this.info,'intro',this.inputintro);
-				this.$set(this.info,'hospital',this.inputhospital);
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				this.$set(this.info,'addr',this.inputaddr);
 	
 				
@@ -208,7 +173,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-<<<<<<< HEAD
 	}
 	.input-style-name {
 		border: 1rpx solid #ddd;
@@ -218,17 +182,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-=======
-	}
-	.input-style-name {
-		border: 1rpx solid #ddd;
-		border-radius: 10rpx;
-		/* height: 100rpx; */
-		height: 50rpx;
-		padding: 10rpx;
-		font-size: 30rpx;
-		width: auto;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 
 	.style-font {

@@ -54,8 +54,6 @@
 .icon-add-circle:before {
   content: "\e664";
 }
-<<<<<<< HEAD
-=======
 .album {
   display: flex;
   flex-direction: row;
@@ -70,5 +68,4 @@
   margin-left: 75rpx;
   flex: 1;
 }
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 

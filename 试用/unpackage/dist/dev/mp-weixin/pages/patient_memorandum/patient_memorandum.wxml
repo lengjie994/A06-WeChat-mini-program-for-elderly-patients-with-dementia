@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<view><view class="container"><view>姓名：</view><view>住址：</view><view>紧急联系人：</view></view><view>备忘<tab-bar vue-id="55a31b20-1" selectedIndex="1" bind:__l="__l"></tab-bar></view></view>
-=======
 <view><view class="header"><uni-nav-bar vue-id="55a31b20-1" title="我的信息" height="11vh" border="{{false}}" fixed="{{true}}" backgroundColor="#f9f9f9" bind:__l="__l"></uni-nav-bar></view><view class="container"><view class="name">{{"姓名："+name}}</view><view>{{"住址："+addr}}</view><view>{{"紧急联系人："+emergence}}</view></view><view><tab-bar vue-id="55a31b20-2" selectedIndex="1" id_data="{{id_data}}" bind:__l="__l"></tab-bar></view></view>
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799

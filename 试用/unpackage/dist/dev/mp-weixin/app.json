@@ -5,9 +5,6 @@
     "pages/patient_reminder/patient_reminder",
     "pages/identity/identity",
     "pages/login/login",
-<<<<<<< HEAD
-    "pages/patient_memoir/patient_memoir"
-=======
     "pages/patient_memoir/patient_memoir",
     "pages/patient_healthdata/patient_healthdata",
     "pages/guardian_myinfo/guardian_myinfo",
@@ -23,7 +20,6 @@
     "pages/doctor_contact_guardian/doctor_contact_guardian",
     "pages/chatting/chatting",
     "pages/success_reservation/success_reservation"
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
   ],
   "subPackages": [],
   "window": {
@@ -32,33 +28,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-<<<<<<< HEAD
-  "tabBar": {
-    "color": "#BBBAC7",
-    "selectedColor": "#2c2c2c",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/patient_reminder/patient_reminder",
-        "iconPath": "static/tab/pill.png",
-        "selectedIconPath": "static/tab/pill_active.png",
-        "text": "服药提醒"
-      },
-      {
-        "pagePath": "pages/patient_memorandum/patient_memorandum",
-        "iconPath": "static/tab/check.png",
-        "selectedIconPath": "static/tab/check_active.png",
-        "text": "备忘录"
-      },
-      {
-        "pagePath": "pages/patient_myinfo/patient_myinfo",
-        "iconPath": "static/tab/my.png",
-        "selectedIconPath": "static/tab/my_active.png",
-        "text": "个人中心"
-      }
-    ]
-  },
-=======
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
   "usingComponents": {}
 }

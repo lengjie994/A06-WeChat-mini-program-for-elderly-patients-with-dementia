@@ -1,38 +1,10 @@
 <template>
 	<uni-popup ref="doctor" type="center">
 		<view class="model-wraper">
-<<<<<<< HEAD
-			<view class=" relative-navigation">
-				<view class="left-title style-font">绑定状态</view>
-			</view>
-			<view class="statu-frame">
-				<view v-bind:class='{selectColor:1==isactive}' @click='selectStatus(1)'>
-					<!-- <icon class="img-stytle" size="15" :type="iconType[0]" /> -->
-					<image class="img-stytle" src="/static/c1.png" />
-					待绑定
-				</view>
-				<view v-bind:class='{selectColor:2==isactive}' @click='selectStatus(2)'>
-					<!-- <icon class="img-stytle" size="15" :type="iconType[1]" /> -->
-					<image class="img-stytle" src="/static/c2.png" />
-					已绑定
-				</view>
-				<view v-bind:class='{selectColor:0==isactive}' @click='selectStatus(0)'>
-					<!-- <icon class="img-stytle" size="15" :type="iconType[2]" /> -->
-					<image class="img-stytle" src="/static/c3.png" />
-					解绑中
-				</view>
-			</view>
-
-			<view class="modal-body">
-				<view class="style-font">医生账号</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputRemark" class=" input-style" placeholder="暂无"></input>
-=======
 			<view class="modal-body">
 				<view class="style-font">医生账号</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
 				<input v-model="inputRemark" class=" input-style" :placeholder="doctor_Id"></input>
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			</view>
 
 			<view>
@@ -47,15 +19,9 @@
 	export default {
 
 		props: {
-<<<<<<< HEAD
 			datadoctor: {
 				type: Object,
 				default: ''
-=======
-			datadoctor: {
-				type: Object,
-				default: ''
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			},
 		},
 		data() {
@@ -65,11 +31,7 @@
 				isactive: 0,
 				total: 0,
 				iconType: ['waiting', 'success', 'cancel'],
-<<<<<<< HEAD
-				
-=======
 				doctor_id:"暂无绑定医生"
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			}
 		},
 		methods: {
@@ -100,11 +62,6 @@
 
 				// this.isShowModal = false
 				this.$emit('onClickConfirm',JSON.stringify(this.datadoctor))
-<<<<<<< HEAD
-				//this.$refs['doctor'].close();
-			}
-		}
-=======
 				this.inputRemark="等待绑定中"
 				//this.$refs['doctor'].close();
 			}
@@ -139,7 +96,6 @@
 				return this.doctor_id
 			}
 		},
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 </script>
 
@@ -152,11 +108,7 @@
 		z-index: 1000;
 		top: 50%;
 		left: 50%;
-<<<<<<< HEAD
-		margin-top: -300rpx;
-=======
 		margin-top: -100rpx;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		margin-left: -300rpx;
 		box-shadow: #dcdcdc 0px 0px 20rpx;
 	}

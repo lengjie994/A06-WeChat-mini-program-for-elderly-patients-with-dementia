@@ -1,12 +1,4 @@
 {
-<<<<<<< HEAD
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {
-    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
-    "uni-popup-dialog": "/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog",
-    "treatment-state": "/treatmentState",
-    "tab-bar": "/components/tabbar/tabbar"
-=======
   "navigationBarTitleText": "个人中心",
   "navigationStyle": "custom",
   "usingComponents": {
@@ -22,6 +14,5 @@
     "patientguardian_state": "/components/patient_guardian_state/patient_guardian_state",
     "fuilistcell": "/components/firstui-uni/firstui/fui-list-cell/fui-list-cell",
     "fuisection": "/node-modules/firstui-uni/firstui/fui-section/fui-section"
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
   }
 }

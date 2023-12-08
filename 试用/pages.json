@@ -1,169 +1,3 @@
-<<<<<<< HEAD
-{
-	"easycom": {
-			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
-		},
-	"pages": [{
-		"path": "pages/patient_myinfo/patient_myinfo",
-		"style": {
-			"navigationBarTitleText": "个人中心",
-			"navigationStyle": "custom"
-		}
-	},
-	{
-		"path" : "pages/patient_memorandum/patient_memorandum",
-		"style" : 
-		{
-			"navigationBarTitleText" : "我的信息",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/patient_reminder/patient_reminder",
-		"style" : 
-		{
-			"navigationBarTitleText" : "服药提醒",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/identity/identity",
-		"style" : 
-		{
-			"navigationBarTitleText" : "身份选择",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/login/login",
-		"style" : 
-		{
-			"navigationBarTitleText" : "登录页",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/patient_memoir/patient_memoir",
-		"style" : 
-		{
-			"navigationBarTitleText" : "我的回忆录",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/patient_healthdata/patient_healthdata",
-		"style" : 
-		{
-			"navigationBarTitleText" : "我的健康数据",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_myinfo/guardian_myinfo",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_health/guardian_health",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_chat/guardian_chat",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"navigationStyle": "custom",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_pill/guardian_pill",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_healthdata/guardian_healthdata",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_reservation/guardian_reservation",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"enablePullDownRefresh" : false
-		}
-	},
-	{
-		"path" : "pages/guardian_reservetime/guardian_reservetime",
-		"style" : 
-		{
-			"navigationBarTitleText" : "",
-			"enablePullDownRefresh" : false
-		}
-	}    ,{
-            "path" : "pages/doctor_myinfo/doctor_myinfo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/doctor_bind_request/doctor_bind_request",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/doctor_reservation/doctor_reservation",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/doctor_contact_guardian/doctor_contact_guardian",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-				"navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
-	// "tabBar": {
-	// 		"color": "#BBBAC7",
-	// 		"selectedColor": "#2c2c2c",
-	// 		"borderStyle": "black",
-=======
 {
 	"easycom": {
 			
@@ -351,7 +185,6 @@
 	// 		"color": "#BBBAC7",
 	// 		"selectedColor": "#2c2c2c",
 	// 		"borderStyle": "black",
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	// 		"list": [{
  //                        "pagePath": "pages/patient_reminder/patient_reminder",
  //                        "iconPath": "static/tab/pill.png",
@@ -363,7 +196,6 @@
  //                        "iconPath": "static/tab/check.png",
  //                        "selectedIconPath": "static/tab/check_active.png",
  //                        "text": "备忘录"
-<<<<<<< HEAD
  //                    },
 	// 				{
 	// 				    "pagePath": "pages/patient_myinfo/patient_myinfo",
@@ -382,24 +214,4 @@
 			"background": "#efeff4"
 		}
 	}
-=======
- //                    },
-	// 				{
-	// 				    "pagePath": "pages/patient_myinfo/patient_myinfo",
-	// 				    "iconPath": "static/tab/my.png",
-	// 				    "selectedIconPath": "static/tab/my_active.png",
-	// 				    "text": "个人中心"
-	// 				}
-	// 		]
-	// 	},
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"app-plus": {
-			"background": "#efeff4"
-		}
-	}
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 }

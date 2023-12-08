@@ -18,31 +18,10 @@
     }
   },
   "compileType": "miniprogram",
-<<<<<<< HEAD
-  "libVersion": "3.1.5",
-=======
-  "libVersion": "3.2.4",
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
+  "libVersion": "3.2.3",
   "appid": "wxd9dc9d27fe5c6f10",
   "projectname": "试用",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  },
+  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

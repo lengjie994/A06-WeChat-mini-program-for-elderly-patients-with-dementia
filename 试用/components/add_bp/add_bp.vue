@@ -4,13 +4,8 @@
 			<view class="modal-body">
 				<view class="style-font">今日收缩压</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-<<<<<<< HEAD
 				<input v-model="inputsbp" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">今日舒张压</view>
-=======
-				<input v-model="inputsbp" class=" input-style-name" placeholder="暂无"></input>
-				<view class="style-font">今日舒张压</view>
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				<input v-model="inputdbp" class=" input-style-name" placeholder="暂无"></input>
 			</view>
 
@@ -25,29 +20,17 @@
 <script>
 	export default {
 
-<<<<<<< HEAD
 		props: {
-=======
-		props: {
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 			
 		},
 		data() {
 			return {
 				isShowModal: false,
-<<<<<<< HEAD
 				inputsbp: null,
 				inputdbp: null,
 				bp:{
 					sbp:null,
 					dbp:null,
-=======
-				inputsbp: null,
-				inputdbp: null,
-				bp:{
-					sbp:null,
-					dbp:null,
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				}
 			}
 		},
@@ -66,21 +49,12 @@
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {	
-<<<<<<< HEAD
 				// this.isShowModal = false
 				this.bp.dbp=this.inputdbp;
 				this.bp.sbp=this.inputsbp;
 				this.$emit('onClickConfirm',JSON.stringify(this.bp))
 				//this.$refs['customModal'].close();
 				this.inputdbp = '';
-=======
-				// this.isShowModal = false
-				this.bp.dbp=this.inputdbp;
-				this.bp.sbp=this.inputsbp;
-				this.$emit('onClickConfirm',JSON.stringify(this.bp))
-				//this.$refs['customModal'].close();
-				this.inputdbp = '';
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 				this.inputsbp = '';
 			}
 		}
@@ -115,15 +89,9 @@
 		margin:10rpx 30rpx;
 	}
 
-<<<<<<< HEAD
 	.btn {
 		display: flex;
 		justify-content: center;
-=======
-	.btn {
-		display: flex;
-		justify-content: center;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 		align-items: center;
 		width: 300rpx;
 		height: 90rpx;
@@ -188,7 +156,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-<<<<<<< HEAD
 	}
 	.input-style-name {
 		border: 1rpx solid #ddd;
@@ -198,17 +165,6 @@
 		padding: 10rpx;
 		font-size: 30rpx;
 		width: auto;
-=======
-	}
-	.input-style-name {
-		border: 1rpx solid #ddd;
-		border-radius: 10rpx;
-		/* height: 100rpx; */
-		height: 50rpx;
-		padding: 10rpx;
-		font-size: 30rpx;
-		width: auto;
->>>>>>> 6f62ccfb075458bed4b2befa424e00cd6bc85799
 	}
 
 	.style-font {
