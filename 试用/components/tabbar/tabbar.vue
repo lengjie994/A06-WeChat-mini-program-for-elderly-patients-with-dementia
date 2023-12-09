@@ -1,13 +1,19 @@
 <template>
     <view class="tab">
          <view v-for="(item,index) in list" :key="index" class="tab-item" @click="switchTab(item, index)">
-            <image class="tab_img" :src="currentIndex == index ? item.selectedIconPath : item.iconPath"></image>
+            <view v-if="currentIndex == index">
+				<fui-icon :name="iconname[index]+'-fill'" color="#465CFF"></fui-icon>
+			</view>
+			<view v-else>
+				<fui-icon :name="iconname[index]"></fui-icon>
+			</view>
             <view class="tab_text" :style="{color: currentIndex == index ? selectedColor : color}">{{item.text}}</view>
         </view>
     </view>
 </template>
  
 <script>
+	import fuiIcon from "firstui-uni/firstui/fui-icon/fui-icon.vue"
     export default {
         props: {
             selectedIndex: { // 当前选中的tab index
@@ -15,14 +21,18 @@
             },
             id_data: {
 				type: String,
-			}
+			},
         },
+		components:{
+			fuiIcon,
+		},
         data() {
             return {
                 color: "#666666",
                 selectedColor: "#465CFF",
                 list: [],
                 currentIndex:0,
+				iconname: ["star","idcard","my"]
             }
         },
         created() {
@@ -56,6 +66,7 @@
                 ]
             } else if(this.id_data=="guardian") {
                 //角色2
+				iconname=["classify","message","my"]
                 _this.list = [{
                         "pagePath": "/pages/guardian_health/guardian_health",
                         "iconPath": "/static/tab/health.png",
@@ -77,6 +88,7 @@
                 ]
             } else if(this.id_data=="doctor"){
 				//医生
+				iconname=["message","my"]
 				_this.list = [{
 				        "pagePath": "/pages/doctor_contact_guardian/doctor_contact_guardian",
 				        "iconPath": "/static/tab/health.png",

@@ -77,6 +77,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    fuiIcon: function () {
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 328))
+    },
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -120,15 +143,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var fuiIcon = function fuiIcon() {
+  Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 328));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   props: {
     selectedIndex: {
@@ -139,12 +158,16 @@ var _default = {
       type: String
     }
   },
+  components: {
+    fuiIcon: fuiIcon
+  },
   data: function data() {
     return {
       color: "#666666",
       selectedColor: "#465CFF",
       list: [],
-      currentIndex: 0
+      currentIndex: 0,
+      iconname: ["star", "idcard", "my"]
     };
   },
   created: function created() {
@@ -173,6 +196,7 @@ var _default = {
       }];
     } else if (this.id_data == "guardian") {
       //角色2
+      iconname = ["classify", "message", "my"];
       _this.list = [{
         "pagePath": "/pages/guardian_health/guardian_health",
         "iconPath": "/static/tab/health.png",
@@ -191,6 +215,7 @@ var _default = {
       }];
     } else if (this.id_data == "doctor") {
       //医生
+      iconname = ["message", "my"];
       _this.list = [{
         "pagePath": "/pages/doctor_contact_guardian/doctor_contact_guardian",
         "iconPath": "/static/tab/health.png",

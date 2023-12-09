@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "fui-icon": "/node-modules/firstui-uni/firstui/fui-icon/fui-icon"
+  },
   "component": true
 }
