@@ -4,56 +4,38 @@
 			<uni-nav-bar title="个人中心" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
 		<view class="info">
-			<image id="pic" src="/static/12.jpg"></image>
-			<text id="id">id:username</text>
-			<view id="depart"></view>
+			<fui-avatar marginRight="24" width="150" marginBottom="20">
+				<fui-icon name="my" color="#fff"></fui-icon>
+			</fui-avatar>
+			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
 		</view>
 		<view>
-
-			<view class="table">
-				<!-- 表头(即第一行) -->
-				<view class="tr" v-if="true" @click="bind_request()">
-					<view class="th">
-						<view class="iconfont icon-tianxuangouren"></view>
-					</view>
-					<view class="td">绑定申请</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
-				</view>
-				<!-- 表格第二行 -->
-				<view class="tr" @click="show_reservation()">
-					<view class="th">
-						<view class="iconfont icon-yisheng2"></view>
-					</view>
-					<view class="td">我的预约</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
-				</view>
-				<!-- 表格第三行 -->
-				<view class="tr" @click="edit_info()">
-					<view class="th">
-						<view class="iconfont icon-yisheng2"></view>
-					</view>
-					<view class="td">我的资料</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
-				</view>
+			<view>
+				<fui-section title="关系绑定" line-width="8rpx" isLine class="fui-section__title"></fui-section>
+				<fui-list-cell arrow @click="bind_request()" marginTop="28">
+					<view class="iconfont icon-tianxuangouren"></view>
+					<text style="margin-left: 20rpx;">绑定申请</text>
+				</fui-list-cell>
+				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
+					class="fui-section__title"></fui-section>
+				<fui-list-cell arrow @click="show_reservation()" marginTop="28">
+					<view class="iconfont icon-qianshuxieyi"></view>
+					<text style="margin-left: 20rpx;">我的预约</text>
+				</fui-list-cell>
+				<fui-list-cell arrow @click="edit_info()">
+					<view class="iconfont icon-yisheng1"></view>
+					<text style="margin-left: 20rpx;">我的资料</text>
+				</fui-list-cell>
 			</view>
+		
+		
 		</view>
+	
 		<!-- 弹出框模块 -->
 		<edit_info ref='customModal' :info="info" @onClickConfirm="onClickConfirm"></edit_info>
-		
-
-
 		<view>
 			<tabBar selectedIndex=1 :id_data="id_data"></tabBar>
 		</view>
-
-
-
 
 	</view>
 </template>
@@ -65,6 +47,10 @@
 	// 引入自定义弹出框组件
 	import tabBar from '@/components/tabbar/tabbar.vue'
 	import edit_info from '@/components/edit_info/edit_info.vue'
+	import fuilistcell from '@/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue'
+	import fuisection from 'firstui-uni/firstui/fui-section/fui-section.vue'
+	import fuiAvatar from "firstui-uni/firstui/fui-avatar/fui-avatar.vue"
+	import fuiTag from "firstui-uni/firstui/fui-tag/fui-tag.vue"
 	export default {
 		data() {
 			return {
@@ -90,6 +76,10 @@
 			uniPopupDialog,
 			tabBar,
 			edit_info,
+			fuilistcell,
+			fuisection,
+			fuiAvatar,
+			fuiTag,
 		},
 
 		methods: {
@@ -141,14 +131,19 @@
 	}
 </script>
 
-
-
-
 <style lang="scss">
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
+	.fui-section__title {
+		margin-left: 32rpx;
+	}
 	.header{
 		background-color: #F5F5F5;
 	}
 	.info {
+		margin-top: 6%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -230,6 +225,10 @@
 	
 	.icon-yisheng2:before {
 	  content: "\e7ad";
+	}
+	
+	.icon-qianshuxieyi:before {
+	  content: "\e620";
 	}
 	
 	.icon-yisheng-01:before {
