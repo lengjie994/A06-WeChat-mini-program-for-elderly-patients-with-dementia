@@ -21,12 +21,8 @@
   align-items: center;
   flex-direction: column;
 }
-.tab .tab-item .tab_img {
-  width: 60rpx;
-  height: 60rpx;
-}
 .tab .tab-item .tab_text {
   font-size: 30rpx;
-  margin-top: 9rpx;
+  margin-top: -5rpx;
 }
 

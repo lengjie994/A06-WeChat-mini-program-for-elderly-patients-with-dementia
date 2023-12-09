@@ -1,12 +1,26 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="我的信息" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
-		<view class="container">
-			<view class="name">姓名：{{name}}</view>
-			<view>住址：{{addr}}</view>
-			<view>紧急联系人：{{emergence}}</view>
+		<view>
+			<fui-section title="我的信息" line-width="8rpx" isLine class="fui-section__title" marginBottom="28"></fui-section>
+			<view class="card">
+				<fui-card title="姓名" tag="本人">
+					<view class="fui-card__content">{{name}}</view>
+				</fui-card>
+			</view>
+			<view class="card">
+				<fui-card title="住址" tag="本人">
+					<view class="fui-card__content">{{addr}}</view>
+				</fui-card>
+			</view>
+			<view class="card">
+				<fui-card title="紧急联系电话" tag="监护人">
+					<view class="fui-card__content">{{emergence}}</view>
+				</fui-card>
+			</view>
+			
 		</view>
 		<view>
 			<tabBar selectedIndex=1 :id_data="id_data"></tabBar>
@@ -16,6 +30,8 @@
 
 <script>
 	import tabBar from '@/components/tabbar/tabbar.vue'
+	import fuisection from 'firstui-uni/firstui/fui-section/fui-section.vue'
+	import fuiCard from "firstui-uni/firstui/fui-card/fui-card.vue"
 	export default {
 		data() {
 			return {
@@ -28,6 +44,8 @@
 		},
 		components: {
 			tabBar,
+			fuisection,
+			fuiCard,
 		},
 		onShow() {
 			let _this=this
@@ -67,32 +85,27 @@
 </script>
 
 <style lang="scss">
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
+	.card{
+		margin-bottom: 20rpx;
+	}
+	.fui-section__title {
+		margin-left: 32rpx;
+	}
+	.fui-card__content {
+			font-size: 28rpx;
+			padding: 32rpx 20rpx;
+			box-sizing: border-box;
+		}
+	
 	.container .name{
 		height: 10%;
 	}
 	.header{
 		background-color: #F5F5F5;
 	}
-	.container {
-		height: 1200rpx;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-top: 5%;
-
-	}
-
-	.container view {
-		border: 3rpx solid;
-		border-radius: 10rpx;
-		padding: 10rpx;
-		margin-bottom: 50rpx;
-		width: 80%;
-		height: 30%;
-		font-family: cursive;
-		font-size: 25px;
-		font-weight: bold;
-
-	}
+	
 </style>
