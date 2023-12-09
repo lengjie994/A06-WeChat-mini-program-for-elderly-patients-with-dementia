@@ -9,6 +9,20 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/doctor_myinfo/doctor_myinfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/patient_myinfo/patient_myinfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/guardian_myinfo/guardian_myinfo",
           "query": "",
           "launchMode": "default",

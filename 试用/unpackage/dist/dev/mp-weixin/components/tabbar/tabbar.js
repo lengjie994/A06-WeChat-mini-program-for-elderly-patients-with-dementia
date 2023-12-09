@@ -196,7 +196,7 @@ var _default = {
       }];
     } else if (this.id_data == "guardian") {
       //角色2
-      iconname = ["classify", "message", "my"];
+      _this.iconname = ["classify", "message", "my"];
       _this.list = [{
         "pagePath": "/pages/guardian_health/guardian_health",
         "iconPath": "/static/tab/health.png",
@@ -215,7 +215,7 @@ var _default = {
       }];
     } else if (this.id_data == "doctor") {
       //医生
-      iconname = ["message", "my"];
+      _this.iconname = ["message", "my"];
       _this.list = [{
         "pagePath": "/pages/doctor_contact_guardian/doctor_contact_guardian",
         "iconPath": "/static/tab/health.png",
