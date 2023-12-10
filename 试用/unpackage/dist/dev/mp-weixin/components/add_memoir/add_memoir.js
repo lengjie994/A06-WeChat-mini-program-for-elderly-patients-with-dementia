@@ -82,6 +82,9 @@ try {
     uniPopup: function () {
       return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 357))
     },
+    uUpload: function () {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-upload/u-upload.vue */ 710))
+    },
   }
 } catch (e) {
   if (
@@ -137,12 +140,25 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
 
-
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 49));
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
+var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 51));
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -175,8 +191,13 @@ var _default = {
       isShowModal: false,
       inputtext: "",
       inputphone: "",
-      composition: {}
+      composition: {},
+      fileList1: []
     };
+  },
+  onReady: function onReady() {
+    // 得到整个组件对象，内部图片列表变量为"lists"
+    this.uUpload = this.$refs.uUpload;
   },
   methods: {
     hideModal: function hideModal() {
@@ -194,15 +215,68 @@ var _default = {
     },
     handleConfirm: function handleConfirm() {
       this.$set(this.composition, 'text', this.inputtext);
-      this.$set(this.composition, 'img', this.inputphone);
-
+      this.$set(this.composition, 'img', this.fileList1);
+      console.log(this.fileList1);
       // this.isShowModal = false
       this.$emit('onClickConfirm', JSON.stringify(this.composition));
       //this.$refs['customModal'].close();
+    },
+    //删除图片
+    deletePic: function deletePic(e) {
+      console.log(e);
+      this["fileList".concat(e.name)].splice(e.index, 1);
+    },
+    // 新增图片
+    afterRead: function afterRead(event) {
+      var _this = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+        var lists, fileListLen;
+        return _regenerator.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log(event);
+                // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
+                lists = [].concat(event.file);
+                fileListLen = _this["fileList".concat(event.name)].length;
+                lists.map(function (item) {
+                  _this["fileList".concat(event.name)].push(_objectSpread(_objectSpread({}, item), {}, {
+                    status: 'success',
+                    message: '上传中'
+                  }));
+                });
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    //上传图片
+    uploadFilePromise: function uploadFilePromise(url) {
+      return new Promise(function (resolve, reject) {
+        var a = uni.uploadFile({
+          //url: this.$common.domain+'/api/common/upload', // 仅为示例，非真实的接口地址
+          url: 'http://192.168.2.21:7001/upload',
+          // 仅为示例，非真实的接口地址
+          filePath: url,
+          name: 'file',
+          formData: {
+            user: 'test'
+          },
+          success: function success(res) {
+            setTimeout(function () {
+              resolve(res.data.data);
+            }, 1000);
+          }
+        });
+      });
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

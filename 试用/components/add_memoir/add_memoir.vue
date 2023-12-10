@@ -5,9 +5,16 @@
 				<view class="style-font">文本内容</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
 				<textarea v-model="inputtext" class=" input-style"></textarea>
-				<view class="style-font">紧急联系人</view>
-				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputphone" class=" input-style" placeholder="暂无"></textarea>
+
+				<view class="content">
+					<!-- 上传图片 -->
+					<u-upload :fileList="fileList1" @afterRead="afterRead" @delete="deletePic" name="1" :multiple="true"
+						:maxCount="10" uploadIcon="plus" uploadIconColor="#0086ff" width="158rpx" height="154rpx"
+						:deletable="true" :previewImage="true">
+					</u-upload>
+				</view>
+
+
 			</view>
 
 			<view>
@@ -31,10 +38,16 @@
 			return {
 				isShowModal: false,
 				inputtext: "",
-				inputphone:"",
-				composition:{},
-				
+				inputphone: "",
+				composition: {},
+
+				fileList1: [],
+
 			}
+		},
+		onReady() {
+			// 得到整个组件对象，内部图片列表变量为"lists"
+			this.uUpload = this.$refs.uUpload;
 		},
 		methods: {
 			hideModal() {
@@ -51,14 +64,55 @@
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {
-				
-				this.$set(this.composition,'text',this.inputtext);
-				this.$set(this.composition,'img',this.inputphone);
-				
+
+				this.$set(this.composition, 'text', this.inputtext);
+				this.$set(this.composition, 'img', this.fileList1);
+				console.log(this.fileList1)
 				// this.isShowModal = false
-				this.$emit('onClickConfirm',JSON.stringify(this.composition))
+				this.$emit('onClickConfirm', JSON.stringify(this.composition))
 				//this.$refs['customModal'].close();
-			}
+			},
+			//删除图片
+			deletePic(e) {
+				console.log(e);
+				this[`fileList${e.name}`].splice(e.index, 1)
+			},
+			// 新增图片
+			async afterRead(event) {
+				console.log(event)
+				// 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
+				let lists = [].concat(event.file)
+				let fileListLen = this[`fileList${event.name}`].length
+				lists.map((item) => {
+					this[`fileList${event.name}`].push({
+						...item,
+						status: 'success',
+						message: '上传中',
+					})
+				})
+			},
+			//上传图片
+			uploadFilePromise(url) {
+				return new Promise((resolve, reject) => {
+					let a = uni.uploadFile({
+						//url: this.$common.domain+'/api/common/upload', // 仅为示例，非真实的接口地址
+						url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
+						filePath: url,
+						name: 'file',
+						formData: {
+							user: 'test'
+						},
+						success: (res) => {
+							setTimeout(() => {
+								resolve(res.data.data)
+							}, 1000)
+						}
+					});
+				})
+			},
+
+
+
 		}
 	}
 </script>
@@ -72,7 +126,7 @@
 		z-index: 1000;
 		top: 50%;
 		left: 50%;
-		margin-top: -300rpx;
+		margin-top: -500rpx;
 		margin-left: -300rpx;
 		box-shadow: #dcdcdc 0px 0px 20rpx;
 	}
@@ -88,7 +142,7 @@
 
 	.modal-body {
 		/* padding: 30rpx 30rpx 80rpx 30rpx; */
-		margin:10rpx 30rpx;
+		margin: 10rpx 30rpx;
 	}
 
 	.btn {
@@ -109,7 +163,7 @@
 
 	/* -----自定义----- */
 	.relative-navigation {
-		margin:0rpx 30rpx ;
+		margin: 0rpx 30rpx;
 		/* font-weight: bold; */
 		position: relative;
 		/* padding-top: 10rpx; */
@@ -139,7 +193,7 @@
 		text-align: center;
 		/* display: flex;
 		justify-content: center */
-			/* display: block; */
+		/* display: block; */
 	}
 
 	.selectColor {
@@ -156,6 +210,7 @@
 		font-size: 30rpx;
 		width: auto;
 	}
+
 	.input-style-name {
 		border: 1rpx solid #ddd;
 		border-radius: 10rpx;
@@ -170,7 +225,7 @@
 		color: #A1AAA9;
 		font-size: 28rpx;
 	}
-	
+
 	.img-stytle {
 		padding-right: 10rpx;
 		width: 32rpx;
@@ -178,4 +233,3 @@
 		margin-right: 10rpx;
 	}
 </style>
-

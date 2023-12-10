@@ -88,6 +88,8 @@
 			onClickConfirm(data) {
 				let stateData = JSON.parse(data)
 				console.log(stateData)
+				let img_urls = stateData.img.map(item => item.url);
+				//现在需要将图片发送给后端然后由后端上传返回图片的云端地址并储存
 				let _this=this;
 				const currentDate = new Date();
 				
@@ -101,10 +103,7 @@
 				//这里需要用户输入文本并且上传照片
 				const newMessage = {
 					text: stateData.text,
-					urls: [
-						'https://cdn.uviewui.com/uview/album/1.jpg',
-						'https://cdn.uviewui.com/uview/album/2.jpg',
-					],
+					urls: img_urls,
 					time: currentTime,
 				};
 				_this.messages.unshift(newMessage); // 将新消息添加到开头

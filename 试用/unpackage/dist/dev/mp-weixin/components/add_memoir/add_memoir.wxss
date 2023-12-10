@@ -7,7 +7,7 @@
 	z-index: 1000;
 	top: 50%;
 	left: 50%;
-	margin-top: -300rpx;
+	margin-top: -500rpx;
 	margin-left: -300rpx;
 	box-shadow: #dcdcdc 0px 0px 20rpx;
 }
@@ -21,7 +21,7 @@
 }
 .modal-body.data-v-99c4bdb8 {
 	/* padding: 30rpx 30rpx 80rpx 30rpx; */
-	margin:10rpx 30rpx;
+	margin: 10rpx 30rpx;
 }
 .btn.data-v-99c4bdb8 {
 	width: 300rpx;
@@ -39,7 +39,7 @@
 
 /* -----自定义----- */
 .relative-navigation.data-v-99c4bdb8 {
-	margin:0rpx 30rpx ;
+	margin: 0rpx 30rpx;
 	/* font-weight: bold; */
 	position: relative;
 	/* padding-top: 10rpx; */
@@ -64,7 +64,7 @@
 	text-align: center;
 	/* display: flex;
 	justify-content: center */
-		/* display: block; */
+	/* display: block; */
 }
 .selectColor.data-v-99c4bdb8 {
 	background-color: #4C91F0;

@@ -107,7 +107,7 @@ try {
       return Promise.all(/*! import() | node-modules/uview-ui/components/u-album/u-album */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-album/u-album")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-album/u-album.vue */ 418))
     },
     add_memoir: function () {
-      return __webpack_require__.e(/*! import() | components/add_memoir/add_memoir */ "components/add_memoir/add_memoir").then(__webpack_require__.bind(null, /*! @/components/add_memoir/add_memoir.vue */ 426))
+      return Promise.all(/*! import() | components/add_memoir/add_memoir */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add_memoir/add_memoir")]).then(__webpack_require__.bind(null, /*! @/components/add_memoir/add_memoir.vue */ 426))
     },
   }
 } catch (e) {
@@ -171,7 +171,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var add_memoir = function add_memoir() {
-  __webpack_require__.e(/*! require.ensure | components/add_memoir/add_memoir */ "components/add_memoir/add_memoir").then((function () {
+  Promise.all(/*! require.ensure | components/add_memoir/add_memoir */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add_memoir/add_memoir")]).then((function () {
     return resolve(__webpack_require__(/*! @/components/add_memoir/add_memoir.vue */ 426));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
@@ -205,6 +205,10 @@ var _default = {
     onClickConfirm: function onClickConfirm(data) {
       var stateData = JSON.parse(data);
       console.log(stateData);
+      var img_urls = stateData.img.map(function (item) {
+        return item.url;
+      });
+      //现在需要将图片发送给后端然后由后端上传返回图片的云端地址并储存
       var _this = this;
       var currentDate = new Date();
 
@@ -218,7 +222,7 @@ var _default = {
       //这里需要用户输入文本并且上传照片
       var newMessage = {
         text: stateData.text,
-        urls: ['https://cdn.uviewui.com/uview/album/1.jpg', 'https://cdn.uviewui.com/uview/album/2.jpg'],
+        urls: img_urls,
         time: currentTime
       };
       _this.messages.unshift(newMessage); // 将新消息添加到开头
