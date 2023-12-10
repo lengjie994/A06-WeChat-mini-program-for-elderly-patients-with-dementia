@@ -209,7 +209,7 @@ var _default = {
     },
     patient_info: function patient_info() {
       uni.redirectTo({
-        url: '/pages/patient_myinfo/patient_myinfo'
+        url: '/pages/patient_memorandum/patient_memorandum'
       });
       this.role = "patient";
       this.sendrole();

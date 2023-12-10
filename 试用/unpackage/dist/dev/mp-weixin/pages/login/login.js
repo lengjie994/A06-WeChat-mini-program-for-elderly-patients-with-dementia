@@ -253,7 +253,7 @@ var _default = {
                             });
                           } else if (_this.role === 'patient') {
                             uni.navigateTo({
-                              url: '/pages/patient_myinfo/patient_myinfo'
+                              url: '/pages/patient_memorandum/patient_memorandum'
                             });
                           }
                         },
