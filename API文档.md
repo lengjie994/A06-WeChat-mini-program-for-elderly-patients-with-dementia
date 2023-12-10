@@ -269,11 +269,11 @@
 
 ### 返回内容
 
-| 属性名    | 说明                  | 类型   |
-| --------- | --------------------- | ------ |
-| openid    | 用户唯一识别标志      | string |
-| msg       | 成功返回标志“success” | string |
-| patientid | 患者specialid         | string |
+| 属性名     | 说明                  | 类型   |
+| ---------- | --------------------- | ------ |
+| openid     | 用户唯一识别标志      | string |
+| msg        | 成功返回标志“success” | string |
+| patient_id | 患者specialid         | string |
 
 
 
@@ -419,7 +419,7 @@
 
 
 
-## 存储聊天记录
+## 医生存储聊天记录
 
 ### 功能说明
 
@@ -427,15 +427,15 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SaveChatRecord/'
+​	'http://127.0.0.1:8000/api/user/DoctorSaveChatlist/'
 
 ### 参数
 
 | 属性名      | 说明       | 类型   |
 | ----------- | ---------- | ------ |
 | openid      | ——         | string |
-| listener_id | 聊天对象id | string |
-| chatrecord  | 聊天记录   | list   |
+| guardian_id | 聊天对象id | string |
+| chatlist    | 聊天记录   | list   |
 
 ### 返回内容
 
@@ -446,7 +446,33 @@
 
 
 
-## 返回聊天记录
+## 监护人存储聊天记录
+
+### 功能说明
+
+​	通过openid获取对应用户，然后两个用户通过后端作为中转站进行通信，前端处理好聊天记录发送给后端保存
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/GuardianSaveChatlist/'
+
+### 参数
+
+| 属性名   | 说明     | 类型   |
+| -------- | -------- | ------ |
+| openid   | ——       | string |
+| chatlist | 聊天记录 | list   |
+
+### 返回内容
+
+| 属性名 | 说明                  | 类型   |
+| ------ | --------------------- | ------ |
+| openid | 用户唯一识别标志      | string |
+| msg    | 成功返回标志“success” | string |
+
+
+
+## 医生返回聊天记录
 
 ### 功能说明
 
@@ -454,22 +480,49 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SendChatRecord/'
+​	'http://127.0.0.1:8000/api/user/DoctorRecvChatlist/'
 
 ### 参数
 
 | 属性名      | 说明       | 类型   |
 | ----------- | ---------- | ------ |
 | openid      | ——         | string |
-| listener_id | 聊天对象id | string |
+| guardian_id | 聊天对象id | string |
 
 ### 返回内容
 
-| 属性名     | 说明                  | 类型   |
-| ---------- | --------------------- | ------ |
-| openid     | 用户唯一识别标志      | string |
-| msg        | 成功返回标志“success” | string |
-| chatrecord | 聊天记录              | list   |
+| 属性名   | 说明                  | 类型   |
+| -------- | --------------------- | ------ |
+| openid   | 用户唯一识别标志      | string |
+| msg      | 成功返回标志“success” | string |
+| chatlist | 聊天记录              | list   |
+
+
+
+## 监护人返回聊天记录
+
+### 功能说明
+
+​	通过openid获取对应用户，然后两个用户通过后端作为中转站进行通信，每一次返回历史聊天记录
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/GuardianRecvChatlist/'
+
+### 参数
+
+| 属性名      | 说明       | 类型   |
+| ----------- | ---------- | ------ |
+| openid      | ——         | string |
+| guardian_id | 聊天对象id | string |
+
+### 返回内容
+
+| 属性名   | 说明                  | 类型   |
+| -------- | --------------------- | ------ |
+| openid   | 用户唯一识别标志      | string |
+| msg      | 成功返回标志“success” | string |
+| chatlist | 聊天记录              | list   |
 
 
 
