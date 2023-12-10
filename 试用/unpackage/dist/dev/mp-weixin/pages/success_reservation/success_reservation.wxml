@@ -1,1 +1,0 @@
-<view>这是预约成功界面<view>{{doctor.career}}</view><view>{{doctor.intro}}</view><view>{{doctor.hospital}}</view><view>{{doctor.addr}}</view><view>{{doctor.career}}</view><view>{{time}}</view></view>
