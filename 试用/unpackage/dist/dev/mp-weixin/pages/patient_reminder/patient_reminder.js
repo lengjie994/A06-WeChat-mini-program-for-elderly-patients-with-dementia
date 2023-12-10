@@ -103,6 +103,9 @@ try {
     uniNavBar: function () {
       return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 314))
     },
+    fuiCard: function () {
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-card/fui-card.vue */ 397))
+    },
   }
 } catch (e) {
   if (
@@ -125,6 +128,37 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l1 = _vm.__map(_vm.list, function (item, index) {
+    var $orig = _vm.__get_orig(item)
+    var l0 = _vm.__map(item.time.split(","), function (item2, index2) {
+      var $orig = _vm.__get_orig(item2)
+      var m0 = _vm.checkTime(item2)
+      var m1 = _vm.checkTime(item2)
+      var m2 = _vm.checkTime(item2)
+      var m3 = _vm.checkTime(item2)
+      var m4 = _vm.checkTime(item2)
+      return {
+        $orig: $orig,
+        m0: m0,
+        m1: m1,
+        m2: m2,
+        m3: m3,
+        m4: m4,
+      }
+    })
+    return {
+      $orig: $orig,
+      l0: l0,
+    }
+  })
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l1: l1,
+      },
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -169,21 +203,37 @@ var tabBar = function tabBar() {
     return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 376));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
+var fuiCard = function fuiCard() {
+  __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then((function () {
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-card/fui-card.vue */ 397));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   data: function data() {
     return {
       openid: "",
       list: [{
-        medicine_name: "奥拉西坦胶囊",
-        time: "12:00",
-        method: "一天一次",
-        state: "立即服用"
+        pill: "奥拉西坦胶囊",
+        count: "一次一粒",
+        dailycount: "3",
+        time: "08:00,12:00,18:00"
+      }, {
+        pill: "奥拉西坦1",
+        count: "一次一粒",
+        dailycount: "2",
+        time: "08:30,12:20"
+      }, {
+        pill: "奥拉西坦2",
+        count: "一次一粒",
+        dailycount: "3",
+        time: "08:00,12:00,13:16"
       }],
       id_data: "patient"
     };
   },
   components: {
-    tabBar: tabBar
+    tabBar: tabBar,
+    fuiCard: fuiCard
   },
   onShow: function onShow() {
     var _this = this;
@@ -215,7 +265,30 @@ var _default = {
     });
   },
   onLoad: function onLoad() {
+    var _this = this;
     this.openid = getApp().globalData.global_openid;
+    _this.checkTime();
+  },
+  methods: {
+    checkTime: function checkTime(targetTime) {
+      var _this = this;
+      // 获取当前时间
+      var currentTime = new Date();
+
+      // 将当前时间转换为 "hh:mm" 格式
+      var currentHours = currentTime.getHours();
+      var currentMinutes = currentTime.getMinutes();
+
+      // 构建当前时间字符串
+      var currentTimeString = "".concat(currentHours, ":").concat(currentMinutes);
+
+      // 比较时间
+      if (currentTimeString > targetTime) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 };
 exports.default = _default;

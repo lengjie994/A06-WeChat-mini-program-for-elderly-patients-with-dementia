@@ -9,6 +9,13 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/patient_reminder/patient_reminder",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/doctor_myinfo/doctor_myinfo",
           "query": "",
           "launchMode": "default",

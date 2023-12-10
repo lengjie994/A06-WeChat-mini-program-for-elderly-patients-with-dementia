@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="我的信息" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
@@ -84,13 +84,18 @@
 <style lang="scss">
 	.card{
 		margin-bottom: 20rpx;
+		font-size: 38rpx;
 	}
 	.fui-section__title {
 		margin-left: 32rpx;
 	}
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
 
 	.fui-card__content {
-		font-size: 28rpx;
+		
 		padding: 32rpx 20rpx;
 		box-sizing: border-box;
 	}

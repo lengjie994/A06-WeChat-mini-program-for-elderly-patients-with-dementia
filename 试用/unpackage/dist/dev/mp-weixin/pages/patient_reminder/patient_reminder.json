@@ -4,6 +4,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
     "tab-bar": "/components/tabbar/tabbar"
   }
 }
