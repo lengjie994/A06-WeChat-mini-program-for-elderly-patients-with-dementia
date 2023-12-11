@@ -419,7 +419,7 @@
 
 
 
-## 医生存储聊天记录
+## 存储聊天记录
 
 ### 功能说明
 
@@ -427,15 +427,16 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/DoctorSaveChatlist/'
+​	'http://127.0.0.1:8000/api/user/SaveChatlist/'
 
 ### 参数
 
-| 属性名      | 说明       | 类型   |
-| ----------- | ---------- | ------ |
-| openid      | ——         | string |
-| guardian_id | 聊天对象id | string |
-| chatlist    | 聊天记录   | list   |
+| 属性名      | 说明                        | 类型   |
+| ----------- | --------------------------- | ------ |
+| openid      | ——                          | string |
+| opposite_id | 聊天对象id                  | string |
+| chatlist    | 聊天记录                    | list   |
+| identity    | 当前用户身份guardian/doctor | string |
 
 ### 返回内容
 
@@ -446,33 +447,7 @@
 
 
 
-## 监护人存储聊天记录
-
-### 功能说明
-
-​	通过openid获取对应用户，然后两个用户通过后端作为中转站进行通信，前端处理好聊天记录发送给后端保存
-
-### url
-
-​	'http://127.0.0.1:8000/api/user/GuardianSaveChatlist/'
-
-### 参数
-
-| 属性名   | 说明     | 类型   |
-| -------- | -------- | ------ |
-| openid   | ——       | string |
-| chatlist | 聊天记录 | list   |
-
-### 返回内容
-
-| 属性名 | 说明                  | 类型   |
-| ------ | --------------------- | ------ |
-| openid | 用户唯一识别标志      | string |
-| msg    | 成功返回标志“success” | string |
-
-
-
-## 医生返回聊天记录
+## 返回聊天记录
 
 ### 功能说明
 
@@ -480,14 +455,15 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/DoctorRecvChatlist/'
+​	'http://127.0.0.1:8000/api/user/ReturnChatlist/'
 
 ### 参数
 
-| 属性名      | 说明       | 类型   |
-| ----------- | ---------- | ------ |
-| openid      | ——         | string |
-| guardian_id | 聊天对象id | string |
+| 属性名      | 说明                        | 类型   |
+| ----------- | --------------------------- | ------ |
+| openid      | ——                          | string |
+| opposite_id | 聊天对象id                  | string |
+| identity    | 当前用户身份guardian/doctor | string |
 
 ### 返回内容
 
