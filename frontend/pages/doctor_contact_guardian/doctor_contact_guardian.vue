@@ -6,6 +6,7 @@
 		</view>
 		<view class="u-page">
 			<u-list @scrolltolower="scrolltolower" :height="scrollheight">
+				<!--根据全局变量indexList判断每一个item是否有新消息，再添加消息提示组件-->
 				<u-list-item v-for="(item, index) in indexList" :key="index">
 					<u-cell :title="`列表长度-${index + 1}`"  @click="gotochat(index)">
 						<u-avatar slot="icon" shape="square" size="35" :src="item.url"
@@ -45,7 +46,8 @@
 					'https://cdn.uviewui.com/uview/album/8.jpg',
 					'https://cdn.uviewui.com/uview/album/9.jpg',
 					'https://cdn.uviewui.com/uview/album/10.jpg',
-				]
+				],
+				timer: "",
 			}
 		},
 
@@ -62,18 +64,49 @@
 			},
 			gotochat(index){
 				getApp().globalData.global_opposite_id=index
+				//告知后端将该监护人消息更新标识修改为false
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为修改标识为false的url
+					url: 'http://127.0.0.1:8000/api/user/login/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid: this.openid,
+						opposite_id: index,
+					},
+					success: function(response) {
+						console.log("修改标识为false成功")
+					},
+					fail: function(response) {
+						console.log("修改标识为false失败")
+					}
+				})
 				uni.navigateTo({
 					url: '/pages/chatting/chatting'
 				})
+			},
+			valChange()
+			{
+				this.indexList=getApp().globalData.global_indexList
 			}
 		},
 		components: {
 			tabBar,
 		},
+		onShow()
+		{
+			this.timer = setInterval(this.valChange, 2000);
+		},
+		
 		onLoad() {
 			this.openid = getApp().globalData.global_openid
 			this.loadmore()
-		}
+		},
+		onHide() {
+			clearTimeout(this.timer);
+		},
 	}
 </script>
 

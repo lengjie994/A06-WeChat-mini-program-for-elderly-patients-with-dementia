@@ -22,6 +22,7 @@
 		methods: {
 			
 			sendrole(){
+				getApp().globalData.global_identity=this.role
 				wx.request({
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
