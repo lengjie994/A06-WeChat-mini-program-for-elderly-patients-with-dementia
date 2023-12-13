@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
+/* WEBPACK VAR INJECTION */(function(uni, wx) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -201,10 +201,29 @@ var _default = {
   onLoad: function onLoad() {
     this.openid = getApp().globalData.global_openid;
     console.log(this.openid);
+    //这里需要获取监护人预约信息
+    wx.request({
+      // 这里是django的本地ip地址
+      // 如果部署到线上，需要改为接口的实际网址
+      //此处url还需修改为获取监护人信息的url
+      url: 'http://127.0.0.1:8000/api/user/login/',
+      // 请求方式修改为 POST
+      method: 'POST',
+      data: {
+        openid: this.openid
+      },
+      success: function success(response) {
+        this.reservations = response.data.code.reservations;
+        console.log("获取预约信息成功");
+      },
+      fail: function fail(response) {
+        console.log("获取预约信息失败");
+      }
+    });
   }
 };
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
 

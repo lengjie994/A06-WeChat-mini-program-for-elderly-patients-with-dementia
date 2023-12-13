@@ -56,14 +56,14 @@
 				scrollTop: 0, //滚动条距离顶部距离
 				infoList: null, //用户信息
 
-				path: "wss://test.jskwsx.com/msg", //websocket链接地址
-				ws: null, //建立的连接
-				lockReconnect: false, //是否真正建立连接
-				timeout: 10 * 1000, //30秒一次心跳
-				timeoutObj: null, //心跳心跳倒计时
-				serverTimeoutObj: null, //心跳倒计时
-				timeoutnum: null, //断开 重连倒计时
-				closeType: 1, //断开判断：0代表不重连，1代表重连
+				// path: "wss://test.jskwsx.com/msg", //websocket链接地址
+				// ws: null, //建立的连接
+				// lockReconnect: false, //是否真正建立连接
+				// timeout: 10 * 1000, //30秒一次心跳
+				// timeoutObj: null, //心跳心跳倒计时
+				// serverTimeoutObj: null, //心跳倒计时
+				// timeoutnum: null, //断开 重连倒计时
+				// closeType: 1, //断开判断：0代表不重连，1代表重连
 			}
 		},
 		onShow() {
@@ -80,9 +80,6 @@
 			//获取聊天对象id
 			this.opposite_id = getApp().globalData.global_opposite_id
 			console.log(this.opposite_id)
-			this.infoList = JSON.parse(options.urlee) //拿到上一个页面传过来的参数，内容是选中客服信息
-			console.log('选中客服信息', this.infoList);
-			//这里需要设置定时刷新页面函数
 
 		},
 		onPageScroll(e) {
@@ -94,22 +91,22 @@
 			}
 		},
 		beforeDestroy() {
-			this.closeType = 0 //离开页面前改为0，代表离开后断开链接不再重连
-			this.ws.send({
-				data: JSON.stringify({
-					type: "online",
-					data: {
-						online: 0,
-						user_type: 'user',
-						is_tourist: uni.getStorageSync("userinfo").id ? 0 : 1
-					}
-				})
-			})
-			// 离开页面后关闭连接
-			this.ws.close();
-			// 清除时间
-			clearTimeout(this.timeoutObj);
-			clearTimeout(this.serverTimeoutObj);
+			// this.closeType = 0 //离开页面前改为0，代表离开后断开链接不再重连
+			// this.ws.send({
+			// 	data: JSON.stringify({
+			// 		type: "online",
+			// 		data: {
+			// 			online: 0,
+			// 			user_type: 'user',
+			// 			is_tourist: uni.getStorageSync("userinfo").id ? 0 : 1
+			// 		}
+			// 	})
+			// })
+			// // 离开页面后关闭连接
+			// this.ws.close();
+			// // 清除时间
+			// clearTimeout(this.timeoutObj);
+			// clearTimeout(this.serverTimeoutObj);
 
 		},
 		methods: {
@@ -232,7 +229,7 @@
 				this.setPageScrollTo() //滚动到最底部
 				console.log('发送成功', this.inputValue);
 			},
-
+/*
 			// 初始化websocket链接
 			initWebpack() {
 				//实例
@@ -340,6 +337,7 @@
 					}, self.timeout);
 				}, self.timeout);
 			},
+			*/
 			//连接成功
 		}
 	}

@@ -74,7 +74,7 @@
                         "text": "患者相关"
                     },
                     {
-                        "pagePath": "/pages/guardian_chat/guardian_chat",
+                        "pagePath": "/pages/chatting/chatting",
                         "iconPath": "/static/tab/chat.png",
                         "selectedIconPath": "/static/tab/chat_active.png",
                         "text": "联系医生"
@@ -113,6 +113,7 @@
 				// uni.switchTab({
 				// 	url:url
 				// })
+				//若点击的是联系医生，需要将医生的聊天消息更新标识置为return false
                 
             }
         }

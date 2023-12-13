@@ -9,6 +9,20 @@
       "list": [
         {
           "name": "",
+          "pathName": "pages/doctor_reservation/doctor_reservation",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/guardian_reservation/guardian_reservation",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
           "pathName": "pages/doctor_contact_guardian/doctor_contact_guardian",
           "query": "",
           "launchMode": "default",

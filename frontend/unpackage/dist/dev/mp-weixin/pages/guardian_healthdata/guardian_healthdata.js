@@ -101,22 +101,22 @@ var components
 try {
   components = {
     qiunDataCharts: function () {
-      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 433))
+      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 435))
     },
     add_heart: function () {
-      return __webpack_require__.e(/*! import() | components/add_heart/add_heart */ "components/add_heart/add_heart").then(__webpack_require__.bind(null, /*! @/components/add_heart/add_heart.vue */ 451))
+      return __webpack_require__.e(/*! import() | components/add_heart/add_heart */ "components/add_heart/add_heart").then(__webpack_require__.bind(null, /*! @/components/add_heart/add_heart.vue */ 453))
     },
     add_temperature: function () {
-      return __webpack_require__.e(/*! import() | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then(__webpack_require__.bind(null, /*! @/components/add_temperature/add_temperature.vue */ 458))
+      return __webpack_require__.e(/*! import() | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then(__webpack_require__.bind(null, /*! @/components/add_temperature/add_temperature.vue */ 460))
     },
     add_bp: function () {
-      return __webpack_require__.e(/*! import() | components/add_bp/add_bp */ "components/add_bp/add_bp").then(__webpack_require__.bind(null, /*! @/components/add_bp/add_bp.vue */ 465))
+      return __webpack_require__.e(/*! import() | components/add_bp/add_bp */ "components/add_bp/add_bp").then(__webpack_require__.bind(null, /*! @/components/add_bp/add_bp.vue */ 467))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 357))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 359))
     },
     uniPopupMessage: function () {
-      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-message/uni-popup-message */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-message/uni-popup-message")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-message/uni-popup-message.vue */ 507))
+      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-message/uni-popup-message */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-message/uni-popup-message")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-message/uni-popup-message.vue */ 509))
     },
   }
 } catch (e) {
@@ -181,22 +181,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var uniPopup = function uniPopup() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 357));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 359));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_heart = function add_heart() {
   __webpack_require__.e(/*! require.ensure | components/add_heart/add_heart */ "components/add_heart/add_heart").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 451));
+    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 453));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_temperature = function add_temperature() {
   __webpack_require__.e(/*! require.ensure | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 458));
+    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 460));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_bp = function add_bp() {
   __webpack_require__.e(/*! require.ensure | components/add_bp/add_bp */ "components/add_bp/add_bp").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 465));
+    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 467));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

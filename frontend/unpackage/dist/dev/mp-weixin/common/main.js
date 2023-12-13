@@ -165,7 +165,7 @@ var _default = {
           },
           success: function success(response) {
             //将indexList更新
-            this.globalData.global_indexList = response.data.code.indexList;
+            this.globalData.global_indexList = response.data.code.IndexList;
             console.log("获取聊天记录成功");
           },
           fail: function fail(response) {
@@ -191,7 +191,7 @@ var _default = {
             openid: this.globalData.global_openid
           },
           success: function success(response) {
-            this.globalData.global_flag = response.data.code.flag;
+            this.globalData.global_flag = response.data.code.Flag;
             console.log("获取聊天记录成功");
           },
           fail: function fail(response) {

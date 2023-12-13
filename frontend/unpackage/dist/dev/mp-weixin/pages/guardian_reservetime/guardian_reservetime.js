@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
+/* WEBPACK VAR INJECTION */(function(uni, wx) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -203,6 +203,25 @@ var _default = {
       uni.navigateTo({
         url: '/pages/success_reservation/success_reservation?param1=' + data
       });
+      //这里需要将预约信息传递给后端，由后端将预约信息记录在监护人和医生数据下
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为传递预约信息的url
+        url: 'http://127.0.0.1:8000/api/user/login/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid,
+          reservation: this.reservation
+        },
+        success: function success(response) {
+          console.log("传递预约信息成功");
+        },
+        fail: function fail(response) {
+          console.log("传递预约信息失败");
+        }
+      });
     }
   },
   onLoad: function onLoad() {
@@ -212,7 +231,7 @@ var _default = {
   }
 };
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
 

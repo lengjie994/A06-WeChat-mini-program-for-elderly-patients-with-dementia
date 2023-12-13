@@ -149,25 +149,29 @@
 			},
 			confirm_doctor(data) {
 				let stateData = JSON.parse(data)
+				//打印要绑定的医生账号
 				console.log(stateData.remark)
-				// 调用更新状态的接口
-				// this.$http.post(this.$apis.changeEarlyWarnLos, {
-				// 	tableName: '',
-				// 	custid: stateData.custid, // 获取客户id
-				// 	areaid: '',
-				// 	remark: stateData.remark, // 获取备注
-				// 	phoneNums: stateData.phoneNums, // 打电话次数
-				// 	status: stateData.status, // 更新状态
-				// }).then(resp => {
-				// 	let code = resp.returnInfo.code;
-				// 	console.log(resp.responseBody)
-				// }).catch(error => {
-				// 	this.$util.feeback.showToast({
-				// 		title: '更新业务状态失败！'
-				// 	});
-				// });
-				// 回调组件里的隐藏方法
-				this.$refs['doctor'].hideModal();
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为绑定医生账号的url
+					url: 'http://127.0.0.1:8000/api/user/GuardianToDoctor/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid:this.openid,
+						doctor_id:stateData.remark,
+					},
+					success: function(response) {
+						getApp().globalData.global_opposite_id=stateData.remark
+						console.log("绑定医生账号成功")
+						console.log(response)
+					},
+					fail: function(response) {
+						console.log("绑定医生账号失败")
+					}
+				})
+				this.$refs['patient'].hideModal();
 			},
 		},
 		onLoad(){
