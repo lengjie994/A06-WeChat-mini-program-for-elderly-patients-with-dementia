@@ -10,6 +10,7 @@ from .models import GlobalVariables
 from .models import User
 from .models import Patient
 from .models import Guardian
+from .models import Doctor
 from wx_backend.LogicManage.Constants import Constants
 
 
@@ -57,6 +58,9 @@ class WeixinLogin(APIView):
                 elif theRole == 'guardian':
                     guardian=Guardian.objects.get(Openid=openid)
                     specialID=guardian.Guardian_id
+                elif theRole == 'doctor':
+                    doctor=Doctor.objects.get(Openid=openid)
+                    specialID=doctor.Doctor_id
             except:
                 theRole = "newUser"
                 User.objects.create(
@@ -119,6 +123,16 @@ class ChooseRole(APIView):
                     session=session_key,
                     Guardian_id=theID,
                 )
+            elif theRole == 'doctor':
+                globalVariables.Doctor_amount+=1
+                globalVariables.save()
+                theID=str(globalVariables.Doctor_amount)
+                Doctor.objects.create(
+                    Openid=openid,
+                    password=openid,
+                    session=session_key,
+                    Doctor_id=theID,
+                )
             print("保存")
             return Response({
                 "status_code": 200,
@@ -161,7 +175,9 @@ class GetPatientInfo(APIView):
                     "Name": patient.Name,
                     "Address": patient.Address,
                     "Phone_contact": patient.Phone_contact,
-                    "Medicine_reminder": patient.Medicine_reminder,
+                    "Medicine": patient.Medicine,
+                    "Memoir":patient.Memoir,
+                    "Healthdata":patient.Healthdata,
                 }
             })
         except:
@@ -191,7 +207,9 @@ class GetGuardianInfo(APIView):
                     "session": guardian.session,
                     "Guardian_id": guardian.Guardian_id,
                     "Patient_id":guardian.Patient_id,
-                    "Doctor_id": guardian.Doctor_id
+                    "Doctor_id": guardian.Doctor_id,
+                    "Status":guardian.Status,
+                    "Reservation":guardian.Reservation,
                 }
             })
         except:
@@ -200,6 +218,38 @@ class GetGuardianInfo(APIView):
                 'code': {
                     "msg": 'false', 
                     "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+
+class getDoctorInfo(APIView):
+    def post(self, request, format=None):
+        """
+        通过openid获取该医生的信息
+        """
+        # 该用户的openid，用于识别该用户
+        openid = json.loads(request.body).get('openid')
+        try:
+            doctor = Doctor.objects.get(Openid=openid)
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "openid": openid,
+                    "session": doctor.session,
+                    "Doctor_id": doctor.Doctor_id,
+                    "Guardian_id_list":doctor.Guardian_id_list,
+                    "Doctor_info":doctor.Doctor_info,
+                    "Reservation":doctor.Reservation,
+                    "Reservation_info":doctor.Reservation_info,
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该医生不存在',
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
@@ -364,7 +414,7 @@ class SendReminder(APIView):
                 }
             })
             patient = Patient.objects.get(Patient_id=patientID)
-            patient.Medicine_reminder = reminder
+            patient.Medicine = reminder
             patient.save()
         except:
             return Response({

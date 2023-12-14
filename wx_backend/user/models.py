@@ -9,6 +9,7 @@ class GlobalVariables(models.Model):
     AccessToken = models.CharField(max_length = 300, default = "UNDEFINED")
     Patient_amount=models.IntegerField(default=0)
     Guardian_amount=models.IntegerField(default=0)
+    Doctor_amount=models.IntegerField(default=0)
 
 #User：用户模型，用于存储用户的各种信息。
 class User(models.Model):
@@ -30,9 +31,11 @@ class Patient(models.Model):
     Address = models.CharField(max_length = 200, default = "UNDEFINED")
     Phone_contact = models.CharField(max_length = 100, default = "UNDEFINED") #紧急联系人电话
     #服药提醒
-    Medicine_reminder = JSONField(null=True)
+    Medicine = JSONField(null=True)
     #我的回忆录
+    Memoir = JSONField(null=True)
     #我的健康数据
+    Healthdata = JSONField(null=True)
 
 #Guardian：模型，用于存储患者的身份和备忘录等信息
 class Guardian(models.Model):
@@ -42,5 +45,17 @@ class Guardian(models.Model):
     Guardian_id = models.CharField(max_length = 100) #监护人自身的特殊id
     Patient_id = models.CharField(max_length = 100, default = "UNDEFINED") #患者的特殊id
     Doctor_id = models.CharField(max_length = 100, default = "UNDEFINED") #医生的特殊id
+    Status = models.CharField(max_length = 100, default = "UNBOUND") #绑定状态，默认未绑定
+    Reservation = JSONField(null=True)
 
-#需要健康数据类型Healthdata存储对应数据
+#医生模型
+class Doctor(models.Model):
+    Openid = models.CharField(max_length = 100)
+    password = models.CharField(max_length = 100)
+    session = models.CharField(max_length = 100)
+    Doctor_id = models.CharField(max_length = 100) #医生自身的特殊id
+
+    Guardian_id_list = JSONField(null=True)
+    Doctor_info = JSONField(null=True)
+    Reservation = JSONField(null=True)
+    Reservation_info  = JSONField(null=True)

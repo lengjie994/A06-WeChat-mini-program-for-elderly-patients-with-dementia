@@ -3,6 +3,7 @@ from user.views import WeixinLogin
 from user.views import ChooseRole
 from user.views import GetPatientInfo
 from user.views import GetGuardianInfo
+from user.views import getDoctorInfo
 from user.views import ModifyMemorial
 from user.views import GuardianToPatient
 from user.views import SendHealthdata
@@ -18,6 +19,8 @@ urlpatterns = [
     path('role/', ChooseRole.as_view(), name='role'),
     path('getPatientInfo/', GetPatientInfo.as_view(), name='getPatientInfo'),
     path('getGuardianInfo/', GetGuardianInfo.as_view(), name='getGuardianInfo'),
+    path('getDoctorInfo/', getDoctorInfo.as_view(), name='getDoctorInfo'),
+    
     path('modifyMemorial/', ModifyMemorial.as_view(), name='modifyMemorial'),
     path('GuardianToPatient/', GuardianToPatient.as_view(), name='GuardianToPatient'),
     path('SendHealthdata/', SendHealthdata.as_view(), name='SendHealthdata'),
