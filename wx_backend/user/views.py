@@ -354,8 +354,10 @@ class SendHealthdata(APIView):
         """
         # 监护人的openid
         openid = json.loads(request.body).get('openid')
+        healthdata = json.loads(request.body).get('healthdata')
         try:
             guardian = Guardian.objects.get(Openid=openid)
+            patient_id = guardian.Patient_id
         except:
             return Response({
                 "status_code": 401,
@@ -365,8 +367,12 @@ class SendHealthdata(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
-        healthdata = json.loads(request.body).get('healthdata')
+        patient = Patient.objects.get(Patient_id=patient_id)
+        patient.Healthdata = healthdata
+        patient.save()
         return Response({
+            "msg": 'success', 
+            "openid": openid,
             'healthdata':healthdata,
         })
 
@@ -377,8 +383,11 @@ class SendMemoir(APIView):
         """
         # 患者的openid
         openid = json.loads(request.body).get('openid')
+        memoir = json.loads(request.body).get('memoir')
         try:
             patient = Patient.objects.get(Openid=openid)
+            patient.Memoir = memoir
+            patient.save()
         except:
             return Response({
                 "status_code": 401,
@@ -388,8 +397,9 @@ class SendMemoir(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
-        memoir = json.loads(request.body).get('memoir')
         return Response({
+            "msg": 'success', 
+            "openid": openid,
             'memoir':memoir,
         })
     
@@ -426,6 +436,8 @@ class SendReminder(APIView):
                 }
             })
         return Response({
+            "msg": 'success', 
+            "openid": openid,
             'reminder':reminder,
         })
 #服药提醒
