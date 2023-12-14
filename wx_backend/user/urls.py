@@ -9,8 +9,10 @@ from user.views import GuardianToPatient
 from user.views import SendHealthdata
 from user.views import SendMemoir
 from user.views import SendReminder
+from user.views import DoctorgetReminder
 from user.BindHandle.bind import GuardianGetID
 from user.BindHandle.bind import PatientGetID
+from user.SendMessage.send import SendOfficialReminder
 
 app_name = 'user'   #后续接口的名称
 
@@ -26,6 +28,10 @@ urlpatterns = [
     path('SendHealthdata/', SendHealthdata.as_view(), name='SendHealthdata'),
     path('SendMemoir/', SendMemoir.as_view(), name='SendMemoir'),
     path('SendReminder/', SendReminder.as_view(), name='SendReminder'),
+    path('DoctorgetReminder/', DoctorgetReminder.as_view(), name='DoctorgetReminder'),
+
     path('GuardianGetID/', GuardianGetID.as_view(), name='GuardianGetID'),
     path('PatientGetID/', PatientGetID.as_view(), name='PatientGetID'),
+
+    path('SendOfficialReminder/', SendOfficialReminder.as_view(), name='SendOfficialReminder'),
 ]

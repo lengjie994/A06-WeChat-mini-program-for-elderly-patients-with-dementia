@@ -1,7 +1,15 @@
 import requests
 import json
-import datetime
-import time
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.http import JsonResponse
+import requests
+import json
+from ..models import GlobalVariables
+from ..models import User
+from ..models import Patient
+from ..models import Guardian
+from wx_backend.LogicManage.Constants import Constants
  
 """
     感觉是测试号配置页面的bug，开发者第一次登录进测试号时生产的
@@ -16,7 +24,7 @@ class SendMessage():                                                 #定义发�
         self.template_id = 'k2PTMJbegwWyT9xZqGf8AMQC31Bt-LBWnchYqepVjrU'  # 模板id
         self.access_token = self.get_access_token()                   #获取 access token
         self.opend_ids = self.get_openid()                            #获取关注用户的openid
-
+        
    
     def get_access_token(self):
         """
@@ -44,35 +52,39 @@ class SendMessage():                                                 #定义发�
         open_ids = json.loads(ans.content)['data']['openid']
         return open_ids
  
-    def sendmsg(self):  
+    def sendmsg(self,openid):  
         """
-        给所有用户发送消息
+        给指定用户发送消息
         """
         url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(self.access_token)
 
         #time = datetime.datetime.now()
         if self.opend_ids != '':
             for open_id in self.opend_ids:
-                body = {
-                        "touser": open_id,
-                        "template_id": self.template_id,
-                        "url": "https://www.baidu.com/",
-                        "topcolor": "#FF0000",
-                         #对应模板中的数据模板
-                        "data": {
-                            # "time": {
-                            #     "value": time,               
-                            #     "color": "#FF99CC"                                  #文字颜色
-                            # },
+                if open_id == openid:
+                    body = {
+                            "touser": open_id,
+                            "template_id": self.template_id,
+                            "url": "https://www.baidu.com/",  #点击后链接的地址
+                            "topcolor": "#FF0000",
+                            #对应模板中的数据模板
+                            "data": {
+                            }
                         }
-                    }
-                data = bytes(json.dumps(body, ensure_ascii=False).encode('utf-8'))  #将数据编码json并转换为bytes型
-                response = requests.post(url, data=data)                    
-                result = response.json()                                            #将返回信息json解码
-                print(result)                                                       # 根据response查看是否广播成功
+                    data = bytes(json.dumps(body, ensure_ascii=False).encode('utf-8'))  #将数据编码json并转换为bytes型
+                    response = requests.post(url, data=data)                    
+                    result = response.json()                                            #将返回信息json解码
+                    print(result)                                                       # 根据response查看是否广播成功
         else:
             print("当前没有用户关注该公众号！")
- 
-if __name__ == "__main__":
-    sends = SendMessage()
-    sends.sendmsg()
+
+
+class SendOfficialReminder(APIView):
+    def post(self, request, format=None):
+        """
+        向指定用户发送公众号提醒
+        """
+        # 监护人的openid
+        openid = json.loads(request.body).get('openid')
+        sends = SendMessage()
+        sends.sendmsg(openid)

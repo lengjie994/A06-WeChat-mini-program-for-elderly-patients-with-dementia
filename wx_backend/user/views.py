@@ -358,6 +358,15 @@ class SendHealthdata(APIView):
         try:
             guardian = Guardian.objects.get(Openid=openid)
             patient_id = guardian.Patient_id
+            if patient_id == 'UNDEFINED':
+                return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'未绑定患者',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
         except:
             return Response({
                 "status_code": 401,
@@ -440,6 +449,79 @@ class SendReminder(APIView):
             "openid": openid,
             'reminder':reminder,
         })
-#服药提醒
-#通过特殊的openid向指定订阅人发送消息
-#到时间程序才会执行
+
+class DoctorgetReminder(APIView):
+    def post(self, request, format=None):
+        """
+        通过openid获取医生，然后通过当前监护人获取该患者信息
+        """
+        # 医生的openid
+        openid = json.loads(request.body).get('openid')
+        guardian_id = json.loads(request.body).get('guardian_id')
+        try:
+            guardian = Guardian.objects.get(Guardian_id=guardian_id)
+            patient_id = guardian.Patient_id
+            if patient_id == 'UNDEFINED':
+                return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'未绑定患者',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        patient = Patient.objects.get(Patient_id=patient_id)
+        Healthdata = patient.Healthdata
+        return Response({
+            "msg": 'success', 
+            "openid": openid,
+            'Healthdata':Healthdata,
+        })
+    
+class GuardianReserve(APIView):
+    def post(self, request, format=None):
+        """
+        通过openid获取监护人，在监护人及医生处添加/取消预约事项
+        """
+        # 监护人的openid
+        openid = json.loads(request.body).get('openid')
+        Reservation = json.loads(request.body).get('Reservation')
+        try:
+            guardian = Guardian.objects.get(Openid=openid)
+            doctorID = guardian.Doctor_id
+            if doctorID == 'UNDEFINED':
+                return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'未绑定医生',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+            doctor = Doctor.objects.get(Doctor_id=doctorID)
+            guardian.Reservation = Reservation
+            guardian.save()
+            doctor.Reservation = Reservation
+            doctor.save()
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        return Response({
+            "msg": 'success', 
+            "openid": openid,
+        })
