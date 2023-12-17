@@ -42,11 +42,13 @@ class Guardian(models.Model):
     Openid = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
     session = models.CharField(max_length = 100)
+    Flag = models.BooleanField(default=False)
     Guardian_id = models.CharField(max_length = 100) #监护人自身的特殊id
     Patient_id = models.CharField(max_length = 100, default = "UNDEFINED") #患者的特殊id
     Doctor_id = models.CharField(max_length = 100, default = "UNDEFINED") #医生的特殊id
     Status = models.CharField(max_length = 100, default = "UNBOUND") #绑定状态，默认未绑定
     Reservation = JSONField(null=True)
+    Chatlist = JSONField(null=True)
 
 #医生模型
 class Doctor(models.Model):

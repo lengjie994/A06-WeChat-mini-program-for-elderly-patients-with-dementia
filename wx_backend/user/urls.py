@@ -10,9 +10,12 @@ from user.views import SendHealthdata
 from user.views import SendMemoir
 from user.views import SendReminder
 from user.views import DoctorgetReminder
+from user.views import GuardianReserve
 from user.BindHandle.bind import GuardianGetID
 from user.BindHandle.bind import PatientGetID
 from user.SendMessage.send import SendOfficialReminder
+from user.ChatHandle.chat import SaveChatlist
+from user.ChatHandle.chat import ReturnChatList
 
 app_name = 'user'   #后续接口的名称
 
@@ -29,9 +32,13 @@ urlpatterns = [
     path('SendMemoir/', SendMemoir.as_view(), name='SendMemoir'),
     path('SendReminder/', SendReminder.as_view(), name='SendReminder'),
     path('DoctorgetReminder/', DoctorgetReminder.as_view(), name='DoctorgetReminder'),
+    path('GuardianReserve/', GuardianReserve.as_view(), name='GuardianReserve'),
 
     path('GuardianGetID/', GuardianGetID.as_view(), name='GuardianGetID'),
     path('PatientGetID/', PatientGetID.as_view(), name='PatientGetID'),
 
     path('SendOfficialReminder/', SendOfficialReminder.as_view(), name='SendOfficialReminder'),
+
+    path('SaveChatlist/', SaveChatlist.as_view(), name='SaveChatlist'),
+    path('ReturnChatList/', ReturnChatList.as_view(), name='ReturnChatList'),
 ]

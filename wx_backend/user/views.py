@@ -199,6 +199,8 @@ class GetGuardianInfo(APIView):
         openid = json.loads(request.body).get('openid')
         try:
             guardian = Guardian.objects.get(Openid=openid)
+            patient_id = guardian.Patient_id
+            patient = Patient.objects.get(Patient_id=patient_id)
             return Response({
                 "status_code": 200,
                 'code': {
@@ -209,6 +211,11 @@ class GetGuardianInfo(APIView):
                     "Patient_id":guardian.Patient_id,
                     "Doctor_id": guardian.Doctor_id,
                     "Status":guardian.Status,
+                    "Name": patient.Name,
+                    "Address": patient.Address,
+                    "Phone_contact": patient.Phone_contact,
+                    "Medicine": patient.Medicine,
+                    "Healthdata":patient.Healthdata,
                     "Reservation":guardian.Reservation,
                 }
             })
