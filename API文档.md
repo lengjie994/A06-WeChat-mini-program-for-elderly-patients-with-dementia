@@ -151,6 +151,8 @@
 | Medicine      | 服药提醒数据          | list   |
 | Healthdata    | 健康数据              | list   |
 | Reservation   | 预约事项              | json   |
+| Chatlist      | 聊天记录              | list   |
+| Flag          | 聊天记录是否更新标识  | bool   |
 
 #### ##拓展说明##
 
@@ -161,11 +163,7 @@
 | Ready    | 待就诊列表 | list |
 | Finished | 已就诊列表 | list |
 
-##### Ready/Finished列表项json格式
 
-| 属性名 | 说明     | 类型   |
-| ------ | -------- | ------ |
-| time   | 预约时间 | string |
 
 ## 获取医生信息
 
@@ -189,11 +187,11 @@
 | ---------------- | --------------------- | ------ |
 | openid           | 用户唯一识别标志      | string |
 | msg              | 成功返回标志“success” | string |
-| Guardian_id_list | 绑定的监护人id列表    | list   |
 | Doctor_id        | 本人id                | string |
 | Doctor_info      | 医生资料              | json   |
 | Reservation      | 预约事项              | json   |
 | Reservation_info | 预约信息              | json   |
+| Indexlist        | 联系人列表            | list   |
 
 #### ##拓展说明##
 
@@ -214,13 +212,7 @@
 | Ready    | 待就诊列表 | list |
 | Finished | 已就诊列表 | list |
 
-##### Ready/Finished列表项json格式
-
-| 属性名 | 说明     | 类型   |
-| ------ | -------- | ------ |
-| time   | 预约时间 | string |
-
-
+##### 
 
 ## 监护人修改备忘录
 
@@ -274,6 +266,32 @@
 | openid     | 用户唯一识别标志      | string |
 | msg        | 成功返回标志“success” | string |
 | patient_id | 患者specialid         | string |
+
+
+
+## 监护人绑定医生
+
+### 功能说明
+
+​	将该监护人内的医生id修改为传入的参数，另外需要将该监护人加入该医生数据下的Indexlist
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/GuardianToDoctor/'
+
+### 参数
+
+| 属性名    | 说明   | 类型   |
+| --------- | ------ | ------ |
+| openid    | ——     | string |
+| doctor_id | 医生id | string |
+
+### 返回内容
+
+| 属性名 | 说明                  | 类型   |
+| ------ | --------------------- | ------ |
+| openid | 用户唯一识别标志      | string |
+| msg    | 成功返回标志“success” | string |
 
 
 
@@ -475,33 +493,6 @@
 
 
 
-## 监护人返回聊天记录
-
-### 功能说明
-
-​	通过openid获取对应用户，然后两个用户通过后端作为中转站进行通信，每一次返回历史聊天记录
-
-### url
-
-​	'http://127.0.0.1:8000/api/user/GuardianRecvChatlist/'
-
-### 参数
-
-| 属性名      | 说明       | 类型   |
-| ----------- | ---------- | ------ |
-| openid      | ——         | string |
-| guardian_id | 聊天对象id | string |
-
-### 返回内容
-
-| 属性名   | 说明                  | 类型   |
-| -------- | --------------------- | ------ |
-| openid   | 用户唯一识别标志      | string |
-| msg      | 成功返回标志“success” | string |
-| chatlist | 聊天记录              | list   |
-
-
-
 ## 监护人预约/取消预约
 
 ### 功能说明
@@ -540,4 +531,56 @@
 | 属性名 | 说明     | 类型   |
 | ------ | -------- | ------ |
 | time   | 预约时间 | string |
+
+
+
+## 修改监护人聊天信息更新标识
+
+### 功能说明
+
+​	将监护人数据下的Flag标识置为false
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/GuardianFlagFalse/'
+
+### 参数
+
+| 属性名      | 说明       | 类型   |
+| ----------- | ---------- | ------ |
+| openid      | ——         | string |
+| guardian_id | 聊天对象id | string |
+
+### 返回内容
+
+| 属性名 | 说明                  | 类型   |
+| ------ | --------------------- | ------ |
+| openid | 用户唯一识别标志      | string |
+| msg    | 成功返回标志“success” | string |
+
+
+
+## 修改医生聊天信息更新标识
+
+### 功能说明
+
+​	将医生数据下的Flag标识置为false
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/DoctorFlagFalse/'
+
+### 参数
+
+| 属性名    | 说明       | 类型   |
+| --------- | ---------- | ------ |
+| openid    | ——         | string |
+| doctor_id | 聊天对象id | string |
+
+### 返回内容
+
+| 属性名 | 说明                  | 类型   |
+| ------ | --------------------- | ------ |
+| openid | 用户唯一识别标志      | string |
+| msg    | 成功返回标志“success” | string |
 
