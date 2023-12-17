@@ -40,6 +40,7 @@ class SaveChatlist(APIView):
                     }
                 })
             sender.Chatlist = chatlist
+            sender.Flag = True
             sender.save()
         elif identity == "doctor":
             try:
@@ -65,6 +66,7 @@ class SaveChatlist(APIView):
                     }
                 })
             receiver.Chatlist = chatlist
+            receiver.Flag = True
             receiver.save()
 
         return Response({
@@ -126,3 +128,55 @@ class ReturnChatList(APIView):
             "openid": openid, 
             "chatlist": chatlist,
         })
+    
+class GuardianFlagFalse(APIView):
+    def post(self, request, format=None):
+        """
+        将监护人数据下的Flag标识置为false
+        """
+        openid = json.loads(request.body).get('openid')
+
+        guardian = None
+        try:
+            guardian = Guardian.objects.get(Openid=openid)
+            guardian.Flag = False
+            guardian.save()
+            return Response({
+            "msg": 'success', 
+            "openid": openid, 
+        })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+class DoctorFlagFalse(APIView):
+    def post(self, request, format=None):
+        """
+        将医生数据下的Flag标识置为false
+        """
+        openid = json.loads(request.body).get('openid')
+        guardian_id = json.loads(request.body).get('guardian_id')
+
+        guardian = None
+        try:
+            guardian = Guardian.objects.get(Guardian_id=guardian_id)
+            guardian.Flag = False
+            guardian.save()
+            return Response({
+            "msg": 'success', 
+            "openid": openid, 
+        })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
