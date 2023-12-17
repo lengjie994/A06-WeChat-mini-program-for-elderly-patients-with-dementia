@@ -40,8 +40,18 @@ class SaveChatlist(APIView):
                     }
                 })
             sender.Chatlist = chatlist
-            sender.Flag = True
             sender.save()
+
+            guardian_id = sender.Guardian_id
+            doctor = Doctor.objects.get(Doctor_id=opposite_id)
+            #医生的监护人列表对应的监护人的flag置为true
+            #监护人列表每一项是一个字典
+            guardian_list = doctor.Guardian_id_list
+            for item in guardian_list:
+                if item["Guardian_id"] == guardian_id:
+                    item["flag"] = True
+            doctor.Guardian_id_list = guardian_list
+            doctor.save()
         elif identity == "doctor":
             try:
                 sender = Doctor.objects.get(Openid=openid)

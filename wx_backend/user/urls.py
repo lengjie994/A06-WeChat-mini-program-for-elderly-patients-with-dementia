@@ -6,6 +6,7 @@ from user.views import GetGuardianInfo
 from user.views import getDoctorInfo
 from user.views import ModifyMemorial
 from user.views import GuardianToPatient
+from user.views import GuardianToDoctor
 from user.views import SendHealthdata
 from user.views import SendMemoir
 from user.views import SendReminder
@@ -16,6 +17,8 @@ from user.BindHandle.bind import PatientGetID
 from user.SendMessage.send import SendOfficialReminder
 from user.ChatHandle.chat import SaveChatlist
 from user.ChatHandle.chat import ReturnChatList
+from user.ChatHandle.chat import GuardianFlagFalse
+from user.ChatHandle.chat import DoctorFlagFalse
 
 app_name = 'user'   #后续接口的名称
 
@@ -28,6 +31,7 @@ urlpatterns = [
     
     path('modifyMemorial/', ModifyMemorial.as_view(), name='modifyMemorial'),
     path('GuardianToPatient/', GuardianToPatient.as_view(), name='GuardianToPatient'),
+    path('GuardianToDoctor/', GuardianToDoctor.as_view(), name='GuardianToDoctor'),
     path('SendHealthdata/', SendHealthdata.as_view(), name='SendHealthdata'),
     path('SendMemoir/', SendMemoir.as_view(), name='SendMemoir'),
     path('SendReminder/', SendReminder.as_view(), name='SendReminder'),
@@ -41,4 +45,6 @@ urlpatterns = [
 
     path('SaveChatlist/', SaveChatlist.as_view(), name='SaveChatlist'),
     path('ReturnChatList/', ReturnChatList.as_view(), name='ReturnChatList'),
+    path('GuardianFlagFalse/', GuardianFlagFalse.as_view(), name='GuardianFlagFalse'),
+    path('DoctorFlagFalse/', DoctorFlagFalse.as_view(), name='DoctorFlagFalse'),
 ]

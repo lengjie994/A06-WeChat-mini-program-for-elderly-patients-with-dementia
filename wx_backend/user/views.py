@@ -354,6 +354,61 @@ class GuardianToPatient(APIView):
                 }
             })
 
+class GuardianToDoctor(APIView):
+    def post(self, request, format=None):
+        """
+        将该监护人内的医生id修改为传入的参数，另外需要将该监护人加入该医生数据下的Guardian_id_list
+        """
+        # 监护人的openid，根据这个查找绑定的患者
+        openid = json.loads(request.body).get('openid')
+        doctor_id = json.loads(request.body).get('doctor_id')
+
+        guardian = None
+        doctor = None
+        
+        try:
+            guardian = Guardian.objects.get(Openid=openid)
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        try:
+            doctor = Doctor.objects.get(Doctor_id=doctor_id)
+            guardian.Doctor_id = doctor_id
+            guardian.save()
+
+            guardian_list = []
+            guardian_list = doctor.Guardian_id_list#此时guardian_list的数据类型是否改变
+            tmp_dict = {
+                "Guardian_id":guardian.Guardian_id, 
+                "flag":guardian.Flag,
+                }
+            guardian_list.append(tmp_dict)
+            doctor.Guardian_id_list = guardian_list
+            doctor.save()
+            
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "openid": openid,
+                }
+            })
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该医生不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        
 class SendHealthdata(APIView):
     def post(self, request, format=None):
         """
