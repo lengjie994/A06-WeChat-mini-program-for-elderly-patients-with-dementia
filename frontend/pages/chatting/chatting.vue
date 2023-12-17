@@ -3,7 +3,7 @@
 		<view class="title" style="position: fixed;">
 			<view>联系对象</view>
 		</view>
-		<view class="wrap">
+		<view class="wrap" :style="{paddingBottom:padding_height}">
 			<view class="content_box" id="box" ref="scrollBox">
 				<view class="timer">2022-08-02 11:08:07</view>
 				<!-- <view :class="item.position == 'left' ? 'userbox2' : 'userbox'" v-for="(item, index) in chatlist"
@@ -33,15 +33,37 @@
 				</view>
 			</view>
 			<view class="bottom">
-				<textarea name="输入框" id="1" cols="20" rows="5" class="areaBox" v-model="inputValue"></textarea>
-				<button style="height: 80rpx;color:#58df4d;font-size: 30rpx;line-height: 80rpx;width: 200rpx;"
-					@click="sendOut">发送</button>
+				<view class="input">
+					<textarea name="输入框" id="1" cols="20" rows="5" class="areaBox" v-model="inputValue"></textarea>
+					<button style="height: 80rpx;color:#58df4d;font-size: 30rpx;line-height: 80rpx;width: 200rpx;"
+						@click="sendOut">发送</button>
+					<button style="height: 80rpx;color:#58df4d;font-size: 30rpx;line-height: 80rpx;width: 200rpx;"
+						@click="changeMode">➕</button>
+				</view>
+				<view class="more-view" v-show="showMore">
+					<view v-if="identity==='doctor'" style="justify-content: center; height: 120rpx;width: 120rpx; margin-left: 30rpx;">
+						<button class="funcbtn">
+							<image src="../../static/health.png"></image>
+						</button>
+						<text style="font-size: 28rpx;">患者数据</text>
+
+					</view>
+					<view v-if="identity==='guardian'" style="justify-content: center; height: 120rpx;width: 120rpx; margin-left: 30rpx;">
+						<button class="funcbtn">
+							<image src="../../static/reserve.png"></image>
+						</button>
+						<text style="font-size: 28rpx;">预约就医</text>
+					</view>
+				</view>
 			</view>
+
+
 		</view>
 	</view>
 </template>
 
 <script>
+	import fuiIcon from "firstui-uni/firstui/fui-icon/fui-icon.vue"
 	export default {
 		data() {
 			return {
@@ -55,6 +77,8 @@
 				inputValue: "", //输入内容
 				scrollTop: 0, //滚动条距离顶部距离
 				infoList: null, //用户信息
+				showMore: false, //底部菜单栏是否弹出
+				padding_height: "0rpx",
 
 				// path: "wss://test.jskwsx.com/msg", //websocket链接地址
 				// ws: null, //建立的连接
@@ -66,6 +90,9 @@
 				// closeType: 1, //断开判断：0代表不重连，1代表重连
 			}
 		},
+		components: {
+			fuiIcon,
+		},
 		onShow() {
 			this.initWebpack(); //初始化
 			this.closeType = 1 //进入改为1，代表如果断开链接自动重连
@@ -75,8 +102,9 @@
 		},
 		onLoad(options) {
 			this.openid = getApp().globalData.global_openid
-			this.identity = getApp().globalData.global_identity
-			
+			//this.identity = getApp().globalData.global_identity
+			this.identity = 'guardian'
+
 			//获取聊天对象id
 			this.opposite_id = getApp().globalData.global_opposite_id
 			console.log(this.opposite_id)
@@ -110,6 +138,18 @@
 
 		},
 		methods: {
+
+			// 切换菜单栏显示隐藏
+			changeMode() {
+				this.showMore = !this.showMore;
+				if (this.showMore) {
+					this.padding_height = "200rpx";
+				} else {
+					this.padding_height = "0rpx";
+				}
+				console.log(this.showMore)
+			},
+
 			//获取历史记录
 			getlishiList(type) {
 				/*uni.request({
@@ -146,7 +186,7 @@
 						opposite_id: this.opposite_id,
 					},
 					success: function(response) {
-						this.chatlist=response.chatlist
+						this.chatlist = response.chatlist
 						console.log("获取聊天记录成功")
 					},
 					fail: function(response) {
@@ -229,121 +269,140 @@
 				this.setPageScrollTo() //滚动到最底部
 				console.log('发送成功', this.inputValue);
 			},
-/*
-			// 初始化websocket链接
-			initWebpack() {
-				//实例
-				this.ws = wx.connectSocket({
-					url: this.path
-				})
-				//链接成功
-				this.ws.onOpen((res) => {
-					let that = this
-					console.log("连接成功", that.ws.readyState);
-					if (that.ws.readyState == 1) {
-						wx.sendSocketMessage({ //发送消息到后台，和send一样，这是微信的写法
-							data: JSON.stringify({
-								type: "login",
-								data: {
-									id: uni.getStorageSync("userinfo").wechatUsers.id,
-									channel_type: 'wechat',
-									uid: uni.getStorageSync("userinfo").id,
-									openid: 'ojV4k6tnkv4_F1dddc3VwLeJ_QLs'
+			/*
+						// 初始化websocket链接
+						initWebpack() {
+							//实例
+							this.ws = wx.connectSocket({
+								url: this.path
+							})
+							//链接成功
+							this.ws.onOpen((res) => {
+								let that = this
+								console.log("连接成功", that.ws.readyState);
+								if (that.ws.readyState == 1) {
+									wx.sendSocketMessage({ //发送消息到后台，和send一样，这是微信的写法
+										data: JSON.stringify({
+											type: "login",
+											data: {
+												id: uni.getStorageSync("userinfo").wechatUsers.id,
+												channel_type: 'wechat',
+												uid: uni.getStorageSync("userinfo").id,
+												openid: 'ojV4k6tnkv4_F1dddc3VwLeJ_QLs'
+											}
+										})
+									})
+									this.ws.send({
+										data: JSON.stringify({
+											type: "online",
+											data: {
+												online: 1,
+												user_type: 'user',
+												is_tourist: uni.getStorageSync("userinfo").id ? 0 : 1
+											}
+										})
+									})
 								}
+								that.start(); //链接成功后开启心跳
 							})
-						})
-						this.ws.send({
-							data: JSON.stringify({
-								type: "online",
-								data: {
-									online: 1,
-									user_type: 'user',
-									is_tourist: uni.getStorageSync("userinfo").id ? 0 : 1
+							//链接异常
+							this.ws.onError((res) => {
+								console.log("出现错误");
+								this.reconnect(); //重连
+							})
+							//链接断开
+							this.ws.onClose((res) => {
+								console.log("连接关闭");
+								//断开链接时判断
+								if (this.closeType == 0) {
+									return
 								}
+								this.reconnect(); //重连
 							})
-						})
-					}
-					that.start(); //链接成功后开启心跳
-				})
-				//链接异常
-				this.ws.onError((res) => {
-					console.log("出现错误");
-					this.reconnect(); //重连
-				})
-				//链接断开
-				this.ws.onClose((res) => {
-					console.log("连接关闭");
-					//断开链接时判断
-					if (this.closeType == 0) {
-						return
-					}
-					this.reconnect(); //重连
-				})
-				//后台返回消息
-				this.ws.onMessage((res) => {
-					let type = JSON.parse(res.data)
-					//后台返回消息，通过type字段判断是不是别人发送给我的消息
-					if (type.type == 'chat') {
-						this.chatlist.push(type.data) //把消息添加到信息列表渲染
-						this.setPageScrollTo() //滚动到最底部
-						console.log("收到后台信息：", JSON.parse(res.data));
-					}
+							//后台返回消息
+							this.ws.onMessage((res) => {
+								let type = JSON.parse(res.data)
+								//后台返回消息，通过type字段判断是不是别人发送给我的消息
+								if (type.type == 'chat') {
+									this.chatlist.push(type.data) //把消息添加到信息列表渲染
+									this.setPageScrollTo() //滚动到最底部
+									console.log("收到后台信息：", JSON.parse(res.data));
+								}
 
-					this.reset(); //收到服务器信息，心跳重置
-				})
-
-			},
-			//重新连接
-			reconnect() {
-				var that = this;
-				//防止重复链接
-				if (that.lockReconnect) {
-					return;
-				}
-				that.lockReconnect = true;
-				//没连接上会一直重连，设置延迟避免请求过多
-				that.timeoutnum && clearTimeout(that.timeoutnum);
-				that.timeoutnum = setTimeout(function() {
-					that.initWebpack(); //新连接
-					that.lockReconnect = false;
-				}, 5000);
-			},
-			//重置心跳
-			reset() {
-				var that = this;
-				clearTimeout(that.timeoutObj); //清除心跳倒计时
-				clearTimeout(that.serverTimeoutObj); //清除超时关闭倒计时
-				that.start(); //重启心跳
-			},
-			//开启心跳
-			start() {
-				var self = this;
-				self.timeoutObj && clearTimeout(self.timeoutObj); //心跳倒计时如果有值就清除掉，防止重复
-				self.serverTimeoutObj && clearTimeout(self.serverTimeoutObj); //超时关闭倒计时如果有值就清除掉，防止重复
-				self.timeoutObj = setTimeout(function() {
-					if (self.ws.readyState == 1) {
-						wx.sendSocketMessage({
-							data: JSON.stringify({
-								type: "ping"
+								this.reset(); //收到服务器信息，心跳重置
 							})
-						})
-					} else {
-						self.reconnect(); //重连
-					}
 
-					//如果超时了就关闭连接
-					self.serverTimeoutObj = setTimeout(function() {
-						self.ws.close();
-					}, self.timeout);
-				}, self.timeout);
-			},
-			*/
+						},
+						//重新连接
+						reconnect() {
+							var that = this;
+							//防止重复链接
+							if (that.lockReconnect) {
+								return;
+							}
+							that.lockReconnect = true;
+							//没连接上会一直重连，设置延迟避免请求过多
+							that.timeoutnum && clearTimeout(that.timeoutnum);
+							that.timeoutnum = setTimeout(function() {
+								that.initWebpack(); //新连接
+								that.lockReconnect = false;
+							}, 5000);
+						},
+						//重置心跳
+						reset() {
+							var that = this;
+							clearTimeout(that.timeoutObj); //清除心跳倒计时
+							clearTimeout(that.serverTimeoutObj); //清除超时关闭倒计时
+							that.start(); //重启心跳
+						},
+						//开启心跳
+						start() {
+							var self = this;
+							self.timeoutObj && clearTimeout(self.timeoutObj); //心跳倒计时如果有值就清除掉，防止重复
+							self.serverTimeoutObj && clearTimeout(self.serverTimeoutObj); //超时关闭倒计时如果有值就清除掉，防止重复
+							self.timeoutObj = setTimeout(function() {
+								if (self.ws.readyState == 1) {
+									wx.sendSocketMessage({
+										data: JSON.stringify({
+											type: "ping"
+										})
+									})
+								} else {
+									self.reconnect(); //重连
+								}
+
+								//如果超时了就关闭连接
+								self.serverTimeoutObj = setTimeout(function() {
+									self.ws.close();
+								}, self.timeout);
+							}, self.timeout);
+						},
+						*/
 			//连接成功
 		}
 	}
 </script>
 
 <style scoped>
+	image {
+		width: 55rpx;
+		height: 50rpx;
+	}
+
+	.funcbtn {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100rpx;
+		height: 100rpx;
+	}
+
+	.more-view {
+		background-color: #F1F1F1;
+		height: 200rpx;
+	}
+
 	.wrap {
 		padding-top: 80rpx;
 		height: 100%;
@@ -358,7 +417,10 @@
 	}
 
 	.areaBox {
-		height: 80rpx;
+		margin-left: 30rpx;
+		margin-top: 5rpx;
+		background-color: white;
+		height: 70rpx;
 	}
 
 	.title {
@@ -377,11 +439,15 @@
 		background-color: #F1F1F1;
 		position: fixed;
 		bottom: 0;
-		display: flex;
+
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 10rpx;
+		/* padding: 0 10rpx; */
 		border-radius: 20rpx;
+	}
+
+	.input {
+		display: flex;
 	}
 
 	.content_box {
