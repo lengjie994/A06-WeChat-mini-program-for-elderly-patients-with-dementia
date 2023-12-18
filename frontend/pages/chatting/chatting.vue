@@ -102,8 +102,8 @@
 		},
 		onLoad(options) {
 			this.openid = getApp().globalData.global_openid
-			//this.identity = getApp().globalData.global_identity
-			this.identity = 'guardian'
+			this.identity = getApp().globalData.global_identity
+			
 
 			//获取聊天对象id
 			this.opposite_id = getApp().globalData.global_opposite_id
