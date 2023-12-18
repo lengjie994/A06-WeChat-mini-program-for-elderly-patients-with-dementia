@@ -62,7 +62,6 @@
 
 				// this.isShowModal = false
 				this.$emit('onClickConfirm',JSON.stringify(this.datadoctor))
-				this.inputRemark="等待绑定中"
 				//this.$refs['doctor'].close();
 			}
 		},

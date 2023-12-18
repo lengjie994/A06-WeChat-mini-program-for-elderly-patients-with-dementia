@@ -18,17 +18,17 @@
 						<image class="touxiang" :src="item.position == 'left' ?item.uavatar:item.to_avatar" />
 					</view>
 				</view> -->
-				<view :class="item.identity == this.identity ? 'userbox' : 'userbox2'" v-for="(item, index) in chatlist"
+				<view :class="item.identity == identity ? 'userbox' : 'userbox2'" v-for="(item, index) in chatlist"
 					:key="index" :id='"item"+index'>
-					<view :class="item.identity == this.identity ? 'nameInfo' : 'nameInfo2'">
-						<view style="font-size: 14rpx">{{ item.identity == this.identity ?item.to_name:item.uname  }}
+					<view :class="item.identity == identity ? 'nameInfo' : 'nameInfo2'">
+						<view style="font-size: 14rpx">{{ item.identity == identity ?item.to_name:item.uname  }}
 						</view>
-						<view :class="item.identity == this.identity ? 'contentText2' : 'contentText2'">
+						<view :class="item.identity == identity ? 'contentText' : 'contentText2'">
 							{{ item.msn }}
 						</view>
 					</view>
 					<view>
-						<image class="touxiang" :src="item.identity == this.identity ?item.to_avatar:item.uavatar" />
+						<image class="touxiang" :src="item.identity == identity ?item.to_avatar:item.uavatar" />
 					</view>
 				</view>
 			</view>
@@ -89,13 +89,11 @@
 				// timeoutnum: null, //断开 重连倒计时
 				// closeType: 1, //断开判断：0代表不重连，1代表重连
 			}
-		},
+		},  
 		components: {
 			fuiIcon,
 		},
 		onShow() {
-			this.initWebpack(); //初始化
-			this.closeType = 1 //进入改为1，代表如果断开链接自动重连
 			this.getlishiList() //历史记录
 			console.log(this.opposite_id)
 			this.userName = uni.getStorageSync("userinfo").nickname //拿到缓存中的用户信息
@@ -107,8 +105,8 @@
 
 			//获取聊天对象id
 			this.opposite_id = getApp().globalData.global_opposite_id
+			console.log(this.identity)
 			console.log(this.opposite_id)
-
 		},
 		onPageScroll(e) {
 			//监听滚动事件，如果滚动条等于0，代表滚动到最顶部，把分页加一，然后历史记录拉第二页数据，以此类推
@@ -152,6 +150,7 @@
 
 			//获取历史记录
 			getlishiList(type) {
+				let _this=this
 				/*uni.request({
 					url: 'https://zz.api.asdwqs.com/gzh/crmebchat/chatMessageList', //仅为示例，并非真实接口地址。
 					method: 'POST',
@@ -177,7 +176,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为获取聊天记录的url
-					url: 'http://127.0.0.1:8000/api/user/login/',
+					url: 'http://127.0.0.1:8000/api/user/ReturnChatList/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -186,8 +185,12 @@
 						opposite_id: this.opposite_id,
 					},
 					success: function(response) {
-						this.chatlist = response.chatlist
+						_this.chatlist = JSON.parse(JSON.stringify(response.data.chatlist));
+						console.log(_this.chatlist[0].identity==_this.identity)
+						
+						console.log(response)
 						console.log("获取聊天记录成功")
+						_this.setPageScrollTo()//滚动到最底部
 					},
 					fail: function(response) {
 						console.log("获取聊天记录失败")
@@ -249,7 +252,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为存储聊天记录的url
-					url: 'http://127.0.0.1:8000/api/user/login/',
+					url: 'http://127.0.0.1:8000/api/user/SaveChatlist/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
