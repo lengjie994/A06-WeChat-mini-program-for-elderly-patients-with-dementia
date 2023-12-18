@@ -151,7 +151,7 @@ var _default = {
 
         var _this = this;
         this.value++;
-        console.log(this.value);
+        // console.log(this.value);
         //每隔一段时间触发获取请求
         wx.request({
           // 这里是django的本地ip地址
@@ -166,8 +166,9 @@ var _default = {
           success: function success(response) {
             //将indexList更新
             _this.globalData.global_indexList = response.data.code.Guardian_id_list;
-            console.log("获取聊天记录成功");
+            // console.log(response)
           },
+
           fail: function fail(response) {
             console.log("获取聊天记录失败");
           }

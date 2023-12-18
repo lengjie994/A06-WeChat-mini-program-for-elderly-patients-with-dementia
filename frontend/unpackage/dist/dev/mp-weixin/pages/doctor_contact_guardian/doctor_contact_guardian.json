@@ -5,9 +5,10 @@
   "usingComponents": {
     "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
     "u-list": "/node-modules/uview-ui/components/u-list/u-list",
-    "u-list-item": "/node-modules/uview-ui/components/u-list-item/u-list-item",
-    "u-cell": "/node-modules/uview-ui/components/u-cell/u-cell",
-    "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
-    "tab-bar": "/components/tabbar/tabbar"
+    "fui-list-cell": "/node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell",
+    "fui-icon": "/node-modules/firstui-uni/firstui/fui-icon/fui-icon",
+    "fui-badge": "/node-modules/firstui-uni/firstui/fui-badge/fui-badge",
+    "tab-bar": "/components/tabbar/tabbar",
+    "fui-list": "/node-modules/firstui-uni/firstui/fui-list/fui-list"
   }
 }

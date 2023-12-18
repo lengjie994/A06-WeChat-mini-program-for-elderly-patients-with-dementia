@@ -7,13 +7,18 @@
 		<view class="u-page">
 			<u-list @scrolltolower="scrolltolower" :height="scrollheight">
 				<!--根据全局变量indexList判断每一个item是否有新消息，再添加消息提示组件-->
-				<u-list-item v-for="(item, index) in indexList" :key="index">
-					<u-cell :title="`列表长度-${index + 1}`"  @click="gotochat(index)">
-						<u-avatar slot="icon" shape="square" size="35" :src="item.url"
-							customStyle="margin: -3px 5px -3px 0"></u-avatar>
-					</u-cell>
-				</u-list-item>
+				<fui-list-cell v-for="(item, index) in indexList" :key="index"  
+				@click="gotochat(item.Guardian_id)" borderColor="#DDD"
+				bottomLeft=0>
+					<view class="fui-align__center">
+						<fui-icon name="my-fill"></fui-icon>
+						<text>{{item.Guardian_id}}</text>
+						
+					</view>
+					<fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge>
+				</fui-list-cell>
 			</u-list>
+			
 		</view>
 		<view>
 			<tabBar selectedIndex=0 :id_data="id_data"></tabBar>
@@ -26,6 +31,10 @@
 
 <script>
 	import tabBar from '@/components/tabbar/tabbar.vue'
+	import fuiList from "firstui-uni/firstui/fui-list/fui-list.vue"
+	import fuiListCell from "firstui-uni/firstui/fui-list-cell/fui-list-cell.vue"
+	import fuiBadge from "firstui-uni/firstui/fui-badge/fui-badge.vue"
+	import fuiIcon from "firstui-uni/firstui/fui-icon/fui-icon.vue"
 
 	export default {
 		data() {
@@ -53,28 +62,29 @@
 
 		methods: {
 			scrolltolower() {
-				this.loadmore()
+				// this.loadmore()
 			},
-			loadmore() {
-				for (let i = 0; i < 30; i++) {
-					this.indexList.push({
-						url: this.urls[uni.$u.random(0, this.urls.length - 1)]
-					})
-				}
-			},
-			gotochat(index){
-				getApp().globalData.global_opposite_id=index
+			// loadmore() {
+			// 	for (let i = 0; i < 30; i++) {
+			// 		this.indexList.push({
+			// 			url: this.urls[uni.$u.random(0, this.urls.length - 1)]
+			// 		})
+			// 	}
+			// },
+			gotochat(id){
+				getApp().globalData.global_opposite_id=id
+				console.log(id)
 				//告知后端将该监护人消息更新标识修改为false
 				wx.request({
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为修改标识为false的url
-					url: 'http://127.0.0.1:8000/api/user/login/',
+					url: 'http://127.0.0.1:8000/api/user/DoctorFlagFalse/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
 						openid: this.openid,
-						opposite_id: index,
+						guardian_id: id,
 					},
 					success: function(response) {
 						console.log("修改标识为false成功")
@@ -89,11 +99,18 @@
 			},
 			valChange()
 			{
-				this.indexList=getApp().globalData.global_indexList
-			}
+				let _this=this
+				_this.indexList=getApp().globalData.global_indexList
+
+			},
+			
 		},
 		components: {
 			tabBar,
+			fuiList,
+			fuiListCell,
+			fuiBadge,
+			fuiIcon,
 		},
 		onShow()
 		{
@@ -102,7 +119,7 @@
 		
 		onLoad() {
 			this.openid = getApp().globalData.global_openid
-			this.loadmore()
+			// this.loadmore()
 		},
 		onHide() {
 			clearTimeout(this.timer);
@@ -116,6 +133,10 @@
 	}
 	.u-page{
 		
+	}
+	.fui-align__center {
+		display: flex;
+		align-items: center;
 	}
 
 </style>

@@ -270,7 +270,7 @@ var _default = {
           opposite_id: this.opposite_id
         },
         success: function success(response) {
-          _this.chatlist = JSON.parse(JSON.stringify(response.data.chatlist));
+          _this.chatlist = response.data.chatlist;
           console.log(_this.chatlist[0].identity == _this.identity);
           console.log(response);
           console.log("获取聊天记录成功");

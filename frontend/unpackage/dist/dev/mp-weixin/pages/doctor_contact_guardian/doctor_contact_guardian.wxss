@@ -4,4 +4,8 @@
 .header {
   background-color: #F5F5F5;
 }
+.fui-align__center {
+  display: flex;
+  align-items: center;
+}
 
