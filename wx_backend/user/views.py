@@ -199,7 +199,17 @@ class GetGuardianInfo(APIView):
         openid = json.loads(request.body).get('openid')
         try:
             guardian = Guardian.objects.get(Openid=openid)
-            patient_id = guardian.Patient_id
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        patient_id = guardian.Patient_id
+        try:
             patient = Patient.objects.get(Patient_id=patient_id)
             return Response({
                 "status_code": 200,
@@ -221,11 +231,21 @@ class GetGuardianInfo(APIView):
             })
         except:
             return Response({
-                "status_code": 401,
+                "status_code": 200,
                 'code': {
-                    "msg": 'false', 
-                    "reason":'该监护人不存在',
-                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                    "msg": 'success', 
+                    "openid": openid,
+                    "session": guardian.session,
+                    "Guardian_id": guardian.Guardian_id,
+                    "Patient_id":guardian.Patient_id,
+                    "Doctor_id": guardian.Doctor_id,
+                    "Status":guardian.Status,
+                    "Name": "",
+                    "Address": "",
+                    "Phone_contact": "",
+                    "Medicine": "",
+                    "Healthdata":"",
+                    "Reservation":guardian.Reservation,
                 }
             })
 
