@@ -80,12 +80,12 @@
 				},
 				success: function(response) {
 					_this.inputRemark=""
-					_this.patient_id=response.data.code.Doctor_id
+					_this.doctor_id=response.data.code.Doctor_id
 			
 					console.log("获取医生账号成功")
 				},
 				fail: function(response) {
-					_this.patient_id="暂无绑定医生"
+					_this.doctor_id="暂无绑定医生"
 					console.log("获取医生账号失败")
 				}
 			})

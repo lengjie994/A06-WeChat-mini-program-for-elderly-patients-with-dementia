@@ -233,6 +233,17 @@ var _default = {
       }
       console.log(this.showMore);
     },
+    gotoHealthdata: function gotoHealthdata() {
+      //这里还需要修改页面逻辑，判断是什么身份进入页面
+      uni.navigateTo({
+        url: '/pages/patient_healthdata/patient_healthdata'
+      });
+    },
+    gotoReservation: function gotoReservation() {
+      uni.navigateTo({
+        url: '/pages/guardian_reservation/guardian_reservation'
+      });
+    },
     //获取历史记录
     getlishiList: function getlishiList(type) {
       var _this = this;
@@ -310,27 +321,7 @@ var _default = {
         // to_avatar: uni.getStorageSync("userinfo").avatar,
         // to_name: uni.getStorageSync("userinfo").nickname
       });
-      /*
-      let parms = {
-      	content: this.inputValue,
-      	uid: uni.getStorageSync("userinfo").id,
-      	uname: uni.getStorageSync("userinfo").nickname,
-      	uavatar: uni.getStorageSync("userinfo").avatar,
-      	to_uid: this.infoList.kf_id,
-      	to_name: this.infoList.kfname,
-      	to_avatar: this.infoList.kf_avatar,
-      	type: 'text',
-      	channel_type: 'wechat',
-      }
-      //通过websocket发送信息到后台
-      this.ws.send({
-      	data: JSON.stringify({
-      		type: "chat",
-      		data: parms
-      	})
-      })
-      */
-      //将chatlist发送给后端
+
       wx.request({
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
@@ -355,113 +346,6 @@ var _default = {
       this.setPageScrollTo(); //滚动到最底部
       console.log('发送成功', this.inputValue);
     }
-    /*
-    			// 初始化websocket链接
-    			initWebpack() {
-    				//实例
-    				this.ws = wx.connectSocket({
-    					url: this.path
-    				})
-    				//链接成功
-    				this.ws.onOpen((res) => {
-    					let that = this
-    					console.log("连接成功", that.ws.readyState);
-    					if (that.ws.readyState == 1) {
-    						wx.sendSocketMessage({ //发送消息到后台，和send一样，这是微信的写法
-    							data: JSON.stringify({
-    								type: "login",
-    								data: {
-    									id: uni.getStorageSync("userinfo").wechatUsers.id,
-    									channel_type: 'wechat',
-    									uid: uni.getStorageSync("userinfo").id,
-    									openid: 'ojV4k6tnkv4_F1dddc3VwLeJ_QLs'
-    								}
-    							})
-    						})
-    						this.ws.send({
-    							data: JSON.stringify({
-    								type: "online",
-    								data: {
-    									online: 1,
-    									user_type: 'user',
-    									is_tourist: uni.getStorageSync("userinfo").id ? 0 : 1
-    								}
-    							})
-    						})
-    					}
-    					that.start(); //链接成功后开启心跳
-    				})
-    				//链接异常
-    				this.ws.onError((res) => {
-    					console.log("出现错误");
-    					this.reconnect(); //重连
-    				})
-    				//链接断开
-    				this.ws.onClose((res) => {
-    					console.log("连接关闭");
-    					//断开链接时判断
-    					if (this.closeType == 0) {
-    						return
-    					}
-    					this.reconnect(); //重连
-    				})
-    				//后台返回消息
-    				this.ws.onMessage((res) => {
-    					let type = JSON.parse(res.data)
-    					//后台返回消息，通过type字段判断是不是别人发送给我的消息
-    					if (type.type == 'chat') {
-    						this.chatlist.push(type.data) //把消息添加到信息列表渲染
-    						this.setPageScrollTo() //滚动到最底部
-    						console.log("收到后台信息：", JSON.parse(res.data));
-    					}
-    						this.reset(); //收到服务器信息，心跳重置
-    				})
-    				},
-    			//重新连接
-    			reconnect() {
-    				var that = this;
-    				//防止重复链接
-    				if (that.lockReconnect) {
-    					return;
-    				}
-    				that.lockReconnect = true;
-    				//没连接上会一直重连，设置延迟避免请求过多
-    				that.timeoutnum && clearTimeout(that.timeoutnum);
-    				that.timeoutnum = setTimeout(function() {
-    					that.initWebpack(); //新连接
-    					that.lockReconnect = false;
-    				}, 5000);
-    			},
-    			//重置心跳
-    			reset() {
-    				var that = this;
-    				clearTimeout(that.timeoutObj); //清除心跳倒计时
-    				clearTimeout(that.serverTimeoutObj); //清除超时关闭倒计时
-    				that.start(); //重启心跳
-    			},
-    			//开启心跳
-    			start() {
-    				var self = this;
-    				self.timeoutObj && clearTimeout(self.timeoutObj); //心跳倒计时如果有值就清除掉，防止重复
-    				self.serverTimeoutObj && clearTimeout(self.serverTimeoutObj); //超时关闭倒计时如果有值就清除掉，防止重复
-    				self.timeoutObj = setTimeout(function() {
-    					if (self.ws.readyState == 1) {
-    						wx.sendSocketMessage({
-    							data: JSON.stringify({
-    								type: "ping"
-    							})
-    						})
-    					} else {
-    						self.reconnect(); //重连
-    					}
-    						//如果超时了就关闭连接
-    					self.serverTimeoutObj = setTimeout(function() {
-    						self.ws.close();
-    					}, self.timeout);
-    				}, self.timeout);
-    			},
-    			*/
-    //连接成功
   }
 };
 exports.default = _default;

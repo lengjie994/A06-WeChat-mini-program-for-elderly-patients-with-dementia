@@ -122,7 +122,7 @@ exports.default = void 0;
 var _props = _interopRequireDefault(__webpack_require__(/*! ../u-text/props.js */ 405));
 var uvText = function uvText() {
   Promise.all(/*! require.ensure | node-modules/uview-ui/components/u-text/u-text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-text/u-text")]).then((function () {
-    return resolve(__webpack_require__(/*! ../u-text/u-text.vue */ 554));
+    return resolve(__webpack_require__(/*! ../u-text/u-text.vue */ 544));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

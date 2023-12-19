@@ -199,6 +199,7 @@ var _default = {
     }
   },
   onLoad: function onLoad() {
+    var _this = this;
     this.openid = getApp().globalData.global_openid;
     console.log(this.openid);
     //这里需要获取监护人预约信息
@@ -206,15 +207,15 @@ var _default = {
       // 这里是django的本地ip地址
       // 如果部署到线上，需要改为接口的实际网址
       //此处url还需修改为获取监护人信息的url
-      url: 'http://127.0.0.1:8000/api/user/login/',
+      url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
       // 请求方式修改为 POST
       method: 'POST',
       data: {
         openid: this.openid
       },
       success: function success(response) {
-        this.reservations = response.data.code.reservations;
-        console.log("获取预约信息成功");
+        _this.message = response.data.code.Reservation;
+        console.log(response);
       },
       fail: function fail(response) {
         console.log("获取预约信息失败");

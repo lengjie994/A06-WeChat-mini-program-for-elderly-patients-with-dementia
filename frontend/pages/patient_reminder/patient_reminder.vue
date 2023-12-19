@@ -81,7 +81,7 @@
 					openid:this.openid,
 				},
 				success: function(response) {
-					console.log("获取服药提醒成功")
+					console.log(response)
 					_this.list=response.data.code.Medicine
 				},
 				fail: function(response) {

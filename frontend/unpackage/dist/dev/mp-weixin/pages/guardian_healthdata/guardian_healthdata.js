@@ -507,20 +507,21 @@ var _default = {
       this.getServerData();
     },
     getServerData: function getServerData() {
-      this.lastSevenElements = [];
-      this.lastSevenElements = this.message.slice(-5);
-      console.log(this.lastSevenElements);
+      var _this = this;
+      _this.lastSevenElements = [];
+      _this.lastSevenElements = _this.message.slice(-5);
+      console.log(_this.lastSevenElements);
       var resdate = [];
       var resdbp = [];
       var ressbp = [];
       var resheart = [];
       var restemp = [];
       for (var i = 0; i < 5; i++) {
-        resdate.push(this.lastSevenElements[i].date.slice(-5));
-        resdbp.push(this.lastSevenElements[i].dbp);
-        ressbp.push(this.lastSevenElements[i].sbp);
-        resheart.push(this.lastSevenElements[i].heart);
-        restemp.push(this.lastSevenElements[i].temperature);
+        resdate.push(_this.lastSevenElements[i].date.slice(-5));
+        resdbp.push(_this.lastSevenElements[i].dbp);
+        ressbp.push(_this.lastSevenElements[i].sbp);
+        resheart.push(_this.lastSevenElements[i].heart);
+        restemp.push(_this.lastSevenElements[i].temperature);
       }
 
       //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
@@ -548,12 +549,13 @@ var _default = {
           data: resheart
         }]
       };
-      this.chartData = JSON.parse(JSON.stringify(res));
-      this.chartData2 = JSON.parse(JSON.stringify(res2));
-      this.chartData3 = JSON.parse(JSON.stringify(res3));
+      _this.chartData = JSON.parse(JSON.stringify(res));
+      _this.chartData2 = JSON.parse(JSON.stringify(res2));
+      _this.chartData3 = JSON.parse(JSON.stringify(res3));
     }
   },
   onLoad: function onLoad() {
+    var _this = this;
     this.openid = getApp().globalData.global_openid;
     wx.request({
       // 这里是django的本地ip地址
@@ -567,13 +569,13 @@ var _default = {
       },
       success: function success(response) {
         console.log("获取健康数据成功");
-        this.message = response.data.code.Healthdata;
+        _this.message = response.data.code.Healthdata;
+        _this.getServerData();
       },
       fail: function fail(response) {
         console.log("修改健康数据失败");
       }
     });
-    this.getServerData();
   }
 };
 exports.default = _default;

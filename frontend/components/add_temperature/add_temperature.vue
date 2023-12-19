@@ -61,7 +61,7 @@
 		z-index: 1000;
 		top: 20%;
 		left: 50%;
-		margin-top: -500rpx;
+		margin-top: -200rpx;
 		margin-left: -300rpx;
 		box-shadow: #dcdcdc 0px 0px 20rpx;
 	}

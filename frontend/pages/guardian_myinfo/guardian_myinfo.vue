@@ -171,7 +171,7 @@
 						console.log("绑定医生账号失败")
 					}
 				})
-				this.$refs['patient'].hideModal();
+				this.$refs['doctor'].hideModal();
 			},
 		},
 		onLoad(){

@@ -222,11 +222,11 @@ var _default = {
       },
       success: function success(response) {
         _this.inputRemark = "";
-        _this.patient_id = response.data.code.Doctor_id;
+        _this.doctor_id = response.data.code.Doctor_id;
         console.log("获取医生账号成功");
       },
       fail: function fail(response) {
-        _this.patient_id = "暂无绑定医生";
+        _this.doctor_id = "暂无绑定医生";
         console.log("获取医生账号失败");
       }
     });

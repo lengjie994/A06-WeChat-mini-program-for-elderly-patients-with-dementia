@@ -83,7 +83,7 @@ try {
       return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 345))
     },
     uUpload: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-upload/u-upload.vue */ 564))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-upload/u-upload.vue */ 554))
     },
   }
 } catch (e) {

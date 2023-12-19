@@ -232,7 +232,7 @@ var _default = {
         sbp: 110
       }, {
         date: "2023.11.13",
-        heart: null,
+        heart: 45,
         temperature: 36.8,
         dbp: 70,
         sbp: 110
@@ -357,6 +357,7 @@ var _default = {
       }
     },
     getServerData: function getServerData() {
+      var _this = this;
       wx.request({
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
@@ -368,59 +369,60 @@ var _default = {
           openid: this.openid
         },
         success: function success(response) {
+          console.log(response);
           _this.message = response.data.code.Healthdata;
           console.log("患者获取健康数据成功");
+          //模拟从服务器获取数据时的延时
+
+          _this.lastSevenElements = [];
+          _this.lastSevenElements = _this.message.slice(-5);
+          console.log(_this.lastSevenElements);
+          var resdate = [];
+          var resdbp = [];
+          var ressbp = [];
+          var resheart = [];
+          var restemp = [];
+          for (var i = 0; i < 5; i++) {
+            resdate.push(_this.lastSevenElements[i].date.slice(-5));
+            resdbp.push(_this.lastSevenElements[i].dbp);
+            ressbp.push(_this.lastSevenElements[i].sbp);
+            resheart.push(_this.lastSevenElements[i].heart);
+            restemp.push(_this.lastSevenElements[i].temperature);
+          }
+
+          //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
+          var res = {
+            categories: resdate,
+            series: [{
+              name: "舒张压",
+              data: resdbp
+            }, {
+              name: "收缩压",
+              data: ressbp
+            }]
+          };
+          var res2 = {
+            categories: resdate,
+            series: [{
+              name: "体温",
+              data: restemp
+            }]
+          };
+          var res3 = {
+            categories: resdate,
+            series: [{
+              name: "心率",
+              data: resheart
+            }]
+          };
+          _this.chartData = JSON.parse(JSON.stringify(res));
+          _this.chartData2 = JSON.parse(JSON.stringify(res2));
+          _this.chartData3 = JSON.parse(JSON.stringify(res3));
         },
         fail: function fail(response) {
           console.log("患者获取健康数据失败");
         }
       });
-      //模拟从服务器获取数据时的延时
-
-      this.lastSevenElements = [];
-      this.lastSevenElements = this.message.slice(-5);
-      console.log(this.lastSevenElements);
-      var resdate = [];
-      var resdbp = [];
-      var ressbp = [];
-      var resheart = [];
-      var restemp = [];
-      for (var i = 0; i < 5; i++) {
-        resdate.push(this.lastSevenElements[i].date.slice(-5));
-        resdbp.push(this.lastSevenElements[i].dbp);
-        ressbp.push(this.lastSevenElements[i].sbp);
-        resheart.push(this.lastSevenElements[i].heart);
-        restemp.push(this.lastSevenElements[i].temperature);
-      }
-
-      //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
-      var res = {
-        categories: resdate,
-        series: [{
-          name: "舒张压",
-          data: resdbp
-        }, {
-          name: "收缩压",
-          data: ressbp
-        }]
-      };
-      var res2 = {
-        categories: resdate,
-        series: [{
-          name: "体温",
-          data: restemp
-        }]
-      };
-      var res3 = {
-        categories: resdate,
-        series: [{
-          name: "心率",
-          data: resheart
-        }]
-      };
-      this.chartData = JSON.parse(JSON.stringify(res));
-      this.chartData2 = JSON.parse(JSON.stringify(res2));
-      this.chartData3 = JSON.parse(JSON.stringify(res3));
     }
   }
 };

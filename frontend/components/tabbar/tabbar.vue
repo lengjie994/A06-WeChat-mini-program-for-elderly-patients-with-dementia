@@ -114,7 +114,26 @@
 				// 	url:url
 				// })
 				//若点击的是联系医生，需要将医生的聊天消息更新标识置为return false
-                
+                if(url=="/pages/chatting/chatting")
+				{
+					wx.request({
+						// 这里是django的本地ip地址
+						// 如果部署到线上，需要改为接口的实际网址
+						//此处url还需修改为修改标识为false的url
+						url: 'http://127.0.0.1:8000/api/user/GuardianFlagFalse/',
+						// 请求方式修改为 POST
+						method: 'POST',
+						data: {
+							openid: this.openid,
+						},
+						success: function(response) {
+							console.log("修改标识为false成功")
+						},
+						fail: function(response) {
+							console.log("修改标识为false失败")
+						}
+					})
+				}
             }
         }
     }

@@ -16,25 +16,27 @@
 			</view>
 		</view>
 		<view class="box">
-			<view class="selectbtn" @tap="showheart">
-				<image src="../../static/health_data/heart.png"></image>
-				<text>心率</text>
+			<view class="selectbtn" @click="showheart">
+				<view class="icon">
+					<image src="../../static/health_data/heart.png"></image>
+					<text>心率</text>
+				</view>
+				<text class="show" style="color: #EE6666;">{{lastSevenElements[4].heart}}</text>
 			</view>
-			<view class="selectbtn" @tap="showtemp">
-				<image src="../../static/health_data/temperature.png"></image>
-				<text>体温</text>
+			<view class="selectbtn" @click="showtemp">
+				<view class="icon">
+					<image src="../../static/health_data/temperature.png"></image>
+					<text>体温</text>
+				</view>
+				<text class="show" style="color: #1890FF;">{{lastSevenElements[4].temperature}}</text>
 			</view>
-			<view class="selectbtn" @tap="showbp">
-				<image src="../../static/health_data/BP.png"></image>
-				<text>血压</text>
+			<view class="selectbtn" @click="showbp">
+				<view class="icon">
+					<image src="../../static/health_data/BP.png"></image>
+					<text>血压</text>
+				</view>
+				<text class="show" style="color: #FAC858;">{{lastSevenElements[4].dbp}}/{{lastSevenElements[4].sbp}}</text>
 			</view>
-		</view>
-		<view v-for="(item, index) in message" :key="index">
-			<view class="td1">{{item.date}}</view>
-			<view class="td2">{{item.heart}}</view>
-			<view class="td3">{{item.temperature}}</view>
-			<view class="td4">{{item.dbp}}</view>
-			<view class="td4">{{item.sbp}}</view>
 		</view>
 		<add_heart ref='addheart' @onClickConfirm="Addheart"></add_heart>
 		<add_temperature ref='addtemp' @onClickConfirm="Addtemp"></add_temperature>
@@ -378,21 +380,21 @@
 			},
 			getServerData() {
 				
-				
-				this.lastSevenElements = [];
-				this.lastSevenElements = this.message.slice(-5);
-				console.log(this.lastSevenElements)
+				let _this=this;
+				_this.lastSevenElements = [];
+				_this.lastSevenElements = _this.message.slice(-5);
+				console.log(_this.lastSevenElements)
 				let resdate = [];
 				let resdbp = [];
 				let ressbp = [];
 				let resheart = [];
 				let restemp = [];
 				for (var i = 0; i < 5; i++) {
-					resdate.push(this.lastSevenElements[i].date.slice(-5));
-					resdbp.push(this.lastSevenElements[i].dbp);
-					ressbp.push(this.lastSevenElements[i].sbp);
-					resheart.push(this.lastSevenElements[i].heart);
-					restemp.push(this.lastSevenElements[i].temperature);
+					resdate.push(_this.lastSevenElements[i].date.slice(-5));
+					resdbp.push(_this.lastSevenElements[i].dbp);
+					ressbp.push(_this.lastSevenElements[i].sbp);
+					resheart.push(_this.lastSevenElements[i].heart);
+					restemp.push(_this.lastSevenElements[i].temperature);
 				}
 
 				//模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
@@ -425,13 +427,14 @@
 					}]
 				};
 
-				this.chartData = JSON.parse(JSON.stringify(res));
-				this.chartData2 = JSON.parse(JSON.stringify(res2));
-				this.chartData3 = JSON.parse(JSON.stringify(res3));
+				_this.chartData = JSON.parse(JSON.stringify(res));
+				_this.chartData2 = JSON.parse(JSON.stringify(res2));
+				_this.chartData3 = JSON.parse(JSON.stringify(res3));
 
 			},
 		},
 		onLoad() {
+			let _this=this
 			this.openid = getApp().globalData.global_openid
 			wx.request({
 				// 这里是django的本地ip地址
@@ -445,65 +448,78 @@
 				},
 				success: function(response) {
 					console.log("获取健康数据成功")
-					this.message = response.data.code.Healthdata;
+					_this.message = response.data.code.Healthdata;
+					_this.getServerData();
 				},
 				fail: function(response) {
 					console.log("修改健康数据失败")
 				}
 			})
-			this.getServerData();
+			
 		}
 	}
 </script>
 
 <style lang="scss">
+	.show {
+		font-size: 80rpx;
+		margin-left: 10%;
+	}
+	
 	.chart {
+		margin-top: 20rpx;
 		margin-left: 4%;
 		width: 92%;
-		height: 500rpx;
+		height: 50vh;
 		border-radius: 15px;
 		box-shadow: 1px 1px 2px 2px rgba(125, 125, 125, 0.1);
 		background-color: white;
-
+	
 	}
-
+	
 	.chartbtn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100rpx;
 	}
-
+	
 	.chartbtn button {
 		height: 80rpx;
 		width: 140rpx;
 		font-size: 32rpx;
 		margin: 0;
 	}
-
+	
 	.charts-box {
 		width: 100%;
-		height: 400rpx;
+		height: 40vh;
 	}
-
+	
 	.box {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-
 	}
-
+	
 	.selectbtn {
 		width: 44%;
-		height: 320rpx;
+		height: 20vh;
 		margin-left: 4%;
 		margin-top: 30rpx;
+		background-color: white;
+		font-size: 35rpx;
+		border-radius: 15px;
+		box-shadow: 1px 1px 2px 2px rgba(125, 125, 125, 0.1);
+	
+	}
+	.icon{
+		width: 100%;
+		height: 8vh;
 		background-color: white;
 		display: flex;
 		font-size: 35rpx;
 		border-radius: 15px;
-		box-shadow: 1px 1px 2px 2px rgba(125, 125, 125, 0.1);
-
 	}
 
 	.selectbtn image {
