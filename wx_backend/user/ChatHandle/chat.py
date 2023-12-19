@@ -173,20 +173,49 @@ class DoctorFlagFalse(APIView):
         guardian_id = json.loads(request.body).get('guardian_id')
 
         guardian = None
+        doctor = None
+        try:
+            doctor = Doctor.objects.get(Openid=openid)
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该医生不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
         try:
             guardian = Guardian.objects.get(Guardian_id=guardian_id)
-            guardian.Flag = False
-            guardian.save()
-            return Response({
-            "msg": 'success', 
-            "openid": openid, 
-        })
         except:
             return Response({
                 "status_code": 401,
                 'code': {
                     "msg": 'false', 
                     "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        guardian_list = doctor.Guardian_id_list
+        guardian_exist = False
+        for item in guardian_list:
+            if item["Guardian_id"] == guardian_id:
+                item["flag"] = False
+                guardian_exist = True
+                
+        if guardian_exist:
+            doctor.Guardian_id_list = guardian_list
+            doctor.save()
+            return Response({
+                "msg": 'success', 
+                "openid": openid, 
+            })
+        else:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不在医生监护人列表中',
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
