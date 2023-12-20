@@ -191,6 +191,29 @@ var _default = {
     },
     showModal: function showModal() {
       // this.isShowModal = true
+      var _this = this;
+      this.openid = getApp().globalData.global_openid;
+      console.log(this.openid);
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为获取患者账号的url
+        url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid
+        },
+        success: function success(response) {
+          _this.inputRemark = "";
+          _this.patient_id = response.data.code.Patient_id;
+          console.log(response);
+        },
+        fail: function fail(response) {
+          _this.patient_id = "暂无绑定患者";
+          console.log("获取患者账号失败");
+        }
+      });
       this.$refs['patient'].open();
     },
     handleCancel: function handleCancel() {
@@ -206,36 +229,12 @@ var _default = {
       this.$emit('onClickConfirm', JSON.stringify(this.datapatient));
       //this.$refs['patient'].close();
     }
-  },
-  onLoad: function onLoad() {
-    this.openid = getApp().globalData.global_openid;
-    var _this = this;
-    wx.request({
-      // 这里是django的本地ip地址
-      // 如果部署到线上，需要改为接口的实际网址
-      //此处url还需修改为获取患者账号的url
-      url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
-      // 请求方式修改为 POST
-      method: 'POST',
-      data: {
-        openid: this.openid
-      },
-      success: function success(response) {
-        _this.inputRemark = "";
-        _this.patient_id = response.data.code.Patient_id;
-        console.log("获取患者账号成功");
-      },
-      fail: function fail(response) {
-        _this.patient_id = "暂无绑定患者";
-        console.log("获取患者账号失败");
-      }
-    });
-  },
-  computed: {
-    patient_Id: function patient_Id() {
-      return this.patient_id;
-    }
   }
+  // computed:{
+  // 	patient_Id(){
+  // 		return this.patient_id
+  // 	}
+  // },
 };
 exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))

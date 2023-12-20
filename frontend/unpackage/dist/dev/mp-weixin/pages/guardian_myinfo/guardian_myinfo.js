@@ -356,7 +356,7 @@ var _default = {
         openid: this.openid
       },
       success: function success(response) {
-        console.log("绑定患者账号成功");
+        console.log("获取监护人id成功");
         _this.id = response.data.code.Guardian_id;
         console.log(response);
       },

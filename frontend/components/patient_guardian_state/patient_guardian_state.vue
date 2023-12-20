@@ -5,7 +5,7 @@
 			<view class="modal-body">
 				<view class="style-font">监护人账号</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputRemark" class=" input-style" :placeholder="guardian_Id" disabled="disabled"></input>
+				<input v-model="inputRemark" class=" input-style" :placeholder="guardian_id" disabled="disabled"></input>
 			</view>
 
 			<view>
@@ -52,6 +52,27 @@
 			},
 			showModal() {
 				// this.isShowModal = true
+				let _this=this
+				this.openid=getApp().globalData.global_openid
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为获取监护人账号的url
+					url: 'http://127.0.0.1:8000/api/user/getPatientInfo/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid:this.openid,
+					},
+					success: function(response) {
+						_this.guardian_id=response.data.code.Guardian_id;
+						console.log("获取监护人账号成功")
+					},
+					fail: function(response) {
+						_this.guardian_id="暂无绑定监护人"
+						console.log("获取监护人账号失败")
+					}
+				})
 				this.$refs['customModal'].open();
 			},
 			handleCancel() {
@@ -67,31 +88,6 @@
 				// this.isShowModal = false
 				this.$emit('onClickConfirm',JSON.stringify(this.dataLineDetail))
 				//this.$refs['customModal'].close();
-			}
-		},
-		computed:{
-			guardian_Id(){
-				this.openid=getApp().globalData.global_openid
-				wx.request({
-					// 这里是django的本地ip地址
-					// 如果部署到线上，需要改为接口的实际网址
-					//此处url还需修改为获取监护人账号的url
-					url: 'http://127.0.0.1:8000/api/user/getPatientInfo/',
-					// 请求方式修改为 POST
-					method: 'POST',
-					data: {
-						openid:this.openid,
-					},
-					success: function(response) {
-						this.guardian_id=response.data.code.Guardian_id;
-						console.log("获取监护人账号成功")
-					},
-					fail: function(response) {
-						this.guardian_id="暂无绑定监护人"
-						console.log("获取监护人账号失败")
-					}
-				})
-				return this.guardian_id
 			}
 		},
 	}

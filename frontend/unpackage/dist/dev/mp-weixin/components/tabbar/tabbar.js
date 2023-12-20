@@ -203,7 +203,7 @@ var _default = {
         "selectedIconPath": "/static/tab/health_active.png",
         "text": "患者相关"
       }, {
-        "pagePath": "/pages/chatting/chatting",
+        "pagePath": "/pages/guardian_contact_doctor/guardian_contact_doctor",
         "iconPath": "/static/tab/chat.png",
         "selectedIconPath": "/static/tab/chat_active.png",
         "text": "联系医生"

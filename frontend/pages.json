@@ -141,7 +141,17 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/guardian_contact_doctor/guardian_contact_doctor",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	// "tabBar": {
 	// 		"color": "#BBBAC7",
 	// 		"selectedColor": "#2c2c2c",

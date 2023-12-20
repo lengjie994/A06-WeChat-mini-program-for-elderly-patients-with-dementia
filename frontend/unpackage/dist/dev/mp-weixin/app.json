@@ -17,7 +17,8 @@
     "pages/doctor_reservation/doctor_reservation",
     "pages/doctor_contact_guardian/doctor_contact_guardian",
     "pages/chatting/chatting",
-    "pages/success_reservation/success_reservation"
+    "pages/success_reservation/success_reservation",
+    "pages/guardian_contact_doctor/guardian_contact_doctor"
   ],
   "subPackages": [],
   "window": {

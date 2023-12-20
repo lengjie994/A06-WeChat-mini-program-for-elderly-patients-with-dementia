@@ -11,11 +11,11 @@
 		</view>
 		<view>
 			<view>
-				<fui-section title="关系绑定" line-width="8rpx" isLine class="fui-section__title"></fui-section>
+				<!-- <fui-section title="关系绑定" line-width="8rpx" isLine class="fui-section__title"></fui-section>
 				<fui-list-cell arrow @click="bind_request()" marginTop="28">
 					<view class="iconfont icon-tianxuangouren"></view>
 					<text style="margin-left: 20rpx;">绑定申请</text>
-				</fui-list-cell>
+				</fui-list-cell> -->
 				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
 					class="fui-section__title"></fui-section>
 				<fui-list-cell arrow @click="show_reservation()" marginTop="28">
@@ -109,7 +109,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为传递医生资料的url
-					url: 'http://127.0.0.1:8000/api/user/login/',
+					url: 'http://127.0.0.1:8000/api/user/SaveDoctorInfo/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {

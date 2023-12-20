@@ -209,7 +209,7 @@ var _default = {
       },
       success: function success(response) {
         console.log("获取药物列表成功");
-        _this.message = response.data.code.Medicine_reminder;
+        _this.message = response.data.code.Medicine;
         console.log(response);
       },
       fail: function fail(response) {

@@ -184,31 +184,6 @@ var _default = {
       iconType: ['waiting', 'success', 'cancel']
     };
   },
-  onLoad: function onLoad() {
-    this.openid = getApp().globalData.global_openid;
-    var _this = this;
-    wx.request({
-      // 这里是django的本地ip地址
-      // 如果部署到线上，需要改为接口的实际网址
-      //此处url还需修改为绑定患者账号的url
-      url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
-      // 请求方式修改为 POST
-      method: 'POST',
-      data: {
-        openid: this.openid
-      },
-      success: function success(response) {
-        console.log("获取备忘录成功");
-        _this.inputname = response.data.code.Name;
-        _this.inputplace = response.data.code.Address;
-        _this.inputphone = response.data.code.Phone_contact;
-        console.log(response);
-      },
-      fail: function fail(response) {
-        console.log("获取备忘录失败");
-      }
-    });
-  },
   methods: {
     hideModal: function hideModal() {
       // this.isShowModal = true
@@ -216,6 +191,29 @@ var _default = {
     },
     showModal: function showModal() {
       // this.isShowModal = true
+      this.openid = getApp().globalData.global_openid;
+      var _this = this;
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为绑定患者账号的url
+        url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid
+        },
+        success: function success(response) {
+          console.log("获取备忘录成功");
+          _this.inputname = response.data.code.Name;
+          _this.inputplace = response.data.code.Address;
+          _this.inputphone = response.data.code.Phone_contact;
+          console.log(response);
+        },
+        fail: function fail(response) {
+          console.log("获取备忘录失败");
+        }
+      });
       this.$refs['customModal'].open();
     },
     handleCancel: function handleCancel() {

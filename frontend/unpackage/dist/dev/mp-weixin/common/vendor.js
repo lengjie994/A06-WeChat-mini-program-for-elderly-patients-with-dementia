@@ -28600,6 +28600,13 @@ var _default = {
       "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
+  }, {
+    "path": "pages/guardian_contact_doctor/guardian_contact_doctor",
+    "style": {
+      "navigationBarTitleText": "",
+      "navigationStyle": "custom",
+      "enablePullDownRefresh": false
+    }
   }],
   "globalStyle": {
     "navigationBarTextStyle": "black",

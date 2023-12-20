@@ -187,10 +187,33 @@ var _default = {
     },
     hideModal: function hideModal() {
       // this.isShowModal = true
+
       this.$refs['doctor'].close();
     },
     showModal: function showModal() {
       // this.isShowModal = true
+      this.openid = getApp().globalData.global_openid;
+      var _this = this;
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为获取患者账号的url
+        url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid
+        },
+        success: function success(response) {
+          _this.inputRemark = "";
+          _this.doctor_id = response.data.code.Doctor_id;
+          console.log("获取医生账号成功");
+        },
+        fail: function fail(response) {
+          _this.doctor_id = "暂无绑定医生";
+          console.log("获取医生账号失败");
+        }
+      });
       this.$refs['doctor'].open();
     },
     handleCancel: function handleCancel() {
@@ -205,35 +228,6 @@ var _default = {
       // this.isShowModal = false
       this.$emit('onClickConfirm', JSON.stringify(this.datadoctor));
       //this.$refs['doctor'].close();
-    }
-  },
-  onLoad: function onLoad() {
-    this.openid = getApp().globalData.global_openid;
-    var _this = this;
-    wx.request({
-      // 这里是django的本地ip地址
-      // 如果部署到线上，需要改为接口的实际网址
-      //此处url还需修改为获取患者账号的url
-      url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
-      // 请求方式修改为 POST
-      method: 'POST',
-      data: {
-        openid: this.openid
-      },
-      success: function success(response) {
-        _this.inputRemark = "";
-        _this.doctor_id = response.data.code.Doctor_id;
-        console.log("获取医生账号成功");
-      },
-      fail: function fail(response) {
-        _this.doctor_id = "暂无绑定医生";
-        console.log("获取医生账号失败");
-      }
-    });
-  },
-  computed: {
-    doctor_Id: function doctor_Id() {
-      return this.doctor_id;
     }
   }
 };

@@ -4,7 +4,7 @@
 			<view class="modal-body">
 				<view class="style-font">患者账号</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputRemark" class=" input-style" :placeholder="patient_Id"></input>
+				<input v-model="inputRemark" class=" input-style" :placeholder="patient_id"></input>
 			</view>
 
 			<view>
@@ -48,7 +48,32 @@
 			},
 			showModal() {
 				// this.isShowModal = true
+				let _this=this
+				this.openid=getApp().globalData.global_openid
+				console.log(this.openid)
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为获取患者账号的url
+					url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid:this.openid,
+					},
+					success: function(response) {
+						_this.inputRemark=""
+						_this.patient_id=response.data.code.Patient_id
+				
+						console.log(response)
+					},
+					fail: function(response) {
+						_this.patient_id="暂无绑定患者"
+						console.log("获取患者账号失败")
+					}
+				})
 				this.$refs['patient'].open();
+				
 			},
 			handleCancel() {
 				// this.isShowModal = false
@@ -65,36 +90,11 @@
 				//this.$refs['patient'].close();
 			}
 		},
-		onLoad(){
-			this.openid=getApp().globalData.global_openid
-			let _this=this
-			wx.request({
-				// 这里是django的本地ip地址
-				// 如果部署到线上，需要改为接口的实际网址
-				//此处url还需修改为获取患者账号的url
-				url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
-				// 请求方式修改为 POST
-				method: 'POST',
-				data: {
-					openid:this.openid,
-				},
-				success: function(response) {
-					_this.inputRemark=""
-					_this.patient_id=response.data.code.Patient_id
-			
-					console.log("获取患者账号成功")
-				},
-				fail: function(response) {
-					_this.patient_id="暂无绑定患者"
-					console.log("获取患者账号失败")
-				}
-			})
-		},
-		computed:{
-			patient_Id(){
-				return this.patient_id
-			}
-		},
+		// computed:{
+		// 	patient_Id(){
+		// 		return this.patient_id
+		// 	}
+		// },
 	}
 </script>
 
