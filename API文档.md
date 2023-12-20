@@ -191,7 +191,7 @@
 | Doctor_info      | 医生资料              | json   |
 | Reservation      | 预约事项              | json   |
 | Reservation_info | 预约信息              | json   |
-| Indexlist        | 联系人列表            | list   |
+| Guardian_id_list | 联系人列表            | list   |
 
 #### ##拓展说明##
 
@@ -273,7 +273,7 @@
 
 ### 功能说明
 
-​	将该监护人内的医生id修改为传入的参数，另外需要将该监护人加入该医生数据下的Indexlist
+​	将该监护人内的医生id修改为传入的参数，另外需要将该监护人加入该医生数据下的Guardian_id_list
 
 ### url
 
@@ -583,3 +583,28 @@
 | openid | 用户唯一识别标志      | string |
 | msg    | 成功返回标志“success” | string |
 
+
+
+## 上传医生信息
+
+### 功能说明
+
+​	将医生的个人信息储存
+
+### url
+
+​	'http://127.0.0.1:8000/api/user/SaveDoctorInfo/'
+
+### 参数
+
+| 属性名 | 说明         | 类型   |
+| ------ | ------------ | ------ |
+| openid | ——           | string |
+| info   | 医生个人信息 | json   |
+
+### 返回内容
+
+| 属性名 | 说明                  | 类型   |
+| ------ | --------------------- | ------ |
+| openid | 用户唯一识别标志      | string |
+| msg    | 成功返回标志“success” | string |
