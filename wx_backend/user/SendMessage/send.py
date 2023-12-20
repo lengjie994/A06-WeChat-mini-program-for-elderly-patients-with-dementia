@@ -10,6 +10,8 @@ from ..models import User
 from ..models import Patient
 from ..models import Guardian
 from wx_backend.LogicManage.Constants import Constants
+import schedule
+import time
  
 """
     感觉是测试号配置页面的bug，开发者第一次登录进测试号时生产的
@@ -84,7 +86,26 @@ class SendOfficialReminder(APIView):
         """
         向指定用户发送公众号提醒
         """
-        # 监护人的openid
+        # 指定用户的openid
         openid = json.loads(request.body).get('openid')
-        sends = SendMessage()
-        sends.sendmsg(openid)
+        setTime = json.loads(request.body).get('time')  #setTime为字符串格式，如'20:00'
+        def job():
+        # 创建 SendOfficialReminder 实例
+            sends = SendMessage()
+            sends.sendmsg(openid)
+            return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "time": setTime,
+                }
+            })
+
+        # 设置定时任务，每天的特定时间发送消息
+        schedule.every().day.at(setTime).do(job)  
+
+        # 无限循环来执行定时任务
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+        # url接口被多次调用会如何
