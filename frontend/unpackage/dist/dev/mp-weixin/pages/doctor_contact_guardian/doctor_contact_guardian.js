@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 302))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
     },
     uList: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 509))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 517))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 338))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 316))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324))
     },
     fuiBadge: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 517))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 525))
     },
   }
 } catch (e) {
@@ -178,27 +178,27 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 364));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiList = function fuiList() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list/fui-list */ "node-modules/firstui-uni/firstui/fui-list/fui-list").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 524));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 532));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiListCell = function fuiListCell() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 338));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiBadge = function fuiBadge() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 517));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 525));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 316));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

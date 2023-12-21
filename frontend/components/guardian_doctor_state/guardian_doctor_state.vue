@@ -64,7 +64,10 @@
 					success: function(response) {
 						_this.inputRemark=""
 						_this.doctor_id=response.data.code.Doctor_id
-				
+						if(_this.doctor_id==null||_this.doctor_id=="UNDEFINED")
+						{
+							_this.doctor_id="暂无绑定医生"
+						}
 						console.log("获取医生账号成功")
 					},
 					fail: function(response) {

@@ -66,6 +66,10 @@
 					},
 					success: function(response) {
 						_this.guardian_id=response.data.code.Guardian_id;
+						if(_this.guardian_id==null||_this.guardian_id=="UNDEFINED")
+						{
+							_this.guardian_id="暂无绑定监护人"
+						}
 						console.log("获取监护人账号成功")
 					},
 					fail: function(response) {

@@ -69,6 +69,19 @@
 					_this.name=response.data.code.Name
 					_this.addr=response.data.code.Address
 					_this.emergence=response.data.code.Phone_contact
+					console.log(response)
+					if(_this.name==null||_this.name=="UNDEFINED")
+					{
+						_this.name="暂无"
+					}
+					if(_this.addr==null||_this.addr=="UNDEFINED")
+					{
+						_this.addr="暂无"
+					}
+					if(_this.emergence==null||_this.emergence=="UNDEFINED")
+					{
+						_this.emergence="暂无"
+					}
 				},
 				fail: function(response) {
 					console.log("获取备忘录失败")

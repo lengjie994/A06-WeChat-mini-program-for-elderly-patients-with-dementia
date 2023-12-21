@@ -166,6 +166,9 @@ var _default = {
           success: function success(response) {
             //将indexList更新
             _this.globalData.global_indexList = response.data.code.Guardian_id_list;
+            if (_this.globalData.global_indexList == null) {
+              _this.globalData.global_indexList = [];
+            }
             // console.log(response)
           },
 
@@ -196,6 +199,9 @@ var _default = {
             // console.log(response)
             _this2.globalData.global_flag = response.data.code.Flag;
             _this2.globalData.global_opposite_id = response.data.code.Doctor_id;
+            if (_this2.globalData.global_opposite_id == null || _this2.globalData.global_opposite_id == "UNDEFINED") {
+              _this2.globalData.global_opposite_id = "";
+            }
             // console.log("获取聊天记录成功")
           },
 

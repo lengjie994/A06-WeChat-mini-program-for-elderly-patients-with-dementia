@@ -143,7 +143,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 316));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -282,7 +282,9 @@ var _default = {
         },
         success: function success(response) {
           _this.chatlist = response.data.chatlist;
-          console.log(_this.chatlist[0].identity == _this.identity);
+          if (_this.chatlist == null) {
+            _this.chatlist = [];
+          }
           console.log(response);
           console.log("获取聊天记录成功");
           _this.setPageScrollTo(); //滚动到最底部

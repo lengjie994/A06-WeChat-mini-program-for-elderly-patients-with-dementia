@@ -101,13 +101,13 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 302))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
     },
     fuiSection: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 331))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 339))
     },
     fuiCard: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-card/fui-card.vue */ 385))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-card/fui-card.vue */ 393))
     },
   }
 } catch (e) {
@@ -172,17 +172,17 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 364));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiCard = function fuiCard() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-card/fui-card.vue */ 385));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-card/fui-card.vue */ 393));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuisection = function fuisection() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 331));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 339));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -225,6 +225,16 @@ var _default = {
         _this.name = response.data.code.Name;
         _this.addr = response.data.code.Address;
         _this.emergence = response.data.code.Phone_contact;
+        console.log(response);
+        if (_this.name == null || _this.name == "UNDEFINED") {
+          _this.name = "暂无";
+        }
+        if (_this.addr == null || _this.addr == "UNDEFINED") {
+          _this.addr = "暂无";
+        }
+        if (_this.emergence == null || _this.emergence == "UNDEFINED") {
+          _this.emergence = "暂无";
+        }
       },
       fail: function fail(response) {
         console.log("获取备忘录失败");

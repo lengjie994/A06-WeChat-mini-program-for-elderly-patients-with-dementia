@@ -101,7 +101,7 @@ var components
 try {
   components = {
     qiunDataCharts: function () {
-      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 421))
+      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 429))
     },
   }
 } catch (e) {
@@ -125,6 +125,31 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var g0 = _vm.lastSevenElements.length
+  var g1 = !(g0 == 0) ? _vm.lastSevenElements.length : null
+  var g2 = _vm.lastSevenElements.length
+  var g3 = !(g2 == 0) ? _vm.lastSevenElements.length : null
+  var g4 = _vm.lastSevenElements.length
+  var g5 = !(g4 == 0) ? _vm.lastSevenElements.length : null
+  var g6 = _vm.lastSevenElements.length
+  var g7 = _vm.lastSevenElements.length
+  var g8 = !(g7 == 0) ? _vm.lastSevenElements.length : null
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        g0: g0,
+        g1: g1,
+        g2: g2,
+        g3: g3,
+        g4: g4,
+        g5: g5,
+        g6: g6,
+        g7: g7,
+        g8: g8,
+      },
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -166,22 +191,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var uniPopup = function uniPopup() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 345));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_heart = function add_heart() {
   __webpack_require__.e(/*! require.ensure | components/add_heart/add_heart */ "components/add_heart/add_heart").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 439));
+    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 447));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_temperature = function add_temperature() {
   __webpack_require__.e(/*! require.ensure | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 446));
+    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 454));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_bp = function add_bp() {
   __webpack_require__.e(/*! require.ensure | components/add_bp/add_bp */ "components/add_bp/add_bp").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 453));
+    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 461));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -194,49 +219,7 @@ var _default = {
       selectedContent: 'content1',
       // 初始化显示内容
       lastSevenElements: [],
-      message: [{
-        date: "2023.11.07",
-        heart: 70,
-        temperature: 37.0,
-        dbp: 70,
-        sbp: 110
-      }, {
-        date: "2023.11.08",
-        heart: 72,
-        temperature: 37.4,
-        dbp: 71,
-        sbp: 120
-      }, {
-        date: "2023.11.09",
-        heart: 64,
-        temperature: 36.2,
-        dbp: 78,
-        sbp: 130
-      }, {
-        date: "2023.11.10",
-        heart: 65,
-        temperature: null,
-        dbp: 76,
-        sbp: 100
-      }, {
-        date: "2023.11.11",
-        heart: 69,
-        temperature: 36.3,
-        dbp: 73,
-        sbp: 114
-      }, {
-        date: "2023.11.12",
-        heart: 64,
-        temperature: 37.2,
-        dbp: 70,
-        sbp: 110
-      }, {
-        date: "2023.11.13",
-        heart: 45,
-        temperature: 36.8,
-        dbp: 70,
-        sbp: 110
-      }],
+      message: [],
       add: {
         date: null,
         heart: null,
@@ -375,19 +358,36 @@ var _default = {
           //模拟从服务器获取数据时的延时
 
           _this.lastSevenElements = [];
-          _this.lastSevenElements = _this.message.slice(-5);
-          console.log(_this.lastSevenElements);
+          if (_this.message == [] || _this.message == null) {
+            _this.message = [];
+            return;
+          }
           var resdate = [];
           var resdbp = [];
           var ressbp = [];
           var resheart = [];
           var restemp = [];
-          for (var i = 0; i < 5; i++) {
-            resdate.push(_this.lastSevenElements[i].date.slice(-5));
-            resdbp.push(_this.lastSevenElements[i].dbp);
-            ressbp.push(_this.lastSevenElements[i].sbp);
-            resheart.push(_this.lastSevenElements[i].heart);
-            restemp.push(_this.lastSevenElements[i].temperature);
+          if (_this.message.length < 5) {
+            var num = _this.message.length;
+            _this.lastSevenElements = _this.message.slice(-num);
+            console.log(_this.lastSevenElements);
+            for (var i = 0; i < _this.message.length; i++) {
+              resdate.push(_this.lastSevenElements[i].date.slice(-num));
+              resdbp.push(_this.lastSevenElements[i].dbp);
+              ressbp.push(_this.lastSevenElements[i].sbp);
+              resheart.push(_this.lastSevenElements[i].heart);
+              restemp.push(_this.lastSevenElements[i].temperature);
+            }
+          } else if (_this.message.length >= 5) {
+            _this.lastSevenElements = _this.message.slice(-5);
+            console.log(_this.lastSevenElements);
+            for (var i = 0; i < 5; i++) {
+              resdate.push(_this.lastSevenElements[i].date.slice(-5));
+              resdbp.push(_this.lastSevenElements[i].dbp);
+              ressbp.push(_this.lastSevenElements[i].sbp);
+              resheart.push(_this.lastSevenElements[i].heart);
+              restemp.push(_this.lastSevenElements[i].temperature);
+            }
           }
 
           //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接

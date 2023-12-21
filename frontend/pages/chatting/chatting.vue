@@ -196,7 +196,10 @@
 					},
 					success: function(response) {
 						_this.chatlist = response.data.chatlist;
-						console.log(_this.chatlist[0].identity==_this.identity)
+						if(_this.chatlist==null)
+						{
+							_this.chatlist=[]
+						}
 						
 						console.log(response)
 						console.log("获取聊天记录成功")

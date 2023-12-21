@@ -1,26 +1,23 @@
 <template>
 	<view class="content">
 		<view class="header">
-			<uni-nav-bar title="服药提醒" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
+			<uni-nav-bar title="服药提醒" height="11vh" :border="false" :fixed="true"
+				backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
 		<scroll-view class="scroll-view" :scroll-y="true" ref="scrollView" style="height: 78vh;">
-		<view v-for="(item,index) in list" :key="index">
-			<view v-for="(item2,index2) in item.time.split(',')" :key="index2">
-				<view class="card">
-					<fui-card :title="item.pill" 
-					:tag="checkTime(item2) ? '已过期' : '待服用'" 
-					size="32"
-					:tagColor="checkTime(item2) ? '#7F7F7F' : '#fff'"
-					:color="checkTime(item2) ? '#b2b2b2' : '#fff'"
-					:background="checkTime(item2) ? '#fff' : 'linear-gradient(90deg, #465CFF 0%, #6831FF 100%)'"
-					>
-						<view class="fui-card__content"
-						:style="checkTime(item2) ? '' : 'color:#fff;'"
-						>{{item2}} {{item.count}}</view>
-					</fui-card>
+			<view v-for="(item,index) in list" :key="index">
+				<view v-for="(item2,index2) in item.time.split(',')" :key="index2">
+					<view class="card">
+						<fui-card :title="item.pill" :tag="checkTime(item2) ? '已过期' : '待服用'" size="32"
+							:tagColor="checkTime(item2) ? '#7F7F7F' : '#fff'"
+							:color="checkTime(item2) ? '#b2b2b2' : '#fff'"
+							:background="checkTime(item2) ? '#fff' : 'linear-gradient(90deg, #465CFF 0%, #6831FF 100%)'">
+							<view class="fui-card__content" :style="checkTime(item2) ? '' : 'color:#fff;'">{{item2}}
+								{{item.count}}</view>
+						</fui-card>
+					</view>
 				</view>
 			</view>
-		</view>
 		</scroll-view>
 		<view>
 			<tabBar selectedIndex=0 :id_data="id_data"></tabBar>
@@ -34,26 +31,9 @@
 	export default {
 		data() {
 			return {
-				openid:"",
-				list: [{
-					pill: "奥拉西坦胶囊",
-					count: "一次一粒",
-					dailycount: "3",
-					time: "08:00,12:00,18:00",
-				},
-				{
-					pill: "奥拉西坦1",
-					count: "一次一粒",
-					dailycount: "2",
-					time: "08:30,12:20",
-				},
-				{
-					pill: "奥拉西坦2",
-					count: "一次一粒",
-					dailycount: "3",
-					time: "08:00,12:00,13:16",
-				}],
-				id_data:"patient",
+				openid: "",
+				list: [],
+				id_data: "patient",
 			};
 		},
 		components: {
@@ -61,7 +41,7 @@
 			fuiCard,
 		},
 		onShow() {
-			let _this=this
+			let _this = this
 			//⭐隐藏pages.json里配置的导航栏，使用封装的tabbar组件
 			uni.hideTabBar({
 				animation: false
@@ -78,42 +58,45 @@
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
-					openid:this.openid,
+					openid: this.openid,
 				},
 				success: function(response) {
 					console.log(response)
-					_this.list=response.data.code.Medicine
+					_this.list = response.data.code.Medicine
+					if (_this.list == null) {
+						_this.list = []
+					}
 				},
 				fail: function(response) {
 					console.log("获取服药提醒失败")
 				}
 			})
 		},
-		onLoad(){
-			let _this=this
-			this.openid=getApp().globalData.global_openid
+		onLoad() {
+			let _this = this
+			this.openid = getApp().globalData.global_openid
 			_this.checkTime();
 		},
-		methods:{
+		methods: {
 			checkTime(targetTime) {
-				let _this=this
-			      // 获取当前时间
-			      var currentTime = new Date();
-			      
-			      // 将当前时间转换为 "hh:mm" 格式
-			      var currentHours = currentTime.getHours();
-			      var currentMinutes = currentTime.getMinutes();
-			      
-			      // 构建当前时间字符串
-			      var currentTimeString = `${currentHours}:${currentMinutes}`;
-			      
-			      // 比较时间
-			      if (currentTimeString > targetTime) {
-			        return true;
-			      } else {
-			        return false;
-			      }
-			    },
+				let _this = this
+				// 获取当前时间
+				var currentTime = new Date();
+
+				// 将当前时间转换为 "hh:mm" 格式
+				var currentHours = currentTime.getHours();
+				var currentMinutes = currentTime.getMinutes();
+
+				// 构建当前时间字符串
+				var currentTimeString = `${currentHours}:${currentMinutes}`;
+
+				// 比较时间
+				if (currentTimeString > targetTime) {
+					return true;
+				} else {
+					return false;
+				}
+			},
 		}
 	}
 </script>
@@ -123,23 +106,27 @@
 		background-color: #F1F4FA;
 		height: 100vh;
 	}
-	.card{
+
+	.card {
 		margin-top: 20rpx;
 		font-size: 38rpx;
 	}
+
 	.fui-section__title {
 		margin-left: 32rpx;
 	}
-	
+
 	.fui-card__content {
 		font-size: 38rpx;
 		padding: 32rpx 20rpx;
 		box-sizing: border-box;
 		font-family: cursive;
 	}
-	.header{
+
+	.header {
 		background-color: #F5F5F5;
 	}
+
 	.container {
 		height: 1200rpx;
 		width: 100%;

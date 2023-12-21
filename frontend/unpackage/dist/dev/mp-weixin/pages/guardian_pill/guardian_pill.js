@@ -101,10 +101,10 @@ var components
 try {
   components = {
     add_pill: function () {
-      return __webpack_require__.e(/*! import() | components/add_pill/add_pill */ "components/add_pill/add_pill").then(__webpack_require__.bind(null, /*! @/components/add_pill/add_pill.vue */ 481))
+      return __webpack_require__.e(/*! import() | components/add_pill/add_pill */ "components/add_pill/add_pill").then(__webpack_require__.bind(null, /*! @/components/add_pill/add_pill.vue */ 489))
     },
     delete_pill: function () {
-      return __webpack_require__.e(/*! import() | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then(__webpack_require__.bind(null, /*! @/components/delete_pill/delete_pill.vue */ 488))
+      return __webpack_require__.e(/*! import() | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then(__webpack_require__.bind(null, /*! @/components/delete_pill/delete_pill.vue */ 496))
     },
   }
 } catch (e) {
@@ -169,12 +169,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var add_pill = function add_pill() {
   __webpack_require__.e(/*! require.ensure | components/add_pill/add_pill */ "components/add_pill/add_pill").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_pill/add_pill.vue */ 481));
+    return resolve(__webpack_require__(/*! @/components/add_pill/add_pill.vue */ 489));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var delete_pill = function delete_pill() {
   __webpack_require__.e(/*! require.ensure | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then((function () {
-    return resolve(__webpack_require__(/*! @/components/delete_pill/delete_pill.vue */ 488));
+    return resolve(__webpack_require__(/*! @/components/delete_pill/delete_pill.vue */ 496));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -187,7 +187,9 @@ var _default = {
         time: "08:00，12:00，18:00"
       }],
       add: {},
-      scrollTop: 0
+      scrollTop: 0,
+      openid: "",
+      patient_openid: ""
     };
   },
   components: {
@@ -210,6 +212,10 @@ var _default = {
       success: function success(response) {
         console.log("获取药物列表成功");
         _this.message = response.data.code.Medicine;
+        if (_this.message == null) {
+          _this.message = [];
+        }
+        _this.patient_openid = response.data.code.Patient_openid;
         console.log(response);
       },
       fail: function fail(response) {
@@ -268,6 +274,26 @@ var _default = {
           console.log("编辑服药提醒失败");
         }
       });
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为编辑服药提醒的url
+        url: 'http://127.0.0.1:8000/api/user/SendOfficialReminder/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.patient_openid,
+          time: stateData.time,
+          name: stateData.name
+        },
+        success: function success(response) {
+          console.log(response);
+          console.log("设置服药提醒成功");
+        },
+        fail: function fail(response) {
+          console.log("设置服药提醒失败");
+        }
+      });
     },
     Deletepill: function Deletepill(data) {
       var _this = this;
@@ -286,6 +312,25 @@ var _default = {
         data: {
           openid: this.openid,
           reminder: this.message
+        },
+        success: function success(response) {
+          console.log("删除服药提醒成功");
+        },
+        fail: function fail(response) {
+          console.log("删除服药提醒失败");
+        }
+      });
+      var param = this.patient_openid + stateData.name;
+      //调用后端取消提醒接口
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为编辑服药提醒的url
+        url: 'http://127.0.0.1:8000/api/user/SendReminder/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          param: param
         },
         success: function success(response) {
           console.log("删除服药提醒成功");

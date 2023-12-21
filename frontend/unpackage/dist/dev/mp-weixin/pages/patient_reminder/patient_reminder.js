@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 302))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
     },
     fuiCard: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-card/fui-card.vue */ 385))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-card/fui-card.vue */ 393))
     },
   }
 } catch (e) {
@@ -200,34 +200,19 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 364));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiCard = function fuiCard() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-card/fui-card */ "node-modules/firstui-uni/firstui/fui-card/fui-card").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-card/fui-card.vue */ 385));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-card/fui-card.vue */ 393));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
   data: function data() {
     return {
       openid: "",
-      list: [{
-        pill: "奥拉西坦胶囊",
-        count: "一次一粒",
-        dailycount: "3",
-        time: "08:00,12:00,18:00"
-      }, {
-        pill: "奥拉西坦1",
-        count: "一次一粒",
-        dailycount: "2",
-        time: "08:30,12:20"
-      }, {
-        pill: "奥拉西坦2",
-        count: "一次一粒",
-        dailycount: "3",
-        time: "08:00,12:00,13:16"
-      }],
+      list: [],
       id_data: "patient"
     };
   },
@@ -258,6 +243,9 @@ var _default = {
       success: function success(response) {
         console.log(response);
         _this.list = response.data.code.Medicine;
+        if (_this.list == null) {
+          _this.list = [];
+        }
       },
       fail: function fail(response) {
         console.log("获取服药提醒失败");

@@ -57,6 +57,51 @@
 			},
 			showModal() {
 				// this.isShowModal = true
+				this.openid=getApp().globalData.global_openid
+				let _this=this;
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为绑定患者账号的url
+					url: 'http://127.0.0.1:8000/api/user/getDoctorInfo/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid: this.openid,
+					},
+					success: function(response) {
+						console.log("获取备忘录成功")
+						_this.inputname=response.data.code.Doctor_info.name;
+						_this.inputcareer=response.data.code.Doctor_info.career;
+						_this.inputintro=response.data.code.Doctor_info.intro;
+						_this.inputhospital=response.data.code.Doctor_info.hospital;
+						_this.inputaddr=response.data.code.Doctor_info.addr;
+						if(_this.inputname==null||_this.inputname=="UNDEFINED")
+						{
+							_this.inputname="暂无"
+						}
+						if(_this.inputcareer==null||_this.inputcareer=="UNDEFINED")
+						{
+							_this.inputcareer="暂无"
+						}
+						if(_this.inputintro==null||_this.inputintro=="UNDEFINED")
+						{
+							_this.inputintro="暂无"
+						}
+						if(_this.inputhospital==null||_this.inputhospital=="UNDEFINED")
+						{
+							_this.inputhospital="暂无"
+						}
+						if(_this.inputaddr==null||_this.inputaddr=="UNDEFINED")
+						{
+							_this.inputaddr="暂无"
+						}
+						console.log(response)
+					},
+					fail: function(response) {
+						console.log("获取备忘录失败")
+					}
+				})
 				this.$refs['customModal'].open();
 			},
 			handleCancel() {

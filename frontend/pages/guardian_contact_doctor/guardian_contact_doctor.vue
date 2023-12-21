@@ -104,6 +104,10 @@
 				let _this=this
 				_this.indexList[0].doctor_id=getApp().globalData.global_opposite_id
 				_this.indexList[0].flag=getApp().globalData.global_flag
+				if(_this.indexList[0].doctor_id=="")
+				{
+					_this.indexList=[]
+				}
 				console.log(_this.indexList)
 			},
 			
@@ -120,6 +124,11 @@
 			let _this=this
 			_this.indexList[0].doctor_id=getApp().globalData.global_opposite_id
 			_this.indexList[0].flag=getApp().globalData.global_flag
+			if(_this.indexList[0].doctor_id=="")
+			{
+				_this.indexList=[]
+			}
+			
 			console.log(_this.indexList)
 			this.timer = setInterval(this.valChange, 2000);
 		},

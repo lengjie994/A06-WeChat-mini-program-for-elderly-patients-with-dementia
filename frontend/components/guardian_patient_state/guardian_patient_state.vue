@@ -64,7 +64,10 @@
 					success: function(response) {
 						_this.inputRemark=""
 						_this.patient_id=response.data.code.Patient_id
-				
+						if(_this.patient_id==null||_this.patient_id=="UNDEFINED")
+						{
+							_this.patient_id="暂无绑定患者"
+						}
 						console.log(response)
 					},
 					fail: function(response) {

@@ -66,6 +66,18 @@
 						_this.inputname=response.data.code.Name;
 						_this.inputplace=response.data.code.Address;
 						_this.inputphone=response.data.code.Phone_contact;
+						if(_this.inputname==null||_this.inputname=="UNDEFINED")
+						{
+							_this.inputname="暂无"
+						}
+						if(_this.inputplace==null||_this.inputplace=="UNDEFINED")
+						{
+							_this.inputplace="暂无"
+						}
+						if(_this.inputphone==null||_this.inputphone=="UNDEFINED")
+						{
+							_this.inputphone="暂无"
+						}
 						console.log(response)
 					},
 					fail: function(response) {

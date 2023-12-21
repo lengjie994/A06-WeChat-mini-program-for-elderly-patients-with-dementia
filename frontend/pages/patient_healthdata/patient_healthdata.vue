@@ -8,10 +8,13 @@
 			</view>
 			<view class="charts-box">
 				<qiun-data-charts v-if="selectedContent === 'content1'" type="column" :opts="opts"
+					loadingType = 0
 					:chartData="chartData" />
 				<qiun-data-charts v-if="selectedContent === 'content2'" type="line" :opts="opts2"
+					loadingType = 0
 					:chartData="chartData2" />
 				<qiun-data-charts v-if="selectedContent === 'content3'" type="line" :opts="opts3"
+					loadingType = 0
 					:chartData="chartData3" />
 			</view>
 		</view>
@@ -21,21 +24,21 @@
 					<image src="../../static/health_data/heart.png"></image>
 					<text>心率</text>
 				</view>
-				<text class="show" style="color: #EE6666;">{{lastSevenElements[4].heart}}</text>
+				<text class="show" style="color: #EE6666;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].heart}}</text>
 			</view>
 			<view class="selectbtn">
 				<view class="icon">
 					<image src="../../static/health_data/temperature.png"></image>
 					<text>体温</text>
 				</view>
-				<text class="show" style="color: #1890FF;">{{lastSevenElements[4].temperature}}</text>
+				<text class="show" style="color: #1890FF;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].temperature}}</text>
 			</view>
 			<view class="selectbtn">
 				<view class="icon">
 					<image src="../../static/health_data/BP.png"></image>
 					<text>血压</text>
 				</view>
-				<text class="show" style="color: #FAC858;">{{lastSevenElements[4].dbp}}/{{lastSevenElements[4].sbp}}</text>
+				<text class="show" style="color: #FAC858;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].dbp}}{{lastSevenElements.length==0?"":"/"}}{{lastSevenElements.length==0?"":lastSevenElements[lastSevenElements.length-1].sbp}}</text>
 			</view>
 		</view>
 	</view>
@@ -55,56 +58,7 @@
 				btncolor3: 'white',
 				selectedContent: 'content1', // 初始化显示内容
 				lastSevenElements: [],
-				message: [{
-						date: "2023.11.07",
-						heart: 70,
-						temperature: 37.0,
-						dbp: 70,
-						sbp: 110,
-					},
-					{
-						date: "2023.11.08",
-						heart: 72,
-						temperature: 37.4,
-						dbp: 71,
-						sbp: 120,
-					},
-					{
-						date: "2023.11.09",
-						heart: 64,
-						temperature: 36.2,
-						dbp: 78,
-						sbp: 130,
-					},
-					{
-						date: "2023.11.10",
-						heart: 65,
-						temperature: null,
-						dbp: 76,
-						sbp: 100,
-					},
-					{
-						date: "2023.11.11",
-						heart: 69,
-						temperature: 36.3,
-						dbp: 73,
-						sbp: 114,
-					},
-					{
-						date: "2023.11.12",
-						heart: 64,
-						temperature: 37.2,
-						dbp: 70,
-						sbp: 110,
-					},
-					{
-						date: "2023.11.13",
-						heart: 45,
-						temperature: 36.8,
-						dbp: 70,
-						sbp: 110,
-					},
-				],
+				message: [],
 				add: {
 					date: null,
 					heart: null,
@@ -254,20 +208,44 @@
 						//模拟从服务器获取数据时的延时
 
 						_this.lastSevenElements = [];
-						_this.lastSevenElements = _this.message.slice(-5);
-						console.log(_this.lastSevenElements)
+						if(_this.message==[] || _this.message==null)
+						{
+							_this.message=[]
+							return;
+						}
 						let resdate = [];
 						let resdbp = [];
 						let ressbp = [];
 						let resheart = [];
 						let restemp = [];
-						for (var i = 0; i < 5; i++) {
-							resdate.push(_this.lastSevenElements[i].date.slice(-5));
-							resdbp.push(_this.lastSevenElements[i].dbp);
-							ressbp.push(_this.lastSevenElements[i].sbp);
-							resheart.push(_this.lastSevenElements[i].heart);
-							restemp.push(_this.lastSevenElements[i].temperature);
+						if(_this.message.length<5)
+						{
+							let num=_this.message.length
+							_this.lastSevenElements = _this.message.slice(-num);
+							console.log(_this.lastSevenElements)
+
+							for (var i = 0; i < _this.message.length; i++) {
+								
+								resdate.push(_this.lastSevenElements[i].date.slice(-num));
+								resdbp.push(_this.lastSevenElements[i].dbp);
+								ressbp.push(_this.lastSevenElements[i].sbp);
+								resheart.push(_this.lastSevenElements[i].heart);
+								restemp.push(_this.lastSevenElements[i].temperature);
+							}
 						}
+						else if(_this.message.length>=5){
+							_this.lastSevenElements = _this.message.slice(-5);
+							console.log(_this.lastSevenElements)
+	
+							for (var i = 0; i < 5; i++) {
+								resdate.push(_this.lastSevenElements[i].date.slice(-5));
+								resdbp.push(_this.lastSevenElements[i].dbp);
+								ressbp.push(_this.lastSevenElements[i].sbp);
+								resheart.push(_this.lastSevenElements[i].heart);
+								restemp.push(_this.lastSevenElements[i].temperature);
+							}
+						}
+						
 
 						//模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
 						let res = {

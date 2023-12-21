@@ -47,6 +47,10 @@
 						success: function(response) {
 							//将indexList更新
 							_this.globalData.global_indexList = response.data.code.Guardian_id_list
+							if(_this.globalData.global_indexList ==null)
+							{
+								_this.globalData.global_indexList =[]
+							}
 							// console.log(response)
 						},
 						fail: function(response) {
@@ -78,6 +82,10 @@
 							// console.log(response)
 							_this.globalData.global_flag = response.data.code.Flag
 							_this.globalData.global_opposite_id=response.data.code.Doctor_id
+							if(_this.globalData.global_opposite_id==null||_this.globalData.global_opposite_id=="UNDEFINED")
+							{
+								_this.globalData.global_opposite_id=""
+							}
 							// console.log("获取聊天记录成功")
 						},
 						fail: function(response) {
