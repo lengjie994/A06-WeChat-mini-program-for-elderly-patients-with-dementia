@@ -36,6 +36,9 @@ class Patient(models.Model):
     Memoir = JSONField(null=True)
     #我的健康数据
     Healthdata = JSONField(null=True)
+    #发送服药提醒的uid
+    Uid = models.CharField(max_length = 200, default = "UNDEFINED")
+
 
 #Guardian：模型，用于存储患者的身份和备忘录等信息
 class Guardian(models.Model):
@@ -49,6 +52,7 @@ class Guardian(models.Model):
     Status = models.CharField(max_length = 100, default = "UNBOUND") #绑定状态，默认未绑定
     Reservation = JSONField(null=True)
     Chatlist = JSONField(null=True)
+    Nickname = models.CharField(max_length = 200, default = "UNDEFINED")
 
 #医生模型
 class Doctor(models.Model):
@@ -61,3 +65,4 @@ class Doctor(models.Model):
     Doctor_info = JSONField(null=True)
     Reservation = JSONField(null=True)
     Reservation_info  = JSONField(null=True)
+    Nickname = models.CharField(max_length = 200, default = "UNDEFINED")

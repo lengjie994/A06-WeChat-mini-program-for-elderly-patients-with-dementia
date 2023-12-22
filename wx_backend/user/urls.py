@@ -12,9 +12,14 @@ from user.views import SendMemoir
 from user.views import SendReminder
 from user.views import DoctorgetReminder
 from user.views import GuardianReserve
+from user.views import WriteUid
+from user.views import ModifyGaurdianNickname
+from user.views import ModifyDoctorInfo
 from user.BindHandle.bind import GuardianGetID
 from user.BindHandle.bind import PatientGetID
 from user.SendMessage.send import SendOfficialReminder
+from user.SendMessage.send import DeleteOneReminder
+
 from user.ChatHandle.chat import SaveChatlist
 from user.ChatHandle.chat import ReturnChatList
 from user.ChatHandle.chat import GuardianFlagFalse
@@ -37,11 +42,15 @@ urlpatterns = [
     path('SendReminder/', SendReminder.as_view(), name='SendReminder'),
     path('DoctorgetReminder/', DoctorgetReminder.as_view(), name='DoctorgetReminder'),
     path('GuardianReserve/', GuardianReserve.as_view(), name='GuardianReserve'),
+    path('WriteUid/', WriteUid.as_view(), name='WriteUid'),
+    path('ModifyGaurdianNickname/', ModifyGaurdianNickname.as_view(), name='ModifyGaurdianNickname'),
+    path('ModifyDoctorInfo/', ModifyDoctorInfo.as_view(), name='ModifyDoctorInfo'),
 
     path('GuardianGetID/', GuardianGetID.as_view(), name='GuardianGetID'),
     path('PatientGetID/', PatientGetID.as_view(), name='PatientGetID'),
 
     path('SendOfficialReminder/', SendOfficialReminder.as_view(), name='SendOfficialReminder'),
+    path('DeleteOneReminder/', DeleteOneReminder.as_view(), name='DeleteOneReminder'),
 
     path('SaveChatlist/', SaveChatlist.as_view(), name='SaveChatlist'),
     path('ReturnChatList/', ReturnChatList.as_view(), name='ReturnChatList'),

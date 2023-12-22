@@ -31,9 +31,14 @@ class WeixinLogin(APIView):
         # 微信接口服务的带参数的地址
         url = base_url + "?appid=" + appid + "&secret=" + appsecret + "&js_code=" + code + "&grant_type=authorization_code"
         response = requests.get(url)
+        
+        url_ACCESS_TOKEN = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+appsecret
+        response_ACCESS_TOKEN = requests.get(url_ACCESS_TOKEN)
+        access_token = response_ACCESS_TOKEN.json()['access_token']
 
         # 处理获取的 openid
         try:
+            #只能获得这两个数据
             openid = response.json()['openid']
             session_key = response.json()['session_key']
         except KeyError:
@@ -46,6 +51,11 @@ class WeixinLogin(APIView):
                 }
             })
         else:
+            url_unionid = 'https://api.weixin.qq.com/wxa/getpaidunionid?access_token='+access_token+'&openid='+openid
+            response_unionid = requests.get(url_unionid)
+            print(response_unionid.json())
+            unionid = response_unionid.json()['unionid']
+            print(unionid)
             theRole=''
             specialID=''
             # 根据openid确定用户的本地身份
@@ -227,6 +237,8 @@ class GetGuardianInfo(APIView):
                     "Medicine": patient.Medicine,
                     "Healthdata":patient.Healthdata,
                     "Reservation":guardian.Reservation,
+                    "Patient_openid":patient.Openid,
+                    "Nickname": guardian.Nickname,
                 }
             })
         except:
@@ -246,6 +258,8 @@ class GetGuardianInfo(APIView):
                     "Medicine": "",
                     "Healthdata":"",
                     "Reservation":guardian.Reservation,
+                    "Patient_openid":"",
+                    "Nickname": guardian.Nickname,
                 }
             })
 
@@ -269,6 +283,7 @@ class getDoctorInfo(APIView):
                     "Doctor_info":doctor.Doctor_info,
                     "Reservation":doctor.Reservation,
                     "Reservation_info":doctor.Reservation_info,
+                    "Nickname": doctor.Nickname,
                 }
             })
         except:
@@ -603,6 +618,90 @@ class GuardianReserve(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
+        return Response({
+            "msg": 'success', 
+            "openid": openid,
+        })
+    
+class WriteUid(APIView):
+    def post(self, request, format=None):
+        """
+        修改患者的uid
+        """
+        # 患者的openid
+        openid = json.loads(request.body).get('openid')
+        uid = json.loads(request.body).get('uid')
+        try:
+            patient = Patient.objects.get(Openid=openid)
+            patient.Uid = uid
+            patient.save()
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该患者不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        return Response({
+            "msg": 'success', 
+            "openid": openid,
+            'uid':uid,
+        })
+
+class ModifyGaurdianNickname(APIView):
+    def post(self, request, format=None):
+        """
+        修改监护人信息
+        """
+        # 监护人的openid
+        openid = json.loads(request.body).get('openid')
+        nickname = json.loads(request.body).get('nickname')
+        try:
+            guardian = Guardian.objects.get(Openid=openid)
+            guardian.Nickname = nickname
+            guardian.save()
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        return Response({
+            "msg": 'success', 
+            "openid": openid,
+        })
+
+class ModifyDoctorInfo(APIView):
+    def post(self, request, format=None):
+        """
+        修改医生信息
+        """
+        # 医生的openid
+        openid = json.loads(request.body).get('openid')
+        nickname = json.loads(request.body).get('nickname')
+        doctor_info = json.loads(request.body).get('Doctor_info')
+        try:
+            doctor = Doctor.objects.get(Openid=openid)
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该患者不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        if doctor_info == '':
+            doctor.Nickname = nickname
+            doctor.save()
+        else:
+            doctor.Doctor_info = doctor_info
+            doctor.save()
         return Response({
             "msg": 'success', 
             "openid": openid,
