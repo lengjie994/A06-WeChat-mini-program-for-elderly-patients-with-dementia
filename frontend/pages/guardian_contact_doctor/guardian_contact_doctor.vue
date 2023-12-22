@@ -1,10 +1,11 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="医生列表" height="11vh" :border="false" :fixed="true"
 				backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
 		<view class="u-page">
+			<fui-section title="医生列表" line-width="8rpx" isLine class="fui-section__title" marginBottom="28"></fui-section>
 			<u-list @scrolltolower="scrolltolower" :height="scrollheight">
 				<!--根据全局变量indexList判断每一个item是否有新消息，再添加消息提示组件-->
 				<fui-list-cell v-if="indexList[0].doctor_id!=''" v-for="(item, index) in indexList" :key="index"  
@@ -35,6 +36,7 @@
 	import fuiListCell from "firstui-uni/firstui/fui-list-cell/fui-list-cell.vue"
 	import fuiBadge from "firstui-uni/firstui/fui-badge/fui-badge.vue"
 	import fuiIcon from "firstui-uni/firstui/fui-icon/fui-icon.vue"
+	import fuisection from 'firstui-uni/firstui/fui-section/fui-section.vue'
 
 	export default {
 		data() {
@@ -113,6 +115,7 @@
 			fuiListCell,
 			fuiBadge,
 			fuiIcon,
+			fuisection,
 		},
 		onShow()
 		{
@@ -137,6 +140,10 @@
 </script>
 
 <style lang="scss">
+	.content{
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
 	.header{
 		background-color: #F5F5F5;
 	}
@@ -146,6 +153,9 @@
 	.fui-align__center {
 		display: flex;
 		align-items: center;
+	}
+	.fui-section__title {
+		margin-left: 32rpx;
 	}
 
 </style>

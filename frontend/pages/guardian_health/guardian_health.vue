@@ -1,40 +1,24 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="患者相关" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
 		<view>
-		
-			<view class="table">
-				<!-- 表头(即第一行) -->
-				<view class="tr" v-if="true" @tap="goto_pill">
-					<view class="th">
+			<view>
+				<view>
+					<fui-section title="患者相关信息" line-width="8rpx" isLine class="fui-section__title"></fui-section>
+					<fui-list-cell arrow @click="goto_pill()" marginTop="28">
 						<view class="iconfont icon-a-23-pill-diagonal"></view>
-					</view>
-					<view class="td">编辑服药提醒</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
-				</view>
-				<!-- 表格第二行 -->
-				<view class="tr" @tap="goto_healthdata">
-					<view class="th">
+						<text style="margin-left: 20rpx;">编辑服药提醒</text>
+					</fui-list-cell>
+					<fui-list-cell arrow @click="goto_healthdata()">
 						<view class="iconfont icon-a-17-chart-3"></view>
-					</view>
-					<view class="td">记录健康数据</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
-				</view>
-				<!-- 表格第三行 -->
-				<view class="tr" @tap="onClickShow()">
-					<view class="th">
+						<text style="margin-left: 20rpx;">记录健康数据</text>
+					</fui-list-cell>
+					<fui-list-cell arrow @click="onClickShow()">
 						<view class="iconfont icon-a-38-mobile-check"></view>
-					</view>
-					<view class="td">编辑备忘录</view>
-					<view class="th">
-						<view class="iconfont icon-jinru" bind:tap=""></view>
-					</view>
+						<text style="margin-left: 20rpx;">编辑备忘录</text>
+					</fui-list-cell>
 				</view>
 			</view>
 		</view>
@@ -53,6 +37,10 @@
 	import uniPopupDialog from '@/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue';
 	import tabBar from '@/components/tabbar/tabbar.vue'
 	import edit_note from '@/components/edit_note/edit_note.vue'
+	import fuilistcell from '@/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue'
+	import fuisection from 'firstui-uni/firstui/fui-section/fui-section.vue'
+	import fuiAvatar from "firstui-uni/firstui/fui-avatar/fui-avatar.vue"
+	import fuiTag from "firstui-uni/firstui/fui-tag/fui-tag.vue"
 	export default {
 		data() {
 			return {
@@ -81,6 +69,10 @@
 			uniPopupDialog,
 			tabBar,
 			edit_note,
+			fuilistcell,
+			fuisection,
+			fuiAvatar,
+			fuiTag,
 		},
 		methods: {
 			goto_pill() {
@@ -138,6 +130,13 @@
 </script>
 
 <style lang="scss">
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
+	.fui-section__title {
+		margin-left: 32rpx;
+	}
 	.header{
 		background-color: #F5F5F5;
 	}

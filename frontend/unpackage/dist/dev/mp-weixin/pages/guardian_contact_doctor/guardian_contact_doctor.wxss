@@ -1,11 +1,18 @@
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
+.content {
+  background-color: #F1F4FA;
+  height: 100vh;
+}
 .header {
   background-color: #F5F5F5;
 }
 .fui-align__center {
   display: flex;
   align-items: center;
+}
+.fui-section__title {
+  margin-left: 32rpx;
 }
 
