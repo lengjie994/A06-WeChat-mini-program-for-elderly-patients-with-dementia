@@ -142,7 +142,8 @@
 					openid: this.openid,
 				},
 				success: function(response) {
-					_this.id = response.data.code.Patient_id;
+					//_this.id = response.data.code.Patient_id;
+					_this.id=(Array(8).join("0") + Number(response.data.code.Patient_id)).slice(-8);
 					console.log("获取患者id成功")
 				},
 				fail: function(response) {

@@ -223,11 +223,12 @@
 				},
 				success: function(response) {
 					console.log("获取监护人id成功")
-					_this.id=response.data.code.Guardian_id;
+					//_this.id=response.data.code.Guardian_id;
+					_this.id=(Array(8).join("0") + Number(response.data.code.Guardian_id)).slice(-8);
 					_this.nickname=response.data.code.Nickname
-					if(_this.nickname==""||_this.nickname=="UNDEFINED")
+					if(_this.nickname==""||_this.nickname=="UNDEFINED"||_this.nickname==undefined||_this.nickname==null)
 					{
-						_this.nickname=="暂无昵称"
+						_this.nickname="暂无昵称"
 					}
 					console.log(response)
 				},

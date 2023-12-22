@@ -174,7 +174,8 @@
 					openid:this.openid,
 				},
 				success: function(response) {
-					_this.id=response.data.code.Doctor_id
+					//_this.id=response.data.code.Doctor_id
+					_this.id=(Array(8).join("0") + Number(response.data.code.Doctor_id)).slice(-8);
 					console.log(111)
 				},
 				fail: function(response) {
