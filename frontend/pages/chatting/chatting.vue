@@ -1,34 +1,16 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="title" style="position: fixed;">
 			<view>联系对象</view>
 		</view>
 		<view class="wrap" :style="{paddingBottom:padding_height}">
 			<view class="content_box" id="box" ref="scrollBox">
-				<view class="timer">2022-08-02 11:08:07</view>
-				<!-- <view :class="item.position == 'left' ? 'userbox2' : 'userbox'" v-for="(item, index) in chatlist"
-					:key="index" :id='"item"+index'>
-					<view :class="item.position == 'left' ? 'nameInfo2' : 'nameInfo'">
-						<view style="font-size: 14rpx">{{ item.position == 'left' ?item.uname:item.to_name  }}</view>
-						<view :class="item.position == 'left' ? 'contentText2' : 'contentText'">
-							{{ item.msn }}
-						</view>
-					</view>
-					<view>
-						<image class="touxiang" :src="item.position == 'left' ?item.uavatar:item.to_avatar" />
-					</view>
-				</view> -->
 				<view :class="item.identity == identity ? 'userbox' : 'userbox2'" v-for="(item, index) in chatlist"
 					:key="index" :id='"item"+index'>
 					<view :class="item.identity == identity ? 'nameInfo' : 'nameInfo2'">
-						<view style="font-size: 14rpx">{{ item.identity == identity ?item.to_name:item.uname  }}
-						</view>
 						<view :class="item.identity == identity ? 'contentText' : 'contentText2'">
 							{{ item.msn }}
 						</view>
-					</view>
-					<view>
-						<image class="touxiang" :src="item.identity == identity ?item.to_avatar:item.uavatar" />
 					</view>
 				</view>
 			</view>
@@ -38,6 +20,7 @@
 					<button style="height: 80rpx;color:#58df4d;font-size: 30rpx;line-height: 80rpx;width: 200rpx;"
 						@click="sendOut">发送</button>
 					<button style="height: 80rpx;color:#58df4d;font-size: 30rpx;line-height: 80rpx;width: 200rpx;"
+						v-if="identity==='doctor'"
 						@click="changeMode">➕</button>
 				</view>
 				<view class="more-view" v-show="showMore">
@@ -48,16 +31,8 @@
 						<text style="font-size: 28rpx;">患者数据</text>
 
 					</view>
-					<view v-if="identity==='guardian'" style="justify-content: center; height: 120rpx;width: 120rpx; margin-left: 30rpx;">
-						<button class="funcbtn" @click="gotoReservation">
-							<image src="../../static/reserve.png"></image>
-						</button>
-						<text style="font-size: 28rpx;">预约就医</text>
-					</view>
 				</view>
 			</view>
-
-
 		</view>
 	</view>
 </template>
@@ -161,27 +136,6 @@
 			//获取历史记录
 			getlishiList(type) {
 				let _this=this
-				/*uni.request({
-					url: 'https://zz.api.asdwqs.com/gzh/crmebchat/chatMessageList', //仅为示例，并非真实接口地址。
-					method: 'POST',
-					data: {
-						accept_id: this.infoList.kf_id,
-						page: this.page,
-						limit: 10,
-					},
-					header: {
-						token: uni.getStorageSync('token') //拿到缓存中的token
-					},
-					success: (res) => {
-						console.log('历史记录:', res);
-						let a = res.data.data.list
-						this.chatlist = a.concat(this.chatlist)//用拿到的数据合并现有的数据，这样当加载第二页历史记录时，顺序不会乱
-						if (type == 1) {//滚动到顶部触发方法会传入1，此时不需要调用滚动到最底部的方法
-							return
-						}
-						this.setPageScrollTo()//滚动到最底部
-					}
-				});*/
 				wx.request({
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
@@ -312,6 +266,7 @@
 		height: 80rpx;
 		width: 100%;
 		background-color: #eaeaea;
+		z-index: 1000;
 		display: flex;
 		justify-content: center;
 		align-items: center;

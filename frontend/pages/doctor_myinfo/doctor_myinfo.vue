@@ -8,6 +8,7 @@
 				<fui-icon name="my" color="#fff"></fui-icon>
 			</fui-avatar>
 			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
+			<fui-tag text="昵称-" type="purple" margin-bottom="24" theme="light" margin-right="24" @click="editnickname()">{{nickname}}</fui-tag>
 		</view>
 		<view>
 			<view>
@@ -18,10 +19,6 @@
 				</fui-list-cell> -->
 				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
 					class="fui-section__title"></fui-section>
-				<fui-list-cell arrow @click="show_reservation()" marginTop="28">
-					<view class="iconfont icon-qianshuxieyi"></view>
-					<text style="margin-left: 20rpx;">我的预约</text>
-				</fui-list-cell>
 				<fui-list-cell arrow @click="edit_info()">
 					<view class="iconfont icon-yisheng1"></view>
 					<text style="margin-left: 20rpx;">我的资料</text>
@@ -36,6 +33,7 @@
 		<view>
 			<tabBar selectedIndex=1 :id_data="id_data"></tabBar>
 		</view>
+		<edit_nickname ref='customModal' :name_info="name_info" @onClickConfirm="Confirmnickname"></edit_nickname>
 
 	</view>
 </template>
@@ -51,12 +49,18 @@
 	import fuisection from 'firstui-uni/firstui/fui-section/fui-section.vue'
 	import fuiAvatar from "firstui-uni/firstui/fui-avatar/fui-avatar.vue"
 	import fuiTag from "firstui-uni/firstui/fui-tag/fui-tag.vue"
+	import edit_nickname from '@/components/edit_nickname/edit_nickname.vue'
 	export default {
 		data() {
 			return {
 				openid:"",
 				info:{},
 				id_data:"doctor",
+				id:"",
+				nickname:"",
+				name_info:{
+					name:'',
+				}
 			};
 		},
 		onShow() {
@@ -80,6 +84,7 @@
 			fuisection,
 			fuiAvatar,
 			fuiTag,
+			edit_nickname,
 		},
 
 		methods: {
@@ -109,11 +114,41 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为传递医生资料的url
-					url: 'http://127.0.0.1:8000/api/user/SaveDoctorInfo/',
+					url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
-						info:stateData
+						openid:this.openid,
+						nickname:this.nickname,
+						Doctor_info:stateData,
+					},
+					success: function() {
+						console.log(111)
+					},
+					fail: function(response) {
+						console.log(222)
+					}
+				})
+				this.$refs['customModal'].hideModal();
+			},
+			editnickname(){
+				this.$refs['customModal'].showModal();
+			},
+			Confirmnickname(data) {
+				let stateData = JSON.parse(data)
+				console.log(stateData.name)
+				this.nickname=stateData.name
+				wx.request({
+					// 这里是django的本地ip地址
+					// 如果部署到线上，需要改为接口的实际网址
+					//此处url还需修改为传递医生资料的url
+					url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
+					// 请求方式修改为 POST
+					method: 'POST',
+					data: {
+						openid:this.openid,
+						nickname:stateData.name,
+						Doctor_info:"",
 					},
 					success: function() {
 						console.log(111)
@@ -127,6 +162,25 @@
 		},
 		onLoad(){
 			this.openid=getApp().globalData.global_openid
+			let _this=this
+			wx.request({
+				// 这里是django的本地ip地址
+				// 如果部署到线上，需要改为接口的实际网址
+				//此处url还需修改为传递医生资料的url
+				url: 'http://127.0.0.1:8000/api/user/getDoctorInfo/',
+				// 请求方式修改为 POST
+				method: 'POST',
+				data: {
+					openid:this.openid,
+				},
+				success: function(response) {
+					_this.id=response.data.code.Doctor_id
+					console.log(111)
+				},
+				fail: function(response) {
+					console.log(222)
+				}
+			})
 		}
 	}
 </script>

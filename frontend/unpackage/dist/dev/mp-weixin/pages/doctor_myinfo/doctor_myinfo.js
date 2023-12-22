@@ -101,25 +101,28 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 318))
     },
     fuiAvatar: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 317))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 325))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332))
     },
     fuiTag: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 332))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 340))
     },
     fuiSection: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 339))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 347))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354))
     },
     edit_info: function () {
-      return __webpack_require__.e(/*! import() | components/edit_info/edit_info */ "components/edit_info/edit_info").then(__webpack_require__.bind(null, /*! @/components/edit_info/edit_info.vue */ 510))
+      return __webpack_require__.e(/*! import() | components/edit_info/edit_info */ "components/edit_info/edit_info").then(__webpack_require__.bind(null, /*! @/components/edit_info/edit_info.vue */ 525))
+    },
+    edit_nickname: function () {
+      return __webpack_require__.e(/*! import() | components/edit_nickname/edit_nickname */ "components/edit_nickname/edit_nickname").then(__webpack_require__.bind(null, /*! @/components/edit_nickname/edit_nickname.vue */ 476))
     },
   }
 } catch (e) {
@@ -184,42 +187,47 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var uniPopup = function uniPopup() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 361));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var uniPopupDialog = function uniPopupDialog() {
   Promise.all(/*! require.ensure | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 360));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 368));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 380));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var edit_info = function edit_info() {
   __webpack_require__.e(/*! require.ensure | components/edit_info/edit_info */ "components/edit_info/edit_info").then((function () {
-    return resolve(__webpack_require__(/*! @/components/edit_info/edit_info.vue */ 510));
+    return resolve(__webpack_require__(/*! @/components/edit_info/edit_info.vue */ 525));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuilistcell = function fuilistcell() {
   __webpack_require__.e(/*! require.ensure | components/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "components/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! @/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 386));
+    return resolve(__webpack_require__(/*! @/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 394));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuisection = function fuisection() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 339));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 347));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiAvatar = function fuiAvatar() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 317));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 325));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiTag = function fuiTag() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 332));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 340));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var edit_nickname = function edit_nickname() {
+  __webpack_require__.e(/*! require.ensure | components/edit_nickname/edit_nickname */ "components/edit_nickname/edit_nickname").then((function () {
+    return resolve(__webpack_require__(/*! @/components/edit_nickname/edit_nickname.vue */ 476));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -227,7 +235,12 @@ var _default = {
     return {
       openid: "",
       info: {},
-      id_data: "doctor"
+      id_data: "doctor",
+      id: "",
+      nickname: "",
+      name_info: {
+        name: ''
+      }
     };
   },
   onShow: function onShow() {
@@ -248,7 +261,8 @@ var _default = {
     fuilistcell: fuilistcell,
     fuisection: fuisection,
     fuiAvatar: fuiAvatar,
-    fuiTag: fuiTag
+    fuiTag: fuiTag,
+    edit_nickname: edit_nickname
   },
   methods: {
     show_reservation: function show_reservation() {
@@ -276,11 +290,41 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为传递医生资料的url
-        url: 'http://127.0.0.1:8000/api/user/SaveDoctorInfo/',
+        url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {
-          info: stateData
+          openid: this.openid,
+          nickname: this.nickname,
+          Doctor_info: stateData
+        },
+        success: function success() {
+          console.log(111);
+        },
+        fail: function fail(response) {
+          console.log(222);
+        }
+      });
+      this.$refs['customModal'].hideModal();
+    },
+    editnickname: function editnickname() {
+      this.$refs['customModal'].showModal();
+    },
+    Confirmnickname: function Confirmnickname(data) {
+      var stateData = JSON.parse(data);
+      console.log(stateData.name);
+      this.nickname = stateData.name;
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为传递医生资料的url
+        url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid,
+          nickname: stateData.name,
+          Doctor_info: ""
         },
         success: function success() {
           console.log(111);
@@ -294,6 +338,25 @@ var _default = {
   },
   onLoad: function onLoad() {
     this.openid = getApp().globalData.global_openid;
+    var _this = this;
+    wx.request({
+      // 这里是django的本地ip地址
+      // 如果部署到线上，需要改为接口的实际网址
+      //此处url还需修改为传递医生资料的url
+      url: 'http://127.0.0.1:8000/api/user/getDoctorInfo/',
+      // 请求方式修改为 POST
+      method: 'POST',
+      data: {
+        openid: this.openid
+      },
+      success: function success(response) {
+        _this.id = response.data.code.Doctor_id;
+        console.log(111);
+      },
+      fail: function fail(response) {
+        console.log(222);
+      }
+    });
   }
 };
 exports.default = _default;

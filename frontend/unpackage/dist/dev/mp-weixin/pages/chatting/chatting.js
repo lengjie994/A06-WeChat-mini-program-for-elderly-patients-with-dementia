@@ -143,7 +143,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -247,27 +247,6 @@ var _default = {
     //获取历史记录
     getlishiList: function getlishiList(type) {
       var _this = this;
-      /*uni.request({
-      	url: 'https://zz.api.asdwqs.com/gzh/crmebchat/chatMessageList', //仅为示例，并非真实接口地址。
-      	method: 'POST',
-      	data: {
-      		accept_id: this.infoList.kf_id,
-      		page: this.page,
-      		limit: 10,
-      	},
-      	header: {
-      		token: uni.getStorageSync('token') //拿到缓存中的token
-      	},
-      	success: (res) => {
-      		console.log('历史记录:', res);
-      		let a = res.data.data.list
-      		this.chatlist = a.concat(this.chatlist)//用拿到的数据合并现有的数据，这样当加载第二页历史记录时，顺序不会乱
-      		if (type == 1) {//滚动到顶部触发方法会传入1，此时不需要调用滚动到最底部的方法
-      			return
-      		}
-      		this.setPageScrollTo()//滚动到最底部
-      	}
-      });*/
       wx.request({
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址

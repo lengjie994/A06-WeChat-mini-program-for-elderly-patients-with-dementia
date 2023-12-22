@@ -17,6 +17,10 @@
 					<view class="iconfont icon-tianxuangouren"></view>
 					<text style="margin-left: 20rpx;">我的监护人</text>
 				</fui-list-cell>
+				<fui-list-cell arrow @click="follow()">
+					<view class="iconfont icon-tianxuangouren"></view>
+					<text style="margin-left: 20rpx;">关注服药提醒公众号</text>
+				</fui-list-cell>
 				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
 					class="fui-section__title"></fui-section>
 				<fui-list-cell arrow @click="goto_healthdata" marginTop="28">
@@ -103,7 +107,11 @@
 					url: '/pages/patient_healthdata/patient_healthdata'
 				})
 			},
-
+			follow() {
+				uni.navigateTo({
+					url: '/pages/follow/follow'
+				})
+			},
 			// 根据自己项目，在某个事件触发弹框弹出,注意！！！$refs后面直接跟[],不需要.
 			onClickShow() {
 				//this.dataLineDetail = data;

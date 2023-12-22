@@ -19384,7 +19384,15 @@ function normalizeComponent (
 /* 326 */,
 /* 327 */,
 /* 328 */,
-/* 329 */
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */
 /*!******************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/firstui-uni/firstui/fui-icon/fui-icon.js ***!
   \******************************************************************************************************************************************/
@@ -19566,14 +19574,6 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
 /* 338 */,
 /* 339 */,
 /* 340 */,
@@ -19601,7 +19601,15 @@ exports.default = _default;
 /* 362 */,
 /* 363 */,
 /* 364 */,
-/* 365 */
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */
 /*!****************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \****************************************************************************************************************************************/
@@ -19642,7 +19650,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 366 */
+/* 374 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
   \*********************************************************************************************************************************************/
@@ -19657,9 +19665,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 367));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 368));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 369));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 375));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 376));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 377));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -19668,7 +19676,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 367 */
+/* 375 */
 /*!********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
   \********************************************************************************************************************************************/
@@ -19678,7 +19686,7 @@ exports.default = _default;
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
 
 /***/ }),
-/* 368 */
+/* 376 */
 /*!*************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
   \*************************************************************************************************************************************************/
@@ -19688,7 +19696,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 369 */
+/* 377 */
 /*!*************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
   \*************************************************************************************************************************************************/
@@ -19698,14 +19706,6 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
 /* 378 */,
 /* 379 */,
 /* 380 */,
@@ -19733,7 +19733,15 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /* 402 */,
 /* 403 */,
 /* 404 */,
-/* 405 */
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */
 /*!****************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \****************************************************************************************************************************************/
@@ -20754,14 +20762,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-text/props.js ***!
   \*************************************************************************************************************************************/
@@ -20889,12 +20897,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */
 /*!**************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-album/props.js ***!
   \**************************************************************************************************************************************/
@@ -20971,21 +20979,21 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
 /* 428 */,
 /* 429 */,
 /* 430 */,
 /* 431 */,
 /* 432 */,
 /* 433 */,
-/* 434 */
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */
 /*!************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js ***!
   \************************************************************************************/
@@ -21001,20 +21009,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 49));
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 435));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 443));
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ 5));
 var _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/typeof */ 13));
 var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 51));
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 436));
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 437));
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 438));
-var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 439));
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 444));
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 445));
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 446));
+var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 447));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
 var _uniI18n = __webpack_require__(/*! @dcloudio/uni-i18n */ 22);
-var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 441));
+var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 449));
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e35) { throw _e35; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e36) { didErr = true; err = _e36; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
@@ -21467,7 +21475,7 @@ var b = "development" === "development",
   O = true;
 var x = "";
 try {
-  x = (__webpack_require__(/*! uni-stat-config */ 442).default || __webpack_require__(/*! uni-stat-config */ 442)).appid;
+  x = (__webpack_require__(/*! uni-stat-config */ 450).default || __webpack_require__(/*! uni-stat-config */ 450)).appid;
 } catch (e) {}
 var R = {};
 function U(e) {
@@ -28338,7 +28346,7 @@ exports.default = Ns;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
-/* 435 */
+/* 443 */
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
   \**********************************************************************/
@@ -28354,7 +28362,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 436 */
+/* 444 */
 /*!*********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
   \*********************************************************/
@@ -28381,7 +28389,7 @@ function _inherits(subClass, superClass) {
 module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 437 */
+/* 445 */
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
   \**************************************************************************/
@@ -28389,7 +28397,7 @@ module.exports = _inherits, module.exports.__esModule = true, module.exports["de
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 435);
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 443);
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
@@ -28401,7 +28409,7 @@ function _possibleConstructorReturn(self, call) {
 module.exports = _possibleConstructorReturn, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 438 */
+/* 446 */
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
   \***************************************************************/
@@ -28417,16 +28425,16 @@ function _getPrototypeOf(o) {
 module.exports = _getPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 439 */
+/* 447 */
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/wrapNativeSuper.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 438);
+var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 446);
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ 16);
-var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 440);
+var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 448);
 var construct = __webpack_require__(/*! ./construct.js */ 15);
 function _wrapNativeSuper(Class) {
   var _cache = typeof Map === "function" ? new Map() : undefined;
@@ -28457,7 +28465,7 @@ function _wrapNativeSuper(Class) {
 module.exports = _wrapNativeSuper, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 440 */
+/* 448 */
 /*!*****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/isNativeFunction.js ***!
   \*****************************************************************/
@@ -28470,7 +28478,7 @@ function _isNativeFunction(fn) {
 module.exports = _isNativeFunction, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 441 */
+/* 449 */
 /*!****************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages.json?{"type":"origin-pages-json"} ***!
   \****************************************************************************************************************************/
@@ -28615,6 +28623,12 @@ var _default = {
       "navigationStyle": "custom",
       "enablePullDownRefresh": false
     }
+  }, {
+    "path": "pages/follow/follow",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
   }],
   "globalStyle": {
     "navigationBarTextStyle": "black",
@@ -28629,7 +28643,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 442 */
+/* 450 */
 /*!***************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages.json?{"type":"stat"} ***!
   \***************************************************************************************************************/
@@ -28649,7 +28663,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 443 */
+/* 451 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/qiun-data-charts/js_sdk/u-charts/u-charts.js ***!
   \*********************************************************************************************************************************************/
@@ -36309,7 +36323,7 @@ var _default = uCharts;
 exports.default = _default;
 
 /***/ }),
-/* 444 */
+/* 452 */
 /*!***************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js ***!
   \***************************************************************************************************************************************************/
@@ -36930,14 +36944,6 @@ var _default = cfu;
 exports.default = _default;
 
 /***/ }),
-/* 445 */,
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */,
-/* 452 */,
 /* 453 */,
 /* 454 */,
 /* 455 */,
@@ -37007,7 +37013,22 @@ exports.default = _default;
 /* 519 */,
 /* 520 */,
 /* 521 */,
-/* 522 */
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-list/props.js ***!
   \*************************************************************************************************************************************/
@@ -37100,21 +37121,6 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 523 */,
-/* 524 */,
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
 /* 538 */,
 /* 539 */,
 /* 540 */,
@@ -37128,7 +37134,29 @@ exports.default = _default;
 /* 548 */,
 /* 549 */,
 /* 550 */,
-/* 551 */
+/* 551 */,
+/* 552 */,
+/* 553 */,
+/* 554 */,
+/* 555 */,
+/* 556 */,
+/* 557 */,
+/* 558 */,
+/* 559 */,
+/* 560 */,
+/* 561 */,
+/* 562 */,
+/* 563 */,
+/* 564 */,
+/* 565 */,
+/* 566 */,
+/* 567 */,
+/* 568 */,
+/* 569 */,
+/* 570 */,
+/* 571 */,
+/* 572 */,
+/* 573 */
 /*!************************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \************************************************************************************************************************************************************/
@@ -37262,12 +37290,12 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */
+/* 574 */,
+/* 575 */,
+/* 576 */,
+/* 577 */,
+/* 578 */,
+/* 579 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-text/value.js ***!
   \*************************************************************************************************************************************/
@@ -37375,7 +37403,7 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 558 */
+/* 580 */
 /*!*******************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/libs/mixin/button.js ***!
   \*******************************************************************************************************************************/
@@ -37405,7 +37433,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 559 */
+/* 581 */
 /*!*********************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/libs/mixin/openType.js ***!
   \*********************************************************************************************************************************/
@@ -37447,14 +37475,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/utils.js ***!
   \***************************************************************************************************************************************/
@@ -37598,7 +37626,7 @@ function chooseFile(_ref) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
-/* 568 */
+/* 590 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/mixin.js ***!
   \***************************************************************************************************************************************/
@@ -37625,7 +37653,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 569 */
+/* 591 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/props.js ***!
   \***************************************************************************************************************************************/
@@ -37767,26 +37795,26 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
-/* 578 */,
-/* 579 */,
-/* 580 */,
-/* 581 */,
-/* 582 */,
-/* 583 */,
-/* 584 */,
-/* 585 */,
-/* 586 */,
-/* 587 */,
-/* 588 */,
-/* 589 */
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-icon/icons.js ***!
   \*************************************************************************************************************************************/
@@ -38017,7 +38045,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 590 */
+/* 612 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-icon/props.js ***!
   \*************************************************************************************************************************************/
@@ -38124,14 +38152,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 591 */,
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */,
-/* 596 */,
-/* 597 */,
-/* 598 */
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-link/props.js ***!
   \*************************************************************************************************************************************/
@@ -38188,14 +38216,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-loading-icon/props.js ***!
   \*********************************************************************************************************************************************/

@@ -7,10 +7,10 @@
 		<view class="u-page">
 			<u-list @scrolltolower="scrolltolower" :height="scrollheight">
 				<!--根据全局变量indexList判断每一个item是否有新消息，再添加消息提示组件-->
-				<fui-list-cell v-for="(item, index) in indexList" :key="index"  
+				<fui-list-cell v-if="indexList[0].doctor_id!=''" v-for="(item, index) in indexList" :key="index"  
 				@click="gotochat(item.doctor_id)" borderColor="#DDD"
 				bottomLeft=0>
-					<view class="fui-align__center">
+					<view  class="fui-align__center">
 						<fui-icon name="my-fill"></fui-icon>
 						<text>{{item.doctor_id}}</text>
 						
@@ -43,7 +43,7 @@
 				id_data: "guardian",
 				navheight: "60px",
 				indexList: [{
-					doctor_id:null,
+					doctor_id:'',
 					flag:false,
 				}],
 				scrollheight: "1100rpx",
@@ -102,12 +102,7 @@
 			valChange()
 			{
 				let _this=this
-				_this.indexList[0].doctor_id=getApp().globalData.global_opposite_id
 				_this.indexList[0].flag=getApp().globalData.global_flag
-				if(_this.indexList[0].doctor_id=="")
-				{
-					_this.indexList=[]
-				}
 				console.log(_this.indexList)
 			},
 			
@@ -124,10 +119,6 @@
 			let _this=this
 			_this.indexList[0].doctor_id=getApp().globalData.global_opposite_id
 			_this.indexList[0].flag=getApp().globalData.global_flag
-			if(_this.indexList[0].doctor_id=="")
-			{
-				_this.indexList=[]
-			}
 			
 			console.log(_this.indexList)
 			this.timer = setInterval(this.valChange, 2000);

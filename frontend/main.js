@@ -59,6 +59,8 @@ import add_bp from '@/components/add_bp/add_bp.vue'
 Vue.component('add_bp',add_bp)
 import edit_info from '@/components/edit_info/edit_info.vue'
 Vue.component('edit_info',edit_info)
+import edit_nickname from '@/components/edit_nickname/edit_nickname.vue'
+Vue.component('edit_nickname',edit_nickname)
 export function createApp() {
   const app = createSSRApp(App)
   return {

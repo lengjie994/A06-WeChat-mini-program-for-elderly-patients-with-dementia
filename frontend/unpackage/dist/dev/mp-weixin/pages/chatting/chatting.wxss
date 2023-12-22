@@ -36,6 +36,7 @@ image.data-v-eb12b574 {
 		height: 80rpx;
 		width: 100%;
 		background-color: #eaeaea;
+		z-index: 1000;
 		display: flex;
 		justify-content: center;
 		align-items: center;

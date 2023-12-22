@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 318))
     },
     uList: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 517))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 532))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332))
     },
     fuiBadge: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 525))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 540))
     },
   }
 } catch (e) {
@@ -178,27 +178,27 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 380));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiList = function fuiList() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list/fui-list */ "node-modules/firstui-uni/firstui/fui-list/fui-list").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 532));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 547));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiListCell = function fuiListCell() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiBadge = function fuiBadge() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 525));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 540));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -208,7 +208,7 @@ var _default = {
       id_data: "guardian",
       navheight: "60px",
       indexList: [{
-        doctor_id: null,
+        doctor_id: '',
         flag: false
       }],
       scrollheight: "1100rpx",
@@ -254,11 +254,7 @@ var _default = {
     },
     valChange: function valChange() {
       var _this = this;
-      _this.indexList[0].doctor_id = getApp().globalData.global_opposite_id;
       _this.indexList[0].flag = getApp().globalData.global_flag;
-      if (_this.indexList[0].doctor_id == "") {
-        _this.indexList = [];
-      }
       console.log(_this.indexList);
     }
   },
@@ -273,9 +269,6 @@ var _default = {
     var _this = this;
     _this.indexList[0].doctor_id = getApp().globalData.global_opposite_id;
     _this.indexList[0].flag = getApp().globalData.global_flag;
-    if (_this.indexList[0].doctor_id == "") {
-      _this.indexList = [];
-    }
     console.log(_this.indexList);
     this.timer = setInterval(this.valChange, 2000);
   },

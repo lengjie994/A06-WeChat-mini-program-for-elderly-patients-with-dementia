@@ -101,22 +101,22 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 310))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 318))
     },
     fuiAvatar: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 317))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 325))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 324))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332))
     },
     fuiTag: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 332))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 340))
     },
     fuiSection: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 339))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-section/fui-section.vue */ 347))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354))
     },
   }
 } catch (e) {
@@ -181,42 +181,42 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var uniPopup = function uniPopup() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 361));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var uniPopupDialog = function uniPopupDialog() {
   Promise.all(/*! require.ensure | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 360));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 368));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 380));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var patientguardian_state = function patientguardian_state() {
   __webpack_require__.e(/*! require.ensure | components/patient_guardian_state/patient_guardian_state */ "components/patient_guardian_state/patient_guardian_state").then((function () {
-    return resolve(__webpack_require__(/*! @/components/patient_guardian_state/patient_guardian_state.vue */ 379));
+    return resolve(__webpack_require__(/*! @/components/patient_guardian_state/patient_guardian_state.vue */ 387));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuilistcell = function fuilistcell() {
   __webpack_require__.e(/*! require.ensure | components/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "components/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! @/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 386));
+    return resolve(__webpack_require__(/*! @/components/firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 394));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuisection = function fuisection() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-section/fui-section */ "node-modules/firstui-uni/firstui/fui-section/fui-section").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 339));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-section/fui-section.vue */ 347));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiAvatar = function fuiAvatar() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-avatar/fui-avatar */ "node-modules/firstui-uni/firstui/fui-avatar/fui-avatar").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 317));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-avatar/fui-avatar.vue */ 325));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiTag = function fuiTag() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-tag/fui-tag */ "node-modules/firstui-uni/firstui/fui-tag/fui-tag").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 332));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-tag/fui-tag.vue */ 340));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -260,6 +260,11 @@ var _default = {
     goto_healthdata: function goto_healthdata() {
       uni.navigateTo({
         url: '/pages/patient_healthdata/patient_healthdata'
+      });
+    },
+    follow: function follow() {
+      uni.navigateTo({
+        url: '/pages/follow/follow'
       });
     },
     // 根据自己项目，在某个事件触发弹框弹出,注意！！！$refs后面直接跟[],不需要.

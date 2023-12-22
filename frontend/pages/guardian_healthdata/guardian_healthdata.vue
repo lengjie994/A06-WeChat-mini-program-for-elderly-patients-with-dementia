@@ -21,21 +21,24 @@
 					<image src="../../static/health_data/heart.png"></image>
 					<text>心率</text>
 				</view>
-				<text class="show" style="color: #EE6666;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].heart}}</text>
+				<text class="show" style="color: #EE6666;">{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].heart=='')?"暂无":lastSevenElements[lastSevenElements.length-1].heart}}</text>
 			</view>
 			<view class="selectbtn" @click="showtemp">
 				<view class="icon">
 					<image src="../../static/health_data/temperature.png"></image>
 					<text>体温</text>
 				</view>
-				<text class="show" style="color: #1890FF;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].temperature}}</text>
+				<text class="show" style="color: #1890FF;">{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].temperature=='')?"暂无":lastSevenElements[lastSevenElements.length-1].temperature}}</text>
 			</view>
 			<view class="selectbtn" @click="showbp">
 				<view class="icon">
 					<image src="../../static/health_data/BP.png"></image>
 					<text>血压</text>
 				</view>
-				<text class="show" style="color: #FAC858;">{{lastSevenElements.length==0?"暂无":lastSevenElements[lastSevenElements.length-1].dbp}}{{lastSevenElements.length==0?"":"/"}}{{lastSevenElements.length==0?"":lastSevenElements[lastSevenElements.length-1].sbp}}</text>
+				<text class="show" style="color: #FAC858;">
+				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].dbp==''||lastSevenElements[lastSevenElements.length-1].dbp==null)?"暂无":lastSevenElements[lastSevenElements.length-1].dbp}}
+				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":"/"}}
+				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":lastSevenElements[lastSevenElements.length-1].sbp}}</text>
 			</view>
 		</view>
 		<add_heart ref='addheart' @onClickConfirm="Addheart"></add_heart>
@@ -63,11 +66,11 @@
 				lastSevenElements: [],
 				message: [],
 				add: {
-					date: null,
-					heart: null,
-					temperature: null,
-					dbp: null,
-					sbp: null,
+					date: "",
+					heart: "",
+					temperature: "",
+					dbp: "",
+					sbp: "",
 				},
 				chartData: {},
 				chartData2: {},
@@ -197,6 +200,7 @@
 			},
 			Addheart(data) {
 				let stateData = JSON.parse(data)
+				
 				console.log(stateData)
 				const currentDate = new Date();
 				const year = currentDate.getFullYear();
@@ -220,7 +224,7 @@
 					this.add.dbp = "";
 					this.add.sbp = "";
 					this.message.push(this.add);
-				} else if (this.message[this.message.length - 1].heart == null) {
+				} else if (this.message[this.message.length - 1].heart == "") {
 					this.message[this.message.length - 1].heart = stateData;
 				} else {
 					this.message[this.message.length - 1].heart = stateData;
@@ -259,20 +263,20 @@
 				if(this.message.length==0)
 				{
 					this.add.date = currentTime;
-					this.add.heart = null;
+					this.add.heart = "";
 					this.add.temperature = stateData;
-					this.add.dbp = null;
-					this.add.sbp = null;
+					this.add.dbp = "";
+					this.add.sbp = "";
 					this.message.push(this.add);
 				}
 				else if (this.message[this.message.length - 1].date != currentTime) {
 					this.add.date = currentTime;
-					this.add.heart = null;
+					this.add.heart = "";
 					this.add.temperature = stateData;
-					this.add.dbp = null;
-					this.add.sbp = null;
+					this.add.dbp = "";
+					this.add.sbp = "";
 					this.message.push(this.add);
-				} else if (this.message[this.message.length - 1].temperature == null) {
+				} else if (this.message[this.message.length - 1].temperature == "") {
 					this.message[this.message.length - 1].temperature = stateData;
 				} else {
 					this.message[this.message.length - 1].temperature = stateData;
@@ -311,23 +315,23 @@
 				if(this.message.length==0)
 				{
 					this.add.date = currentTime;
-					this.add.heart = null;
-					this.add.temperature = null;
+					this.add.heart = "";
+					this.add.temperature = "";
 					this.add.dbp = stateData.dbp;
 					this.add.sbp = stateData.sbp;
 					this.message.push(this.add);
 				}
 				else if (this.message[this.message.length - 1].date != currentTime) {
 					this.add.date = currentTime;
-					this.add.heart = null;
-					this.add.temperature = null;
+					this.add.heart = "";
+					this.add.temperature = "";
 					this.add.dbp = stateData.dbp;
 					this.add.sbp = stateData.sbp;
 					this.message.push(this.add);
-				} else if (this.message[this.message.length - 1].dbp == null) {
+				} else if (this.message[this.message.length - 1].dbp == "") {
 					this.message[this.message.length - 1].dbp = stateData.dbp;
 					this.message[this.message.length - 1].sbp = stateData.sbp;
-				} else if (this.message[this.message.length - 1].sbp == null) {
+				} else if (this.message[this.message.length - 1].sbp == "") {
 					this.message[this.message.length - 1].sbp = stateData.sbp;
 					this.message[this.message.length - 1].dbp = stateData.dbp;
 				} else {
@@ -363,10 +367,6 @@
 				{
 					_this.message=[]
 					return;
-				}
-				if(_this.message.dbp==null)
-				{
-					_this.message.dbp=""
 				}
 				let resdate = [];
 				let resdbp = [];

@@ -33,12 +33,7 @@
 	export default {
 		data() {
 			return {
-				message: [{
-					pill: "奥拉西坦胶囊",
-					count: "一次一粒",
-					dailycount: "3",
-					time: "08:00，12:00，18:00",
-				}],
+				message: [],
 				add: {},
 				scrollTop: 0,
 				openid:"",

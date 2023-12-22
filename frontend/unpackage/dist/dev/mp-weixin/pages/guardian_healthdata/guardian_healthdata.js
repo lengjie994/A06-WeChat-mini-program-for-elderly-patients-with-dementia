@@ -101,22 +101,22 @@ var components
 try {
   components = {
     qiunDataCharts: function () {
-      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 429))
+      return Promise.all(/*! import() | uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts")]).then(__webpack_require__.bind(null, /*! @/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts.vue */ 437))
     },
     add_heart: function () {
-      return __webpack_require__.e(/*! import() | components/add_heart/add_heart */ "components/add_heart/add_heart").then(__webpack_require__.bind(null, /*! @/components/add_heart/add_heart.vue */ 447))
+      return __webpack_require__.e(/*! import() | components/add_heart/add_heart */ "components/add_heart/add_heart").then(__webpack_require__.bind(null, /*! @/components/add_heart/add_heart.vue */ 455))
     },
     add_temperature: function () {
-      return __webpack_require__.e(/*! import() | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then(__webpack_require__.bind(null, /*! @/components/add_temperature/add_temperature.vue */ 454))
+      return __webpack_require__.e(/*! import() | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then(__webpack_require__.bind(null, /*! @/components/add_temperature/add_temperature.vue */ 462))
     },
     add_bp: function () {
-      return __webpack_require__.e(/*! import() | components/add_bp/add_bp */ "components/add_bp/add_bp").then(__webpack_require__.bind(null, /*! @/components/add_bp/add_bp.vue */ 461))
+      return __webpack_require__.e(/*! import() | components/add_bp/add_bp */ "components/add_bp/add_bp").then(__webpack_require__.bind(null, /*! @/components/add_bp/add_bp.vue */ 469))
     },
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 361))
     },
     uniPopupMessage: function () {
-      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-message/uni-popup-message */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-message/uni-popup-message")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-message/uni-popup-message.vue */ 503))
+      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-message/uni-popup-message */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-message/uni-popup-message")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-message/uni-popup-message.vue */ 518))
     },
   }
 } catch (e) {
@@ -140,15 +140,26 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var g0 = _vm.lastSevenElements.length
-  var g1 = !(g0 == 0) ? _vm.lastSevenElements.length : null
-  var g2 = _vm.lastSevenElements.length
-  var g3 = !(g2 == 0) ? _vm.lastSevenElements.length : null
-  var g4 = _vm.lastSevenElements.length
-  var g5 = !(g4 == 0) ? _vm.lastSevenElements.length : null
-  var g6 = _vm.lastSevenElements.length
-  var g7 = _vm.lastSevenElements.length
-  var g8 = !(g7 == 0) ? _vm.lastSevenElements.length : null
+  var g0 =
+    _vm.lastSevenElements.length == 0 ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].heart == ""
+  var g1 = !g0 ? _vm.lastSevenElements.length : null
+  var g2 =
+    _vm.lastSevenElements.length == 0 ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].temperature == ""
+  var g3 = !g2 ? _vm.lastSevenElements.length : null
+  var g4 =
+    _vm.lastSevenElements.length == 0 ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].dbp == "" ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].dbp == null
+  var g5 = !g4 ? _vm.lastSevenElements.length : null
+  var g6 =
+    _vm.lastSevenElements.length == 0 ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].sbp == null
+  var g7 =
+    _vm.lastSevenElements.length == 0 ||
+    _vm.lastSevenElements[_vm.lastSevenElements.length - 1].sbp == null
+  var g8 = !g7 ? _vm.lastSevenElements.length : null
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -206,22 +217,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var uniPopup = function uniPopup() {
   __webpack_require__.e(/*! require.ensure | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then((function () {
-    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353));
+    return resolve(__webpack_require__(/*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 361));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_heart = function add_heart() {
   __webpack_require__.e(/*! require.ensure | components/add_heart/add_heart */ "components/add_heart/add_heart").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 447));
+    return resolve(__webpack_require__(/*! @/components/add_heart/add_heart.vue */ 455));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_temperature = function add_temperature() {
   __webpack_require__.e(/*! require.ensure | components/add_temperature/add_temperature */ "components/add_temperature/add_temperature").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 454));
+    return resolve(__webpack_require__(/*! @/components/add_temperature/add_temperature.vue */ 462));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var add_bp = function add_bp() {
   __webpack_require__.e(/*! require.ensure | components/add_bp/add_bp */ "components/add_bp/add_bp").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 461));
+    return resolve(__webpack_require__(/*! @/components/add_bp/add_bp.vue */ 469));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -235,11 +246,11 @@ var _default = {
       lastSevenElements: [],
       message: [],
       add: {
-        date: null,
-        heart: null,
-        temperature: null,
-        dbp: null,
-        sbp: null
+        date: "",
+        heart: "",
+        temperature: "",
+        dbp: "",
+        sbp: ""
       },
       chartData: {},
       chartData2: {},
@@ -381,7 +392,7 @@ var _default = {
         this.add.dbp = "";
         this.add.sbp = "";
         this.message.push(this.add);
-      } else if (this.message[this.message.length - 1].heart == null) {
+      } else if (this.message[this.message.length - 1].heart == "") {
         this.message[this.message.length - 1].heart = stateData;
       } else {
         this.message[this.message.length - 1].heart = stateData;
@@ -418,19 +429,19 @@ var _default = {
       this.$refs['addtemp'].hideModal();
       if (this.message.length == 0) {
         this.add.date = currentTime;
-        this.add.heart = null;
+        this.add.heart = "";
         this.add.temperature = stateData;
-        this.add.dbp = null;
-        this.add.sbp = null;
+        this.add.dbp = "";
+        this.add.sbp = "";
         this.message.push(this.add);
       } else if (this.message[this.message.length - 1].date != currentTime) {
         this.add.date = currentTime;
-        this.add.heart = null;
+        this.add.heart = "";
         this.add.temperature = stateData;
-        this.add.dbp = null;
-        this.add.sbp = null;
+        this.add.dbp = "";
+        this.add.sbp = "";
         this.message.push(this.add);
-      } else if (this.message[this.message.length - 1].temperature == null) {
+      } else if (this.message[this.message.length - 1].temperature == "") {
         this.message[this.message.length - 1].temperature = stateData;
       } else {
         this.message[this.message.length - 1].temperature = stateData;
@@ -467,22 +478,22 @@ var _default = {
       this.$refs['addbp'].hideModal();
       if (this.message.length == 0) {
         this.add.date = currentTime;
-        this.add.heart = null;
-        this.add.temperature = null;
+        this.add.heart = "";
+        this.add.temperature = "";
         this.add.dbp = stateData.dbp;
         this.add.sbp = stateData.sbp;
         this.message.push(this.add);
       } else if (this.message[this.message.length - 1].date != currentTime) {
         this.add.date = currentTime;
-        this.add.heart = null;
-        this.add.temperature = null;
+        this.add.heart = "";
+        this.add.temperature = "";
         this.add.dbp = stateData.dbp;
         this.add.sbp = stateData.sbp;
         this.message.push(this.add);
-      } else if (this.message[this.message.length - 1].dbp == null) {
+      } else if (this.message[this.message.length - 1].dbp == "") {
         this.message[this.message.length - 1].dbp = stateData.dbp;
         this.message[this.message.length - 1].sbp = stateData.sbp;
-      } else if (this.message[this.message.length - 1].sbp == null) {
+      } else if (this.message[this.message.length - 1].sbp == "") {
         this.message[this.message.length - 1].sbp = stateData.sbp;
         this.message[this.message.length - 1].dbp = stateData.dbp;
       } else {
@@ -516,9 +527,6 @@ var _default = {
       if (_this.message == [] || _this.message == null) {
         _this.message = [];
         return;
-      }
-      if (_this.message.dbp == null) {
-        _this.message.dbp = "";
       }
       var resdate = [];
       var resdbp = [];

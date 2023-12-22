@@ -101,10 +101,10 @@ var components
 try {
   components = {
     add_pill: function () {
-      return __webpack_require__.e(/*! import() | components/add_pill/add_pill */ "components/add_pill/add_pill").then(__webpack_require__.bind(null, /*! @/components/add_pill/add_pill.vue */ 489))
+      return __webpack_require__.e(/*! import() | components/add_pill/add_pill */ "components/add_pill/add_pill").then(__webpack_require__.bind(null, /*! @/components/add_pill/add_pill.vue */ 504))
     },
     delete_pill: function () {
-      return __webpack_require__.e(/*! import() | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then(__webpack_require__.bind(null, /*! @/components/delete_pill/delete_pill.vue */ 496))
+      return __webpack_require__.e(/*! import() | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then(__webpack_require__.bind(null, /*! @/components/delete_pill/delete_pill.vue */ 511))
     },
   }
 } catch (e) {
@@ -169,23 +169,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var add_pill = function add_pill() {
   __webpack_require__.e(/*! require.ensure | components/add_pill/add_pill */ "components/add_pill/add_pill").then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_pill/add_pill.vue */ 489));
+    return resolve(__webpack_require__(/*! @/components/add_pill/add_pill.vue */ 504));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var delete_pill = function delete_pill() {
   __webpack_require__.e(/*! require.ensure | components/delete_pill/delete_pill */ "components/delete_pill/delete_pill").then((function () {
-    return resolve(__webpack_require__(/*! @/components/delete_pill/delete_pill.vue */ 496));
+    return resolve(__webpack_require__(/*! @/components/delete_pill/delete_pill.vue */ 511));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
   data: function data() {
     return {
-      message: [{
-        pill: "奥拉西坦胶囊",
-        count: "一次一粒",
-        dailycount: "3",
-        time: "08:00，12:00，18:00"
-      }],
+      message: [],
       add: {},
       scrollTop: 0,
       openid: "",

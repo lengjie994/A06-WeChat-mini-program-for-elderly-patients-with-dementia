@@ -134,6 +134,7 @@
 			},
 		},
 		onLoad() {
+			let _this=this
 			this.openid = getApp().globalData.global_openid
 			wx.request({
 				// 这里是django的本地ip地址
@@ -147,7 +148,12 @@
 				},
 				success: function(response) {
 					console.log("获取回忆录成功")
-					this.messages = response.data.code.Memoir
+					_this.messages = response.data.code.Memoir
+					if(_this.messages==null)
+					{
+						_this.messages=[]
+					}
+					
 				},
 				fail: function(response) {
 					console.log("获取回忆录失败")

@@ -7,13 +7,13 @@
 				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
 				<view class="style-font">每次剂量</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputcount" class=" input-style" placeholder="暂无"></textarea>
+				<textarea v-model="inputcount" class=" input-style" placeholder="例如一次一粒"></textarea>
 				<view class="style-font">每日剂次</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputdailycount" class=" input-style" placeholder="暂无"></textarea>
+				<textarea v-model="inputdailycount" class=" input-style" placeholder="例如一日三次"></textarea>
 				<view class="style-font">提醒时间</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputtime" class=" input-style" placeholder="暂无"></textarea>
+				<textarea v-model="inputtime" class=" input-style" placeholder="使用英文符号,例如8:00,12:00,16:00"></textarea>
 			</view>
 
 			<view>

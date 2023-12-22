@@ -151,6 +151,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/follow/follow",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	// "tabBar": {
 	// 		"color": "#BBBAC7",
