@@ -32,9 +32,6 @@ class WeixinLogin(APIView):
         url = base_url + "?appid=" + appid + "&secret=" + appsecret + "&js_code=" + code + "&grant_type=authorization_code"
         response = requests.get(url)
         
-        url_ACCESS_TOKEN = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+appsecret
-        response_ACCESS_TOKEN = requests.get(url_ACCESS_TOKEN)
-        access_token = response_ACCESS_TOKEN.json()['access_token']
 
         # 处理获取的 openid
         try:
@@ -51,11 +48,6 @@ class WeixinLogin(APIView):
                 }
             })
         else:
-            url_unionid = 'https://api.weixin.qq.com/wxa/getpaidunionid?access_token='+access_token+'&openid='+openid
-            response_unionid = requests.get(url_unionid)
-            print(response_unionid.json())
-            unionid = response_unionid.json()['unionid']
-            print(unionid)
             theRole=''
             specialID=''
             # 根据openid确定用户的本地身份
@@ -116,7 +108,8 @@ class ChooseRole(APIView):
             if theRole == 'patient':
                 globalVariables.Patient_amount+=1
                 globalVariables.save()
-                theID=str(globalVariables.Patient_amount)
+                tmp_ID=str(globalVariables.Patient_amount)
+                theID = tmp_ID.zfill(8)
                 Patient.objects.create(
                     Openid=openid,
                     password=openid,
@@ -126,7 +119,8 @@ class ChooseRole(APIView):
             elif theRole == 'guardian':
                 globalVariables.Guardian_amount+=1
                 globalVariables.save()
-                theID=str(globalVariables.Guardian_amount)
+                tmp_ID=str(globalVariables.Guardian_amount)
+                theID = tmp_ID.zfill(8)
                 Guardian.objects.create(
                     Openid=openid,
                     password=openid,
@@ -136,7 +130,8 @@ class ChooseRole(APIView):
             elif theRole == 'doctor':
                 globalVariables.Doctor_amount+=1
                 globalVariables.save()
-                theID=str(globalVariables.Doctor_amount)
+                tmp_ID=str(globalVariables.Doctor_amount)
+                theID = tmp_ID.zfill(8)
                 Doctor.objects.create(
                     Openid=openid,
                     password=openid,
@@ -188,6 +183,7 @@ class GetPatientInfo(APIView):
                     "Medicine": patient.Medicine,
                     "Memoir":patient.Memoir,
                     "Healthdata":patient.Healthdata,
+                    "uid":patient.Uid,
                 }
             })
         except:
@@ -207,6 +203,7 @@ class GetGuardianInfo(APIView):
         """
         # 该用户的openid，用于识别该用户
         openid = json.loads(request.body).get('openid')
+        guardian = None
         try:
             guardian = Guardian.objects.get(Openid=openid)
         except:
@@ -218,6 +215,14 @@ class GetGuardianInfo(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
+        doctor_nickname = ''
+        doctor_id = guardian.Doctor_id
+        try:   
+            doctor = Doctor.objects.get(Doctor_id=doctor_id)
+            doctor_nickname = doctor.Nickname
+        except:
+            doctor_nickname = ''
+
         patient_id = guardian.Patient_id
         try:
             patient = Patient.objects.get(Patient_id=patient_id)
@@ -239,6 +244,7 @@ class GetGuardianInfo(APIView):
                     "Reservation":guardian.Reservation,
                     "Patient_openid":patient.Openid,
                     "Nickname": guardian.Nickname,
+                    "Doctor_nickname":doctor_nickname,
                 }
             })
         except:
@@ -260,6 +266,7 @@ class GetGuardianInfo(APIView):
                     "Reservation":guardian.Reservation,
                     "Patient_openid":"",
                     "Nickname": guardian.Nickname,
+                    "Doctor_nickname":doctor_nickname,
                 }
             })
 
@@ -422,6 +429,7 @@ class GuardianToDoctor(APIView):
             tmp_dict = {
                 "Guardian_id":guardian.Guardian_id, 
                 "flag":guardian.Flag,
+                "nickname":guardian.Nickname,
                 }
             guardian_list.append(tmp_dict)
             doctor.Guardian_id_list = guardian_list
