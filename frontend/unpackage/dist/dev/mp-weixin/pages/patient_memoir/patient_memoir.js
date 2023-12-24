@@ -101,13 +101,13 @@ var components
 try {
   components = {
     "u-Text": function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u--text/u--text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--text/u--text")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--text/u--text.vue */ 416))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u--text/u--text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u--text/u--text")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u--text/u--text.vue */ 408))
     },
     uAlbum: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-album/u-album */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-album/u-album")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-album/u-album.vue */ 422))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-album/u-album */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-album/u-album")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-album/u-album.vue */ 414))
     },
     add_memoir: function () {
-      return Promise.all(/*! import() | components/add_memoir/add_memoir */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add_memoir/add_memoir")]).then(__webpack_require__.bind(null, /*! @/components/add_memoir/add_memoir.vue */ 430))
+      return Promise.all(/*! import() | components/add_memoir/add_memoir */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add_memoir/add_memoir")]).then(__webpack_require__.bind(null, /*! @/components/add_memoir/add_memoir.vue */ 422))
     },
   }
 } catch (e) {
@@ -172,7 +172,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var add_memoir = function add_memoir() {
   Promise.all(/*! require.ensure | components/add_memoir/add_memoir */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/add_memoir/add_memoir")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/add_memoir/add_memoir.vue */ 430));
+    return resolve(__webpack_require__(/*! @/components/add_memoir/add_memoir.vue */ 422));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

@@ -104,13 +104,13 @@ try {
       return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 318))
     },
     uList: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 532))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 524))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 532))
     },
     fuiBadge: function () {
       return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 540))
@@ -178,7 +178,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 380));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiList = function fuiList() {
@@ -188,7 +188,7 @@ var fuiList = function fuiList() {
 };
 var fuiListCell = function fuiListCell() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 354));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiBadge = function fuiBadge() {
@@ -198,7 +198,7 @@ var fuiBadge = function fuiBadge() {
 };
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 332));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 532));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

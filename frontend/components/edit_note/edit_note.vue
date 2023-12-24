@@ -4,13 +4,13 @@
 			<view class="modal-body">
 				<view class="style-font">姓名</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<input v-model="inputname" class=" input-style-name" placeholder="暂无"></input>
+				<input v-model="inputname" class=" input-style-name" :placeholder="name"></input>
 				<view class="style-font">住址</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputplace" class=" input-style" placeholder="暂无"></textarea>
+				<textarea v-model="inputplace" class=" input-style" :placeholder="addr"></textarea>
 				<view class="style-font">紧急联系人</view>
 				<!-- <input v-model="inputSerialNum" class="uni-input input-style" focus placeholder="请输入备注" /> -->
-				<textarea v-model="inputphone" class=" input-style" placeholder="暂无"></textarea>
+				<textarea v-model="inputphone" class=" input-style" :placeholder="phone"></textarea>
 			</view>
 
 			<view>
@@ -36,6 +36,9 @@
 				inputname: null,
 				inputplace:null,
 				inputphone:null,
+				name:"",
+				addr:"",
+				phone:"",
 				isactive: 0,
 				total: 0,
 				iconType: ['waiting', 'success', 'cancel'],
@@ -63,20 +66,20 @@
 					},
 					success: function(response) {
 						console.log("获取备忘录成功")
-						_this.inputname=response.data.code.Name;
-						_this.inputplace=response.data.code.Address;
-						_this.inputphone=response.data.code.Phone_contact;
-						if(_this.inputname==null||_this.inputname=="UNDEFINED")
+						_this.name=response.data.code.Name;
+						_this.addr=response.data.code.Address;
+						_this.phone=response.data.code.Phone_contact;
+						if(_this.name==null||_this.name=="UNDEFINED")
 						{
-							_this.inputname="暂无"
+							_this.name="暂无"
 						}
-						if(_this.inputplace==null||_this.inputplace=="UNDEFINED")
+						if(_this.addr==null||_this.addr=="UNDEFINED")
 						{
-							_this.inputplace="暂无"
+							_this.addr="暂无"
 						}
-						if(_this.inputphone==null||_this.inputphone=="UNDEFINED")
+						if(_this.phone==null||_this.phone=="UNDEFINED")
 						{
-							_this.inputphone="暂无"
+							_this.phone="暂无"
 						}
 						console.log(response)
 					},
@@ -96,8 +99,9 @@
 				this.$set(this.note,'name',this.inputname);
 				this.$set(this.note,'place',this.inputplace);
 				this.$set(this.note,'phone',this.inputphone);
-	
-				
+				this.inputname=""
+				this.inputplace=""
+				this.inputphone=""
 				// this.isShowModal = false
 				this.$emit('onClickConfirm',JSON.stringify(this.note))
 				//this.$refs['customModal'].close();

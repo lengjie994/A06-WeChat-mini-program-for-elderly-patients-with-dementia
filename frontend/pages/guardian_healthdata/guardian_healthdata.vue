@@ -36,9 +36,7 @@
 					<text>血压</text>
 				</view>
 				<text class="show" style="color: #FAC858;">
-				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].dbp==''||lastSevenElements[lastSevenElements.length-1].dbp==null)?"暂无":lastSevenElements[lastSevenElements.length-1].dbp}}
-				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":"/"}}
-				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":lastSevenElements[lastSevenElements.length-1].sbp}}</text>
+				{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].dbp==''||lastSevenElements[lastSevenElements.length-1].dbp==null)?"暂无":lastSevenElements[lastSevenElements.length-1].dbp}}{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":"/"}}{{(lastSevenElements.length==0||lastSevenElements[lastSevenElements.length-1].sbp==null)?"":lastSevenElements[lastSevenElements.length-1].sbp}}</text>
 			</view>
 		</view>
 		<add_heart ref='addheart' @onClickConfirm="Addheart"></add_heart>

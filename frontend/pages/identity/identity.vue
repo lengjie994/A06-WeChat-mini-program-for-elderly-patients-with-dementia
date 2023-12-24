@@ -45,26 +45,29 @@
 				})
 			},
 			patient_info(){
+				this.sendrole()
 				uni.redirectTo({
 					url:'/pages/patient_memorandum/patient_memorandum'
 				})
 				this.role="patient"
-				this.sendrole()
+				
 				
 			},
 			guardian_info(){
+				this.sendrole()
 				uni.redirectTo({
 					url:'/pages/guardian_myinfo/guardian_myinfo'
 				})
 				this.role="guardian"
-				this.sendrole()
+				
 			},
 			doctor_info(){
+				this.sendrole()
 				uni.redirectTo({
 					url:'/pages/doctor_myinfo/doctor_myinfo'
 				})
 				this.role="doctor"
-				this.sendrole()
+				
 			},
 			
 		},

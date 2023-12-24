@@ -19392,188 +19392,7 @@ function normalizeComponent (
 /* 334 */,
 /* 335 */,
 /* 336 */,
-/* 337 */
-/*!******************************************************************************************************************************************!*\
-  !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/firstui-uni/firstui/fui-icon/fui-icon.js ***!
-  \******************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  "addressbook": "\uE80C",
-  "addfriends-fill": "\uE80A",
-  "addfriends": "\uE80B",
-  "backspace-fill": "\uE808",
-  "backspace": "\uE809",
-  "bankcard-fill": "\uE806",
-  "bankcard": "\uE807",
-  "camera-fill": "\uE804",
-  "camera": "\uE805",
-  "captcha-fill": "\uE802",
-  "captcha": "\uE803",
-  "cart-fill": "\uE800",
-  "cart": "\uE801",
-  "classify": "\uE7FE",
-  "classify-fill": "\uE7FF",
-  "comment-fill": "\uE7FC",
-  "comment": "\uE7FD",
-  "community-fill": "\uE7FA",
-  "community": "\uE7FB",
-  "coupon-fill": "\uE7F8",
-  "coupon": "\uE7F9",
-  "delete": "\uE7F6",
-  "delete-fill": "\uE7F7",
-  "edit": "\uE7F4",
-  "edit-fill": "\uE7F5",
-  "fabulous-fill": "\uE7F2",
-  "fabulous": "\uE7F3",
-  "find": "\uE7F0",
-  "find-fill": "\uE7F1",
-  "help-fill": "\uE7EE",
-  "help": "\uE7EF",
-  "home-fill": "\uE7EC",
-  "home": "\uE7ED",
-  "idcard-fill": "\uE7EA",
-  "idcard": "\uE7EB",
-  "info": "\uE7E8",
-  "info-fill": "\uE7E9",
-  "invite-fill": "\uE7E6",
-  "invite": "\uE7E7",
-  "kefu-fill": "\uE7E4",
-  "kefu": "\uE7E5",
-  "like-fill": "\uE7E2",
-  "like": "\uE7E3",
-  "location": "\uE7E0",
-  "location-fill": "\uE7E1",
-  "lock": "\uE7DE",
-  "lock-fill": "\uE7DF",
-  "mail-fill": "\uE7DC",
-  "mail": "\uE7DD",
-  "message": "\uE7DA",
-  "message-fill": "\uE7DB",
-  "mobile-fill": "\uE7D8",
-  "mobile": "\uE7D9",
-  "more": "\uE7D6",
-  "more-fill": "\uE7D7",
-  "my-fill": "\uE7D4",
-  "my": "\uE7D5",
-  "principal": "\uE80D",
-  "notice-fill": "\uE7D2",
-  "notice": "\uE7D3",
-  "order": "\uE7D0",
-  "order-fill": "\uE7D1",
-  "picture": "\uE7CE",
-  "picture-fill": "\uE7CF",
-  "setup-fill": "\uE7CC",
-  "setup": "\uE7CD",
-  "share": "\uE7CA",
-  "share-fill": "\uE7CB",
-  "shop": "\uE7C8",
-  "shop-fill": "\uE7C9",
-  "star-fill": "\uE7C5",
-  "star": "\uE7C6",
-  "starhalf": "\uE7C7",
-  "stepon-fill": "\uE7C3",
-  "stepon": "\uE7C4",
-  "wait-fill": "\uE7C1",
-  "wait": "\uE7C2",
-  "warning": "\uE7BF",
-  "warning-fill": "\uE7C0",
-  "plus": "\uE7BC",
-  "plussign-fill": "\uE7BD",
-  "plussign": "\uE7BE",
-  "minus": "\uE7B9",
-  "minussign": "\uE7BA",
-  "minussign-fill": "\uE7BB",
-  "close": "\uE7B8",
-  "clear": "\uE7B6",
-  "clear-fill": "\uE7B7",
-  "checkbox-fill": "\uE7B5",
-  "checkround": "\uE7B4",
-  "checkbox": "\uE7B3",
-  "check": "\uE7B2",
-  "pulldown-fill": "\uE7AE",
-  "pullup": "\uE7AF",
-  "pullup-fill": "\uE7B0",
-  "pulldown": "\uE7B1",
-  "roundright-fill": "\uE7AC",
-  "roundright": "\uE7AD",
-  "arrowright": "\uE7A9",
-  "arrowleft": "\uE7AA",
-  "arrowdown": "\uE7AB",
-  "left": "\uE7A6",
-  "up": "\uE7A7",
-  "right": "\uE7A8",
-  "back": "\uE7A3",
-  "top": "\uE7A4",
-  "dropdown": "\uE7A5",
-  "turningleft": "\uE79F",
-  "turningup": "\uE7A0",
-  "turningright": "\uE7A1",
-  "turningdown": "\uE7A2",
-  "refresh": "\uE79C",
-  "loading": "\uE79D",
-  "search": "\uE79E",
-  "rotate": "\uE79B",
-  "screen": "\uE79A",
-  "signin": "\uE799",
-  "calendar": "\uE798",
-  "scan": "\uE797",
-  "qrcode": "\uE796",
-  "wallet": "\uE795",
-  "telephone": "\uE794",
-  "visible": "\uE793",
-  "invisible": "\uE792",
-  "menu": "\uE78E",
-  "operate": "\uE78F",
-  "slide": "\uE790",
-  "list": "\uE791",
-  "nonetwork": "\uE78D",
-  "partake": "\uE78C",
-  "qa": "\uE78B",
-  "barchart": "\uE788",
-  "piechart": "\uE789",
-  "linechart": "\uE78A",
-  "at": "\uE787",
-  "face": "\uE77F",
-  "redpacket": "\uE780",
-  "suspend": "\uE781",
-  "link": "\uE782",
-  "keyboard": "\uE783",
-  "play": "\uE784",
-  "video": "\uE785",
-  "voice": "\uE786",
-  "sina": "\uE77A",
-  "browser": "\uE77B",
-  "moments": "\uE77C",
-  "qq": "\uE77D",
-  "wechat": "\uE77E",
-  "balance": "\uE779",
-  "bankcardpay": "\uE778",
-  "wxpay": "\uE777",
-  "alipay": "\uE776",
-  "payment": "\uE818",
-  "receive": "\uE817",
-  "sendout": "\uE816",
-  "evaluate": "\uE815",
-  "aftersale": "\uE814",
-  "warehouse": "\uE813",
-  "transport": "\uE812",
-  "delivery": "\uE811",
-  "switch": "\uE810",
-  "goods": "\uE80F",
-  "goods-fill": "\uE80E"
-};
-exports.default = _default;
-
-/***/ }),
+/* 337 */,
 /* 338 */,
 /* 339 */,
 /* 340 */,
@@ -19601,15 +19420,7 @@ exports.default = _default;
 /* 362 */,
 /* 363 */,
 /* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */
+/* 365 */
 /*!****************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \****************************************************************************************************************************************/
@@ -19650,7 +19461,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 374 */
+/* 366 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
   \*********************************************************************************************************************************************/
@@ -19665,9 +19476,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 375));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 376));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 377));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 367));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 368));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 369));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -19676,7 +19487,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 375 */
+/* 367 */
 /*!********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
   \********************************************************************************************************************************************/
@@ -19686,7 +19497,7 @@ exports.default = _default;
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
 
 /***/ }),
-/* 376 */
+/* 368 */
 /*!*************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
   \*************************************************************************************************************************************************/
@@ -19696,7 +19507,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 377 */
+/* 369 */
 /*!*************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
   \*************************************************************************************************************************************************/
@@ -19706,6 +19517,14 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
 /* 378 */,
 /* 379 */,
 /* 380 */,
@@ -19733,15 +19552,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /* 402 */,
 /* 403 */,
 /* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */
+/* 405 */
 /*!****************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \****************************************************************************************************************************************/
@@ -20762,14 +20573,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-text/props.js ***!
   \*************************************************************************************************************************************/
@@ -20897,12 +20708,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */
 /*!**************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-album/props.js ***!
   \**************************************************************************************************************************************/
@@ -20979,21 +20790,21 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
 /* 428 */,
 /* 429 */,
 /* 430 */,
 /* 431 */,
 /* 432 */,
 /* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */
+/* 434 */
 /*!************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js ***!
   \************************************************************************************/
@@ -21009,20 +20820,20 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 49));
-var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 443));
+var _assertThisInitialized2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ 435));
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ 5));
 var _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/typeof */ 13));
 var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 51));
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 444));
-var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 445));
-var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 446));
-var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 447));
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ 436));
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ 437));
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ 438));
+var _wrapNativeSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/wrapNativeSuper */ 439));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ 23));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ 24));
 var _uniI18n = __webpack_require__(/*! @dcloudio/uni-i18n */ 22);
-var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 449));
+var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 441));
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e35) { throw _e35; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e36) { didErr = true; err = _e36; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
@@ -21475,7 +21286,7 @@ var b = "development" === "development",
   O = true;
 var x = "";
 try {
-  x = (__webpack_require__(/*! uni-stat-config */ 450).default || __webpack_require__(/*! uni-stat-config */ 450)).appid;
+  x = (__webpack_require__(/*! uni-stat-config */ 442).default || __webpack_require__(/*! uni-stat-config */ 442)).appid;
 } catch (e) {}
 var R = {};
 function U(e) {
@@ -28346,7 +28157,7 @@ exports.default = Ns;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3), __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
-/* 443 */
+/* 435 */
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
   \**********************************************************************/
@@ -28362,7 +28173,7 @@ function _assertThisInitialized(self) {
 module.exports = _assertThisInitialized, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 444 */
+/* 436 */
 /*!*********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
   \*********************************************************/
@@ -28389,7 +28200,7 @@ function _inherits(subClass, superClass) {
 module.exports = _inherits, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 445 */
+/* 437 */
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
   \**************************************************************************/
@@ -28397,7 +28208,7 @@ module.exports = _inherits, module.exports.__esModule = true, module.exports["de
 /***/ (function(module, exports, __webpack_require__) {
 
 var _typeof = __webpack_require__(/*! ./typeof.js */ 13)["default"];
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 443);
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized.js */ 435);
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
     return call;
@@ -28409,7 +28220,7 @@ function _possibleConstructorReturn(self, call) {
 module.exports = _possibleConstructorReturn, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 446 */
+/* 438 */
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
   \***************************************************************/
@@ -28425,16 +28236,16 @@ function _getPrototypeOf(o) {
 module.exports = _getPrototypeOf, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 447 */
+/* 439 */
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/wrapNativeSuper.js ***!
   \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 446);
+var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf.js */ 438);
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf.js */ 16);
-var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 448);
+var isNativeFunction = __webpack_require__(/*! ./isNativeFunction.js */ 440);
 var construct = __webpack_require__(/*! ./construct.js */ 15);
 function _wrapNativeSuper(Class) {
   var _cache = typeof Map === "function" ? new Map() : undefined;
@@ -28465,7 +28276,7 @@ function _wrapNativeSuper(Class) {
 module.exports = _wrapNativeSuper, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 448 */
+/* 440 */
 /*!*****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/isNativeFunction.js ***!
   \*****************************************************************/
@@ -28478,7 +28289,7 @@ function _isNativeFunction(fn) {
 module.exports = _isNativeFunction, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
-/* 449 */
+/* 441 */
 /*!****************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages.json?{"type":"origin-pages-json"} ***!
   \****************************************************************************************************************************/
@@ -28643,7 +28454,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 450 */
+/* 442 */
 /*!***************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages.json?{"type":"stat"} ***!
   \***************************************************************************************************************/
@@ -28663,7 +28474,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 451 */
+/* 443 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/qiun-data-charts/js_sdk/u-charts/u-charts.js ***!
   \*********************************************************************************************************************************************/
@@ -36323,7 +36134,7 @@ var _default = uCharts;
 exports.default = _default;
 
 /***/ }),
-/* 452 */
+/* 444 */
 /*!***************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/qiun-data-charts/js_sdk/u-charts/config-ucharts.js ***!
   \***************************************************************************************************************************************************/
@@ -36944,6 +36755,14 @@ var _default = cfu;
 exports.default = _default;
 
 /***/ }),
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
 /* 453 */,
 /* 454 */,
 /* 455 */,
@@ -37020,15 +36839,7 @@ exports.default = _default;
 /* 526 */,
 /* 527 */,
 /* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */
+/* 529 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-list/props.js ***!
   \*************************************************************************************************************************************/
@@ -37119,6 +36930,195 @@ var _default = {
 };
 exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */
+/*!******************************************************************************************************************************************!*\
+  !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/firstui-uni/firstui/fui-icon/fui-icon.js ***!
+  \******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  "addressbook": "\uE80C",
+  "addfriends-fill": "\uE80A",
+  "addfriends": "\uE80B",
+  "backspace-fill": "\uE808",
+  "backspace": "\uE809",
+  "bankcard-fill": "\uE806",
+  "bankcard": "\uE807",
+  "camera-fill": "\uE804",
+  "camera": "\uE805",
+  "captcha-fill": "\uE802",
+  "captcha": "\uE803",
+  "cart-fill": "\uE800",
+  "cart": "\uE801",
+  "classify": "\uE7FE",
+  "classify-fill": "\uE7FF",
+  "comment-fill": "\uE7FC",
+  "comment": "\uE7FD",
+  "community-fill": "\uE7FA",
+  "community": "\uE7FB",
+  "coupon-fill": "\uE7F8",
+  "coupon": "\uE7F9",
+  "delete": "\uE7F6",
+  "delete-fill": "\uE7F7",
+  "edit": "\uE7F4",
+  "edit-fill": "\uE7F5",
+  "fabulous-fill": "\uE7F2",
+  "fabulous": "\uE7F3",
+  "find": "\uE7F0",
+  "find-fill": "\uE7F1",
+  "help-fill": "\uE7EE",
+  "help": "\uE7EF",
+  "home-fill": "\uE7EC",
+  "home": "\uE7ED",
+  "idcard-fill": "\uE7EA",
+  "idcard": "\uE7EB",
+  "info": "\uE7E8",
+  "info-fill": "\uE7E9",
+  "invite-fill": "\uE7E6",
+  "invite": "\uE7E7",
+  "kefu-fill": "\uE7E4",
+  "kefu": "\uE7E5",
+  "like-fill": "\uE7E2",
+  "like": "\uE7E3",
+  "location": "\uE7E0",
+  "location-fill": "\uE7E1",
+  "lock": "\uE7DE",
+  "lock-fill": "\uE7DF",
+  "mail-fill": "\uE7DC",
+  "mail": "\uE7DD",
+  "message": "\uE7DA",
+  "message-fill": "\uE7DB",
+  "mobile-fill": "\uE7D8",
+  "mobile": "\uE7D9",
+  "more": "\uE7D6",
+  "more-fill": "\uE7D7",
+  "my-fill": "\uE7D4",
+  "my": "\uE7D5",
+  "principal": "\uE80D",
+  "notice-fill": "\uE7D2",
+  "notice": "\uE7D3",
+  "order": "\uE7D0",
+  "order-fill": "\uE7D1",
+  "picture": "\uE7CE",
+  "picture-fill": "\uE7CF",
+  "setup-fill": "\uE7CC",
+  "setup": "\uE7CD",
+  "share": "\uE7CA",
+  "share-fill": "\uE7CB",
+  "shop": "\uE7C8",
+  "shop-fill": "\uE7C9",
+  "star-fill": "\uE7C5",
+  "star": "\uE7C6",
+  "starhalf": "\uE7C7",
+  "stepon-fill": "\uE7C3",
+  "stepon": "\uE7C4",
+  "wait-fill": "\uE7C1",
+  "wait": "\uE7C2",
+  "warning": "\uE7BF",
+  "warning-fill": "\uE7C0",
+  "plus": "\uE7BC",
+  "plussign-fill": "\uE7BD",
+  "plussign": "\uE7BE",
+  "minus": "\uE7B9",
+  "minussign": "\uE7BA",
+  "minussign-fill": "\uE7BB",
+  "close": "\uE7B8",
+  "clear": "\uE7B6",
+  "clear-fill": "\uE7B7",
+  "checkbox-fill": "\uE7B5",
+  "checkround": "\uE7B4",
+  "checkbox": "\uE7B3",
+  "check": "\uE7B2",
+  "pulldown-fill": "\uE7AE",
+  "pullup": "\uE7AF",
+  "pullup-fill": "\uE7B0",
+  "pulldown": "\uE7B1",
+  "roundright-fill": "\uE7AC",
+  "roundright": "\uE7AD",
+  "arrowright": "\uE7A9",
+  "arrowleft": "\uE7AA",
+  "arrowdown": "\uE7AB",
+  "left": "\uE7A6",
+  "up": "\uE7A7",
+  "right": "\uE7A8",
+  "back": "\uE7A3",
+  "top": "\uE7A4",
+  "dropdown": "\uE7A5",
+  "turningleft": "\uE79F",
+  "turningup": "\uE7A0",
+  "turningright": "\uE7A1",
+  "turningdown": "\uE7A2",
+  "refresh": "\uE79C",
+  "loading": "\uE79D",
+  "search": "\uE79E",
+  "rotate": "\uE79B",
+  "screen": "\uE79A",
+  "signin": "\uE799",
+  "calendar": "\uE798",
+  "scan": "\uE797",
+  "qrcode": "\uE796",
+  "wallet": "\uE795",
+  "telephone": "\uE794",
+  "visible": "\uE793",
+  "invisible": "\uE792",
+  "menu": "\uE78E",
+  "operate": "\uE78F",
+  "slide": "\uE790",
+  "list": "\uE791",
+  "nonetwork": "\uE78D",
+  "partake": "\uE78C",
+  "qa": "\uE78B",
+  "barchart": "\uE788",
+  "piechart": "\uE789",
+  "linechart": "\uE78A",
+  "at": "\uE787",
+  "face": "\uE77F",
+  "redpacket": "\uE780",
+  "suspend": "\uE781",
+  "link": "\uE782",
+  "keyboard": "\uE783",
+  "play": "\uE784",
+  "video": "\uE785",
+  "voice": "\uE786",
+  "sina": "\uE77A",
+  "browser": "\uE77B",
+  "moments": "\uE77C",
+  "qq": "\uE77D",
+  "wechat": "\uE77E",
+  "balance": "\uE779",
+  "bankcardpay": "\uE778",
+  "wxpay": "\uE777",
+  "alipay": "\uE776",
+  "payment": "\uE818",
+  "receive": "\uE817",
+  "sendout": "\uE816",
+  "evaluate": "\uE815",
+  "aftersale": "\uE814",
+  "warehouse": "\uE813",
+  "transport": "\uE812",
+  "delivery": "\uE811",
+  "switch": "\uE810",
+  "goods": "\uE80F",
+  "goods-fill": "\uE80E"
+};
+exports.default = _default;
 
 /***/ }),
 /* 538 */,
