@@ -1,4 +1,7 @@
-from django.urls import path
+from django.urls import path,re_path
+from django.views.static import serve
+from wx_backend.settings import MEDIA_ROOT
+
 from user.views import WeixinLogin
 from user.views import ChooseRole
 from user.views import GetPatientInfo
@@ -24,6 +27,8 @@ from user.ChatHandle.chat import SaveChatlist
 from user.ChatHandle.chat import ReturnChatList
 from user.ChatHandle.chat import GuardianFlagFalse
 from user.ChatHandle.chat import DoctorFlagFalse
+
+from user.UploadPhoto.photo import UploadImageView
 
 app_name = 'user'   #后续接口的名称
 
@@ -56,4 +61,7 @@ urlpatterns = [
     path('ReturnChatList/', ReturnChatList.as_view(), name='ReturnChatList'),
     path('GuardianFlagFalse/', GuardianFlagFalse.as_view(), name='GuardianFlagFalse'),
     path('DoctorFlagFalse/', DoctorFlagFalse.as_view(), name='DoctorFlagFalse'),
+
+    path('UploadImage/', UploadImageView.as_view(), name='UploadImage'),
+    re_path('^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
 ]

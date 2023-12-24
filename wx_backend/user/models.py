@@ -18,6 +18,10 @@ class User(models.Model):
     session = models.CharField(max_length = 100)
     role = models.CharField(max_length = 100)
 
+    img = models.ImageField(upload_to='lalallalalal',default='images/default.jpg')
+    class Meta:
+        db_table = 'user'
+
 #Patient：患者模型，用于存储患者的身份和备忘录等信息
 class Patient(models.Model):
     Openid = models.CharField(max_length = 100)
@@ -66,3 +70,10 @@ class Doctor(models.Model):
     Reservation = JSONField(null=True)
     Reservation_info  = JSONField(null=True)
     Nickname = models.CharField(max_length = 200, default = "UNDEFINED")
+
+class MediaCampTest(models.Model):
+    class Meta:
+        db_table = "media_camp"
+
+    # 营地图片
+    img = models.FileField(verbose_name="营地图片", max_length=256, upload_to="camp/")

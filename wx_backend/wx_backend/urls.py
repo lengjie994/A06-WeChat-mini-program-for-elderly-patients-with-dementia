@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.urls import path, re_path, include
+from django.views.static import serve
+from django.conf import settings
+from user.UploadPhoto.camp_view import CampImgUploadView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/user/', include('user.urls', namespace='user')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}, name='media'),
+    # 自驾营地上传图片接口
+    path('camp/upload/img', CampImgUploadView.as_view()),
 ]
