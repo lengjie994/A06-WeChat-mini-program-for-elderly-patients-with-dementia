@@ -6,7 +6,7 @@
 		</view>
 		<view class="info">
 			<fui-avatar marginRight="24" width="150" marginBottom="20">
-				<fui-icon name="my" color="#fff"></fui-icon>
+				<image src="../../static/patient.png" style="width: 150rpx;height: 150rpx;"></image>
 			</fui-avatar>
 			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
 		</view>
@@ -135,7 +135,7 @@
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为修改健康数据的url
-				url: 'http://127.0.0.1:8000/api/user/getPatientInfo/',
+				url: 'http://43.140.198.99/api/user/getPatientInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
@@ -143,7 +143,7 @@
 				},
 				success: function(response) {
 					//_this.id = response.data.code.Patient_id;
-					_this.id=(Array(8).join("0") + Number(response.data.code.Patient_id)).slice(-8);
+					_this.id=response.data.code.Patient_id;
 					console.log("获取患者id成功")
 				},
 				fail: function(response) {

@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view class="title" style="position: fixed;">
-			<view>联系对象</view>
+			<view>{{opposite_nickname}}</view>
 		</view>
 		<view class="wrap" :style="{paddingBottom:padding_height}">
 			<view class="content_box" id="box" ref="scrollBox">
@@ -54,7 +54,7 @@
 				infoList: null, //用户信息
 				showMore: false, //底部菜单栏是否弹出
 				padding_height: "0rpx",
-
+				opposite_nickname:"",
 				// path: "wss://test.jskwsx.com/msg", //websocket链接地址
 				// ws: null, //建立的连接
 				// lockReconnect: false, //是否真正建立连接
@@ -71,7 +71,7 @@
 		onShow() {
 			this.getlishiList() //历史记录
 			console.log(this.opposite_id)
-			this.userName = uni.getStorageSync("userinfo").nickname //拿到缓存中的用户信息
+			
 		},
 		onLoad(options) {
 			this.openid = getApp().globalData.global_openid
@@ -80,8 +80,9 @@
 
 			//获取聊天对象id
 			this.opposite_id = getApp().globalData.global_opposite_id
+			this.opposite_nickname=getApp().globalData.global_opposite_nickname
 			console.log(this.identity)
-			console.log(this.opposite_id)
+			console.log(this.opposite_nickname)
 		},
 		onPageScroll(e) {
 			//监听滚动事件，如果滚动条等于0，代表滚动到最顶部，把分页加一，然后历史记录拉第二页数据，以此类推
@@ -140,7 +141,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为获取聊天记录的url
-					url: 'http://127.0.0.1:8000/api/user/ReturnChatList/',
+					url: 'http://43.140.198.99/api/user/ReturnChatList/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -198,7 +199,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为存储聊天记录的url
-					url: 'http://127.0.0.1:8000/api/user/SaveChatlist/',
+					url: 'http://43.140.198.99/api/user/SaveChatlist/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {

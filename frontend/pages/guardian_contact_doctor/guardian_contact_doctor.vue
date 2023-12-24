@@ -13,7 +13,7 @@
 				bottomLeft=0>
 					<view  class="fui-align__center">
 						<fui-icon name="my-fill"></fui-icon>
-						<text>{{item.doctor_id}}</text>
+						<text>{{doctor_nickname}}</text>
 						
 					</view>
 					<fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge>
@@ -62,6 +62,7 @@
 					'https://cdn.uviewui.com/uview/album/10.jpg',
 				],
 				timer: "",
+				doctor_nickname:"",
 			}
 		},
 
@@ -84,7 +85,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为修改标识为false的url
-					url: 'http://127.0.0.1:8000/api/user/GuardianFlagFalse/',
+					url: 'http://43.140.198.99/api/user/GuardianFlagFalse/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -125,11 +126,14 @@
 			
 			console.log(_this.indexList)
 			this.timer = setInterval(this.valChange, 2000);
+			this.doctor_nickname=getApp().globalData.global_opposite_nickname
+			this.openid = getApp().globalData.global_openid
 		},
 		
 		onLoad() {
 			let _this=this
-			this.openid = getApp().globalData.global_openid
+			
+			
 			// this.loadmore()
 			
 		},

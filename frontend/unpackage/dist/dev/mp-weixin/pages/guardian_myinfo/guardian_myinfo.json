@@ -5,7 +5,6 @@
   "usingComponents": {
     "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
     "fui-avatar": "/node-modules/firstui-uni/firstui/fui-avatar/fui-avatar",
-    "fui-icon": "/node-modules/firstui-uni/firstui/fui-icon/fui-icon",
     "fui-tag": "/node-modules/firstui-uni/firstui/fui-tag/fui-tag",
     "fui-section": "/node-modules/firstui-uni/firstui/fui-section/fui-section",
     "fui-list-cell": "/node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell",

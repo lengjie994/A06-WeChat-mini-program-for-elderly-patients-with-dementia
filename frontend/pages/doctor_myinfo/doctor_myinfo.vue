@@ -5,7 +5,7 @@
 		</view>
 		<view class="info">
 			<fui-avatar marginRight="24" width="150" marginBottom="20">
-				<fui-icon name="my" color="#fff"></fui-icon>
+				<image src="../../static/doctor.png" style="width: 150rpx;height: 150rpx;"></image>
 			</fui-avatar>
 			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
 			<fui-tag text="昵称-" type="purple" margin-bottom="24" theme="light" margin-right="24" @click="editnickname()">{{nickname}}</fui-tag>
@@ -114,7 +114,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为传递医生资料的url
-					url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
+					url: 'http://43.140.198.99/api/user/ModifyDoctorInfo/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -142,7 +142,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为传递医生资料的url
-					url: 'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/',
+					url: 'http://43.140.198.99/api/user/ModifyDoctorInfo/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -167,7 +167,7 @@
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为传递医生资料的url
-				url: 'http://127.0.0.1:8000/api/user/getDoctorInfo/',
+				url: 'http://43.140.198.99/api/user/getDoctorInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
@@ -175,7 +175,13 @@
 				},
 				success: function(response) {
 					//_this.id=response.data.code.Doctor_id
-					_this.id=(Array(8).join("0") + Number(response.data.code.Doctor_id)).slice(-8);
+					_this.id=response.data.code.Doctor_id;
+					_this.nickname=response.data.code.Nickname
+					if(_this.nickname==""||_this.nickname=="UNDEFINED"||_this.nickname==undefined||_this.nickname==null)
+					{
+						_this.nickname="暂无昵称"
+					}
+					console.log(response)
 					console.log(111)
 				},
 				fail: function(response) {

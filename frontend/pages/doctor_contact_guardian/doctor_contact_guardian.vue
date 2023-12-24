@@ -8,11 +8,11 @@
 			<u-list @scrolltolower="scrolltolower" :height="scrollheight">
 				<!--根据全局变量indexList判断每一个item是否有新消息，再添加消息提示组件-->
 				<fui-list-cell v-for="(item, index) in indexList" :key="index"  
-				@click="gotochat(item.Guardian_id)" borderColor="#DDD"
+				@click="gotochat(item)" borderColor="#DDD"
 				bottomLeft=0>
 					<view class="fui-align__center">
 						<fui-icon name="my-fill"></fui-icon>
-						<text>{{item.Guardian_id}}</text>
+						<text>{{item.Guardian_nickname}}</text>
 						
 					</view>
 					<fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge>
@@ -71,20 +71,21 @@
 			// 		})
 			// 	}
 			// },
-			gotochat(id){
-				getApp().globalData.global_opposite_id=id
-				console.log(id)
+			gotochat(item){
+				getApp().globalData.global_opposite_id=item.id
+				getApp().globalData.global_opposite_nickname=item.nickname
+				console.log(item)
 				//告知后端将该监护人消息更新标识修改为false
 				wx.request({
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为修改标识为false的url
-					url: 'http://127.0.0.1:8000/api/user/DoctorFlagFalse/',
+					url: 'http://43.140.198.99/api/user/DoctorFlagFalse/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
 						openid: this.openid,
-						guardian_id: id,
+						guardian_id: item.id,
 					},
 					success: function(response) {
 						console.log("修改标识为false成功")
@@ -115,10 +116,10 @@
 		onShow()
 		{
 			this.timer = setInterval(this.valChange, 2000);
+			this.openid = getApp().globalData.global_openid
 		},
 		
 		onLoad() {
-			this.openid = getApp().globalData.global_openid
 			// this.loadmore()
 		},
 		onHide() {

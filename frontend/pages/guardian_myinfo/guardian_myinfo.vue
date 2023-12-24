@@ -5,7 +5,7 @@
 		</view>
 		<view class="info">
 			<fui-avatar marginRight="24" width="150" marginBottom="20">
-				<fui-icon name="my" color="#fff"></fui-icon>
+				<image src="../../static/guardian.png" style="width: 150rpx;height: 150rpx;"></image>
 			</fui-avatar>
 			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
 			<fui-tag text="昵称-" type="purple" margin-bottom="24" theme="light" margin-right="24" @click="editnickname()">{{nickname}}</fui-tag>
@@ -136,7 +136,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为绑定患者账号的url
-					url: 'http://127.0.0.1:8000/api/user/GuardianToPatient/',
+					url: 'http://43.140.198.99/api/user/GuardianToPatient/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -161,7 +161,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为绑定医生账号的url
-					url: 'http://127.0.0.1:8000/api/user/GuardianToDoctor/',
+					url: 'http://43.140.198.99/api/user/GuardianToDoctor/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -190,7 +190,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为传递医生资料的url
-					url: 'http://127.0.0.1:8000/api/user/ModifyGaurdianNickname/',
+					url: 'http://43.140.198.99/api/user/ModifyGaurdianNickname/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -215,7 +215,7 @@
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为绑定患者账号的url
-				url: 'http://127.0.0.1:8000/api/user/getGuardianInfo/',
+				url: 'http://43.140.198.99/api/user/getGuardianInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
@@ -224,7 +224,7 @@
 				success: function(response) {
 					console.log("获取监护人id成功")
 					//_this.id=response.data.code.Guardian_id;
-					_this.id=(Array(8).join("0") + Number(response.data.code.Guardian_id)).slice(-8);
+					_this.id=response.data.code.Guardian_id;
 					_this.nickname=response.data.code.Nickname
 					if(_this.nickname==""||_this.nickname=="UNDEFINED"||_this.nickname==undefined||_this.nickname==null)
 					{

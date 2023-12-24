@@ -68,9 +68,52 @@
 				this.$set(this.composition, 'text', this.inputtext);
 				this.$set(this.composition, 'img', this.fileList1);
 				console.log(this.fileList1)
+				for (var index in this.fileList1) {
+				
+				          var imgItem = this.fileList1[index];
+				
+				          console.log("filePath:", imgItem.size, imgItem.url);
+				
+				
+				          wx.uploadFile({
+				            url: 'http://43.140.198.99/api/user/SendMemoir/', // 接口地址
+				            filePath: imgItem.url,
+				            name: 'file_data',
+				            header: {
+				              "content-type": "multipart/form-data"
+				            },
+				            formData: {
+				              'user': 'test'
+				            },
+				            success:res => {
+				             
+				              var jsonData= JSON.parse(res.data)
+				
+				              console.log("jsonData:", jsonData);
+				
+				              console.log("完整url：", networkUtil.getImageFullUrl(jsonData.data.img));
+							  this.fileList1[index].url=res.url
+				              //do something
+				            },
+				            fail:res => {
+				              const data = res.data
+				
+				              //do something
+				            },
+				
+				            complete:res => {
+				              const data = res.data
+				
+				              //do something
+				            }
+				          })
+				        }
+				
 				// this.isShowModal = false
 				this.$emit('onClickConfirm', JSON.stringify(this.composition))
 				//this.$refs['customModal'].close();
+				this.fileList1=[]
+				this.inputtext=""
 			},
 			//删除图片
 			deletePic(e) {
@@ -91,25 +134,25 @@
 					})
 				})
 			},
-			//上传图片
-			uploadFilePromise(url) {
-				return new Promise((resolve, reject) => {
-					let a = uni.uploadFile({
-						//url: this.$common.domain+'/api/common/upload', // 仅为示例，非真实的接口地址
-						url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
-						filePath: url,
-						name: 'file',
-						formData: {
-							user: 'test'
-						},
-						success: (res) => {
-							setTimeout(() => {
-								resolve(res.data.data)
-							}, 1000)
-						}
-					});
-				})
-			},
+			// //上传图片
+			// uploadFilePromise(url) {
+			// 	return new Promise((resolve, reject) => {
+			// 		let a = uni.uploadFile({
+			// 			//url: this.$common.domain+'/api/common/upload', // 仅为示例，非真实的接口地址
+			// 			url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
+			// 			filePath: url,
+			// 			name: 'file',
+			// 			formData: {
+			// 				user: 'test'
+			// 			},
+			// 			success: (res) => {
+			// 				setTimeout(() => {
+			// 					resolve(res.data.data)
+			// 				}, 1000)
+			// 			}
+			// 		});
+			// 	})
+			// },
 
 
 

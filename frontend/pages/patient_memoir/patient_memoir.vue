@@ -115,7 +115,7 @@
 				// 	// 这里是django的本地ip地址
 				// 	// 如果部署到线上，需要改为接口的实际网址
 				// 	//此处url还需修改为添加回忆录的url
-				// 	url: 'http://127.0.0.1:8000/api/user/SendMemoir/',
+				// 	url: 'http://43.140.198.99/api/user/SendMemoir/',
 				// 	// 请求方式修改为 POST
 				// 	method: 'POST',
 				// 	data: {
@@ -140,7 +140,7 @@
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为获取回忆录的url
-				url: 'http://127.0.0.1:8000/api/user/getPatientInfo/',
+				url: 'http://43.140.198.99/api/user/getPatientInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
