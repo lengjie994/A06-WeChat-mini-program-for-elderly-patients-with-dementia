@@ -18,7 +18,7 @@ class User(models.Model):
     session = models.CharField(max_length = 100)
     role = models.CharField(max_length = 100)
 
-    img = models.ImageField(upload_to='lalallalalal',default='images/default.jpg')
+    img = models.ImageField(upload_to='img/',null=True)
     class Meta:
         db_table = 'user'
 
@@ -72,6 +72,7 @@ class Doctor(models.Model):
     Nickname = models.CharField(max_length = 200, default = "UNDEFINED")
 
 class MediaCampTest(models.Model):
+
     class Meta:
         db_table = "media_camp"
 

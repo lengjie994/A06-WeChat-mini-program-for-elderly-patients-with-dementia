@@ -23,7 +23,7 @@ class UploadImageView(APIView):
         @return:
         """
         # 获取当前用户  我这里是写死的
-        user = User.objects.filter(id=1).first()
+        user = User.objects.first()
         image = request.FILES.get('image', None)
         if image:
             file_info, suffix = os.path.splitext(image.name)

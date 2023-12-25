@@ -25,7 +25,7 @@ class WeixinLogin(APIView):
         # 填写你的测试号密钥
         appid = 'wx2535e2c919c58832'
         appsecret = '3a6e697feadee759db26c7fa033c8dc6'
-
+        
         # 微信接口服务地址
         base_url = 'https://api.weixin.qq.com/sns/jscode2session'
         # 微信接口服务的带参数的地址
@@ -137,6 +137,7 @@ class ChooseRole(APIView):
                     password=openid,
                     session=session_key,
                     Doctor_id=theID,
+                    Guardian_id_list=[],
                 )
             print("保存")
             return Response({
@@ -245,6 +246,8 @@ class GetGuardianInfo(APIView):
                     "Patient_openid":patient.Openid,
                     "Nickname": guardian.Nickname,
                     "Doctor_nickname":doctor_nickname,
+                    "Flag":guardian.Flag,
+                    "Patient_uid":patient.Uid,
                 }
             })
         except:
@@ -267,6 +270,8 @@ class GetGuardianInfo(APIView):
                     "Patient_openid":"",
                     "Nickname": guardian.Nickname,
                     "Doctor_nickname":doctor_nickname,
+                    "Flag":guardian.Flag,
+                    "Patient_uid":""
                 }
             })
 
@@ -425,7 +430,8 @@ class GuardianToDoctor(APIView):
             guardian.save()
 
             guardian_list = []
-            guardian_list = doctor.Guardian_id_list#此时guardian_list的数据类型是否改变
+            print(doctor.Guardian_id_list)
+            guardian_list = doctor.Guardian_id_list
             tmp_dict = {
                 "Guardian_id":guardian.Guardian_id, 
                 "flag":guardian.Flag,
