@@ -64,52 +64,69 @@
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {
-				let _this=this
+
 				this.$set(this.composition, 'text', this.inputtext);
-				this.$set(this.composition, 'img', this.fileList1);
+				
 				console.log(this.fileList1)
-				for (var index in this.fileList1) {
-				
-				          var imgItem = this.fileList1[index];
-				
-				          console.log("filePath:", imgItem.size, imgItem.url);
-				
-				
-				          wx.uploadFile({
-				            url: getApp().globalData.base_url+'/UploadImage/', // 接口地址
-				            filePath: imgItem.url,
-				            name: 'image',
-				            header: {
-				              "content-type": "multipart/form-data"
-				            },
-				            formData: {
-				            },
-				            success:res => {
-				              console.log("jsonData:", res.data);
-							  console.log(_this.fileList1)
-							  _this.fileList1[index].url=res.data.msg
-							  
-				              //do something
-				            },
-				            fail:res => {
-				              const data = res.data
-							  console.log("失败");
-				              //do something
-				            },
-				
-				            complete:res => {
-				              const data = res.data
-				
-				              //do something
-				            }
-				          })
-				        }
-				
-				// this.isShowModal = false
-				this.$emit('onClickConfirm', JSON.stringify(this.composition))
-				//this.$refs['customModal'].close();
-				this.fileList1=[]
-				this.inputtext=""
+				var list2 = []
+				return new Promise((resolve, reject) => {
+					let len = this.fileList1.length
+					let timer = null
+					for (let i = 0; i < this.fileList1.length; i++) {
+						var imgItem = this.fileList1[i];
+
+						console.log("filePath:", imgItem.size, imgItem.url);
+
+
+						wx.uploadFile({
+							url: getApp().globalData.base_url + '/UploadImage/', // 接口地址
+							filePath: imgItem.url,
+							name: 'image',
+							header: {
+								"content-type": "multipart/form-data"
+							},
+							formData: {},
+							success: res => {
+								var json = JSON.parse(res.data) // 此处转换
+								console.log(json)
+								list2.push(json.msg)
+								//do something
+							},
+							fail: res => {
+								const data = res.data
+								console.log("失败");
+								//do something
+							},
+
+							complete: res => {
+								console.log('完成..: ' + len)
+								len--; // 不论success还是fail，都把len-1
+
+								//do something
+							}
+						})
+					}
+					// 关键部分
+					// 通过此部分来延续方法的时长，待到异步的回调执行完毕后则关闭
+					// 以防万一，建议设定一个阈值，防止出现意外导致无限循环
+					timer = setInterval(() => {
+						console.log(len);
+						if (!len || len < -5000) { // 只要len结束，将定时器清除
+							console.log("同步结束");
+							resolve(list2)
+							console.log(list2)
+							// this.isShowModal = false
+							
+							this.$set(this.composition, 'img', list2);
+							this.$emit('onClickConfirm', JSON.stringify(this.composition))
+							//this.$refs['customModal'].close();
+							this.fileList1 = []
+							this.inputtext = ""
+							clearInterval(timer) // 上传操作完成，消除阻塞
+						}
+					}, 1) // 这个参数一定要写，如果不写在IOS端会报错导致同步失败
+					
+				}, 50);
 			},
 			//删除图片
 			deletePic(e) {

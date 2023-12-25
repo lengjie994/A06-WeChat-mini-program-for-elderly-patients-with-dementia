@@ -113,7 +113,7 @@ try {
       return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 532))
     },
     uBadge: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-badge/u-badge")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 547))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-badge/u-badge")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 540))
     },
   }
 } catch (e) {
@@ -183,7 +183,7 @@ var tabBar = function tabBar() {
 };
 var fuiList = function fuiList() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list/fui-list */ "node-modules/firstui-uni/firstui/fui-list/fui-list").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 555));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 548));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiListCell = function fuiListCell() {
@@ -193,7 +193,7 @@ var fuiListCell = function fuiListCell() {
 };
 var fuiBadge = function fuiBadge() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 540));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 555));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiIcon = function fuiIcon() {

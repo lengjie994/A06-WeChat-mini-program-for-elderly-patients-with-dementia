@@ -205,9 +205,7 @@ var _default = {
     onClickConfirm: function onClickConfirm(data) {
       var stateData = JSON.parse(data);
       console.log(stateData);
-      var img_urls = stateData.img.map(function (item) {
-        return item.url;
-      });
+      var img_urls = stateData.img;
       //现在需要将图片发送给后端然后由后端上传返回图片的云端地址并储存
       var _this = this;
       var currentDate = new Date();
@@ -230,25 +228,26 @@ var _default = {
       _this.$nextTick(function () {
         _this.$refs.scrollView && _this.$refs.scrollView.scrollTo(0, 0); // 通过 ref 滚动到顶部
       });
-      // wx.request({
-      // 	// 这里是django的本地ip地址
-      // 	// 如果部署到线上，需要改为接口的实际网址
-      // 	//此处url还需修改为添加回忆录的url
-      // 	url: getApp().globalData.base_url+'/SendMemoir/',
-      // 	// 请求方式修改为 POST
-      // 	method: 'POST',
-      // 	data: {
-      // 		openid: this.openid,
-      // 		memoir: this.messages,
-      // 	},
-      // 	success: function(response) {
-      // 		console.log("添加回忆录成功")
-      // 		console.log(response)
-      // 	},
-      // 	fail: function(response) {
-      // 		console.log("添加回忆录失败")
-      // 	}
-      // })
+
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为添加回忆录的url
+        url: getApp().globalData.base_url + '/SendMemoir/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          openid: this.openid,
+          memoir: this.messages
+        },
+        success: function success(response) {
+          console.log("添加回忆录成功");
+          console.log(response);
+        },
+        fail: function fail(response) {
+          console.log("添加回忆录失败");
+        }
+      });
       this.$refs['customModal'].hideModal();
     }
   },
@@ -266,7 +265,7 @@ var _default = {
         openid: this.openid
       },
       success: function success(response) {
-        console.log("获取回忆录成功");
+        console.log("获取回忆录成功", response);
         _this.messages = response.data.code.Memoir;
         if (_this.messages == null) {
           _this.messages = [];
