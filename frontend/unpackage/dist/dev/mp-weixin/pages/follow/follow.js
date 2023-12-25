@@ -101,10 +101,10 @@ var components
 try {
   components = {
     fuiInput: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-input/fui-input.vue */ 554))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-input/fui-input.vue */ 562))
     },
     fuiButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-button/fui-button.vue */ 561))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-button/fui-button.vue */ 569))
     },
   }
 } catch (e) {
@@ -169,12 +169,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var fuiInput = function fuiInput() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-input/fui-input.vue */ 554));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-input/fui-input.vue */ 562));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiButton = function fuiButton() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-button/fui-button.vue */ 561));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-button/fui-button.vue */ 569));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -196,7 +196,7 @@ var _default = {
       // 这里是django的本地ip地址
       // 如果部署到线上，需要改为接口的实际网址
       //此处url还需修改为绑定患者账号的url
-      url: 'http://43.140.198.99/api/user/getPatientInfo/',
+      url: getApp().globalData.base_url + '/getPatientInfo/',
       // 请求方式修改为 POST
       method: 'POST',
       data: {
@@ -223,7 +223,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为绑定患者账号的url
-        url: 'http://43.140.198.99/api/user/WriteUid/',
+        url: getApp().globalData.base_url + '/WriteUid/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {

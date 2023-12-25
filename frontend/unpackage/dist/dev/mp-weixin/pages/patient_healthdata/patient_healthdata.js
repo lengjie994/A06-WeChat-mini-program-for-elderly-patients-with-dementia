@@ -345,7 +345,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为修改健康数据的url
-        url: 'http://43.140.198.99/api/user/getPatientInfo/',
+        url: getApp().globalData.base_url + '/getPatientInfo/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {

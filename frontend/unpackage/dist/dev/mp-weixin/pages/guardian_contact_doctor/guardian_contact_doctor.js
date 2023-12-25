@@ -115,8 +115,8 @@ try {
     fuiIcon: function () {
       return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 532))
     },
-    fuiBadge: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 540))
+    uBadge: function () {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-badge/u-badge")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 547))
     },
   }
 } catch (e) {
@@ -186,7 +186,7 @@ var tabBar = function tabBar() {
 };
 var fuiList = function fuiList() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list/fui-list */ "node-modules/firstui-uni/firstui/fui-list/fui-list").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 547));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 555));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiListCell = function fuiListCell() {
@@ -244,7 +244,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为修改标识为false的url
-        url: 'http://43.140.198.99/api/user/GuardianFlagFalse/',
+        url: getApp().globalData.base_url + '/GuardianFlagFalse/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {

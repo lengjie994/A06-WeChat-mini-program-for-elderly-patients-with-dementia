@@ -1557,7 +1557,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8934,7 +8934,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8955,14 +8955,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9058,7 +9058,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_DARK_MODE":"false","VUE_APP_NAME":"试用","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -37135,7 +37135,96 @@ exports.default = _default;
 /* 549 */,
 /* 550 */,
 /* 551 */,
-/* 552 */,
+/* 552 */
+/*!**************************************************************************************************************************************!*\
+  !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-badge/props.js ***!
+  \**************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    // 是否显示圆点
+    isDot: {
+      type: Boolean,
+      default: uni.$u.props.badge.isDot
+    },
+    // 显示的内容
+    value: {
+      type: [Number, String],
+      default: uni.$u.props.badge.value
+    },
+    // 是否显示
+    show: {
+      type: Boolean,
+      default: uni.$u.props.badge.show
+    },
+    // 最大值，超过最大值会显示 '{max}+'
+    max: {
+      type: [Number, String],
+      default: uni.$u.props.badge.max
+    },
+    // 主题类型，error|warning|success|primary
+    type: {
+      type: String,
+      default: uni.$u.props.badge.type
+    },
+    // 当数值为 0 时，是否展示 Badge
+    showZero: {
+      type: Boolean,
+      default: uni.$u.props.badge.showZero
+    },
+    // 背景颜色，优先级比type高，如设置，type参数会失效
+    bgColor: {
+      type: [String, null],
+      default: uni.$u.props.badge.bgColor
+    },
+    // 字体颜色
+    color: {
+      type: [String, null],
+      default: uni.$u.props.badge.color
+    },
+    // 徽标形状，circle-四角均为圆角，horn-左下角为直角
+    shape: {
+      type: String,
+      default: uni.$u.props.badge.shape
+    },
+    // 设置数字的显示方式，overflow|ellipsis|limit
+    // overflow会根据max字段判断，超出显示`${max}+`
+    // ellipsis会根据max判断，超出显示`${max}...`
+    // limit会依据1000作为判断条件，超出1000，显示`${value/1000}K`，比如2.2k、3.34w，最多保留2位小数
+    numberType: {
+      type: String,
+      default: uni.$u.props.badge.numberType
+    },
+    // 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效
+    offset: {
+      type: Array,
+      default: uni.$u.props.badge.offset
+    },
+    // 是否反转背景和字体颜色
+    inverted: {
+      type: Boolean,
+      default: uni.$u.props.badge.inverted
+    },
+    // 是否绝对定位
+    absolute: {
+      type: Boolean,
+      default: uni.$u.props.badge.absolute
+    }
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
 /* 553 */,
 /* 554 */,
 /* 555 */,
@@ -37163,7 +37252,15 @@ exports.default = _default;
 /* 577 */,
 /* 578 */,
 /* 579 */,
-/* 580 */
+/* 580 */,
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */
 /*!************************************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \************************************************************************************************************************************************************/
@@ -37297,12 +37394,12 @@ function createAnimation(option, _this) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 581 */,
-/* 582 */,
-/* 583 */,
-/* 584 */,
-/* 585 */,
-/* 586 */
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-text/value.js ***!
   \*************************************************************************************************************************************/
@@ -37410,7 +37507,7 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 587 */
+/* 595 */
 /*!*******************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/libs/mixin/button.js ***!
   \*******************************************************************************************************************************/
@@ -37440,7 +37537,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 588 */
+/* 596 */
 /*!*********************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/libs/mixin/openType.js ***!
   \*********************************************************************************************************************************/
@@ -37482,14 +37579,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 589 */,
-/* 590 */,
-/* 591 */,
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */,
-/* 596 */
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/utils.js ***!
   \***************************************************************************************************************************************/
@@ -37633,7 +37730,7 @@ function chooseFile(_ref) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
-/* 597 */
+/* 605 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/mixin.js ***!
   \***************************************************************************************************************************************/
@@ -37660,7 +37757,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 598 */
+/* 606 */
 /*!***************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-upload/props.js ***!
   \***************************************************************************************************************************************/
@@ -37802,14 +37899,6 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
 /* 607 */,
 /* 608 */,
 /* 609 */,
@@ -37821,7 +37910,15 @@ exports.default = _default;
 /* 615 */,
 /* 616 */,
 /* 617 */,
-/* 618 */
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-icon/icons.js ***!
   \*************************************************************************************************************************************/
@@ -38052,7 +38149,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 619 */
+/* 627 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-icon/props.js ***!
   \*************************************************************************************************************************************/
@@ -38159,14 +38256,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 620 */,
-/* 621 */,
-/* 622 */,
-/* 623 */,
-/* 624 */,
-/* 625 */,
-/* 626 */,
-/* 627 */
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */
 /*!*************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-link/props.js ***!
   \*************************************************************************************************************************************/
@@ -38223,14 +38320,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 628 */,
-/* 629 */,
-/* 630 */,
-/* 631 */,
-/* 632 */,
-/* 633 */,
-/* 634 */,
-/* 635 */
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */
 /*!*********************************************************************************************************************************************!*\
   !*** D:/桌面/前端/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/node_modules/uview-ui/components/u-loading-icon/props.js ***!
   \*********************************************************************************************************************************************/

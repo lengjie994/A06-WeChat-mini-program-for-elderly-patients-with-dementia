@@ -13,6 +13,7 @@
 			global_indexList: [],
 			global_flag: false, //监护人方聊天消息是否更新标识
 			global_opposite_nickname:"",
+			base_url:"http://127.0.0.1:8000/api/user",
 		},
 		data() {
 			return {
@@ -41,7 +42,7 @@
 						// 这里是django的本地ip地址
 						// 如果部署到线上，需要改为接口的实际网址
 						//此处url还需修改为获取医生信息的url
-						url: 'http://43.140.198.99/api/user/getDoctorInfo/',
+						url: _this.globalData.base_url+'/getDoctorInfo/',
 						// 请求方式修改为 POST
 						method: 'POST',
 						data: {
@@ -75,7 +76,7 @@
 						// 这里是django的本地ip地址
 						// 如果部署到线上，需要改为接口的实际网址
 						//此处url还需修改为获取监护人信息的url
-						url: 'http://43.140.198.99/api/user/getGuardianInfo/',
+						url: _this.globalData.base_url+'/getGuardianInfo/',
 						// 请求方式修改为 POST
 						method: 'POST',
 						data: {

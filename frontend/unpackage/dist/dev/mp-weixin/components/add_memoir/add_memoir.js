@@ -83,7 +83,7 @@ try {
       return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 353))
     },
     uUpload: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-upload/u-upload.vue */ 591))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-upload/u-upload */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-upload/u-upload")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-upload/u-upload.vue */ 599))
     },
   }
 } catch (e) {
@@ -222,27 +222,25 @@ var _default = {
         var imgItem = this.fileList1[index];
         console.log("filePath:", imgItem.size, imgItem.url);
         wx.uploadFile({
-          url: 'http://43.140.198.99/api/user/SendMemoir/',
+          url: getApp().globalData.base_url + '/UploadImage/',
           // 接口地址
           filePath: imgItem.url,
-          name: 'file_data',
+          name: 'image',
           header: {
             "content-type": "multipart/form-data"
           },
-          formData: {
-            'user': 'test'
-          },
+          formData: {},
           success: function success(res) {
-            var jsonData = JSON.parse(res.data);
-            console.log("jsonData:", jsonData);
-            console.log("完整url：", networkUtil.getImageFullUrl(jsonData.data.img));
-            _this.fileList1[index].url = res.url;
+            console.log("jsonData:", res.data);
+            console.log(_this.fileList1);
+            _this.fileList1[index].url = res.data.msg;
+
             //do something
           },
 
           fail: function fail(res) {
             var data = res.data;
-
+            console.log("失败");
             //do something
           },
 

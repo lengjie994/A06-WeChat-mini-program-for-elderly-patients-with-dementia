@@ -198,7 +198,7 @@ var _default = {
       // 这里是django的本地ip地址
       // 如果部署到线上，需要改为接口的实际网址
       //此处url还需修改为绑定患者账号的url
-      url: 'http://43.140.198.99/api/user/getGuardianInfo/',
+      url: getApp().globalData.base_url + '/getGuardianInfo/',
       // 请求方式修改为 POST
       method: 'POST',
       data: {
@@ -255,7 +255,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为编辑服药提醒的url
-        url: 'http://43.140.198.99/api/user/SendReminder/',
+        url: getApp().globalData.base_url + '/SendReminder/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {
@@ -273,7 +273,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为编辑服药提醒的url
-        url: 'http://43.140.198.99/api/user/SendOfficialReminder/',
+        url: getApp().globalData.base_url + '/SendOfficialReminder/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {
@@ -301,7 +301,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为编辑服药提醒的url
-        url: 'http://43.140.198.99/api/user/SendReminder/',
+        url: getApp().globalData.base_url + '/SendReminder/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {
@@ -321,7 +321,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为编辑服药提醒的url
-        url: 'http://43.140.198.99/api/user/SendReminder/',
+        url: getApp().globalData.base_url + '/SendReminder/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {

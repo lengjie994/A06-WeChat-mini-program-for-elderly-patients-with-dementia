@@ -16,7 +16,8 @@
 						<text>{{doctor_nickname}}</text>
 						
 					</view>
-					<fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge>
+					<!-- <fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge> -->
+					<u-badge v-if="indexList[0].flag===true" :is-dot="true" type="error"></u-badge>
 				</fui-list-cell>
 			</u-list>
 			
@@ -85,7 +86,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为修改标识为false的url
-					url: 'http://43.140.198.99/api/user/GuardianFlagFalse/',
+					url: getApp().globalData.base_url+'/GuardianFlagFalse/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {

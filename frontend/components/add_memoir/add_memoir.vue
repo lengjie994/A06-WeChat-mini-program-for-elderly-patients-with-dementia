@@ -64,7 +64,7 @@
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {
-
+				let _this=this
 				this.$set(this.composition, 'text', this.inputtext);
 				this.$set(this.composition, 'img', this.fileList1);
 				console.log(this.fileList1)
@@ -76,28 +76,24 @@
 				
 				
 				          wx.uploadFile({
-				            url: 'http://43.140.198.99/api/user/SendMemoir/', // 接口地址
+				            url: getApp().globalData.base_url+'/UploadImage/', // 接口地址
 				            filePath: imgItem.url,
-				            name: 'file_data',
+				            name: 'image',
 				            header: {
 				              "content-type": "multipart/form-data"
 				            },
 				            formData: {
-				              'user': 'test'
 				            },
 				            success:res => {
-				             
-				              var jsonData= JSON.parse(res.data)
-				
-				              console.log("jsonData:", jsonData);
-				
-				              console.log("完整url：", networkUtil.getImageFullUrl(jsonData.data.img));
-							  this.fileList1[index].url=res.url
+				              console.log("jsonData:", res.data);
+							  console.log(_this.fileList1)
+							  _this.fileList1[index].url=res.data.msg
+							  
 				              //do something
 				            },
 				            fail:res => {
 				              const data = res.data
-				
+							  console.log("失败");
 				              //do something
 				            },
 				

@@ -191,7 +191,7 @@ var _default = {
         // 这里是django的本地ip地址
         // 如果部署到线上，需要改为接口的实际网址
         //此处url还需修改为传递身份的url
-        url: 'http://43.140.198.99/api/user/role/',
+        url: getApp().globalData.base_url + '/role/',
         // 请求方式修改为 POST
         method: 'POST',
         data: {
@@ -209,25 +209,25 @@ var _default = {
       });
     },
     patient_info: function patient_info() {
+      this.role = "patient";
       this.sendrole();
       uni.redirectTo({
         url: '/pages/patient_memorandum/patient_memorandum'
       });
-      this.role = "patient";
     },
     guardian_info: function guardian_info() {
+      this.role = "guardian";
       this.sendrole();
       uni.redirectTo({
         url: '/pages/guardian_myinfo/guardian_myinfo'
       });
-      this.role = "guardian";
     },
     doctor_info: function doctor_info() {
+      this.role = "doctor";
       this.sendrole();
       uni.redirectTo({
         url: '/pages/doctor_myinfo/doctor_myinfo'
       });
-      this.role = "doctor";
     }
   },
   onLoad: function onLoad() {
