@@ -3,6 +3,7 @@
   "navigationStyle": "custom",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar"
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "fui-button": "/node-modules/firstui-uni/firstui/fui-button/fui-button"
   }
 }

@@ -1,23 +1,30 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="身份选择" height="11vh" :border="false" :fixed="true" backgroundColor="#f9f9f9"></uni-nav-bar>
 		</view>
 		<view class="btn">
-			<button type="primary" @click="patient_info">我是患者</button>
+			<!-- <button type="primary" @click="patient_info">我是患者</button>
 			<button type="primary" @click="guardian_info">我是监护人</button>
-			<button type="primary" @click="doctor_info">我是医生</button>
+			<button type="primary" @click="doctor_info">我是医生</button> -->
+			<fui-button radius="96rpx" :margin="['40rpx']"  @click="patient_info" width="450rpx">我是患者</fui-button>
+			<fui-button radius="96rpx" :margin="['40rpx']" @click="guardian_info" width="450rpx">我是监护人</fui-button>
+			<fui-button radius="96rpx" :margin="['40rpx']" @click="doctor_info" width="450rpx">我是医生</fui-button>
 		</view>
 	</view>
 </template>
 
 <script>
+	import fuiButton from "firstui-uni/firstui/fui-button/fui-button.vue"
 	export default {
 		data() {
 			return {
 				role:'',
 				openid:'',
 			};
+		},
+		components:{
+			fuiButton,
 		},
 		methods: {
 			
@@ -82,10 +89,16 @@
 
 <style lang="scss">
 	.btn{
-		margin-top: 40%;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 89vh;
 	}
-	button{
-		width: 70%;
-		margin-top: 100rpx;
+
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
 	}
+
 </style>

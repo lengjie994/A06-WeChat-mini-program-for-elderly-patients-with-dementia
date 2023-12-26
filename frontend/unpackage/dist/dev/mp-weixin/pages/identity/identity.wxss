@@ -2,10 +2,14 @@
 /* 水平间距 */
 /* 水平间距 */
 .btn {
-  margin-top: 40%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 89vh;
 }
-button {
-  width: 70%;
-  margin-top: 100rpx;
+.content {
+  background-color: #F1F4FA;
+  height: 100vh;
 }
 

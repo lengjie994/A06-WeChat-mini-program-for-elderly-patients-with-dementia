@@ -75,7 +75,7 @@
 		onLoad() {
 			let _this = this
 			this.openid = getApp().globalData.global_openid
-			_this.checkTime();
+			//_this.checkTime();
 		},
 		methods: {
 			checkTime(targetTime) {
@@ -89,7 +89,13 @@
 
 				// 构建当前时间字符串
 				var currentTimeString = `${currentHours}:${currentMinutes}`;
-
+				console.log("currentTimeString")
+				console.log(currentTimeString)
+				console.log("targetTime")
+				console.log(targetTime)
+				let b=(currentTimeString > targetTime)?0:1
+				console.log(b)
+				
 				// 比较时间
 				if (currentTimeString > targetTime) {
 					return true;

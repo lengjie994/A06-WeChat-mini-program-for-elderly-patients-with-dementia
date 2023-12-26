@@ -159,6 +159,14 @@
                 "enablePullDownRefresh": false
             }
             
+        },
+        {
+        	"path" : "pages/uid/uid",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "",
+        		"enablePullDownRefresh" : false
+        	}
         }
     ],
 	// "tabBar": {

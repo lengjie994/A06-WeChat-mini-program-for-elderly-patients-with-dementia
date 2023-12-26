@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="add_new">
 			<view class="add_image" @tap="onClickShow()">
 				<view class="iconfont icon-add-circle"></view>
@@ -53,25 +53,7 @@
 					'https://cdn.uviewui.com/uview/album/10.jpg',
 				],
 				openid: "",
-				messages: [{
-						text: '消息1',
-						urls: [
-							'https://cdn.uviewui.com/uview/album/1.jpg',
-							'https://cdn.uviewui.com/uview/album/2.jpg',
-							'https://cdn.uviewui.com/uview/album/3.jpg',
-							'https://cdn.uviewui.com/uview/album/4.jpg',
-							'https://cdn.uviewui.com/uview/album/5.jpg',
-							'https://cdn.uviewui.com/uview/album/6.jpg',
-							'https://cdn.uviewui.com/uview/album/7.jpg',
-							'https://cdn.uviewui.com/uview/album/8.jpg',
-							'https://cdn.uviewui.com/uview/album/9.jpg',
-							'https://cdn.uviewui.com/uview/album/10.jpg',
-						],
-						time: '2023-12-2-2-2-2'
-					},
-					
-					// ...
-				],
+				messages: [],
 				scrollTop: 0,
 			};
 		},

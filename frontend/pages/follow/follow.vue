@@ -24,6 +24,7 @@
 		},
 		onLoad() {
 			let _this=this
+			this.openid = getApp().globalData.global_openid
 			this.followurl = decodeURIComponent('https://wxpusher.zjiecode.com/wxuser/?type=1&id=67688#/follow')
 			console.log(this.followurl)
 			wx.request({

@@ -4,6 +4,8 @@
 .btn {
   display: flex;
   height: 10%;
+  justify-content: center;
+  align-items: center;
 }
 .scroll-view {
   margin-top: 20rpx;
@@ -27,7 +29,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   /* 自动换行 */
-  height: 140rpx;
+  height: 120rpx;
   text-align: center;
   /* 文本居中 */
   align-items: center;

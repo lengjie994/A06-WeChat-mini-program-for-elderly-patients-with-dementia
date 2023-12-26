@@ -8,12 +8,12 @@
 			<fui-avatar marginRight="24" width="150" marginBottom="20">
 				<image src="../../static/patient.png" style="width: 150rpx;height: 150rpx;"></image>
 			</fui-avatar>
-			<fui-tag text="ID-" type="purple" margin-bottom="24" theme="light" margin-right="24">{{id}}</fui-tag>
+			<fui-tag text="ID-" type="purple" theme="light" margin-right="24">{{id}}</fui-tag>
 		</view>
 		<view>
 			<view>
 				<fui-section title="关系绑定" line-width="8rpx" isLine class="fui-section__title"></fui-section>
-				<fui-list-cell arrow @click="onClickShow()" marginTop="28">
+				<fui-list-cell arrow @click="onClickShow()" marginTop="20">
 					<view class="iconfont icon-tianxuangouren"></view>
 					<text style="margin-left: 20rpx;">我的监护人</text>
 				</fui-list-cell>
@@ -21,9 +21,13 @@
 					<view class="iconfont icon-tianxuangouren"></view>
 					<text style="margin-left: 20rpx;">关注服药提醒公众号</text>
 				</fui-list-cell>
+				<fui-list-cell arrow @click="followuid()">
+					<view class="iconfont icon-tianxuangouren"></view>
+					<text style="margin-left: 20rpx;">填写UID</text>
+				</fui-list-cell>
 				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
 					class="fui-section__title"></fui-section>
-				<fui-list-cell arrow @click="goto_healthdata" marginTop="28">
+				<fui-list-cell arrow @click="goto_healthdata" marginTop="20">
 					<view class="iconfont icon-fenxiang"></view>
 					<text style="margin-left: 20rpx;">我的健康数据</text>
 				</fui-list-cell>
@@ -107,9 +111,14 @@
 					url: '/pages/patient_healthdata/patient_healthdata'
 				})
 			},
-			follow() {
+			followuid() {
 				uni.navigateTo({
 					url: '/pages/follow/follow'
+				})
+			},
+			follow() {
+				uni.navigateTo({
+					url: '/pages/uid/uid'
 				})
 			},
 			// 根据自己项目，在某个事件触发弹框弹出,注意！！！$refs后面直接跟[],不需要.
@@ -172,7 +181,7 @@
 	}
 
 	.info {
-		margin-top: 6%;
+		margin-top: 4%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;

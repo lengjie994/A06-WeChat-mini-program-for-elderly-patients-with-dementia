@@ -14,6 +14,7 @@
 			global_flag: false, //监护人方聊天消息是否更新标识
 			global_opposite_nickname:"",
 			base_url:"http://127.0.0.1:8000/api/user",
+			//base_url:"http://43.140.198.99/api/user",
 		},
 		data() {
 			return {

@@ -1,17 +1,23 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="btn">
-			<button @tap="showadd()">添加服药提醒</button>
-			<button @tap="showdelete()">删除服药提醒</button>
+			<!-- <button @tap="showadd()">添加服药提醒</button> -->
+			<fui-button radius="96rpx" :margin="['40rpx','40rpx']"  @click="showadd" width="300rpx">添加服药提醒</fui-button>
+			<!-- <button @tap="showdelete()">删除服药提醒</button> -->
+			<fui-button radius="96rpx" :margin="['40rpx','40rpx']"  @click="showdelete" width="300rpx">删除服药提醒</fui-button>
 		</view>
 		<scroll-view class="scroll-view" :scroll-y="true" :scroll-top="scrollTop" ref="scrollView">
 			<view class="table">
-				<view class="tr">
+				<view v-if="message.length>0" class="tr">
 					<view class="th1">当前用药</view>
 					<view class="th2">每次剂量</view>
 					<view class="th3">每日剂次</view>
 					<view class="th4">提醒时间</view>
 				</view>
+				<view v-else>
+					<fui-empty src="/static/empty.png" title="暂无数据" descr="点击上方按钮添加服药提醒!"></fui-empty>
+				</view>
+				
 				<view class="tr" v-for="(item, index) in message" :key="index">
 					<view class="td1">{{item.pill}}</view>
 					<view class="td2">{{item.count}}</view>
@@ -30,6 +36,8 @@
 <script>
 	import add_pill from '@/components/add_pill/add_pill.vue'
 	import delete_pill from '@/components/delete_pill/delete_pill.vue'
+	import fuiButton from "firstui-uni/firstui/fui-button/fui-button.vue"
+	import fuiEmpty from "firstui-uni/firstui/fui-empty/fui-empty.vue"
 	export default {
 		data() {
 			return {
@@ -43,6 +51,8 @@
 		components: {
 			add_pill,
 			delete_pill,
+			fuiButton,
+			fuiEmpty,
 		},
 		onLoad(){
 			let _this=this;
@@ -194,9 +204,15 @@
 </script>
 
 <style lang="scss">
+	.content {
+		
+		
+	}
 	.btn {
 		display: flex;
 		height: 10%;
+		justify-content: center;
+		align-items: center;
 	}
 	
 	.scroll-view {
@@ -225,7 +241,7 @@
 		flex-direction: column;
 		flex-wrap: wrap;
 		/* 自动换行 */
-		height: 140rpx;
+		height: 120rpx;
 		text-align: center;
 		/* 文本居中 */
 		align-items: center;

@@ -19,7 +19,8 @@
     "pages/chatting/chatting",
     "pages/success_reservation/success_reservation",
     "pages/guardian_contact_doctor/guardian_contact_doctor",
-    "pages/follow/follow"
+    "pages/follow/follow",
+    "pages/uid/uid"
   ],
   "subPackages": [],
   "window": {
