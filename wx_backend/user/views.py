@@ -309,7 +309,48 @@ class getDoctorInfo(APIView):
                     'errid': Constants.ERROR_CODE_NOT_FOUND,
                 }
             })
+
+class DoctorFindHealthData(APIView):
+    def post(self, request, format=None):
+        """
+        医生调用这个接口，参数为监护人的specialID，
+        返回监护人绑定的患者的HealthData
+        """
+        guardian_id = json.loads(request.body).get('guardian_id')
+        guardian = None
+        try:
+            guardian = Guardian.objects.get(Guardian_id=guardian_id)
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'该监护人不存在',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
         
+        patient_id = guardian.Patient_id
+        patient = None
+        try:
+            patient = Patient.objects.get(Patient_id=patient_id)
+        except:
+            return Response({
+                "status_code": 401,
+                'code': {
+                    "msg": 'false', 
+                    "reason":'未绑定患者',
+                    'errid': Constants.ERROR_CODE_NOT_FOUND,
+                }
+            })
+        return Response({
+                "status_code": 200,
+                'code': {
+                    "msg": 'success', 
+                    "Healthdata":patient.Healthdata,
+                }
+            })
+
 class ModifyMemorial(APIView):
     def post(self, request, format=None):
         """
