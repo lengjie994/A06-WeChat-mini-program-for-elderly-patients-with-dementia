@@ -30,17 +30,17 @@ class UploadImageView(APIView):
             # 修改照片名称 按需求来进行改写
             image.name = 'w' + suffix
             if suffix.upper() not in ['.JPG', '.JPEG', '.PNG']:
-                return Response({"msg": "照片格式只支持PNG、JPEG、JPG", "code": 1})
+                return Response({"msg": "照片格式只支持PNG、JPEG、JPG", "code": 401})
             # 判断数据库中该用户是否有上传过照片，如果有，代表我们服务器本地也有这个照片，
             # 因为我们model用的是 upload_to 这个，所以 如果照片存在，再次上传同一张照片，
             # 系统会自动给你在照片的末尾加上一些字符串来区分并不会替换掉照片，会造成无用的图片越来越多，
             # 所以我们要把之间的同一个名字的照片先删除掉，在进行保存
             if user.img:
-                path = settings.BASE_DIR + '/media/' + str(user.img)
+                path = str(settings.BASE_DIR) + '/media/' + str(user.img)
                 if os.path.exists(path):
                     os.remove(path)
             # 保存图片
             user.img = image
             user.save()
-            whole_path = 'http://43.140.198.99/home/ubuntu/wx_backend/media/'+user.img
-        return Response({"msg": whole_path, "code": 0})
+            whole_path = 'http://43.140.198.99/media/'+str(user.img)
+        return Response({"msg": whole_path, "code": 200})
