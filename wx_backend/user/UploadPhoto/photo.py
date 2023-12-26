@@ -42,4 +42,5 @@ class UploadImageView(APIView):
             # 保存图片
             user.img = image
             user.save()
-        return Response({"msg": str(user.img), "code": 0})
+            whole_path = 'http://43.140.198.99/home/ubuntu/wx_backend/media/'+user.img
+        return Response({"msg": whole_path, "code": 0})

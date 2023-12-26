@@ -23,8 +23,10 @@ class WeixinLogin(APIView):
         code = json.loads(request.body).get('code')
 
         # 填写你的测试号密钥
-        appid = 'wx2535e2c919c58832'
-        appsecret = '3a6e697feadee759db26c7fa033c8dc6'
+        # appid = 'wx2535e2c919c58832'
+        # appsecret = '3a6e697feadee759db26c7fa033c8dc6'
+        appid = 'wx8dba766c81fb2d5e'
+        appsecret = '0925d0d41ae34e4ea76efdd8b7338658'
         
         # 微信接口服务地址
         base_url = 'https://api.weixin.qq.com/sns/jscode2session'
