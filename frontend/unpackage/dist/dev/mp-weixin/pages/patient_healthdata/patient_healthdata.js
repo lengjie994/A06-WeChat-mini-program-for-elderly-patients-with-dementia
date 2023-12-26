@@ -213,6 +213,8 @@ var _default = {
   data: function data() {
     return {
       openid: "",
+      identity: "",
+      guardian_id: "",
       btncolor1: '#FAC858',
       btncolor2: 'white',
       btncolor3: 'white',
@@ -312,9 +314,16 @@ var _default = {
       }
     };
   },
-  onLoad: function onLoad() {
-    this.openid = getApp().globalData.global_openid;
-    this.getServerData();
+  onLoad: function onLoad(options) {
+    this.identity = options.identity;
+    console.log(this.identity);
+    if (this.identity == "patient") {
+      this.openid = getApp().globalData.global_openid;
+      this.getServerData();
+    } else {
+      this.guardian_id = getApp().globalData.global_opposite_id;
+      this.getServerData2();
+    }
   },
   components: {
     uniPopup: uniPopup,
@@ -350,6 +359,91 @@ var _default = {
         method: 'POST',
         data: {
           openid: this.openid
+        },
+        success: function success(response) {
+          console.log(response);
+          _this.message = response.data.code.Healthdata;
+          console.log("患者获取健康数据成功");
+          //模拟从服务器获取数据时的延时
+
+          _this.lastSevenElements = [];
+          if (_this.message == [] || _this.message == null) {
+            _this.message = [];
+            return;
+          }
+          var resdate = [];
+          var resdbp = [];
+          var ressbp = [];
+          var resheart = [];
+          var restemp = [];
+          if (_this.message.length < 5) {
+            var num = _this.message.length;
+            _this.lastSevenElements = _this.message.slice(-num);
+            console.log(_this.lastSevenElements);
+            for (var i = 0; i < _this.message.length; i++) {
+              resdate.push(_this.lastSevenElements[i].date.slice(-num));
+              resdbp.push(_this.lastSevenElements[i].dbp);
+              ressbp.push(_this.lastSevenElements[i].sbp);
+              resheart.push(_this.lastSevenElements[i].heart);
+              restemp.push(_this.lastSevenElements[i].temperature);
+            }
+          } else if (_this.message.length >= 5) {
+            _this.lastSevenElements = _this.message.slice(-5);
+            console.log(_this.lastSevenElements);
+            for (var i = 0; i < 5; i++) {
+              resdate.push(_this.lastSevenElements[i].date.slice(-5));
+              resdbp.push(_this.lastSevenElements[i].dbp);
+              ressbp.push(_this.lastSevenElements[i].sbp);
+              resheart.push(_this.lastSevenElements[i].heart);
+              restemp.push(_this.lastSevenElements[i].temperature);
+            }
+          }
+
+          //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
+          var res = {
+            categories: resdate,
+            series: [{
+              name: "舒张压",
+              data: resdbp
+            }, {
+              name: "收缩压",
+              data: ressbp
+            }]
+          };
+          var res2 = {
+            categories: resdate,
+            series: [{
+              name: "体温",
+              data: restemp
+            }]
+          };
+          var res3 = {
+            categories: resdate,
+            series: [{
+              name: "心率",
+              data: resheart
+            }]
+          };
+          _this.chartData = JSON.parse(JSON.stringify(res));
+          _this.chartData2 = JSON.parse(JSON.stringify(res2));
+          _this.chartData3 = JSON.parse(JSON.stringify(res3));
+        },
+        fail: function fail(response) {
+          console.log("患者获取健康数据失败");
+        }
+      });
+    },
+    getServerData2: function getServerData2() {
+      var _this = this;
+      wx.request({
+        // 这里是django的本地ip地址
+        // 如果部署到线上，需要改为接口的实际网址
+        //此处url还需修改为修改健康数据的url
+        url: getApp().globalData.base_url + '/DoctorfindHealthdata/',
+        // 请求方式修改为 POST
+        method: 'POST',
+        data: {
+          guardian_id: this.guardian_id
         },
         success: function success(response) {
           console.log(response);

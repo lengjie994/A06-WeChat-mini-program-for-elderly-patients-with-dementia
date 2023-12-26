@@ -108,7 +108,7 @@
 			},
 			goto_healthdata() {
 				uni.navigateTo({
-					url: '/pages/patient_healthdata/patient_healthdata'
+					url: '/pages/patient_healthdata/patient_healthdata?identity=patient'
 				})
 			},
 			followuid() {

@@ -178,7 +178,7 @@ var add_memoir = function add_memoir() {
 var _default = {
   data: function data() {
     return {
-      urls2: ['https://cdn.uviewui.com/uview/album/1.jpg', 'https://cdn.uviewui.com/uview/album/2.jpg', 'https://cdn.uviewui.com/uview/album/3.jpg', 'https://cdn.uviewui.com/uview/album/4.jpg', 'https://cdn.uviewui.com/uview/album/5.jpg', 'https://cdn.uviewui.com/uview/album/6.jpg', 'https://cdn.uviewui.com/uview/album/7.jpg', 'https://cdn.uviewui.com/uview/album/8.jpg', 'https://cdn.uviewui.com/uview/album/9.jpg', 'https://cdn.uviewui.com/uview/album/10.jpg'],
+      urls2: [],
       openid: "",
       messages: [],
       scrollTop: 0

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="content">
 		<view class="header">
 			<uni-nav-bar title="监护人列表" height="11vh" :border="false" :fixed="true"
 				backgroundColor="#f9f9f9"></uni-nav-bar>
@@ -130,6 +130,10 @@
 </script>
 
 <style lang="scss">
+	.content {
+		background-color: #F1F4FA;
+		height: 100vh;
+	}
 	.header{
 		background-color: #F5F5F5;
 	}

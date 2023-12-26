@@ -236,7 +236,7 @@ var _default = {
     gotoHealthdata: function gotoHealthdata() {
       //这里还需要修改页面逻辑，判断是什么身份进入页面
       uni.navigateTo({
-        url: '/pages/patient_healthdata/patient_healthdata'
+        url: '/pages/patient_healthdata/patient_healthdata?identity=doctor'
       });
     },
     gotoReservation: function gotoReservation() {

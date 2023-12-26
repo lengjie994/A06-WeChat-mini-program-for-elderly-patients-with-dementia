@@ -19,7 +19,7 @@
 				</fui-list-cell> -->
 				<fui-section title="我的档案" line-width="8rpx" isLine margin-top="20"
 					class="fui-section__title"></fui-section>
-				<fui-list-cell arrow @click="edit_info()">
+				<fui-list-cell arrow @click="edit_info()" marginTop="20">
 					<view class="iconfont icon-yisheng1"></view>
 					<text style="margin-left: 20rpx;">我的资料</text>
 				</fui-list-cell>

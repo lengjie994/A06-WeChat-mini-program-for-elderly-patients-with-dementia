@@ -69,7 +69,8 @@
 				nickname:"暂无昵称",
 				name_info:{
 					name:'',
-				}
+				},
+				openid:"",
 			};
 		},
 		onShow() {
