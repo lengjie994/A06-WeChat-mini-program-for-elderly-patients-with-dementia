@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的信息",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "fui-section": "/node-modules/firstui-uni/firstui/fui-section/fui-section",
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
+    "tab-bar": "/components/tabbar/tabbar",
+    "fuisection": "/node-modules/firstui-uni/firstui/fui-section/fui-section"
+  }
+}

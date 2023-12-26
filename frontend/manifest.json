@@ -1,6 +1,6 @@
 {
-    "name" : "试用",
-    "appid" : "",
+    "name" : "守忘",
+    "appid" : "__UNI__BE5F0A3",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -52,7 +52,8 @@
         /* 小程序特有相关 */
         "appid" : "wx2535e2c919c58832",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "postcss" : false
         },
         "usingComponents" : true
     },

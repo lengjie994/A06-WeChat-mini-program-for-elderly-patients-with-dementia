@@ -37,7 +37,7 @@
 				add: {},
 				scrollTop: 0,
 				openid:"",
-				patient_openid:"",
+				patient_uid:"",
 			};
 		},
 		components: {
@@ -63,7 +63,7 @@
 					if(_this.message==null){
 						_this.message=[]
 					}
-					_this.patient_openid=response.data.code.Patient_openid
+					_this.patient_uid=response.data.code.Patient_uid
 					console.log(response)
 				},
 				fail: function(response) {
@@ -169,7 +169,7 @@
 						console.log("删除服药提醒失败")
 					}
 				})
-				let param=this.patient_openid+stateData.name
+				let param=this.patient_uid+stateData.name
 				//调用后端取消提醒接口
 				wx.request({
 					// 这里是django的本地ip地址
