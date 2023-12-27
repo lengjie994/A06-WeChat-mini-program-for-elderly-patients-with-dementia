@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/follow/follow"],{
 
 /***/ 310:
-/*!*************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/main.js?{"page":"pages%2Ffollow%2Ffollow"} ***!
-  \*************************************************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/main.js?{"page":"pages%2Ffollow%2Ffollow"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_follow.default);
 /***/ }),
 
 /***/ 311:
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue ***!
-  \******************************************************************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pages/follow/follow.vue"
 /***/ }),
 
 /***/ 312:
-/*!*************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=template&id=2f62b6b4& ***!
-  \*************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=template&id=2f62b6b4& ***!
+  \***********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 313:
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=template&id=2f62b6b4& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=template&id=2f62b6b4& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,10 +101,10 @@ var components
 try {
   components = {
     fuiInput: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-input/fui-input.vue */ 564))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-input/fui-input.vue */ 584))
     },
     fuiButton: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-button/fui-button.vue */ 571))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-button/fui-button.vue */ 406))
     },
   }
 } catch (e) {
@@ -138,9 +138,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 314:
-/*!*******************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -154,9 +154,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 315:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -169,19 +169,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var fuiInput = function fuiInput() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-input/fui-input */ "node-modules/firstui-uni/firstui/fui-input/fui-input").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-input/fui-input.vue */ 564));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-input/fui-input.vue */ 584));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiButton = function fuiButton() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-button/fui-button */ "node-modules/firstui-uni/firstui/fui-button/fui-button").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-button/fui-button.vue */ 571));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-button/fui-button.vue */ 406));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
   data: function data() {
     return {
-      followurl: '',
-      uid: "请输入上述公众号返回的UID"
+      followurl: ''
     };
   },
   components: {
@@ -248,9 +247,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 316:
-/*!****************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=style&index=0&lang=scss& ***!
-  \****************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -264,9 +263,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 317:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/follow/follow.vue?vue&type=style&index=0&lang=scss& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/follow/follow.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -1,7 +1,7 @@
 <template>
 	<view>
 
-		<fui-input :padding="['20rpx','32rpx']" label="UID" :bottomLeft="0" :placeholder="uid" @input="input">
+		<fui-input :padding="['20rpx','32rpx']" label="UID" :bottomLeft="0" placeholder="请输入上述公众号返回的UID" @input="input">
 			<fui-button type="gray" bold width="100rpx" height="64rpx" :size="28" text="确认"
 				@click="confirm()"></fui-button>
 		</fui-input>
@@ -15,7 +15,6 @@
 		data() {
 			return {
 				followurl: '',
-				uid: "请输入上述公众号返回的UID",
 			};
 		},
 		components: {

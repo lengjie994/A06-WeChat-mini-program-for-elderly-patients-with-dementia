@@ -12,7 +12,7 @@
 				bottomLeft=0>
 					<view class="fui-align__center">
 						<fui-icon name="my-fill"></fui-icon>
-						<text>{{item.Guardian_nickname}}</text>
+						<text>{{item.nickname}}</text>
 						
 					</view>
 					<!-- <fui-badge v-if="item.flag==='true'" value="1" type="danger"></fui-badge> -->
@@ -73,7 +73,7 @@
 			// 	}
 			// },
 			gotochat(item){
-				getApp().globalData.global_opposite_id=item.id
+				getApp().globalData.global_opposite_id=item.Guardian_id
 				getApp().globalData.global_opposite_nickname=item.nickname
 				console.log(item)
 				//告知后端将该监护人消息更新标识修改为false
@@ -86,18 +86,19 @@
 					method: 'POST',
 					data: {
 						openid: this.openid,
-						guardian_id: item.id,
+						guardian_id: item.Guardian_id,
 					},
 					success: function(response) {
+						uni.navigateTo({
+							url: '/pages/chatting/chatting'
+						})
 						console.log("修改标识为false成功")
 					},
 					fail: function(response) {
 						console.log("修改标识为false失败")
 					}
 				})
-				uni.navigateTo({
-					url: '/pages/chatting/chatting'
-				})
+				
 			},
 			valChange()
 			{
@@ -116,6 +117,7 @@
 		},
 		onShow()
 		{
+			this.indexList=getApp().globalData.global_indexList
 			this.timer = setInterval(this.valChange, 2000);
 			this.openid = getApp().globalData.global_openid
 		},
@@ -124,7 +126,7 @@
 			// this.loadmore()
 		},
 		onHide() {
-			clearTimeout(this.timer);
+			clearInterval(this.timer);
 		},
 	}
 </script>

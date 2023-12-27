@@ -2,9 +2,9 @@
 	<view>
 		<view class="chart">
 			<view class="chartbtn">
-				<button :style="{ backgroundColor: btncolor1 }" @click="showContent('content1')">血压</button>
-				<button :style="{ backgroundColor: btncolor2 }" @click="showContent('content2')">体温</button>
 				<button :style="{ backgroundColor: btncolor3 }" @click="showContent('content3')">心率</button>
+				<button :style="{ backgroundColor: btncolor2 }" @click="showContent('content2')">体温</button>
+				<button :style="{ backgroundColor: btncolor1 }" @click="showContent('content1')">血压</button>
 			</view>
 			<view class="charts-box">
 				<qiun-data-charts v-if="selectedContent === 'content1'" type="column" :opts="opts"
@@ -55,10 +55,10 @@
 				openid: "",
 				identity:"",
 				guardian_id:"",
-				btncolor1: '#FAC858',
+				btncolor1: 'white',
 				btncolor2: 'white',
-				btncolor3: 'white',
-				selectedContent: 'content1', // 初始化显示内容
+				btncolor3: '#EE6666',
+				selectedContent: 'content3', // 初始化显示内容
 				lastSevenElements: [],
 				message: [],
 				add: {
@@ -237,7 +237,7 @@
 
 							for (var i = 0; i < _this.message.length; i++) {
 								
-								resdate.push(_this.lastSevenElements[i].date.slice(-num));
+								resdate.push(_this.lastSevenElements[i].date);
 								resdbp.push(_this.lastSevenElements[i].dbp);
 								ressbp.push(_this.lastSevenElements[i].sbp);
 								resheart.push(_this.lastSevenElements[i].heart);
@@ -249,7 +249,7 @@
 							console.log(_this.lastSevenElements)
 	
 							for (var i = 0; i < 5; i++) {
-								resdate.push(_this.lastSevenElements[i].date.slice(-5));
+								resdate.push(_this.lastSevenElements[i].date);
 								resdbp.push(_this.lastSevenElements[i].dbp);
 								ressbp.push(_this.lastSevenElements[i].sbp);
 								resheart.push(_this.lastSevenElements[i].heart);
@@ -304,7 +304,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为修改健康数据的url
-					url: getApp().globalData.base_url+'/DoctorfindHealthdata/',
+					url: getApp().globalData.base_url+'/DoctorFindHealthData/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -336,7 +336,7 @@
 			
 							for (var i = 0; i < _this.message.length; i++) {
 								
-								resdate.push(_this.lastSevenElements[i].date.slice(-num));
+								resdate.push(_this.lastSevenElements[i].date);
 								resdbp.push(_this.lastSevenElements[i].dbp);
 								ressbp.push(_this.lastSevenElements[i].sbp);
 								resheart.push(_this.lastSevenElements[i].heart);
@@ -348,7 +348,7 @@
 							console.log(_this.lastSevenElements)
 				
 							for (var i = 0; i < 5; i++) {
-								resdate.push(_this.lastSevenElements[i].date.slice(-5));
+								resdate.push(_this.lastSevenElements[i].date);
 								resdbp.push(_this.lastSevenElements[i].dbp);
 								ressbp.push(_this.lastSevenElements[i].sbp);
 								resheart.push(_this.lastSevenElements[i].heart);

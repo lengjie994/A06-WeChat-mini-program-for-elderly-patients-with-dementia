@@ -1,1 +1,1 @@
-.btn{margin-top:40%}button{width:70%;margin-top:100rpx}
+.btn{justify-content:center;align-items:center;display:flex;flex-direction:column;height:89vh}.content{background-color:#f1f4fa;height:100vh}

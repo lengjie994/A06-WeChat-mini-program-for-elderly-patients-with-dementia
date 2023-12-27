@@ -141,9 +141,9 @@
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
-						openid:this.patient_openid,
+						openid:this.openid,
 						time:stateData.time,
-						name:stateData.name,
+						medicineName:stateData.name,
 					},
 					success: function(response) {
 						console.log(response)

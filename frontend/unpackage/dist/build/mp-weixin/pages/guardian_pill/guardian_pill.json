@@ -2,6 +2,8 @@
   "navigationBarTitleText": "",
   "enablePullDownRefresh": false,
   "usingComponents": {
+    "fui-button": "/node-modules/firstui-uni/firstui/fui-button/fui-button",
+    "fui-empty": "/node-modules/firstui-uni/firstui/fui-empty/fui-empty",
     "add_pill": "/components/add_pill/add_pill",
     "delete_pill": "/components/delete_pill/delete_pill"
   }

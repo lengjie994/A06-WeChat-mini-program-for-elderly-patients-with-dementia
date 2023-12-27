@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content1">
 		<view class="add_new">
 			<view class="add_image" @tap="onClickShow()">
 				<view class="iconfont icon-add-circle"></view>
@@ -9,25 +9,38 @@
 			</view>
 		</view>
 		<scroll-view class="scroll-view" :scroll-y="true" :scroll-top="scrollTop" ref="scrollView">
-			<view v-for="(message, index) in messages" :key="index">
-
-
-				<view class="u-demo-block">
-					<view class="u-demo-block__content">
-						<view class="album">
-							<view class="album__content">
-								<view :style="{
-											marginBottom: '8rpx',
-										}">
-									<u--text :text="message.text"  size="40"></u--text>
-									<text v-if="message.time" class="time">{{message.time}}</text>
-								</view>
-								<u-album :urls="message.urls" 
-									multipleSize="200"></u-album>
-							</view>
-						</view>
-					</view>
+			<view v-for="(message, index) in messages" :key="index" style="margin-top: 30rpx;">
+				<!-- <view style="display: flex;flex-direction: column;margin-left: 10%;">
+					<text class="text">{{message.text}}</text>
+					<text class="time">{{message.time}}</text>
 				</view>
+				
+				<view class="onepiece">
+					<fui-grid :columns="3" showBorder=false >
+						<fui-grid-item v-for="(item,index1) in message.urls" :key="index1" highlight=false>
+							<view class="fui-grid__cell">
+								<image :src="item" class="fui-icon" mode="widthFix"></image>
+							</view>
+						</fui-grid-item>
+					</fui-grid>
+				</view> -->
+				<fui-card :tag="message.time">
+					<view style="margin-left: 5%;margin-bottom: 20rpx;margin-top: 20rpx;">
+						<text class="text">{{message.text}}</text>
+					</view>
+					
+					<view class="onepiece">
+						<fui-grid :columns="3" showBorder=false >
+							<fui-grid-item v-for="(item,index1) in message.urls" :key="index1" highlight=false>
+								<view class="fui-grid__cell">
+									<image :src="item" class="fui-icon" mode="widthFix"></image>
+								</view>
+							</fui-grid-item>
+						</fui-grid>
+					</view>
+					<view style="height: 20rpx;"></view>
+				</fui-card>
+				
 			</view>
 
 		</scroll-view>
@@ -37,11 +50,13 @@
 
 <script>
 	import add_memoir from '@/components/add_memoir/add_memoir.vue'
+	import fuiGrid from "firstui-uni/firstui/fui-grid/fui-grid.vue"
+	import fuiGridItem from "firstui-uni/firstui/fui-grid-item/fui-grid-item.vue"
+	import fuiCard from "firstui-uni/firstui/fui-card/fui-card.vue"
 	export default {
 		data() {
 			return {
-				urls2: [
-				],
+				urls2: [],
 				openid: "",
 				messages: [],
 				scrollTop: 0,
@@ -49,6 +64,9 @@
 		},
 		components: {
 			add_memoir,
+			fuiGrid,
+			fuiGridItem,
+			fuiCard,
 		},
 		methods: {
 			onClickShow() {
@@ -62,9 +80,9 @@
 				console.log(stateData)
 				let img_urls = stateData.img;
 				//现在需要将图片发送给后端然后由后端上传返回图片的云端地址并储存
-				let _this=this;
+				let _this = this;
 				const currentDate = new Date();
-				
+
 				// 获取当前时间的年、月、日、时、分、秒
 				const year = currentDate.getFullYear();
 				const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 使用 padStart 格式化月份
@@ -87,7 +105,7 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为添加回忆录的url
-					url: getApp().globalData.base_url+'/SendMemoir/',
+					url: getApp().globalData.base_url + '/SendMemoir/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
@@ -106,26 +124,25 @@
 			},
 		},
 		onLoad() {
-			let _this=this
+			let _this = this
 			this.openid = getApp().globalData.global_openid
 			wx.request({
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为获取回忆录的url
-				url: getApp().globalData.base_url+'/getPatientInfo/',
+				url: getApp().globalData.base_url + '/getPatientInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
 					openid: this.openid,
 				},
 				success: function(response) {
-					console.log("获取回忆录成功",response)
+					console.log("获取回忆录成功", response)
 					_this.messages = response.data.code.Memoir
-					if(_this.messages==null)
-					{
-						_this.messages=[]
+					if (_this.messages == null) {
+						_this.messages = []
 					}
-					
+
 				},
 				fail: function(response) {
 					console.log("获取回忆录失败")
@@ -136,6 +153,31 @@
 </script>
 
 <style lang="scss">
+	.text{
+		font-family: cursive;
+		font-weight: 500;
+	}
+	.time{
+		color: #B2B2B2;
+		font-size: 50%;
+	}
+	.onepiece{
+		width: 90%;
+		margin-left: 5%;
+	}
+	.fui-grid__cell {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			flex: 1;
+			font-size: 28rpx;
+			font-weight: 400;
+		}
+	.fui-icon {
+			width: 95%;
+			height: 95%;
+		}
 	.message {
 		align-items: center;
 		width: 100%;
@@ -153,9 +195,6 @@
 		width: 85%;
 	}
 
-	.time {
-		margin-left: 50%;
-	}
 
 	.add_new {
 		display: flex;

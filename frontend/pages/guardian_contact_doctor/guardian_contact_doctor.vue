@@ -93,15 +93,16 @@
 						openid: this.openid,
 					},
 					success: function(response) {
+						uni.navigateTo({
+							url: '/pages/chatting/chatting'
+						})
 						console.log("修改标识为false成功")
 					},
 					fail: function(response) {
 						console.log("修改标识为false失败")
 					}
 				})
-				uni.navigateTo({
-					url: '/pages/chatting/chatting'
-				})
+				
 			},
 			valChange()
 			{
@@ -130,7 +131,9 @@
 			this.doctor_nickname=getApp().globalData.global_opposite_nickname
 			this.openid = getApp().globalData.global_openid
 		},
-		
+		onHide() {
+			clearInterval(this.timer);
+		},
 		onLoad() {
 			let _this=this
 			

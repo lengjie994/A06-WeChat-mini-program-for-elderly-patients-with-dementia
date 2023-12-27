@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/doctor_contact_guardian/doctor_contact_guardian"],{
 
 /***/ 280:
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/main.js?{"page":"pages%2Fdoctor_contact_guardian%2Fdoctor_contact_guardian"} ***!
-  \***********************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/main.js?{"page":"pages%2Fdoctor_contact_guardian%2Fdoctor_contact_guardian"} ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22,9 +22,9 @@ createPage(_doctor_contact_guardian.default);
 /***/ }),
 
 /***/ 281:
-/*!****************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue ***!
-  \****************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -63,9 +63,9 @@ component.options.__file = "pages/doctor_contact_guardian/doctor_contact_guardia
 /***/ }),
 
 /***/ 282:
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=template&id=1eb382e8& ***!
-  \***********************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=template&id=1eb382e8& ***!
+  \*********************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 283:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=template&id=1eb382e8& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=template&id=1eb382e8& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -101,19 +101,19 @@ var components
 try {
   components = {
     uniNavBar: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 318))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 324))
     },
     uList: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 526))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-list/u-list */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-list/u-list")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-list/u-list.vue */ 546))
     },
     fuiListCell: function () {
-      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346))
+      return __webpack_require__.e(/*! import() | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 352))
     },
     fuiIcon: function () {
-      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 534))
+      return Promise.all(/*! import() | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then(__webpack_require__.bind(null, /*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 554))
     },
     uBadge: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-badge/u-badge")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 542))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-badge/u-badge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-badge/u-badge")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-badge/u-badge.vue */ 562))
     },
   }
 } catch (e) {
@@ -147,9 +147,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 284:
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -163,9 +163,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 285:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -178,27 +178,27 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var tabBar = function tabBar() {
   __webpack_require__.e(/*! require.ensure | components/tabbar/tabbar */ "components/tabbar/tabbar").then((function () {
-    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 372));
+    return resolve(__webpack_require__(/*! @/components/tabbar/tabbar.vue */ 378));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiList = function fuiList() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list/fui-list */ "node-modules/firstui-uni/firstui/fui-list/fui-list").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 550));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list/fui-list.vue */ 570));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiListCell = function fuiListCell() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell */ "node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 346));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-list-cell/fui-list-cell.vue */ 352));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiBadge = function fuiBadge() {
   __webpack_require__.e(/*! require.ensure | node-modules/firstui-uni/firstui/fui-badge/fui-badge */ "node-modules/firstui-uni/firstui/fui-badge/fui-badge").then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 557));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-badge/fui-badge.vue */ 577));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var fuiIcon = function fuiIcon() {
   Promise.all(/*! require.ensure | node-modules/firstui-uni/firstui/fui-icon/fui-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/firstui-uni/firstui/fui-icon/fui-icon")]).then((function () {
-    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 534));
+    return resolve(__webpack_require__(/*! firstui-uni/firstui/fui-icon/fui-icon.vue */ 554));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -225,7 +225,7 @@ var _default = {
     // 	}
     // },
     gotochat: function gotochat(item) {
-      getApp().globalData.global_opposite_id = item.id;
+      getApp().globalData.global_opposite_id = item.Guardian_id;
       getApp().globalData.global_opposite_nickname = item.nickname;
       console.log(item);
       //告知后端将该监护人消息更新标识修改为false
@@ -238,17 +238,17 @@ var _default = {
         method: 'POST',
         data: {
           openid: this.openid,
-          guardian_id: item.id
+          guardian_id: item.Guardian_id
         },
         success: function success(response) {
+          uni.navigateTo({
+            url: '/pages/chatting/chatting'
+          });
           console.log("修改标识为false成功");
         },
         fail: function fail(response) {
           console.log("修改标识为false失败");
         }
-      });
-      uni.navigateTo({
-        url: '/pages/chatting/chatting'
       });
     },
     valChange: function valChange() {
@@ -264,6 +264,7 @@ var _default = {
     fuiIcon: fuiIcon
   },
   onShow: function onShow() {
+    this.indexList = getApp().globalData.global_indexList;
     this.timer = setInterval(this.valChange, 2000);
     this.openid = getApp().globalData.global_openid;
   },
@@ -271,7 +272,7 @@ var _default = {
     // this.loadmore()
   },
   onHide: function onHide() {
-    clearTimeout(this.timer);
+    clearInterval(this.timer);
   }
 };
 exports.default = _default;
@@ -280,9 +281,9 @@ exports.default = _default;
 /***/ }),
 
 /***/ 286:
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=style&index=0&lang=scss& ***!
-  \**************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************!*\
+  !*** C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -296,9 +297,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 287:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-26版本/A06-WeChat-mini-program-for-elderly-patients-with-dementia/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=style&index=0&lang=scss& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/86137/Desktop/uni_app/12-27版本/frontend/frontend/pages/doctor_contact_guardian/doctor_contact_guardian.vue?vue&type=style&index=0&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

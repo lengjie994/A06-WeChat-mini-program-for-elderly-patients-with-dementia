@@ -2,8 +2,9 @@
   "navigationBarTitleText": "我的回忆录",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "u--text": "/node-modules/uview-ui/components/u--text/u--text",
-    "u-album": "/node-modules/uview-ui/components/u-album/u-album",
+    "fui-card": "/node-modules/firstui-uni/firstui/fui-card/fui-card",
+    "fui-grid": "/node-modules/firstui-uni/firstui/fui-grid/fui-grid",
+    "fui-grid-item": "/node-modules/firstui-uni/firstui/fui-grid-item/fui-grid-item",
     "add_memoir": "/components/add_memoir/add_memoir"
   }
 }

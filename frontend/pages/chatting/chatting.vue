@@ -55,6 +55,7 @@
 				showMore: false, //底部菜单栏是否弹出
 				padding_height: "0rpx",
 				opposite_nickname:"",
+				timer:"",
 				// path: "wss://test.jskwsx.com/msg", //websocket链接地址
 				// ws: null, //建立的连接
 				// lockReconnect: false, //是否真正建立连接
@@ -69,9 +70,14 @@
 			fuiIcon,
 		},
 		onShow() {
+			
 			this.getlishiList() //历史记录
+			this.timer = setInterval(this.getlishiList, 2000);
 			console.log(this.opposite_id)
 			
+		},
+		onHide() {
+			clearInterval(this.timer);
 		},
 		onLoad(options) {
 			this.openid = getApp().globalData.global_openid
@@ -83,6 +89,7 @@
 			this.opposite_nickname=getApp().globalData.global_opposite_nickname
 			console.log(this.identity)
 			console.log(this.opposite_nickname)
+			console.log(this.opposite_id)
 		},
 		onPageScroll(e) {
 			//监听滚动事件，如果滚动条等于0，代表滚动到最顶部，把分页加一，然后历史记录拉第二页数据，以此类推

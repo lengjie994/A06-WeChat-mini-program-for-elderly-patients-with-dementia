@@ -2,9 +2,9 @@
 	<view>
 		<view class="chart">
 			<view class="chartbtn">
-				<button :style="{ backgroundColor: btncolor1 }" @click="showContent('content1')">血压</button>
+				<button :style="{ backgroundColor: btncolor3 }" @click="showContent('content3')">血压</button>
 				<button :style="{ backgroundColor: btncolor2 }" @click="showContent('content2')">体温</button>
-				<button :style="{ backgroundColor: btncolor3 }" @click="showContent('content3')">心率</button>
+				<button :style="{ backgroundColor: btncolor1 }" @click="showContent('content1')">心率</button>
 			</view>
 			<view class="charts-box">
 				<qiun-data-charts v-if="selectedContent === 'content1'" type="column" :opts="opts"
@@ -57,10 +57,10 @@
 		data() {
 			return {
 
-				btncolor1: '#FAC858',
+				btncolor1: 'white',
 				btncolor2: 'white',
-				btncolor3: 'white',
-				selectedContent: 'content1', // 初始化显示内容
+				btncolor3: '#EE6666',
+				selectedContent: 'content3', // 初始化显示内容
 				lastSevenElements: [],
 				message: [],
 				add: {
@@ -83,7 +83,7 @@
 					legend: {},
 					width: 35,
 					xAxis: {
-						disableGrid: true
+						disableGrid: true,
 					},
 					yAxis: {
 						data: [{
@@ -201,10 +201,9 @@
 				
 				console.log(stateData)
 				const currentDate = new Date();
-				const year = currentDate.getFullYear();
 				const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 使用 padStart 格式化月份
 				const day = currentDate.getDate().toString().padStart(2, '0');
-				const currentTime = year + "." + month + "." + day;
+				const currentTime = month + "." + day;
 				this.$refs['addheart'].hideModal();
 				if(this.message.length==0)
 				{
@@ -253,10 +252,9 @@
 				let stateData = JSON.parse(data)
 				console.log(stateData)
 				const currentDate = new Date();
-				const year = currentDate.getFullYear();
 				const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 使用 padStart 格式化月份
 				const day = currentDate.getDate().toString().padStart(2, '0');
-				const currentTime = year + "." + month + "." + day;
+				const currentTime = month + "." + day;
 				this.$refs['addtemp'].hideModal();
 				if(this.message.length==0)
 				{
@@ -305,10 +303,9 @@
 				let stateData = JSON.parse(data)
 				console.log(stateData)
 				const currentDate = new Date();
-				const year = currentDate.getFullYear();
 				const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // 使用 padStart 格式化月份
 				const day = currentDate.getDate().toString().padStart(2, '0');
-				const currentTime = year + "." + month + "." + day;
+				const currentTime = month + "." + day;
 				this.$refs['addbp'].hideModal();
 				if(this.message.length==0)
 				{
@@ -379,7 +376,7 @@
 				
 					for (var i = 0; i < _this.message.length; i++) {
 						
-						resdate.push(_this.lastSevenElements[i].date.slice(-num));
+						resdate.push(_this.lastSevenElements[i].date);
 						resdbp.push(_this.lastSevenElements[i].dbp);
 						ressbp.push(_this.lastSevenElements[i].sbp);
 						resheart.push(_this.lastSevenElements[i].heart);
@@ -391,14 +388,15 @@
 					console.log(_this.lastSevenElements)
 					
 					for (var i = 0; i < 5; i++) {
-						resdate.push(_this.lastSevenElements[i].date.slice(-5));
+						resdate.push(_this.lastSevenElements[i].date);
 						resdbp.push(_this.lastSevenElements[i].dbp);
 						ressbp.push(_this.lastSevenElements[i].sbp);
 						resheart.push(_this.lastSevenElements[i].heart);
 						restemp.push(_this.lastSevenElements[i].temperature);
 					}
 				}
-
+				console.log("resdate")
+				console.log(resdate)
 				//模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
 				let res = {
 					categories: resdate,
@@ -467,7 +465,6 @@
 		font-size: 80rpx;
 		margin-left: 10%;
 	}
-	
 	.chart {
 		margin-top: 20rpx;
 		margin-left: 4%;
@@ -476,7 +473,7 @@
 		border-radius: 15px;
 		box-shadow: 1px 1px 2px 2px rgba(125, 125, 125, 0.1);
 		background-color: white;
-	
+		z-index: 0;
 	}
 	
 	.chartbtn {
