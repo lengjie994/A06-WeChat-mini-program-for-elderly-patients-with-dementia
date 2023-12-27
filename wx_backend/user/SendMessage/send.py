@@ -25,15 +25,15 @@ from ..models import Doctor
 class SendMessage():                                                 #定义发送消息的类
     def __init__(self):                                              
         self.app_token = 'AT_7P2P17zb8MBjxaqYgR2M6zGwoglHHD1N'
-        self.msg = '服药提醒'
         
-    def sendmsg(self,uid):  
+        
+    def sendmsg(self,uid,msg):  
         """利用 wxpusher 的 web api 发送 json 数据包，实现微信信息的发送"""
         webapi = 'http://wxpusher.zjiecode.com/api/send/message'
         data = {
             "appToken":self.app_token,
-            "content":self.msg,
-            "summary":self.msg[:99], # 该参数可选，默认为 msg 的前10个字符
+            "content":msg,
+            "summary":msg[:99], # 该参数可选，默认为 msg 的前10个字符
             "contentType":1,
             "uids":[ uid, ],
             }
@@ -50,6 +50,7 @@ class SendOfficialReminder(APIView):
         openid = json.loads(request.body).get('openid')
         setTime = json.loads(request.body).get('time')  #setTime为字符串格式，如'20:00'
         medicineName = json.loads(request.body).get('medicineName')
+        count = json.loads(request.body).get('count')
         uid=''
         try:
             guardian = Guardian.objects.get(Openid=openid)
@@ -75,10 +76,11 @@ class SendOfficialReminder(APIView):
                 }
             })
         specialTag = str(openid) + str(medicineName)
+        msg = str(medicineName)+'，'+str(count)
         def job():
         # 创建 SendOfficialReminder 实例
             sends = SendMessage()
-            sends.sendmsg(uid)
+            sends.sendmsg(uid,msg)
             return Response({
                 "status_code": 200,
                 'code': {
