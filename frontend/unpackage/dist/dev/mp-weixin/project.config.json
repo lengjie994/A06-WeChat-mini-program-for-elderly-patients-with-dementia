@@ -18,7 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.0",
+  "libVersion": "3.2.3",
   "appid": "wx8dba766c81fb2d5e",
   "projectname": "守忘",
   "condition": {},

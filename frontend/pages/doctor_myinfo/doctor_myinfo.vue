@@ -29,7 +29,7 @@
 		</view>
 	
 		<!-- 弹出框模块 -->
-		<edit_info ref='customModal' :info="info" @onClickConfirm="onClickConfirm"></edit_info>
+		<edit_info ref='info' :info="info" @onClickConfirm="onClickConfirm"></edit_info>
 		<view>
 			<tabBar selectedIndex=1 :id_data="id_data"></tabBar>
 		</view>
@@ -104,7 +104,7 @@
 				//this.dataLineDetail = data;
 				// this.$refs['showWeight'].open()
 				// 调用弹出框组件里的显示方法
-				this.$refs['customModal'].showModal();
+				this.$refs['info'].showModal();
 			},
 			// 点击确定按钮，弹出框隐藏
 			onClickConfirm(data) {
@@ -129,7 +129,7 @@
 						console.log(222)
 					}
 				})
-				this.$refs['customModal'].hideModal();
+				this.$refs['info'].hideModal();
 			},
 			editnickname(){
 				this.$refs['customModal'].showModal();

@@ -13,8 +13,9 @@
 			global_indexList: [],
 			global_flag: false, //监护人方聊天消息是否更新标识
 			global_opposite_nickname:"",
-			//base_url:"http://127.0.0.1:8000/api/user",
+			// base_url:"http://127.0.0.1:8000/api/user",
 			base_url:"http://43.140.198.99/api/user",
+			// base_url:"http://183.173.169.112/api/user",
 		},
 		data() {
 			return {
@@ -26,9 +27,6 @@
 			console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
 			console.log('App Launch')
 			this.timer = setInterval(this.valChange, 2000);
-			uni.navigateTo({
-				url:"/pages/login/login"
-			})
 		},
 		methods: {
 			valChange() {

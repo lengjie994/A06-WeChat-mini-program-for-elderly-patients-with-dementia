@@ -23,7 +23,14 @@
   flex-direction: row;
   width: 92%;
 }
-.th1, .th2, .th3, .th4, .td1, .td2, .td3, .td4 {
+.th1,
+.th2,
+.th3,
+.th4,
+.td1,
+.td2,
+.td3,
+.td4 {
   /* 公有的属性 */
   display: flex;
   flex-direction: column;
@@ -46,26 +53,36 @@
   /* 单元格右线框 */
   font-size: 32rpx;
 }
-.td1, .th1 {
+.td1,
+.th1 {
   width: 32%;
 }
-.td2, .th2 {
+.td2,
+.th2 {
   width: 24%;
 }
-.td3, .th3 {
+.td3,
+.th3 {
   width: 10%;
 }
-.td4, .th4 {
+.td4,
+.th4 {
   width: 34%;
 }
-.th1, .th2, .th3, .th4 {
+.th1,
+.th2,
+.th3,
+.th4 {
   font-weight: 800;
   /* 字体加重 */
   background-color: #B3CCF4;
   /* 背景色 */
   height: 80rpx;
 }
-.td1, .td2, .td3, .td4 {
+.td1,
+.td2,
+.td3,
+.td4 {
   text-align: left;
 }
 

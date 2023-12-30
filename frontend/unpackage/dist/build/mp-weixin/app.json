@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/patient_myinfo/patient_myinfo",
     "pages/patient_memorandum/patient_memorandum",
     "pages/patient_reminder/patient_reminder",
     "pages/identity/identity",
-    "pages/login/login",
     "pages/patient_memoir/patient_memoir",
     "pages/patient_healthdata/patient_healthdata",
     "pages/guardian_myinfo/guardian_myinfo",
@@ -27,7 +27,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#F1F4FA"
   },
   "usingComponents": {}
 }

@@ -8,11 +8,11 @@
 			</view>
 			<view class="charts-box">
 				<qiun-data-charts v-if="selectedContent === 'content1'" type="column" :opts="opts"
-					loadingType = 0 :chartData="chartData" />
+					loadingType = 0 :chartData="chartData" :canvas2d="true" canvasId="canvasId_data1"/>
 				<qiun-data-charts v-if="selectedContent === 'content2'" type="line" :opts="opts2"
-					loadingType = 0 :chartData="chartData2" />
+					loadingType = 0 :chartData="chartData2" :canvas2d="true" canvasId="canvasId_data1"/>
 				<qiun-data-charts v-if="selectedContent === 'content3'" type="line" :opts="opts3"
-					loadingType = 0 :chartData="chartData3" />
+					loadingType = 0 :chartData="chartData3" :canvas2d="true" canvasId="canvasId_data1"/>
 			</view>
 		</view>
 		<view class="box">

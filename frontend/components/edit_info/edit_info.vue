@@ -1,5 +1,5 @@
 <template>
-	<uni-popup ref="customModal" type="center">
+	<uni-popup ref="info" type="center">
 		<view class="model-wraper">
 			<view class="modal-body">
 				<view class="style-font">姓名</view>
@@ -53,7 +53,7 @@
 		methods: {
 			hideModal() {
 				// this.isShowModal = true
-				this.$refs['customModal'].close();
+				this.$refs['info'].close();
 			},
 			showModal() {
 				// this.isShowModal = true
@@ -102,11 +102,11 @@
 						console.log("获取备忘录失败")
 					}
 				})
-				this.$refs['customModal'].open();
+				this.$refs['info'].open();
 			},
 			handleCancel() {
 				// this.isShowModal = false
-				this.$refs['customModal'].close();
+				this.$refs['info'].close();
 				this.$emit('onClickCancel', 'cancel')
 			},
 			handleConfirm() {

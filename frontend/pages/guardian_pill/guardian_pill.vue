@@ -2,9 +2,10 @@
 	<view class="content">
 		<view class="btn">
 			<!-- <button @tap="showadd()">添加服药提醒</button> -->
-			<fui-button radius="96rpx" :margin="['40rpx','40rpx']"  @click="showadd" width="300rpx">添加服药提醒</fui-button>
+			<fui-button radius="96rpx" :margin="['40rpx','40rpx']" @click="showadd" width="300rpx">添加服药提醒</fui-button>
 			<!-- <button @tap="showdelete()">删除服药提醒</button> -->
-			<fui-button radius="96rpx" :margin="['40rpx','40rpx']"  @click="showdelete" width="300rpx">删除服药提醒</fui-button>
+			<fui-button radius="96rpx" :margin="['40rpx','40rpx']" @click="showdelete"
+				width="300rpx">删除服药提醒</fui-button>
 		</view>
 		<scroll-view class="scroll-view" :scroll-y="true" :scroll-top="scrollTop" ref="scrollView">
 			<view class="table">
@@ -17,7 +18,7 @@
 				<view v-else>
 					<fui-empty src="/static/empty.png" title="暂无数据" descr="点击上方按钮添加服药提醒!"></fui-empty>
 				</view>
-				
+
 				<view class="tr" v-for="(item, index) in message" :key="index">
 					<view class="td1">{{item.pill}}</view>
 					<view class="td2">{{item.count}}</view>
@@ -44,8 +45,8 @@
 				message: [],
 				add: {},
 				scrollTop: 0,
-				openid:"",
-				patient_uid:"",
+				openid: "",
+				patient_uid: "",
 			};
 		},
 		components: {
@@ -54,33 +55,33 @@
 			fuiButton,
 			fuiEmpty,
 		},
-		onLoad(){
-			let _this=this;
-			this.openid=getApp().globalData.global_openid
+		onLoad() {
+			let _this = this;
+			this.openid = getApp().globalData.global_openid
 			wx.request({
 				// 这里是django的本地ip地址
 				// 如果部署到线上，需要改为接口的实际网址
 				//此处url还需修改为绑定患者账号的url
-				url: getApp().globalData.base_url+'/getGuardianInfo/',
+				url: getApp().globalData.base_url + '/getGuardianInfo/',
 				// 请求方式修改为 POST
 				method: 'POST',
 				data: {
-					openid:this.openid,
+					openid: this.openid,
 				},
 				success: function(response) {
 					console.log("获取药物列表成功")
-					_this.message=response.data.code.Medicine;
-					if(_this.message==null){
-						_this.message=[]
+					_this.message = response.data.code.Medicine;
+					if (_this.message == null) {
+						_this.message = []
 					}
-					_this.patient_uid=response.data.code.Patient_uid
+					_this.patient_uid = response.data.code.Patient_uid
 					console.log(response)
 				},
 				fail: function(response) {
 					console.log("获取药物列表失败")
 				}
 			})
-		
+
 		},
 		methods: {
 			// 根据自己项目，在某个事件触发弹框弹出,注意！！！$refs后面直接跟[],不需要.
@@ -98,7 +99,7 @@
 			},
 			// 点击确定按钮，弹出框隐藏 
 			Addpill(data) {
-				let _this=this;
+				let _this = this;
 				let stateData = JSON.parse(data)
 				console.log(stateData.name)
 				console.log(stateData.count)
@@ -110,6 +111,8 @@
 					dailycount: stateData.dailycount,
 					time: stateData.time,
 				};
+				let timelist = stateData.time.split(",")
+				console.log(timelist)
 				console.log(_this.add)
 				console.log(_this.message)
 				_this.message.push(_this.add);
@@ -119,12 +122,12 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为编辑服药提醒的url
-					url: getApp().globalData.base_url+'/SendReminder/',
+					url: getApp().globalData.base_url + '/SendReminder/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
-						openid:this.openid,
-						reminder:this.message,
+						openid: this.openid,
+						reminder: this.message,
 					},
 					success: function(response) {
 						console.log("编辑服药提醒成功")
@@ -133,29 +136,33 @@
 						console.log("编辑服药提醒失败")
 					}
 				})
-				wx.request({
-					// 这里是django的本地ip地址
-					// 如果部署到线上，需要改为接口的实际网址
-					//此处url还需修改为编辑服药提醒的url
-					url: getApp().globalData.base_url+'/SendOfficialReminder/',
-					// 请求方式修改为 POST
-					method: 'POST',
-					data: {
-						openid:this.openid,
-						time:stateData.time,
-						medicineName:stateData.name,
-					},
-					success: function(response) {
-						console.log(response)
-						console.log("设置服药提醒成功")
-					},
-					fail: function(response) {
-						console.log("设置服药提醒失败")
-					}
-				})
+				for (let i = 0; i < timelist.length; i++) {
+					wx.request({
+						// 这里是django的本地ip地址
+						// 如果部署到线上，需要改为接口的实际网址
+						//此处url还需修改为编辑服药提醒的url
+						
+						url: getApp().globalData.base_url + '/SendOfficialReminder/',
+						// 请求方式修改为 POST
+						method: 'POST',
+						data: {
+							openid: this.openid,
+							time: timelist[i],
+							medicineName: stateData.name,
+							count: stateData.count,
+						},
+						success: function(response) {
+							console.log(response)
+							console.log("设置服药提醒成功")
+						},
+						fail: function(response) {
+							console.log("设置服药提醒失败")
+						}
+					})
+				}
 			},
 			Deletepill(data) {
-				let _this=this;
+				let _this = this;
 				let stateData = JSON.parse(data)
 				console.log(stateData)
 				_this.message.splice(stateData, 1);
@@ -165,12 +172,12 @@
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为编辑服药提醒的url
-					url: getApp().globalData.base_url+'/SendReminder/',
+					url: getApp().globalData.base_url + '/SendReminder/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
-						openid:this.openid,
-						reminder:this.message,
+						openid: this.openid,
+						reminder: this.message,
 					},
 					success: function(response) {
 						console.log("删除服药提醒成功")
@@ -179,17 +186,17 @@
 						console.log("删除服药提醒失败")
 					}
 				})
-				let param=this.patient_uid+stateData.name
+				let param = this.patient_uid + stateData.name
 				//调用后端取消提醒接口
 				wx.request({
 					// 这里是django的本地ip地址
 					// 如果部署到线上，需要改为接口的实际网址
 					//此处url还需修改为编辑服药提醒的url
-					url: getApp().globalData.base_url+'/SendReminder/',
+					url: getApp().globalData.base_url + '/SendReminder/',
 					// 请求方式修改为 POST
 					method: 'POST',
 					data: {
-						param:param,
+						param: param,
 					},
 					success: function(response) {
 						console.log("删除服药提醒成功")
@@ -204,20 +211,18 @@
 </script>
 
 <style lang="scss">
-	.content {
-		
-		
-	}
+	.content {}
+
 	.btn {
 		display: flex;
 		height: 10%;
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.scroll-view {
 		margin-top: 20rpx;
-	    height:980rpx;
+		height: 980rpx;
 	}
 
 	.table {
@@ -234,8 +239,14 @@
 		width: 92%;
 	}
 
-	.th1,.th2,.th3,.th4,
-	.td1,.td2,.td3,.td4 {
+	.th1,
+	.th2,
+	.th3,
+	.th4,
+	.td1,
+	.td2,
+	.td3,
+	.td4 {
 		/* 公有的属性 */
 		display: flex;
 		flex-direction: column;
@@ -259,20 +270,31 @@
 
 		font-size: 32rpx;
 	}
-	.td1,.th1{
+
+	.td1,
+	.th1 {
 		width: 32%;
 	}
-	.td2,.th2{
+
+	.td2,
+	.th2 {
 		width: 24%;
 	}
-	.td3,.th3{
+
+	.td3,
+	.th3 {
 		width: 10%;
 	}
-	.td4,.th4{
+
+	.td4,
+	.th4 {
 		width: 34%;
 	}
 
-	.th1,.th2,.th3,.th4 {
+	.th1,
+	.th2,
+	.th3,
+	.th4 {
 		font-weight: 800;
 		/* 字体加重 */
 		background-color: #B3CCF4;
@@ -280,7 +302,10 @@
 		height: 80rpx;
 	}
 
-	.td1,.td2,.td3,.td4 {
+	.td1,
+	.td2,
+	.td3,
+	.td4 {
 		text-align: left;
 	}
 </style>
