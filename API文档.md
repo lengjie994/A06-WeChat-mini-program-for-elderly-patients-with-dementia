@@ -8,7 +8,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/login/'
+​	'http://43.140.198.99/api/user/login/'
 
 ### 参数
 
@@ -36,7 +36,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/role/'
+​	'http://43.140.198.99/api/user/role/'
 
 ### 参数
 
@@ -64,7 +64,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/getPatientInfo/'
+​	'http://43.140.198.99/api/user/getPatientInfo/'
 
 ### 参数
 
@@ -127,7 +127,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/getGuardianInfo/'
+​	'http://43.140.198.99/api/user/getGuardianInfo/'
 
 ### 参数
 
@@ -173,7 +173,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/getDoctorInfo/'
+​	'http://43.140.198.99/api/user/getDoctorInfo/'
 
 ### 参数
 
@@ -222,7 +222,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/modifyMemorial/'
+​	'http://43.140.198.99/api/user/modifyMemorial/'
 
 ### 参数
 
@@ -250,7 +250,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/GuardianToPatient/'
+​	'http://43.140.198.99/api/user/GuardianToPatient/'
 
 ### 参数
 
@@ -277,7 +277,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/GuardianToDoctor/'
+​	'http://43.140.198.99/api/user/GuardianToDoctor/'
 
 ### 参数
 
@@ -303,7 +303,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SendHealthdata/'
+​	'http://43.140.198.99/api/user/SendHealthdata/'
 
 ### 参数
 
@@ -330,7 +330,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SendMemoir/'
+​	'http://43.140.198.99/api/user/SendMemoir/'
 
 ### 参数
 
@@ -367,7 +367,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/UploadImage/'
+​	'http://43.140.198.99/api/user/UploadImage/'
 
 ### 参数
 
@@ -392,7 +392,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SendReminder/'
+​	'http://43.140.198.99/api/user/SendReminder/'
 
 ### 参数
 
@@ -419,7 +419,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SaveChatlist/'
+​	'http://43.140.198.99/api/user/SaveChatlist/'
 
 ### 参数
 
@@ -447,7 +447,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/ReturnChatlist/'
+​	'http://43.140.198.99/api/user/ReturnChatlist/'
 
 ### 参数
 
@@ -475,7 +475,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/GuardianFlagFalse/'
+​	'http://43.140.198.99/api/user/GuardianFlagFalse/'
 
 ### 参数
 
@@ -500,7 +500,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/DoctorFlagFalse/'
+​	'http://43.140.198.99/api/user/DoctorFlagFalse/'
 
 ### 参数
 
@@ -526,7 +526,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/ModifyDoctorInfo/'
+​	'http://43.140.198.99/api/user/ModifyDoctorInfo/'
 
 ### 参数
 
@@ -552,7 +552,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/DoctorFindHealthData/'
+​	'http://43.140.198.99/api/user/DoctorFindHealthData/'
 
 ### 参数
 
@@ -577,7 +577,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/WriteUid/'
+​	'http://43.140.198.99/api/user/WriteUid/'
 
 ### 参数
 
@@ -604,7 +604,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/ModifyGaurdianNickname/'
+​	'http://43.140.198.99/api/user/ModifyGaurdianNickname/'
 
 ### 参数
 
@@ -630,7 +630,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/GuardianGetID/'
+​	'http://43.140.198.99/api/user/GuardianGetID/'
 
 ### 参数
 
@@ -655,7 +655,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/PatientGetID/'
+​	'http://43.140.198.99/api/user/PatientGetID/'
 
 ### 参数
 
@@ -680,7 +680,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/SendOfficialReminder/'
+​	'http://43.140.198.99/api/user/SendOfficialReminder/'
 
 ### 参数
 
@@ -708,7 +708,7 @@
 
 ### url
 
-​	'http://127.0.0.1:8000/api/user/DeleteOneReminder/'
+​	'http://43.140.198.99/api/user/DeleteOneReminder/'
 
 ### 参数
 
