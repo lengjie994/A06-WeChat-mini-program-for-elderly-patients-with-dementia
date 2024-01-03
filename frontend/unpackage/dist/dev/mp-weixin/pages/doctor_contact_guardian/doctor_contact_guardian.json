@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar",
+    "u-list": "/node-modules/uview-ui/components/u-list/u-list",
+    "fui-list-cell": "/node-modules/firstui-uni/firstui/fui-list-cell/fui-list-cell",
+    "fui-icon": "/node-modules/firstui-uni/firstui/fui-icon/fui-icon",
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "tab-bar": "/components/tabbar/tabbar",
+    "fui-list": "/node-modules/firstui-uni/firstui/fui-list/fui-list",
+    "fui-badge": "/node-modules/firstui-uni/firstui/fui-badge/fui-badge"
+  }
+}

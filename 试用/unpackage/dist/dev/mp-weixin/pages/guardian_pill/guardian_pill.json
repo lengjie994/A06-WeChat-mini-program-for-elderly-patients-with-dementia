@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "add_pill": "/components/add_pill/add_pill",
-    "delete_pill": "/components/delete_pill/delete_pill"
-  }
-}

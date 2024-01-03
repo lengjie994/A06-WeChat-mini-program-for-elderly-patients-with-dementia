@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "fui-input": "/node-modules/firstui-uni/firstui/fui-input/fui-input",
+    "fui-button": "/node-modules/firstui-uni/firstui/fui-button/fui-button"
+  }
+}

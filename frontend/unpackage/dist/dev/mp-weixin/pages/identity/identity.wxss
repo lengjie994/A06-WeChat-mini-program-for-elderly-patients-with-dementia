@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.btn {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 89vh;
+}
+.content {
+  background-color: #F1F4FA;
+  height: 100vh;
+}
+
